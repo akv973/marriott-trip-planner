@@ -1,0 +1,27 @@
+[
+  {
+    "id": "editorial-dove-mountain-desk-review",
+    "propertyId": "property-dove-mountain",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in desert walking and a resort setting"
+    ],
+    "strengths": [
+      "Desert activities give this property a distinct planning use case"
+    ],
+    "weaknesses": [
+      "Desk research is insufficient to assess service or room condition"
+    ],
+    "rationale": "Editorial desk review based on the sourced setting and activities. No firsthand stay evaluation, quality rating, elite-benefit assessment, or hotel ranking is asserted.",
+    "reviewedAt": "2026-10-07",
+    "methodologyVersion": "desk-review-1"
+  }
+]

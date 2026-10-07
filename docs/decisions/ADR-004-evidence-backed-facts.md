@@ -1,6 +1,6 @@
 # ADR-004: Evidence-backed factual data
 
-Status: Accepted; domain implementation starts in Stage 1. Date: 2026-10-06.
+Status: Accepted; implemented in Stage 1 through ADR-007. Date: 2026-10-06.
 
 ## Context
 

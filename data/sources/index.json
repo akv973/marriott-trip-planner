@@ -1,1 +1,227 @@
-[]
+[
+  {
+    "id": "source-dove-mountain",
+    "title": "The Ritz-Carlton, Dove Mountain — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/tusrz-the-ritz-carlton-dove-mountain/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-half-moon-bay",
+    "title": "The Ritz-Carlton, Half Moon Bay — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/hafrz-the-ritz-carlton-half-moon-bay/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-lake-tahoe",
+    "title": "The Ritz-Carlton, Lake Tahoe — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/rnorz-the-ritz-carlton-lake-tahoe/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-grand-cayman",
+    "title": "The Ritz-Carlton, Grand Cayman — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/gcmrz-the-ritz-carlton-grand-cayman/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-st-regis-new-york",
+    "title": "The St. Regis New York — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/nycxr-the-st-regis-new-york/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-st-regis-aspen",
+    "title": "The St. Regis Aspen Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/asexr-the-st-regis-aspen-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-st-regis-maldives",
+    "title": "The St. Regis Maldives Vommuli Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/mlexr-the-st-regis-maldives-vommuli-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-st-regis-washington",
+    "title": "The St. Regis Washington, D.C. — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/wassx-the-st-regis-washington-dc/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-new-york-edition",
+    "title": "The New York EDITION — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/nyceb-the-new-york-edition/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-reykjavik-edition",
+    "title": "The Reykjavik EDITION — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/rekeb-the-reykjavik-edition/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-tokyo-edition-toranomon",
+    "title": "The Tokyo EDITION, Toranomon — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/tyoet-the-tokyo-edition-toranomon/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-miami-beach-edition",
+    "title": "The Miami Beach EDITION — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/miaeb-the-miami-beach-edition/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-gritti-palace",
+    "title": "The Gritti Palace, a Luxury Collection Hotel, Venice — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/vcegl-the-gritti-palace-a-luxury-collection-hotel-venice/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-mystique-santorini",
+    "title": "Mystique, a Luxury Collection Hotel, Santorini — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/jtrml-mystique-a-luxury-collection-hotel-santorini/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-imperial-vienna",
+    "title": "Hotel Imperial, a Luxury Collection Hotel, Vienna — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/vieil-hotel-imperial-a-luxury-collection-hotel-vienna/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-marques-de-riscal",
+    "title": "Hotel Marqués de Riscal, a Luxury Collection Hotel, Elciego — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/biolc-hotel-marques-de-riscal-a-luxury-collection-hotel-elciego/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-jw-sao-paulo",
+    "title": "JW Marriott Hotel Sao Paulo — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/saojw-jw-marriott-hotel-sao-paulo/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-jw-masai-mara",
+    "title": "JW Marriott Masai Mara Lodge — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/nbomj-jw-marriott-masai-mara-lodge/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-jw-nairobi",
+    "title": "JW Marriott Hotel Nairobi — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/nbojw-jw-marriott-hotel-nairobi/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-jw-tampa",
+    "title": "JW Marriott Tampa Water Street — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/tpajd-jw-marriott-tampa-water-street/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-jw-phuket",
+    "title": "JW Marriott Phuket Resort & Spa — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/hktjw-jw-marriott-phuket-resort-and-spa/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-mapito",
+    "title": "Mapito Safari Camp, Serengeti, Autograph Collection — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/jrosk-mapito-safari-camp-serengeti-autograph-collection/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-mereshi",
+    "title": "Mereshi Safari Camp Serengeti, Autograph Collection — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/lkymp-mereshi-safari-camp-serengeti-autograph-collection/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-cloudveil",
+    "title": "The Cloudveil, Autograph Collection — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/jacak-the-cloudveil-autograph-collection/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-elephant-weimar",
+    "title": "Hotel Elephant Weimar, Autograph Collection — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/erfak-hotel-elephant-weimar-autograph-collection/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-07",
+    "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  }
+]

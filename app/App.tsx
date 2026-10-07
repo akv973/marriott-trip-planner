@@ -5,7 +5,7 @@ import { FoundationError } from '../components/FoundationError';
 import { loadFoundation } from '../lib/catalog/foundation';
 import type { FoundationManifest } from '../types/foundation';
 
-function FoundationScreen({ manifest }: { manifest: FoundationManifest }) {
+function FoundationScreen({ manifest, propertyCount }: { manifest: FoundationManifest; propertyCount: number }) {
   useEffect(() => {
     document.getElementById(window.location.hash.slice(1))?.scrollIntoView();
   }, []);
@@ -23,7 +23,7 @@ function FoundationScreen({ manifest }: { manifest: FoundationManifest }) {
           <a href="#foundation">Our approach</a>
           <a href="#roadmap">What’s next</a>
         </nav>
-        <span className="stage-pill"><span />Foundation · Stage {manifest.stage}</span>
+        <span className="stage-pill"><span />Data foundation · Stage {manifest.stage}</span>
       </header>
 
       <main id="main" tabIndex={-1}>
@@ -41,12 +41,12 @@ function FoundationScreen({ manifest }: { manifest: FoundationManifest }) {
         <section className="catalog-section" aria-labelledby="catalog-title">
           <div className="section-heading">
             <div><p className="eyebrow">Your property collection</p><h2 id="catalog-title">Great trips start with great stays.</h2></div>
-            <span className="quiet-label">Catalog not yet populated</span>
+            <span className="quiet-label">Catalog baseline verified</span>
           </div>
           <div className="empty-catalog">
             <span className="empty-icon" aria-hidden="true">⌑</span>
-            <div><h3>A considered collection is on the way.</h3><p>Hotels will appear here as their details are researched and sourced. This foundation contains no property listings or pricing.</p></div>
-            <span className="empty-count">0<span>curated properties</span></span>
+            <div><h3>A considered collection is on the way.</h3><p>The first 25 properties have sourced identity records. Browsing and property details are planned for the next stage.</p></div>
+            <span className="empty-count">{propertyCount}<span>curated properties</span></span>
           </div>
         </section>
 
@@ -69,7 +69,7 @@ function FoundationScreen({ manifest }: { manifest: FoundationManifest }) {
               </article>
             ))}
           </div>
-          <p className="roadmap-note">Next milestone: the data and evidence model. Each stage is reviewed before the next begins.</p>
+          <p className="roadmap-note">Next milestone: the Property Explorer. Each stage is reviewed before the next begins.</p>
         </section>
       </main>
 
@@ -80,5 +80,5 @@ function FoundationScreen({ manifest }: { manifest: FoundationManifest }) {
 
 export function App() {
   const result = loadFoundation();
-  return result.success ? <FoundationScreen manifest={result.data.foundation} /> : <FoundationError />;
+  return result.success ? <FoundationScreen manifest={result.data.foundation} propertyCount={result.data.properties.length} /> : <FoundationError />;
 }

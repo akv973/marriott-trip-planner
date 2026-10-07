@@ -4,7 +4,7 @@
 
 React and TypeScript render a static browser application built by Vite. The deployable artifact is `dist/`, hosted on GitHub Pages. Node 24 is the development and CI runtime, not a production server dependency. Dependency resolution is reproducible through `package-lock.json` and `npm ci`.
 
-Zod is the runtime validation boundary. TypeScript types are inferred from schemas to avoid a second, inconsistent type definition. Current validation covers the foundation manifest and five deliberately empty collections. Stage 1 introduces domain schemas and evidence relationships; it must supersede the empty-collection guard.
+Zod is the runtime validation boundary. TypeScript types are inferred from schemas to avoid a second, inconsistent type definition. Stage 1 validates the manifest and six domain collections, including relationships/evidence. Benefits remain empty. See ADR-007 and the data-methodology contracts.
 
 ## Boundaries
 
@@ -28,7 +28,7 @@ Separate entities will include Property, Brand, Destination, Airport, Source, Ev
 
 Property identity and stable characteristics are distinct from date-sensitive affiliations, opening/closure states, fees, policies, availability, and prices. Effective views can derive a current value from evidence but must not erase older or conflicting claims. Official URLs are locators; they alone do not prove every field.
 
-Factual records must be schema-valid and referentially valid. Evidence has timestamps, confidence, source attribution, and conflict status where appropriate. Editorial judgments have rationale, review date, and methodology version. Stage 1 determines exact schemas and mandatory evidence fields.
+Factual records must be schema-valid and referentially valid. Evidence has timestamps, confidence, source attribution, and conflict status where appropriate. Editorial judgments have rationale, review date, and methodology version. Stage 1 implements strict schemas, typed claims and evidence admission; see `docs/data-methodology/catalog-model.md`.
 
 ## Recommendation design
 
