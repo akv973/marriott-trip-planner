@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrandMark } from '../components/BrandMark';
 import { ContourArt } from '../components/ContourArt';
 import { FoundationError } from '../components/FoundationError';
@@ -5,6 +6,10 @@ import { loadFoundation } from '../lib/catalog/foundation';
 import type { FoundationManifest } from '../types/foundation';
 
 function FoundationScreen({ manifest }: { manifest: FoundationManifest }) {
+  useEffect(() => {
+    document.getElementById(window.location.hash.slice(1))?.scrollIntoView();
+  }, []);
+
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
