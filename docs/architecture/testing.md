@@ -12,12 +12,29 @@
 | `npm run test:integration` | Shipped JSON → validation → React shell; empty state; real anchor targets; invalid-data fallback |
 | `npm run catalog:health` | Explicit zero-property report with evidence assessment marked not performed |
 | `npm run build` | Production bundle |
+| `npm run test:browser` | Chromium desktop/narrow shell loading, assets, console errors, overflow, navigation, and direct-fragment reloads |
 
 `npm run check` groups typecheck, lint, schema validation, both Vitest projects, and build. The CI workflow runs unit and integration suites separately to make failures easy to diagnose.
 
 ## Verification limits
 
-jsdom checks document behavior and semantics; it cannot prove browser layout, paint, media-query behavior, contrast, or real network operation. Do not label it as E2E testing. Stage 0 has no explorer or planner flows, so Playwright is not installed solely to create placeholder passing tests. Add Playwright and browser CI in Stage 2 when meaningful user flows exist.
+jsdom checks document behavior and semantics; it cannot prove browser layout, paint, media-query behavior, contrast, or real network operation. Do not label it as E2E testing. Stage 0 browser checks cover only the implemented shell. They exposed an actual initial-fragment reload defect and provide regression coverage for that fix. Explorer and planner flows remain unimplemented and are not counted as passing.
+
+CI installs Chromium and runs four shell checks at 1366×900 and 390×844 against the production preview. The preview and build must both use `/marriott-trip-planner/`; a mismatched preview base can return HTML or 404 for bundled assets. Successful main runs deploy Pages, then repeat all four checks against the public live URL. The `local-stage-0-browser-qa` and `live-stage-0-browser-qa` artifacts contain JSON results, full-page screenshots, and traces on failure. Inspect screenshots separately before claiming visual QA. A Chromium viewport check is not physical-device or cross-browser testing.
+
+To reproduce the production preview checks:
+
+```bash
+npx playwright install --with-deps chromium
+VITE_BASE_PATH=/marriott-trip-planner/ npm run build
+npm run test:browser
+```
+
+To inspect an already deployed shell:
+
+```bash
+PLAYWRIGHT_BASE_URL=https://akv973.github.io/marriott-trip-planner/ npm run test:browser
+```
 
 Production-base checks inspect built asset paths for both `/` and `/marriott-trip-planner/`. Local development requires a successful Vite startup. Visual/browser verification is reported separately; lack of an available approved preview path is a limitation, not a pass.
 

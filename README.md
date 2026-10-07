@@ -26,7 +26,7 @@ For GitHub project Pages:
 
 ```bash
 VITE_BASE_PATH=/marriott-trip-planner/ npm run build
-npm run preview
+npm run preview -- --base /marriott-trip-planner/
 ```
 
 Open `http://localhost:4173/marriott-trip-planner/`. Do not use `vite preview` as a production server. See the [deployment runbook](docs/architecture/deployment.md).
@@ -43,7 +43,7 @@ Open `http://localhost:4173/marriott-trip-planner/`. Do not use `vite preview` a
 | `lib/points/`, `lib/scoring/`, `lib/trips/`, `lib/benefits/`, `lib/storage/` | Reserved module boundaries, with no domain implementation yet |
 | `types/` | Types inferred from runtime schemas |
 | `scripts/` | Schema validation and empty-catalog health commands |
-| `tests/` | Vitest unit and React/jsdom integration tests |
+| `tests/` | Vitest unit, React/jsdom integration, and Chromium shell checks |
 | `docs/` | Governing brief, requirements, architecture, ADRs, data methodology, and stage records |
 | `public/` | Original or permitted static assets; `.nojekyll` |
 
@@ -61,9 +61,9 @@ Open `http://localhost:4173/marriott-trip-planner/`. Do not use `vite preview` a
 
 ## CI and deployment
 
-`.github/workflows/ci.yml` runs installation, typecheck, lint, schema validation, unit tests, integration tests, catalog foundation health, and the production build for pull requests and main-branch pushes. Only a successful main-branch validation job can upload and deploy the Pages artifact. Deployment receives Pages write and OIDC permissions; pull-request checks have read-only repository permissions.
+`.github/workflows/ci.yml` runs installation, typecheck, lint, schema validation, unit tests, integration tests, catalog foundation health, the production build, and desktop/narrow Chromium shell checks for pull requests and main-branch pushes. Only a successful main-branch validation job can upload and deploy the Pages artifact. A dependent job repeats browser checks against the live site and uploads screenshots and results. Deployment receives Pages write and OIDC permissions; pull-request checks have read-only repository permissions.
 
-The intended source repository is `akv973/marriott-trip-planner`. It has not been created or connected during this local foundation build. No remote workflow run or deployed URL is claimed. The GitHub connector currently has no repository-creation or Pages-settings operation.
+Source repository: [akv973/marriott-trip-planner](https://github.com/akv973/marriott-trip-planner). Live shell: [GitHub Pages](https://akv973.github.io/marriott-trip-planner/). The original foundation commit `7a66c1228dc7aff73ca758b0761b8cbae14a3657` is preserved in the remote history. See the [Stage 0 record](docs/stages/stage-0.md) for observed runs, QA evidence, and limitations.
 
 ## Stage discipline
 

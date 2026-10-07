@@ -2,7 +2,11 @@
 
 ## Current state
 
-The project is a local Git repository, intended for `akv973/marriott-trip-planner`. The connected GitHub tools expose repository reads and content changes but do not expose repository creation or Pages-settings changes. No connected repository with this name was found. No remote push, PR, Actions run, or Pages deployment has occurred.
+Repository: [akv973/marriott-trip-planner](https://github.com/akv973/marriott-trip-planner), public. Pages source is **GitHub Actions**. The verified live shell is [https://akv973.github.io/marriott-trip-planner/](https://akv973.github.io/marriott-trip-planner/).
+
+The exact original foundation commit `7a66c1228dc7aff73ca758b0761b8cbae14a3657` was imported without rewriting it. Its [first CI and Pages run](https://github.com/akv973/marriott-trip-planner/actions/runs/37563282727) succeeded. The temporary import workflow is retained only on the separate `stage-0-import` bootstrap branch; it is not on main. Subsequent Stage 0 changes use focused PRs and passing CI. See the stage record for final verification evidence.
+
+Branch protection remains unconfigured. Automatic approval review rejected changing branch protection and administrator bypass settings as outside the explicit authorization. The workflow still gates deployment on successful required checks; this does not enforce PR requirements at the repository level.
 
 ## Repository setup
 
@@ -16,33 +20,33 @@ git push -u origin main
 ```
 
 4. In repository Settings → Pages, select **GitHub Actions** as the build source. Confirm Actions has permission to use official actions and that the `github-pages` environment permits main deployments.
-5. Require pull requests and the **Required checks** status on `main` through a branch rule or ruleset. Do not bypass a failed check to publish.
+5. Repository-level protection is recommended separately: require pull requests and the **Required checks** status on `main` through a branch rule or ruleset. Configure security settings only with authorization. Do not merge a failed check or publish a failed build.
 6. Inspect the first CI run. If Pages was enabled after the first run, rerun through the workflow's `workflow_dispatch` on `main`.
 
 ## What the workflow does
 
-Install → typecheck → lint → schema validation → unit tests → integration tests → empty-catalog health → production build. It builds with `VITE_BASE_PATH=/marriott-trip-planner/`, uploads `dist/` only for main, then a separate dependent job configures and deploys Pages.
+Install → typecheck → lint → schema validation → unit tests → integration tests → empty-catalog health → production build → desktop/narrow browser checks. It builds with `VITE_BASE_PATH=/marriott-trip-planner/`, uploads `dist/` only for a successful main validation, then a separate dependent job configures and deploys Pages. A third job depends on deployment and checks the live site at desktop and narrow widths, uploading browser evidence.
 
 PRs and merge-queue checks do not deploy. No personal access token or deploy key is required by the workflow. `GITHUB_TOKEN` and short-lived OIDC permissions are scoped to their job.
 
 ## Verify before claiming deployment
 
 - Record the full main commit SHA and exact Actions run URL.
-- Verify **Required checks** and **Deploy GitHub Pages** succeeded for that SHA.
+- Verify **Required checks**, **Deploy GitHub Pages**, and **Live browser QA** succeeded for that SHA.
 - Record the literal Pages URL returned by the deployment, not an assumed future URL.
 - Open the live shell at its repository base path. Confirm its CSS/JS load, empty state and planned labels are visible, anchor links work, and mobile/desktop layouts behave correctly.
 - Confirm there are no failed external requests or invented hotel/rate values.
 
-The expected URL shape is `https://akv973.github.io/marriott-trip-planner/`. This is an intended location, **not a verified deployed URL**.
+Compare the live HTML and bundled asset bytes with the artifact built for the recorded commit. The dependent deployment job supplies the workflow-to-commit connection; matching bytes corroborate the live output. The shell does not display an embedded commit identifier.
 
 ## Local production check
 
 ```bash
 VITE_BASE_PATH=/marriott-trip-planner/ npm run build
-npm run preview
+npm run preview -- --base /marriott-trip-planner/
 ```
 
-Open `http://localhost:4173/marriott-trip-planner/`. Also build with the default `/` for local development. Assets must resolve under the selected base path. Future route/deep-link checks belong to Stage 2.
+Open `http://localhost:4173/marriott-trip-planner/`. Also build with the default `/` for local development. Assets must resolve under the selected base path. Stage 0 uses native fragment links rather than application path routes. React restores the initial fragment position after mounting so direct fragment reloads work. Future explorer/planner routes belong to their approved stages.
 
 ## If the repository name changes
 
