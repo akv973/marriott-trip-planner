@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test';
-import properties from '../../data/properties/index.json';
+import { readFileSync } from 'node:fs';
+
+const properties = JSON.parse(readFileSync(new URL('../../data/properties/index.json', import.meta.url), 'utf8')) as { slug: string; name: string }[];
 
 async function noOverflow(page: import('@playwright/test').Page) {
   const layout = await page.evaluate(() => ({ width: innerWidth, scrollWidth: document.documentElement.scrollWidth }));
@@ -36,6 +38,7 @@ test('explorer loads all properties with intact assets and responsive cards', as
   }
   expect(assetResponses.filter((asset) => /\/assets\/.*\.(js|css)$/.test(asset.url))).toHaveLength(2);
   expect(brokenAssets).toEqual([]); expect(applicationErrors).toEqual([]);
+  await page.screenshot({ path: testInfo.outputPath(`explorer-viewport-${testInfo.project.name}.png`) });
   await page.screenshot({ path: testInfo.outputPath(`explorer-${testInfo.project.name}.png`), fullPage: true });
   await testInfo.attach('browser-evidence.json', { body: Buffer.from(JSON.stringify({ url: page.url(), cards, assetResponses, applicationErrors, brokenAssets }, null, 2)), contentType: 'application/json' });
 });
