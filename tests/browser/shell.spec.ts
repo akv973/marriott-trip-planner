@@ -115,7 +115,8 @@ test('detail facts, sources, unknown booking values and editorial remain distinc
   const airport = page.locator('.fact-row').filter({ has: page.getByText('Nearest airport', { exact: true }) });
   await expect(airport).toContainText('about 53.9 km');
   await airport.locator('summary').click();
-  await expect(airport).toContainText('33.5');
+  await expect(airport).toContainText('1 mile = 1.609344 km');
+  await expect(airport).toContainText('Approximate hotel-published distance');
   await noOverflow(page);
   await page.screenshot({ path: testInfo.outputPath(`dove-mountain-${testInfo.project.name}.png`), fullPage: true });
   await expect(page.getByRole('button', { name: /Compare|Save|Add to trip/i })).toHaveCount(0);
