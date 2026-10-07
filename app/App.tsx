@@ -1,84 +1,45 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { BrandMark } from '../components/BrandMark';
-import { ContourArt } from '../components/ContourArt';
 import { FoundationError } from '../components/FoundationError';
+import { PropertyExplorer } from '../components/PropertyExplorer';
+import { PropertyDetails } from '../components/PropertyDetails';
+import { ProjectNotes } from '../components/ProjectNotes';
 import { loadFoundation } from '../lib/catalog/foundation';
-import type { FoundationManifest } from '../types/foundation';
+import { explorerHref, parseRoute } from '../lib/navigation/routes';
+import type { Catalog } from '../types/catalog';
 
-function FoundationScreen({ manifest, propertyCount }: { manifest: FoundationManifest; propertyCount: number }) {
+export function ExplorerApplication({ catalog, asOf }: { catalog: Catalog; asOf: string }) {
+  const [route, setRoute] = useState(() => parseRoute(window.location.hash));
   useEffect(() => {
-    document.getElementById(window.location.hash.slice(1))?.scrollIntoView();
+    const onHashChange = () => setRoute(parseRoute(window.location.hash));
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
-
-  return (
-    <>
-      <a className="skip-link" href="#main">Skip to content</a>
-      <header className="site-header">
-        <a className="brand" href="#overview" aria-label="Marriott Trip Planner overview">
-          <BrandMark />
-          <span>Marriott<span className="brand-subtitle">Trip Planner</span></span>
-        </a>
-        <nav aria-label="Main navigation">
-          <a href="#overview">Overview</a>
-          <a href="#foundation">Our approach</a>
-          <a href="#roadmap">What’s next</a>
-        </nav>
-        <span className="stage-pill"><span />Data foundation · Stage {manifest.stage}</span>
-      </header>
-
-      <main id="main" tabIndex={-1}>
-        <section id="overview" className="hero" aria-labelledby="hero-title">
-          <ContourArt />
-          <div className="hero-copy">
-            <p className="eyebrow">Thoughtful stays. Clear decisions.</p>
-            <h1 id="hero-title">Your next journey,<br /><em>well considered.</em></h1>
-            <p className="hero-description">A place to discover worthwhile Marriott stays, make sense of cash and points, and bring your travel plans together.</p>
-            <a className="primary-link" href="#roadmap">Explore what’s coming <span aria-hidden="true">↗</span></a>
-          </div>
-          <div className="hero-note"><span className="note-line" />The first step: a foundation you can trust.</div>
-        </section>
-
-        <section className="catalog-section" aria-labelledby="catalog-title">
-          <div className="section-heading">
-            <div><p className="eyebrow">Your property collection</p><h2 id="catalog-title">Great trips start with great stays.</h2></div>
-            <span className="quiet-label">Catalog baseline verified</span>
-          </div>
-          <div className="empty-catalog">
-            <span className="empty-icon" aria-hidden="true">⌑</span>
-            <div><h3>A considered collection is on the way.</h3><p>The first 25 properties have sourced identity records. Browsing and property details are planned for the next stage.</p></div>
-            <span className="empty-count">{propertyCount}<span>curated properties</span></span>
-          </div>
-        </section>
-
-        <section id="foundation" className="principles-section" aria-labelledby="principles-title">
-          <div className="principles-intro"><p className="eyebrow">Built with care</p><h2 id="principles-title">Better planning begins<br />with better information.</h2><p>Useful decisions need reliable facts and visible assumptions. That is the starting point for every part of this planner.</p></div>
-          <div className="principle-list">
-            <article><span>01</span><div><h3>Evidence before recommendations</h3><p>Important hotel facts will carry their sources. Unknown information will stay unknown.</p></div></article>
-            <article><span>02</span><div><h3>Your rates, transparent value</h3><p>Enter the cash and award prices you find. See the assumptions behind a booking assessment.</p></div></article>
-            <article><span>03</span><div><h3>Plans that stay yours</h3><p>Profiles and trips are designed for local browser storage, with export and import planned.</p></div></article>
-          </div>
-        </section>
-
-        <section id="roadmap" className="roadmap-section" aria-labelledby="roadmap-title">
-          <div className="section-heading"><div><p className="eyebrow">A clear path forward</p><h2 id="roadmap-title">Taking shape, one stage at a time.</h2></div><span className="quiet-label">Planned capabilities</span></div>
-          <div className="roadmap-grid">
-            {manifest.modules.map((module, index) => (
-              <article className="roadmap-card" key={module.id}>
-                <div className="card-top"><span className="card-number">0{index + 1}</span><span className="card-stage">Stage {module.firstStage}</span></div>
-                <h3>{module.title}</h3><p>{module.description}</p><span className="planned-label">Planned</span>
-              </article>
-            ))}
-          </div>
-          <p className="roadmap-note">Next milestone: the Property Explorer. Each stage is reviewed before the next begins.</p>
-        </section>
-      </main>
-
-      <footer><p>Marriott Trip Planner <span>·</span> Thoughtful travel, explained.</p><p>Independent planning tool. Not affiliated with Marriott International.</p></footer>
-    </>
-  );
+  const property = route.page === 'property' ? catalog.properties.find((record) => record.slug === route.slug) : undefined;
+  const section = route.page === 'explore' ? route.section : null;
+  const pageKey = `${route.page}:${property?.slug ?? ''}`;
+  useEffect(() => {
+    if (section) document.getElementById(section)?.scrollIntoView();
+    else {
+      window.scrollTo?.(0, 0);
+      document.getElementById('page-title')?.focus({ preventScroll: true });
+    }
+  }, [pageKey, section]);
+  useEffect(() => {
+    document.title = `${property ? property.name : route.page === 'explore' ? 'Property Explorer' : 'Property not found'} · Marriott Trip Planner`;
+  }, [property, route.page]);
+  return <>
+    <a className="skip-link" href="#main" onClick={(event) => { event.preventDefault(); document.getElementById('main')?.focus(); }}>Skip to content</a>
+    <header className="site-header"><a className="brand" href={explorerHref()} aria-label="Marriott Trip Planner explorer"><BrandMark /><span>Marriott<span className="brand-subtitle">Trip Planner</span></span></a>
+      <nav aria-label="Main navigation"><a href={explorerHref()} aria-current={route.page === 'explore' && !section ? 'page' : undefined}>Explorer</a><a href="#foundation">Our approach</a><a href="#roadmap">What’s next</a></nav><span className="stage-pill"><span />Property Explorer · Stage 2</span></header>
+    <main id="main" tabIndex={-1}>
+      {route.page === 'explore' ? <PropertyExplorer catalog={catalog} query={route.query} asOf={asOf} /> : property ? <PropertyDetails catalog={catalog} property={property} query={route.query} asOf={asOf} /> : <section className="not-found"><p className="eyebrow">An uncharted corner</p><h1 id="page-title" tabIndex={-1}>Property not found.</h1><p>This link doesn’t identify a property in the curated collection.</p><a className="primary-link" href={explorerHref(route.query)}>Return to the explorer <span aria-hidden="true">→</span></a></section>}
+      {route.page === 'explore' && <ProjectNotes />}
+    </main><footer><p>Marriott Trip Planner <span>·</span> Thoughtful travel, explained.</p><p>Independent planning tool. Not affiliated with Marriott International.</p></footer>
+  </>;
 }
 
 export function App() {
-  const result = loadFoundation();
-  return result.success ? <FoundationScreen manifest={result.data.foundation} propertyCount={result.data.properties.length} /> : <FoundationError />;
+  const [result] = useState(loadFoundation);
+  return result.success ? <ExplorerApplication catalog={result.data} asOf={new Date().toISOString().slice(0, 10)} /> : <FoundationError />;
 }

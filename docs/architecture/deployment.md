@@ -2,7 +2,7 @@
 
 ## Current state
 
-Repository: [akv973/marriott-trip-planner](https://github.com/akv973/marriott-trip-planner), public. Pages source is **GitHub Actions**. The verified live shell is [https://akv973.github.io/marriott-trip-planner/](https://akv973.github.io/marriott-trip-planner/).
+Repository: [akv973/marriott-trip-planner](https://github.com/akv973/marriott-trip-planner), public. Pages source is **GitHub Actions**. The live explorer is [https://akv973.github.io/marriott-trip-planner/](https://akv973.github.io/marriott-trip-planner/).
 
 The exact original foundation commit `7a66c1228dc7aff73ca758b0761b8cbae14a3657` was imported without rewriting it. Its [first CI and Pages run](https://github.com/akv973/marriott-trip-planner/actions/runs/37563282727) succeeded. The temporary import workflow is retained only on the separate `stage-0-import` bootstrap branch; it is not on main. Subsequent Stage 0 changes use focused PRs and passing CI. See the stage record for final verification evidence.
 
@@ -34,10 +34,10 @@ PRs and merge-queue checks do not deploy. No personal access token or deploy key
 - Record the full main commit SHA and exact Actions run URL.
 - Verify **Required checks**, **Deploy GitHub Pages**, and **Live browser QA** succeeded for that SHA.
 - Record the literal Pages URL returned by the deployment, not an assumed future URL.
-- Open the live shell at its repository base path. Confirm its CSS/JS load, catalog summary and planned labels are visible, anchor links work, and mobile/desktop layouts behave correctly.
+- Open the live explorer at its repository base path. Confirm CSS/JS load, all 25 properties render, combined filters and sorting work, detail URLs reload, sources and unknowns remain visible, and mobile/desktop layouts behave correctly.
 - Confirm there are no failed external requests or invented hotel/rate values.
 
-Compare the live HTML and bundled asset bytes with the artifact built for the recorded commit. The dependent deployment job supplies the workflow-to-commit connection; matching bytes corroborate the live output. The shell does not display an embedded commit identifier.
+Compare the live HTML and bundled asset bytes with the artifact built for the recorded commit. The dependent deployment job supplies the workflow-to-commit connection; matching bytes corroborate the live output. The app does not display an embedded commit identifier.
 
 ## Local production check
 
@@ -46,7 +46,7 @@ VITE_BASE_PATH=/marriott-trip-planner/ npm run build
 npm run preview -- --base /marriott-trip-planner/
 ```
 
-Open `http://localhost:4173/marriott-trip-planner/`. Also build with the default `/` for local development. Assets must resolve under the selected base path. Stage 0 uses native fragment links rather than application path routes. React restores the initial fragment position after mounting so direct fragment reloads work. Future explorer/planner routes belong to their approved stages.
+Open `http://localhost:4173/marriott-trip-planner/`. Also build with the default `/` for local development. Assets must resolve under the selected base path. Stage 2 uses `#/explore` and `#/properties/<slug>` hash routes. Reloading either fetches the repository root document; filters/search/sort remain inside the fragment. The original informational anchors are still restored after React mounts. Planner routes belong to later authorized stages.
 
 ## If the repository name changes
 
