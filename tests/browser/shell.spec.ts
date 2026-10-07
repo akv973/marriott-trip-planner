@@ -5,6 +5,9 @@ test('shell loads with intact assets and fits its viewport', async ({ page }, te
   const brokenAssets: string[] = [];
   const assetResponses: { url: string; status: number }[] = [];
   page.on('pageerror', (error) => applicationErrors.push(error.message));
+  page.on('console', (message) => {
+    if (message.type() === 'error') applicationErrors.push(message.text());
+  });
   page.on('response', (response) => {
     if (['script', 'stylesheet', 'image', 'font'].includes(response.request().resourceType())) {
       assetResponses.push({ url: response.url(), status: response.status() });

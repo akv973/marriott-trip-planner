@@ -15,7 +15,7 @@ export default defineConfig({
   ],
   ...(liveUrl ? {} : {
     webServer: {
-      command: 'npm run preview -- --host 127.0.0.1',
+      command: 'npm run preview -- --host 127.0.0.1 --base /marriott-trip-planner/',
       url: 'http://127.0.0.1:4173/marriott-trip-planner/',
       reuseExistingServer: false,
       timeout: 30_000,
