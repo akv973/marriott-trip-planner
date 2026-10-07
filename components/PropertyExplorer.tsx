@@ -41,7 +41,7 @@ export function PropertyExplorer({ catalog, query, asOf }: { catalog: Catalog; q
       <ContourArt />
       <div><p className="eyebrow">A considered collection</p><h1 id="page-title" tabIndex={-1}>Find a stay worth<br /><em>the journey.</em></h1>
         <p>Explore {catalog.properties.length} curated Marriott properties. Follow the sources, discover the setting, and see what’s still unknown.</p></div>
-      <div className="collection-stat"><strong>{catalog.properties.length}</strong><span>properties<br />across {catalog.brands.length} brands</span></div>
+      <div className="collection-stat"><strong>{catalog.properties.length}</strong><span>properties{' '}<br />across {catalog.brands.length} brands</span></div>
     </section>
     <section className="explorer-section" aria-label="Property explorer">
       <form className="search-form" onSubmit={search} role="search">

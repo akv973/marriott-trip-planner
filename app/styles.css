@@ -18,8 +18,8 @@ a:focus-visible { outline: 3px solid var(--clay); outline-offset: 6px; border-ra
 main:focus { outline: none; }
 svg { display: block; }
 section[id] { scroll-margin-top: 24px; }
-.skip-link { position: fixed; left: 18px; top: -100px; z-index: 10; background: var(--green); color: white; padding: 12px 20px; }
-.skip-link:focus { top: 12px; }
+.skip-link { position: fixed; left: 18px; top: 12px; z-index: 10; background: var(--green); color: white; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skip-link:focus { width: auto; height: auto; padding: 12px 20px; overflow: visible; clip-path: none; }
 .site-header { max-width: 1280px; margin: auto; min-height: 112px; padding: 24px 52px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; font-family: Georgia, serif; font-size: 24px; line-height: 1.05; }
 .brand-mark { width: 40px; height: 40px; }
