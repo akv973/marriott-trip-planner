@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "0.1",
+  "appId": "marriott-trip-planner",
+  "stage": 0,
+  "deploymentTarget": "github-pages",
+  "catalogState": "unpopulated",
+  "modules": [
+    { "id": "explorer", "title": "Discover worthwhile stays", "description": "A curated collection of hotels, with sources behind the details.", "firstStage": 2 },
+    { "id": "economics", "title": "Make your points count", "description": "A transparent cash-versus-points assessment using rates you enter.", "firstStage": 4 },
+    { "id": "trips", "title": "Bring your trip together", "description": "Connect hotel stays and see the points and cash your trip needs.", "firstStage": 6 }
+  ]
+}
