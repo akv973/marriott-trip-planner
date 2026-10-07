@@ -9,3 +9,5 @@ playwright-report/
 *.local
 *.tsbuildinfo
 .DS_Store
+test-results/
+playwright-report/
