@@ -8,7 +8,7 @@ Zod is the runtime validation boundary. TypeScript types are inferred from schem
 
 ## Boundaries
 
-The UI consumes validated domain results. It may format values and manage view state, but it must not implement economic calculations, scoring, evidence resolution, or benefits precedence. The shell consumes a small manifest and contains no business engine.
+The UI consumes validated domain results. It may format values and manage view state, but it must not implement economic calculations, scoring, evidence resolution, or benefits precedence. The explorer consumes the validated catalog. Query/sort functions and factual evidence presentation live in `lib/catalog/`; UI components own form state and rendering only.
 
 | Module | Future responsibility |
 | --- | --- |
@@ -36,11 +36,11 @@ Four layers: eligibility → trip fit → independent booking economics → dete
 
 ## State and persistence
 
-Stage 0 has no account or persisted traveler profile. Stage 7 will define a storage interface, versioned export envelope, schema validation on import, migration rules, and graceful quota/corruption handling. Traveler-specific state must not be built into static deployment artifacts.
+Stage 2 has no account or persisted traveler profile. Explorer view state lives in the URL only. Stage 7 will define a storage interface, versioned export envelope, schema validation on import, migration rules, and graceful quota/corruption handling. Traveler-specific state must not be built into static deployment artifacts.
 
 ## Navigation and Pages
 
-The shell uses ordinary same-document anchors. Vite's `VITE_BASE_PATH` is `/` locally and `/marriott-trip-planner/` for project Pages. Stage 2 should choose a static-host-safe route strategy, documenting direct-link reload behavior; hash routing is a likely candidate. No router, 404 rewrite, or future deep-link behavior is claimed today.
+Stage 2 uses hash routes: `#/explore` and `#/properties/<slug>`, with URLSearchParams inside the hash for search, filters, and sorting. GitHub Pages always receives the repository root document on direct reload. Native `#foundation` and `#roadmap` anchors remain supported. Unknown routes/slugs show a recoverable not-found screen. See ADR-008 and `property-explorer.md`. Vite's `VITE_BASE_PATH` remains `/` locally and `/marriott-trip-planner/` for project Pages. No new router dependency or Pages 404 rewrite is needed.
 
 ## Failure handling
 
@@ -52,4 +52,4 @@ Pull requests and main pushes execute the same required checks. The deploy job d
 
 ## Assets and accessibility
 
-The shell uses system fonts, CSS, and original decorative SVG. It has a skip link, named navigation, semantic landmarks, heading hierarchy, visible keyboard focus, and responsive breakpoints. DOM integration tests verify the shell and link targets. Browser layout/contrast checks remain a separately reported verification task.
+The explorer uses system fonts, CSS, and original decorative SVG. It has a skip link, named navigation, semantic landmarks, heading hierarchy, visible keyboard focus, and responsive breakpoints. DOM integration tests verify queries, details, unknowns, conflicts, staleness, and recovery. Chromium E2E checks cover desktop/narrow explorer flows, layout, assets, direct-link reloads, keyboard interaction, and all 25 detail pages. Screenshot inspection is reported separately from automated assertions.

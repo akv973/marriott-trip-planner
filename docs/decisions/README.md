@@ -9,5 +9,6 @@
 | [005](ADR-005-recommendation-methodology.md) | Separate recommendation layers |
 | [006](ADR-006-dynamic-data-non-blocking.md) | Dynamic data is non-blocking |
 | [007](ADR-007-stage-1-catalog-contract.md) | Domain contracts, evidence admission, conflict and health |
+| [008](ADR-008-explorer-navigation.md) | Hash URLs, composable explorer queries, and inspectable evidence |
 
 ADRs record architectural direction. Acceptance of a later-stage design does not mean that its implementation exists. Supersede decisions explicitly and retain their history.
