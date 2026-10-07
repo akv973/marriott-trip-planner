@@ -1,23 +1,42 @@
 # Data and evidence methodology
 
-## Current foundation
+Stage 1 implements separate factual snapshots, sources, evidence and editorial records. See [domain and health definitions](catalog-model.md) and [seed research](seed-catalog.md). Stage 0's empty collections remain documented historically in its completion record.
 
-All five domain collections are intentionally empty. Stage 0 implements the validation framework, not hotel schemas, evidence resolution, editorial scoring, or a researched catalog. The foundation schema rejects prematurely seeded records.
+## Source preference
 
-## Stage 1 approach
+1. Marriott corporate / Bonvoy program terms
+2. Official Marriott property page, including the official Ritz-Carlton site
+3. Official hotel website
+4. Official hotel communication
+5. Authoritative government/tourism source where relevant
+6. Reputable third-party source
+7. Traveler/community report
 
-Stable property identity is separate from editorial evaluation and date-sensitive observations. Important claims need a Source and EvidenceClaim, with relevant dates, confidence, and conflicts. Missing data is allowed; it must be distinguishable from known absence and zero cost.
+This hierarchy guides research; it never automatically selects truth. Specificity, applicability, recency and evidence quality matter. Preserve disagreements regardless of source rank. A hotel listing substantiates identity and observed affiliation without establishing current operations, pricing, availability or elite entitlements.
 
-Source precedence generally follows Marriott corporate/Bonvoy terms, the official Marriott property page, the official hotel website, official hotel communication, reputable reporting, then community/traveler reports. Rank does not override recency or validity. Preserve conflicting claims and explain any effective-value resolution.
+## Claim values and confidence
 
-Record claim values, field/subject, property reference, source reference, observation/verification dates, applicable validity periods, confidence, notes, and conflict state where relevant. Store editorial strengths, weaknesses, ratings, stay recommendations, and rationale with their own review date and methodology version.
+Subjects form a discriminated union: room count is a positive integer or null; brand is a Brand ID or null; geography, flags, tags and airports use matching validators. Arbitrary JSON and quality scores are not factual subjects. `operatingStatus` is a dated claim only; no seed operating status is asserted.
 
-Prices must include currency, stay dates, observation date, room comparability, taxes/fees, and booking terms where known. A standalone points number is not current availability or a current rate. Affiliation changes, resort fees, benefits, openings, closures, and availability are observations rather than timeless facts.
+| Confidence | Maintainer meaning |
+| --- | --- |
+| High | Directly verified specific factual statement, typically first-party |
+| Medium | Sourced baseline with constrained interpretation/classification or a material limitation |
+| Low | Sourced known claim with weak reliability; requires careful review |
+| Unverified | Observed but not verified, or explicit unknown |
 
-## Catalog health
+All known claims require a Source, including Unverified claims. High/Medium/Low also require a known value and last verification date. Unknown claims may have a null source but must be Unverified with no verification date. At least one observation or verification date is required. Confidence is maintainer judgment, not probability or a substitute for evidence.
 
-Stage 1 defines critical evidence requirements, missing references, stale thresholds by claim type, unresolved conflicts, and confidence denominators. Report counts and percentages with explicit denominators. Empty evidence does not yield 100% confidence.
+## Time and staleness
 
-The Stage 0 `catalog:health` command reports properties and schema errors, zero claims, `evidenceAssessed: false`, and `confidencePercentages: null`. Full completeness/staleness/conflict evaluation does not yet exist. Serious conflicts or schema failures must block bulk expansion at Stage 9.
+`observedAt` records observation; `lastVerifiedAt` records verification. Source `accessedAt` does not automatically refresh every claim. Optional `validFrom`/`validTo` form an inclusive interval. Verification cannot predate observation. Future validity is supported; future observation/verification is invalid for the assessment date.
 
-No facts should be invented to fill a schema. No images or proprietary datasets are copied. Manually captured evidence must preserve its source and verification date, with maintainer review before promotion.
+Default useful lifespan is **365 days**, with **180 days for brand affiliation** and **90 days for operating status**. `StalenessPolicy.bySubject` permits per-field overrides. UTC age uses last verification, falling back to observation. Age strictly greater than threshold is potentially stale. Unknown/inactive claims are excluded. Staleness means review is due, not that a claim is disproven. CLI/CI do not fetch live hotel data.
+
+## Conflicts
+
+Retain all claims and Source IDs. Mark known disputes `conflictStatus: disputed`. Health also discovers unequal active sourced verified claims when flags were omitted. Group by Property/subject and expose all active claim IDs. Unknown/Unverified claims do not independently manufacture disagreement; explicit dispute flags remain visible. Comparison normalizes tag ordering and airport-object key ordering. Dates and source ranks do not select a winner.
+
+Optional conflicted snapshots must remain null/omitted. Publishing one value as fact while retaining an unresolved disagreement fails validation. Required identity subjects cannot be null, so identity disputes block production admission while preserving developer diagnostics. Non-overlapping historical/future claims do not conflict with today's value. Independent fixtures cover explicit/discovered conflicts, stale claims, unknowns and temporal boundaries.
+
+No scraper, undocumented endpoint, credentials, copied photography, rates or booking automation are included. Later observations follow their separately authorized stages and specific evidence requirements.

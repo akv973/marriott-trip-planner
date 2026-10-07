@@ -23,7 +23,7 @@ test('shell loads with intact assets and fits its viewport', async ({ page }, te
   const response = await page.goto('./', { waitUntil: 'networkidle' });
   expect(response?.status()).toBe(200);
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-  await expect(page.getByText('Catalog not yet populated')).toBeVisible();
+  await expect(page.getByText('Catalog baseline verified')).toBeVisible();
   await expect(page.getByText('Planned', { exact: true })).toHaveCount(3);
 
   const layout = await page.evaluate(() => {
@@ -47,7 +47,7 @@ test('shell loads with intact assets and fits its viewport', async ({ page }, te
   expect(assetResponses.filter((asset) => /\/assets\/.*\.(js|css)$/.test(asset.url))).toHaveLength(2);
   expect(brokenAssets).toEqual([]);
   expect(applicationErrors).toEqual([]);
-  await page.screenshot({ path: testInfo.outputPath(`stage-0-${testInfo.project.name}.png`), fullPage: true });
+  await page.screenshot({ path: testInfo.outputPath(`shell-${testInfo.project.name}.png`), fullPage: true });
   await testInfo.attach('browser-evidence.json', {
     body: Buffer.from(JSON.stringify({ url: page.url(), layout, assetResponses, applicationErrors, brokenAssets }, null, 2)),
     contentType: 'application/json',

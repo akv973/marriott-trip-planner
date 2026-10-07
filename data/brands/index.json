@@ -1,1 +1,69 @@
-[]
+[
+  {
+    "id": "brand-ritz-carlton",
+    "slug": "ritz-carlton",
+    "name": "The Ritz-Carlton",
+    "sourceIds": [
+      "source-dove-mountain",
+      "source-half-moon-bay",
+      "source-lake-tahoe",
+      "source-grand-cayman"
+    ]
+  },
+  {
+    "id": "brand-st-regis",
+    "slug": "st-regis",
+    "name": "St. Regis",
+    "sourceIds": [
+      "source-st-regis-new-york",
+      "source-st-regis-aspen",
+      "source-st-regis-maldives",
+      "source-st-regis-washington"
+    ]
+  },
+  {
+    "id": "brand-edition",
+    "slug": "edition",
+    "name": "EDITION",
+    "sourceIds": [
+      "source-new-york-edition",
+      "source-reykjavik-edition",
+      "source-tokyo-edition-toranomon",
+      "source-miami-beach-edition"
+    ]
+  },
+  {
+    "id": "brand-luxury-collection",
+    "slug": "luxury-collection",
+    "name": "The Luxury Collection",
+    "sourceIds": [
+      "source-gritti-palace",
+      "source-mystique-santorini",
+      "source-imperial-vienna",
+      "source-marques-de-riscal"
+    ]
+  },
+  {
+    "id": "brand-jw-marriott",
+    "slug": "jw-marriott",
+    "name": "JW Marriott",
+    "sourceIds": [
+      "source-jw-sao-paulo",
+      "source-jw-masai-mara",
+      "source-jw-nairobi",
+      "source-jw-tampa",
+      "source-jw-phuket"
+    ]
+  },
+  {
+    "id": "brand-autograph-collection",
+    "slug": "autograph-collection",
+    "name": "Autograph Collection",
+    "sourceIds": [
+      "source-mapito",
+      "source-mereshi",
+      "source-cloudveil",
+      "source-elephant-weimar"
+    ]
+  }
+]

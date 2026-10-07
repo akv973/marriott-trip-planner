@@ -3,7 +3,7 @@ import foundation from '../../data/foundation.json';
 import { validateFoundation } from '../../lib/validation/foundation';
 
 function validBundle() {
-  return { foundation: structuredClone(foundation), properties: [], brands: [], destinations: [], benefits: [], sources: [] };
+  return { foundation: { ...structuredClone(foundation), stage: 0, catalogState: "unpopulated" }, properties: [], brands: [], destinations: [], benefits: [], sources: [], evidenceClaims: [], editorialAssessments: [] };
 }
 
 describe('Stage 0 validation boundary', () => {
@@ -19,7 +19,7 @@ describe('Stage 0 validation boundary', () => {
 
   it('rejects unintended stage progression', () => {
     const bundle = validBundle();
-    bundle.foundation.stage = 1;
+    bundle.foundation.stage = 2;
     expect(validateFoundation(bundle).success).toBe(false);
   });
 

@@ -1,1 +1,267 @@
-[]
+[
+  {
+    "id": "destination-marana-us",
+    "slug": "marana-us",
+    "name": "Marana",
+    "country": "US",
+    "region": "North America",
+    "administrativeArea": "Arizona",
+    "sourceIds": [
+      "source-dove-mountain"
+    ]
+  },
+  {
+    "id": "destination-half-moon-bay-us",
+    "slug": "half-moon-bay-us",
+    "name": "Half Moon Bay",
+    "country": "US",
+    "region": "North America",
+    "administrativeArea": "California",
+    "sourceIds": [
+      "source-half-moon-bay"
+    ]
+  },
+  {
+    "id": "destination-truckee-us",
+    "slug": "truckee-us",
+    "name": "Truckee",
+    "country": "US",
+    "region": "North America",
+    "administrativeArea": "California",
+    "sourceIds": [
+      "source-lake-tahoe"
+    ]
+  },
+  {
+    "id": "destination-seven-mile-beach-ky",
+    "slug": "seven-mile-beach-ky",
+    "name": "Seven Mile Beach",
+    "country": "KY",
+    "region": "North America",
+    "administrativeArea": "Grand Cayman",
+    "sourceIds": [
+      "source-grand-cayman"
+    ]
+  },
+  {
+    "id": "destination-new-york-us",
+    "slug": "new-york-us",
+    "name": "New York",
+    "country": "US",
+    "region": "North America",
+    "administrativeArea": "New York",
+    "sourceIds": [
+      "source-st-regis-new-york",
+      "source-new-york-edition"
+    ]
+  },
+  {
+    "id": "destination-aspen-us",
+    "slug": "aspen-us",
+    "name": "Aspen",
+    "country": "US",
+    "region": "North America",
+    "administrativeArea": "Colorado",
+    "sourceIds": [
+      "source-st-regis-aspen"
+    ]
+  },
+  {
+    "id": "destination-vommuli-island-mv",
+    "slug": "vommuli-island-mv",
+    "name": "Vommuli Island",
+    "country": "MV",
+    "region": "Asia",
+    "administrativeArea": "Dhaalu Atoll",
+    "sourceIds": [
+      "source-st-regis-maldives"
+    ]
+  },
+  {
+    "id": "destination-washington-us",
+    "slug": "washington-us",
+    "name": "Washington",
+    "country": "US",
+    "region": "North America",
+    "administrativeArea": "District of Columbia",
+    "sourceIds": [
+      "source-st-regis-washington"
+    ]
+  },
+  {
+    "id": "destination-reykjavik-is",
+    "slug": "reykjavik-is",
+    "name": "Reykjavik",
+    "country": "IS",
+    "region": "Europe",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-reykjavik-edition"
+    ]
+  },
+  {
+    "id": "destination-tokyo-jp",
+    "slug": "tokyo-jp",
+    "name": "Tokyo",
+    "country": "JP",
+    "region": "Asia",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-tokyo-edition-toranomon"
+    ]
+  },
+  {
+    "id": "destination-miami-beach-us",
+    "slug": "miami-beach-us",
+    "name": "Miami Beach",
+    "country": "US",
+    "region": "North America",
+    "administrativeArea": "Florida",
+    "sourceIds": [
+      "source-miami-beach-edition"
+    ]
+  },
+  {
+    "id": "destination-venice-it",
+    "slug": "venice-it",
+    "name": "Venice",
+    "country": "IT",
+    "region": "Europe",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-gritti-palace"
+    ]
+  },
+  {
+    "id": "destination-santorini-gr",
+    "slug": "santorini-gr",
+    "name": "Santorini",
+    "country": "GR",
+    "region": "Europe",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-mystique-santorini"
+    ]
+  },
+  {
+    "id": "destination-vienna-at",
+    "slug": "vienna-at",
+    "name": "Vienna",
+    "country": "AT",
+    "region": "Europe",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-imperial-vienna"
+    ]
+  },
+  {
+    "id": "destination-elciego-es",
+    "slug": "elciego-es",
+    "name": "Elciego",
+    "country": "ES",
+    "region": "Europe",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-marques-de-riscal"
+    ]
+  },
+  {
+    "id": "destination-sao-paulo-br",
+    "slug": "sao-paulo-br",
+    "name": "Sao Paulo",
+    "country": "BR",
+    "region": "South America",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-jw-sao-paulo"
+    ]
+  },
+  {
+    "id": "destination-masai-mara-ke",
+    "slug": "masai-mara-ke",
+    "name": "Masai Mara",
+    "country": "KE",
+    "region": "Africa",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-jw-masai-mara"
+    ]
+  },
+  {
+    "id": "destination-nairobi-ke",
+    "slug": "nairobi-ke",
+    "name": "Nairobi",
+    "country": "KE",
+    "region": "Africa",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-jw-nairobi"
+    ]
+  },
+  {
+    "id": "destination-tampa-us",
+    "slug": "tampa-us",
+    "name": "Tampa",
+    "country": "US",
+    "region": "North America",
+    "administrativeArea": "Florida",
+    "sourceIds": [
+      "source-jw-tampa"
+    ]
+  },
+  {
+    "id": "destination-phuket-th",
+    "slug": "phuket-th",
+    "name": "Phuket",
+    "country": "TH",
+    "region": "Asia",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-jw-phuket"
+    ]
+  },
+  {
+    "id": "destination-serengeti-tz",
+    "slug": "serengeti-tz",
+    "name": "Serengeti",
+    "country": "TZ",
+    "region": "Africa",
+    "administrativeArea": "Ikoma Region",
+    "sourceIds": [
+      "source-mapito"
+    ]
+  },
+  {
+    "id": "destination-robanda-village-tz",
+    "slug": "robanda-village-tz",
+    "name": "Robanda village",
+    "country": "TZ",
+    "region": "Africa",
+    "administrativeArea": null,
+    "sourceIds": [
+      "source-mereshi"
+    ]
+  },
+  {
+    "id": "destination-jackson-us",
+    "slug": "jackson-us",
+    "name": "Jackson",
+    "country": "US",
+    "region": "North America",
+    "administrativeArea": "Wyoming",
+    "sourceIds": [
+      "source-cloudveil"
+    ]
+  },
+  {
+    "id": "destination-weimar-de",
+    "slug": "weimar-de",
+    "name": "Weimar",
+    "country": "DE",
+    "region": "Europe",
+    "administrativeArea": "Thuringia",
+    "sourceIds": [
+      "source-elephant-weimar"
+    ]
+  }
+]

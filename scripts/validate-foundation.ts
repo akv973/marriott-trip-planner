@@ -8,5 +8,5 @@ if (!result.success) {
   }
   process.exitCode = 1;
 } else {
-  console.log('PASS: Stage 0 manifest and all five intentionally empty collections validate.');
+  console.log(`PASS: Stage ${result.data.foundation.stage} manifest and catalog validate (${result.data.properties.length} properties).`);
 }

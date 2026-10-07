@@ -5,15 +5,15 @@ import * as catalog from '../../lib/catalog/foundation';
 import { validateFoundation } from '../../lib/validation/foundation';
 
 describe('Validated foundation and application shell', () => {
-  it('loads the shipped collections and renders an explicit empty catalog', () => {
+  it('loads the shipped collections and renders the staged catalog summary', () => {
     const result = catalog.loadFoundation();
     expect(result.success).toBe(true);
     if (!result.success) throw new Error('Shipped foundation should validate.');
-    expect(result.data.properties).toHaveLength(0);
+    expect(result.data.properties).toHaveLength(25);
     render(<App />);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Your next journey');
-    expect(screen.getByText('Catalog not yet populated')).toBeInTheDocument();
-    expect(screen.getByText(/contains no property listings or pricing/)).toBeInTheDocument();
+    expect(screen.getByText('Catalog baseline verified')).toBeInTheDocument();
+    expect(screen.getByText(/Browsing and property details are planned/)).toBeInTheDocument();
     expect(screen.getAllByText('Planned', { exact: true })).toHaveLength(3);
   });
 
@@ -36,7 +36,7 @@ describe('Validated foundation and application shell', () => {
     try {
       render(<App />);
       expect(screen.getByRole('heading', { name: 'The planner couldn’t load.' })).toBeInTheDocument();
-      expect(screen.queryByText('Catalog not yet populated')).not.toBeInTheDocument();
+      expect(screen.queryByText('Catalog baseline verified')).not.toBeInTheDocument();
     } finally {
       spy.mockRestore();
     }

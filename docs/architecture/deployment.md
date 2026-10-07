@@ -25,7 +25,7 @@ git push -u origin main
 
 ## What the workflow does
 
-Install → typecheck → lint → schema validation → unit tests → integration tests → empty-catalog health → production build → desktop/narrow browser checks. It builds with `VITE_BASE_PATH=/marriott-trip-planner/`, uploads `dist/` only for a successful main validation, then a separate dependent job configures and deploys Pages. A third job depends on deployment and checks the live site at desktop and narrow widths, uploading browser evidence.
+Install → typecheck → lint → schema validation → unit tests → integration tests → catalog evidence health → production build → desktop/narrow browser checks. It builds with `VITE_BASE_PATH=/marriott-trip-planner/`, uploads `dist/` only for a successful main validation, then a separate dependent job configures and deploys Pages. A third job depends on deployment and checks the live site at desktop and narrow widths, uploading browser evidence.
 
 PRs and merge-queue checks do not deploy. No personal access token or deploy key is required by the workflow. `GITHUB_TOKEN` and short-lived OIDC permissions are scoped to their job.
 
@@ -34,7 +34,7 @@ PRs and merge-queue checks do not deploy. No personal access token or deploy key
 - Record the full main commit SHA and exact Actions run URL.
 - Verify **Required checks**, **Deploy GitHub Pages**, and **Live browser QA** succeeded for that SHA.
 - Record the literal Pages URL returned by the deployment, not an assumed future URL.
-- Open the live shell at its repository base path. Confirm its CSS/JS load, empty state and planned labels are visible, anchor links work, and mobile/desktop layouts behave correctly.
+- Open the live shell at its repository base path. Confirm its CSS/JS load, catalog summary and planned labels are visible, anchor links work, and mobile/desktop layouts behave correctly.
 - Confirm there are no failed external requests or invented hotel/rate values.
 
 Compare the live HTML and bundled asset bytes with the artifact built for the recorded commit. The dependent deployment job supplies the workflow-to-commit connection; matching bytes corroborate the live output. The shell does not display an embedded commit identifier.

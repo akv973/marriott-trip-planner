@@ -2,16 +2,16 @@
 
 Read `docs/product/project-brief.md`, `docs/architecture/technical-architecture.md`, and the latest stage report before changing this project. The attached brief governs the product.
 
-- Execute only the explicitly authorized stage. Stage 0 is the current stage; Stage 1 is not authorized.
+- Execute only the explicitly authorized stage. Stage 1 is authorized and is the current stage. Stage 2 is not authorized.
 - Stop after each stage's completion report. Approval for a stage does not authorize the next stage.
 - Inspect Git state, architecture documents, and relevant tests before edits.
 - Keep factual data separate from editorial judgment. Unknown is a supported value; never replace unknown rates with zero.
 - No Marriott scraping, undocumented endpoints, account connections, booking automation, secrets, or unlicensed photos.
-- Keep business rules outside UI components. Domain models start in Stage 1.
+- Keep business rules outside UI components. Stage 1 domain models are implemented; later-stage engines remain unimplemented.
 - Run `npm run check` after substantive changes and update documentation. Run browser flows when a stage introduces them.
 - Use focused commits and pull requests. A remote deployment is verified only when its workflow and exact deployed URL are confirmed.
-- Do not claim Stage 0 catalog validation verifies hotel facts. The catalog is intentionally empty.
+- Do not claim Stage 0 catalog validation verifies hotel facts. Stage 1 schema/reference checks require separately reviewed evidence; optional gaps are allowed.
 
 ## Current file boundaries
 
-`app/` and `components/`: responsive application shell. `lib/validation/`: Zod foundation schema. `lib/catalog/`: loading validated foundation data. `data/`: manifest and empty collections. `scripts/`: schema and health commands. `tests/`: unit and integration projects. `.github/workflows/`: checks and gated Pages deployment.
+`app/` and `components/`: responsive application shell. `lib/validation/`: Zod foundation and Stage 1 domain schemas. `lib/catalog/`: validated domain ingestion, evidence checks, and health. `data/`: manifest, sourced Stage 1 entities, and empty future-stage benefits. `scripts/`: schema and health commands. `tests/`: unit and integration projects. `.github/workflows/`: checks and gated Pages deployment.

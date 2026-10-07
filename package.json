@@ -10,7 +10,7 @@
     "dev": "vite --host 0.0.0.0",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0",
-    "validate:schema": "node --import tsx scripts/validate-foundation.ts",
+    "validate:schema": "node --import tsx scripts/validate-foundation.ts && npm run validate:catalog",
     "catalog:health": "node --import tsx scripts/catalog-health.ts",
     "test": "vitest",
     "test:unit": "vitest run --project unit",
@@ -19,7 +19,8 @@
     "test:browser": "playwright test",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "check": "npm run typecheck && npm run lint && npm run validate:schema && npm run test:ci && npm run build"
+    "check": "npm run typecheck && npm run lint && npm run validate:schema && npm run test:ci && npm run build",
+    "validate:catalog": "node --import tsx scripts/validate-catalog.ts"
   },
   "dependencies": {
     "react": "^19.2.0",
