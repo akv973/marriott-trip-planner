@@ -102,7 +102,7 @@ test('empty, single, duplicated, missing and oversized URLs recover explicitly',
   await expect(page.getByRole('alert')).toHaveCount(0);
   await page.getByRole('button', { name: /Remove Mapito/ }).click();
   await page.getByRole('button', { name: /Remove Mereshi/ }).click();
-  await page.getByRole('button', { name: /Remove JW Marriott Hotel São Paulo/ }).click();
+  await page.getByRole('button', { name: /Remove JW Marriott Hotel Sao Paulo/ }).click();
   await expect(page.getByRole('heading', { name: 'Choose one more property.' })).toBeVisible();
   await expect(page.getByRole('table')).toHaveCount(0);
   await noOverflow(page);
