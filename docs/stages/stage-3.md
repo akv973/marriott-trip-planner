@@ -20,7 +20,7 @@ All six sourced catalog collections are byte-for-byte unchanged: 25 properties, 
 
 ## Validation to date
 
-Local `npm ci`, typecheck, lint, schema/reference/evidence validation, unit tests (88), integration tests (21), default build, Pages-base build and `git diff --check` pass. Synthetic DOM comparison fixtures retain disputed/stale/unverified/historical claims and false/unknown distinctions. Three aligned 2/3/4-property DOM scenarios pass; no Stage 4 controls.
+Local `npm ci`, typecheck, lint, schema/reference/evidence validation, unit tests (88), integration tests (22), default build, Pages-base build and `git diff --check` pass. Synthetic DOM comparison fixtures retain disputed/stale/unverified/historical claims and false/unknown distinctions. Three aligned 2/3/4-property DOM scenarios and immediate checkbox state updates pass; no Stage 4 controls.
 
 Six comparison browser scenarios per desktop/narrow viewport are added to the existing eight explorer scenarios (28 total). Required CI, merge, Pages deployment, live suite and visual inspection are pending and are not claimed as passing here. Local Chromium download failed (truncated ZIP), and the cloud browser could not open the local preview. CI installs Chromium independently.
 

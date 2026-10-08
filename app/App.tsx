@@ -21,7 +21,12 @@ export function ExplorerApplication({ catalog, asOf }: { catalog: Catalog; asOf:
   const property = route.page === 'property' ? catalog.properties.find((record) => record.slug === route.slug) : undefined;
   const selection = resolveComparison(catalog, route.comparisonSlugs);
   const slugs = selection.properties.map((record) => record.slug);
-  const setSelection = (next: string[]) => window.location.assign(route.page === 'compare' ? comparisonHref(next, route.query) : route.page === 'property' ? propertyHref(route.slug, route.query, next) : explorerHref(route.query, next));
+  const setSelection = (next: string[]) => {
+    const href = route.page === 'compare' ? comparisonHref(next, route.query) : route.page === 'property' ? propertyHref(route.slug, route.query, next) : explorerHref(route.query, next);
+    window.location.assign(href);
+    // Controlled checkboxes must reflect the click before the async hashchange.
+    setRoute(parseRoute(href));
+  };
   const onToggle = (slug: string) => setSelection(toggleComparison(slugs, slug));
   const onRemove = (slug: string) => setSelection(slugs.filter((entry) => entry !== slug));
   const onClear = () => setSelection([]);

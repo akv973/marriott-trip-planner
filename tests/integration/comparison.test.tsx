@@ -15,6 +15,16 @@ const selected = ['mapito', 'mereshi', 'dove-mountain', 'jw-sao-paulo'];
 const row = (label: string) => screen.getByRole('rowheader', { name: label }).parentElement!;
 
 describe('Property comparison UI', () => {
+  it('updates a controlled checkbox in the click event before hashchange delivery', () => {
+    render(<App />);
+    const checkbox = screen.getByRole('checkbox', { name: /Compare Mapito/ });
+    fireEvent.click(checkbox);
+    expect(checkbox).toBeChecked();
+    expect(window.location.hash).toContain('compare=mapito');
+    fireEvent.click(checkbox);
+    expect(checkbox).not.toBeChecked();
+    expect(window.location.hash).not.toContain('compare=mapito');
+  });
   it.each([2, 3, 4])('aligns %i properties under matching column headers and explicit booking unknowns', (count) => {
     window.history.replaceState(null, '', comparisonHref(selected.slice(0, count)));
     render(<App />);
