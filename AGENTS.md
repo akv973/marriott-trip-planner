@@ -2,7 +2,7 @@
 
 Read `docs/product/project-brief.md`, `docs/architecture/technical-architecture.md`, and the latest stage report before changing this project. The attached brief governs the product.
 
-- Execute only the explicitly authorized stage. Stage 6 is explicitly authorized and in progress. Stage 7 is not authorized.
+- Execute only the explicitly authorized stage. Stage 6 is complete and is the current stage. Stage 7 is not authorized.
 - Stop after each stage's completion report. Approval for a stage does not authorize the next stage.
 - Inspect Git state, architecture documents, and relevant tests before edits.
 - Keep factual data separate from editorial judgment. Unknown is a supported value; never replace unknown rates with zero.
@@ -14,4 +14,4 @@ Read `docs/product/project-brief.md`, `docs/architecture/technical-architecture.
 
 ## Current file boundaries
 
-`app/` and `components/`: responsive explorer, property details, 2–4 property comparison, navigation, manual points inputs, and application shell. `lib/validation/`: Zod foundation and Stage 1 domain schemas. `lib/catalog/`: validated domain ingestion, evidence checks, health, and pure explorer/comparison/presentation functions. `lib/points/`: strict manual input validation, dated policy references and pure single-stay economics. `lib/scoring/`: strict transient recommendation requests, versioned fit weights, eligibility, independent economics and deterministic explanations. `lib/trips/`: validated transient ordered trips and independent selected-booking aggregation. `data/`: manifest, unchanged sourced Stage 1 entities, and empty future-stage benefits. `scripts/`: schema and health commands. `tests/`: unit, integration, and browser projects. `.github/workflows/`: checks and gated Pages deployment.
+`app/` and `components/`: responsive explorer, property details, 2–4 property comparison, navigation, manual points inputs, trip editing, and application shell. `lib/validation/`: Zod foundation and Stage 1 domain schemas. `lib/catalog/`: validated domain ingestion, evidence checks, health, and pure explorer/comparison/presentation functions. `lib/points/`: strict manual input validation, dated policy references and pure single-stay economics. `lib/scoring/`: strict transient recommendation requests, versioned fit weights, eligibility, independent economics and deterministic explanations. `lib/trips/`: validated transient ordered trips and independent selected-booking aggregation. `data/`: manifest, unchanged sourced Stage 1 entities, and empty future-stage benefits. `scripts/`: schema and health commands. `tests/`: unit, integration, and browser projects. `.github/workflows/`: checks and gated Pages deployment.
