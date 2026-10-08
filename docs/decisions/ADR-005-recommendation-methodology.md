@@ -1,6 +1,6 @@
 # ADR-005: Recommendation methodology
 
-Status: Accepted as architecture; Stage 5 weights remain pending. Date: 2026-10-06.
+Status: Accepted; Stage 5 weights implemented by ADR-011. Date: 2026-10-06. Updated: 2026-10-08.
 
 ## Context
 

@@ -1,6 +1,6 @@
 # Marriott Trip Planner
 
-An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 4 — Manual Points Calculator.** Browse the existing 25-property catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Assess manual cash/points quotes with transparent arithmetic. Hotel-fit recommendations, trips, profiles, and maps remain planned.
+An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 5 — Recommendation Engine.** Browse the existing 25-property catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Assess manual cash/points quotes with transparent arithmetic. Generate deterministic, inspectable recommendations with separate eligibility, trip fit, booking economics and explanations. Trips, profiles and maps remain planned.
 
 ## Run locally
 
@@ -75,7 +75,7 @@ Source repository: [akv973/marriott-trip-planner](https://github.com/akv973/marr
 
 ## Stage discipline
 
-The next stage is **Stage 5 — Recommendation Engine**, only after explicit approval. The unchanged Stage 1 catalog contains 25 properties across six brands and 14 countries/territories, 25 sources and 260 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
+The next stage is **Stage 6 — Trip Builder**, only after explicit approval. The unchanged Stage 1 catalog contains 25 properties across six brands and 14 countries/territories, 25 sources and 260 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
 
 Hash URLs preserve comparison selections, search, filters, and sort order through reloads and property-detail round trips. See [explorer behavior](docs/architecture/property-explorer.md) for supported filters and unknown handling.
 
@@ -85,4 +85,8 @@ No Marriott credentials, scraping, undocumented endpoints, or dynamic pricing ar
 
 Open `#/calculator`, use the navigation from a comparison, or choose “Calculate with your own rates” on a property detail. Enter comparable cash and award quotes, taxes, mandatory fees and cash still due on the award. Blank values remain unknown; explicit zero means confirmed no charge. Inspect the arithmetic, dated policy links, discount eligibility and configurable assessment thresholds. Non-USD quotes require manually entered FX for USD CPP. Rates are transient manual inputs, never catalog facts.
 
-See [calculator architecture](docs/architecture/manual-points-calculator.md) and [Stage 4 report](docs/stages/stage-4.md). Stop before Stage 5; no live pricing, scoring, certificates, trips or profile persistence are introduced.
+See [calculator architecture](docs/architecture/manual-points-calculator.md) and [Stage 4 report](docs/stages/stage-4.md). Stage 4 remains preserved. No live pricing, certificates, trips or profile persistence are introduced.
+
+## Stage 5 recommendations
+
+Use `#/recommendations` for required constraints, preferred experiences, versioned configurable fit weights and optional manual property quotes. Sparse catalog ratings remain unknown; inspect components, coverage, possible score bounds and structured request/results JSON. Booking value and fit are separate. See [engine architecture](docs/architecture/recommendation-engine.md), [ADR-011](docs/decisions/ADR-011-recommendation-engine.md) and [Stage 5 report](docs/stages/stage-5.md). Stop before Stage 6.

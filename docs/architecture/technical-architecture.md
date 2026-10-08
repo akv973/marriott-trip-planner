@@ -61,3 +61,7 @@ Stage 3 adds `#/compare`, repeated `compare` slug parameters on all existing rou
 ## Stage 4 manual economics
 
 Stage 4 adds `#/calculator`, standalone `lib/points/` validation/economics and dated primary-policy links. Null prices, fees, FX and balances are supported without substitution. Booking-value bands are independent from later hotel-fit scoring. See ADR-010 and `manual-points-calculator.md`. The manifest admits Stage 4 and rejects Stage 5. Catalog collections, benefits, dependencies and lockfile remain unchanged. Manual quotes are transient and cleared on reload; no integration or profile persistence is introduced.
+
+## Stage 5 recommendations
+
+Stage 5 adds `#/recommendations` and pure strict request/scoring functions in `lib/scoring/`. Eligibility, trip fit, existing points economics and structured explanations remain independently inspectable. Default/custom weights are versioned, unknown components retain weight and null values, and partial fit displays coverage/bounds. Quotes and preferences are transient; no trip or profile persistence is introduced. See ADR-011 and `recommendation-engine.md`. The manifest admits Stage 5 and rejects Stage 6; catalog collections, points business rules, dependencies and lockfile are unchanged.
