@@ -20,7 +20,7 @@
 
 jsdom checks document behavior and semantics; it cannot prove browser layout, paint, media-query behavior, contrast, or real network operation. Do not label it as E2E testing.
 
-CI installs Chromium and runs eight explorer flows at each of 1366×900 and 390×844 (16 tests) against the production preview. Flows include all 25 direct detail pages, combined filters/search/sorting, unknowns and sources, not-found recovery, keyboard interaction, native history and detail/fragment reloads. The preview and build must both use `/marriott-trip-planner/`. Successful main runs deploy Pages, then repeat all 16 checks against the public live URL. The `local-explorer-browser-qa` and `live-explorer-browser-qa` artifacts contain JSON results, full-page explorer/filtered/detail screenshots and traces on failure. Inspect screenshots separately before claiming visual QA. A Chromium viewport check is not physical-device or cross-browser testing.
+CI installs Chromium and runs 44 combined checks at 1366×900 and 390×844 against the production preview: 16 explorer, 12 comparison, 8 calculator and 8 recommendation checks. Flows include all 25 direct detail pages, combined filters/search/sorting, unknowns and sources, not-found recovery, keyboard interaction, native history and detail/fragment reloads. The preview and build must both use `/marriott-trip-planner/`. Successful main runs deploy Pages, then repeat all 44 checks against the public live URL. The `local-explorer-browser-qa` and `live-explorer-browser-qa` artifacts contain JSON results, full-page explorer/filtered/detail screenshots and traces on failure. Inspect screenshots separately before claiming visual QA. A Chromium viewport check is not physical-device or cross-browser testing.
 
 To reproduce the production preview checks:
 
@@ -52,7 +52,7 @@ Six comparison scenarios run at each desktop/narrow viewport (12 additional test
 
 ## Stage 4 economics coverage
 
-Eight canonical economics fixtures plus discount, unknown/zero/invalid, currency, threshold and route boundaries are covered by the new unit suite. Six new DOM flows validate manual pricing and source disclosures. Four new browser scenarios run at each desktop/narrow viewport (eight additional; 36 combined). They cover transparent five-night assessment, unknown/invalid/comparability recovery, variable/total/FX modes and context/history/reload. The browser artifacts include `calculator-filled.png` and `calculator-result.png` for both viewports. Inspect these before claiming visual QA. Stage 5–8 behavior remains pending as documented in `manual-points-calculator.md`.
+Eight canonical economics fixtures plus discount, unknown/zero/invalid, currency, threshold and route boundaries are covered by the new unit suite. Six new DOM flows validate manual pricing and source disclosures. Four new browser scenarios run at each desktop/narrow viewport (eight additional; 36 combined). They cover transparent five-night assessment, unknown/invalid/comparability recovery, variable/total/FX modes and context/history/reload. The browser artifacts include `calculator-filled.png` and `calculator-result.png` for both viewports. Inspect these before claiming visual QA. Stage 6–8 behavior remains pending as documented in `manual-points-calculator.md`.
 
 ## Stage 5 recommendation coverage
 
