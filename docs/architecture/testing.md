@@ -1,6 +1,6 @@
 # Testing and validation
 
-## Current checks (Stage 5 — Recommendation Engine)
+## Current checks (Stage 6 — Trip Builder)
 
 | Command | Checks |
 | --- | --- |
@@ -20,7 +20,7 @@
 
 jsdom checks document behavior and semantics; it cannot prove browser layout, paint, media-query behavior, contrast, or real network operation. Do not label it as E2E testing.
 
-CI installs Chromium and runs 44 combined checks at 1366×900 and 390×844 against the production preview: 16 explorer, 12 comparison, 8 calculator and 8 recommendation checks. Flows include all 25 direct detail pages, combined filters/search/sorting, unknowns and sources, not-found recovery, keyboard interaction, native history and detail/fragment reloads. The preview and build must both use `/marriott-trip-planner/`. Successful main runs deploy Pages, then repeat all 44 checks against the public live URL. The `local-explorer-browser-qa` and `live-explorer-browser-qa` artifacts contain JSON results, full-page explorer/filtered/detail screenshots and traces on failure. Inspect screenshots separately before claiming visual QA. A Chromium viewport check is not physical-device or cross-browser testing.
+CI installs Chromium and runs 54 combined checks at 1366×900 and 390×844 against the production preview: 16 explorer, 12 comparison, 8 calculator, 8 recommendation and 10 Trip Builder checks. Flows include all 25 direct detail pages, combined filters/search/sorting, unknowns and sources, not-found recovery, keyboard interaction, native history and detail/fragment reloads. The preview and build must both use `/marriott-trip-planner/`. Successful main runs deploy Pages, then repeat all 54 checks against the public live URL. The `local-explorer-browser-qa` and `live-explorer-browser-qa` artifacts contain JSON results, full-page explorer/filtered/detail screenshots and traces on failure. Inspect screenshots separately before claiming visual QA. A Chromium viewport check is not physical-device or cross-browser testing.
 
 To reproduce the production preview checks:
 
@@ -56,4 +56,8 @@ Eight canonical economics fixtures plus discount, unknown/zero/invalid, currency
 
 ## Stage 5 recommendation coverage
 
-Independent synthetic fixtures verify fit contributions, bounds/coverage, null preservation, deterministic replay/order, fresh/conflicted/stale/unverified evidence, current/closed/planned status, eligibility unknowns, budget paths, insufficient balance, dates/nights, manual quote economics, custom weights and graceful validation. DOM tests verify sourced/partial results, manual quote application, excluded recovery and source conflicts. Four new browser scenarios run at both viewports (8 new; 44 combined), on preview and live. Artifacts include `recommendations-full.png`, `recommendation-card.png` and `recommendation-economics.png`. Inspect screenshots independently. Certificates, benefit overrides, profiles and multi-hotel totals remain pending in their respective stages.
+Independent synthetic fixtures verify fit contributions, bounds/coverage, null preservation, deterministic replay/order, fresh/conflicted/stale/unverified evidence, current/closed/planned status, eligibility unknowns, budget paths, insufficient balance, dates/nights, manual quote economics, custom weights and graceful validation. DOM tests verify sourced/partial results, manual quote application, excluded recovery and source conflicts. Four new browser scenarios run at both viewports (8 new; 44 combined), on preview and live. Artifacts include `recommendations-full.png`, `recommendation-card.png` and `recommendation-economics.png`. Inspect screenshots independently. Certificates, benefit overrides, and profiles remain pending in their respective stages.
+
+## Stage 6 trip coverage
+
+Twenty-three new unit cases independently verify mixed selected bookings, calculator delegation, immutability/replay, edits, complete/partial/zero totals, balance/shortfalls, stay-scoped discounts, FX/minor units, weighted comparable awards, chronology/order, notes/quote age and malformed/oversized inputs. Five new DOM flows verify the editor, invalidation/recovery, multiple trips/notes, reorder/removal, nightly unknowns, FX, application-memory navigation and absence of storage writes. Five new browser scenarios run at each viewport (10 new; 54 combined) on preview and live. Screenshots include `trip-builder-full.png`, `trip-totals.png` and `trip-stay-arithmetic.png`. Inspect desktop and narrow images independently. Local persistence/import/export/certificates remain unimplemented.

@@ -6,6 +6,7 @@ export type Route = RouteContext & ({ page: 'explore'; section: string | null }
   | { page: 'property'; slug: string }
   | { page: 'compare' }
   | { page: 'recommendations' }
+  | { page: 'trips' }
   | { page: 'calculator'; propertySlug: string | null }
   | { page: 'not-found' });
 
@@ -23,6 +24,7 @@ export function parseRoute(hash: string): Route {
   }
   if (path === '/calculator') return { page: 'calculator', propertySlug: params.get('property')?.slice(0, 100) ?? null, query, comparisonSlugs };
   if (path === '/recommendations') return { page: 'recommendations', query, comparisonSlugs };
+  if (path === '/trips') return { page: 'trips', query, comparisonSlugs };
   if (path === '/compare') return { page: 'compare', query, comparisonSlugs };
   if (/^\/properties\/[a-z][a-z0-9]*(-[a-z0-9]+)*$/.test(path)) return { page: 'property', slug: path.slice('/properties/'.length), query, comparisonSlugs };
   return { page: 'not-found', query, comparisonSlugs };
@@ -46,3 +48,5 @@ export function calculatorHref(query: ExplorerQuery = DEFAULT_QUERY, comparisonS
 }
 
 export const recommendationsHref = (query: ExplorerQuery = DEFAULT_QUERY, comparisonSlugs: string[] = []) => `#/recommendations${serializeQuery(query, comparisonSlugs)}`;
+
+export const tripsHref = (query: ExplorerQuery = DEFAULT_QUERY, comparisonSlugs: string[] = []) => `#/trips${serializeQuery(query, comparisonSlugs)}`;

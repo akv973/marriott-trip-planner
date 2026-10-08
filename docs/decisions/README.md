@@ -17,3 +17,5 @@ ADRs record architectural direction. Acceptance of a later-stage design does not
 - [ADR-010: Independent manual single-stay economics](ADR-010-manual-points-calculator.md)
 
 - [ADR-011: Separate recommendations and explicit partial fit](ADR-011-recommendation-engine.md)
+
+- [ADR-012: Ordered transient trips and selected-booking totals](ADR-012-trip-builder.md)

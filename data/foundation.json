@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1",
   "appId": "marriott-trip-planner",
-  "stage": 5,
+  "stage": 6,
   "deploymentTarget": "github-pages",
   "catalogState": "seeded",
   "modules": [

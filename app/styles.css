@@ -414,3 +414,40 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .recommendation-audit pre { overflow: auto; max-height: 500px; max-width: 100%; padding: 18px; background: #edf1e8; font-size: 11px; line-height: 1.6; }
 @media (max-width: 760px) { .recommendation-card-header { flex-direction: column; } .fit-summary { width: 100%; } .recommendation-layers, .fit-components { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 520px) { .recommendation-card { padding: 20px; } .recommendation-card h3 { font-size: 24px; } .recommendation-methodology, .recommendation-quotes { padding: 18px; } .recommendation-tags { gap: 8px 14px; } }
+
+/* Stage 6: ordered manual stays and honest partial trip totals. */
+.trip-toolbar, .trip-section-heading, .trip-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.trip-toolbar { padding: 22px 0 34px; }
+.trip-toolbar > label { flex: 1; max-width: 400px; }
+.trip-toolbar > span { font-size: 11px; color: var(--muted); }
+.trip-toolbar .primary-link, .trip-actions .primary-link { border: 0; cursor: pointer; min-height: 46px; }
+.trip-layout { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 30px; padding-bottom: 60px; align-items: start; }
+.trip-editor { min-width: 0; }
+.trip-wide { grid-column: 1 / -1; }
+.trip-section-heading { justify-content: space-between; margin-bottom: 22px; }
+.trip-section-heading h2 { font-size: 25px; }
+.trip-section-heading h3 { font-size: 23px; }
+.trip-section-heading a { font-size: 12px; text-decoration: underline; }
+.trip-stay { padding: 24px; margin-bottom: 24px; background: #faf9f5; border: 1px solid var(--line); border-radius: 4px; min-width: 0; }
+.trip-actions { gap: 16px; }
+.trip-actions button:disabled, .trip-toolbar button:disabled { opacity: .45; cursor: default; }
+.calculator-field textarea { font: inherit; font-weight: 400; padding: 12px; min-height: 90px; width: 100%; border: 1px solid #b6beb3; border-radius: 2px; resize: vertical; color: var(--green); background: white; }
+.calculator-field textarea:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+.trip-pricing, .trip-evidence { padding-top: 22px; margin-top: 22px; border-top: 1px solid var(--line); }
+.trip-stay summary { font-size: 13px; font-weight: 600; cursor: pointer; min-height: 40px; }
+.trip-stay p, .trip-stay li { font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+.trip-stay h4 { font-size: 14px; margin: 14px 0; }
+.trip-stay ul { padding-left: 20px; }
+.trip-stay-result { background: #edf1e8; padding: 18px; margin-top: 24px; border-radius: 3px; }
+.trip-evidence a { text-decoration: underline; }
+.trip-subtotal { display: block; font-size: 11px; font-weight: 400; padding-top: 8px; }
+.trip-summary > [role='status'] { font-size: 13px; line-height: 1.7; }
+@media (max-width: 960px) { .trip-layout { grid-template-columns: 1fr; } }
+@media (max-width: 640px) {
+  .trip-stay { padding: 20px 16px; }
+  .trip-toolbar { gap: 16px; }
+  .trip-toolbar > label { flex-basis: 100%; order: 2; }
+  .trip-section-heading { align-items: start; }
+  .trip-stay .trip-section-heading { gap: 10px; }
+  .trip-stay-result { padding: 16px; }
+}

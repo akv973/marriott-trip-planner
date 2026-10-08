@@ -19,7 +19,7 @@ describe('Stage 0 validation boundary', () => {
 
   it('rejects unintended stage progression', () => {
     const bundle = validBundle();
-    bundle.foundation.stage = 6;
+    bundle.foundation.stage = 7;
     expect(validateFoundation(bundle).success).toBe(false);
   });
 
