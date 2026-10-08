@@ -24,8 +24,8 @@ The long-term goal is multi-trip allocation of a points balance, certificates, c
 | 0 | Foundation | Complete |
 | 1 | Data and evidence models; approximately 25 sourced hotels | Strong schemas; no invented facts |
 | 2 | Explorer, filters, navigation, detail pages | Complete; meaningful explorer browser flows |
-| 3 | Comparison of 2–4 properties | Stage 3 authorized; aligned facts/editorial and explicit unknowns |
-| 4 | Manual cash/points assessment | Not authorized; independent economics engine and regression fixtures |
+| 3 | Comparison of 2–4 properties | Complete; aligned facts/editorial and explicit unknowns |
+| 4 | Manual cash/points assessment | Stage 4 authorized; independent economics engine and regression fixtures |
 | 5 | Explainable recommendations | Eligibility, trip fit, economics, explanation |
 | 6 | Single- and multi-hotel trip builder | Safe partial totals and point balances |
 | 7 | Local profile, certificates, import/export | Versioned storage boundary; no login |
@@ -55,7 +55,7 @@ The long-term goal is multi-trip allocation of a points balance, certificates, c
 1. **Scoring:** Section 16 includes redemption value in a trip-fit weight table, while Sections 14–15 require separate economics. ADR-005 prioritizes the separate four-layer architecture. No scoring formula is implemented in Stage 0. Stage 5 must establish and version the final weights.
 2. **Benefits:** Recommendations precede the benefit engine. Until Stage 8, missing benefits must be unavailable or explicitly provisional; no invented benefit scores.
 3. **Profiles:** Planner inputs may exist before profile persistence. Stage 7 adds versioned storage and import/export; Stage 5 does not silently create authentication or persistence.
-4. **Certificates:** Stage 4 lists basic manual calculations; the full engine specification also requires certificates and top-offs. Their rules and staged delivery must be explicit before implementation, with approved, dated policy sources and regression fixtures. No certificate behavior is assumed now.
+4. **Certificates:** Stage 4 lists basic manual calculations; the full engine specification also requires certificates and top-offs. Stage 4 covers basic single-stay economics. Certificate use/top-offs remain in Stage 7 alongside the local certificate model; they are not implemented or claimed as passing in Stage 4. Their current policy must be verified again at implementation.
 5. **Regression fixtures:** Add behavior assertions when each corresponding engine exists. Do not fabricate passing placeholders for unimplemented business logic.
 
 ## Stage gate

@@ -49,3 +49,7 @@ Stage 1 implements domain and relationship checks, independent unknown/conflict/
 ## Stage 3 comparison coverage
 
 Six comparison scenarios run at each desktop/narrow viewport (12 additional tests; 28 combined). They cover selection from explorer/details, query-preserving return links, reload/history, 2/3/4 aligned columns, source disclosures, unknown booking values, scroll containment, four-property capacity, replacement/removal/clear, and invalid/duplicate/oversized URL recovery. Comparison screenshots are included in the existing browser artifacts. Unit/DOM tests additionally cover pure selection/URL rules, Stage 4 rejection, unknown/zero/empty editorial values and preserved conflicted/stale/unverified/historical factual evidence.
+
+## Stage 4 economics coverage
+
+Eight canonical economics fixtures plus discount, unknown/zero/invalid, currency, threshold and route boundaries are covered by the new unit suite. Six new DOM flows validate manual pricing and source disclosures. Four new browser scenarios run at each desktop/narrow viewport (eight additional; 36 combined). They cover transparent five-night assessment, unknown/invalid/comparability recovery, variable/total/FX modes and context/history/reload. The browser artifacts include `calculator-filled.png` and `calculator-result.png` for both viewports. Inspect these before claiming visual QA. Stage 5–8 behavior remains pending as documented in `manual-points-calculator.md`.
