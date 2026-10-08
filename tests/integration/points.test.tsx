@@ -17,6 +17,7 @@ describe('Manual points calculator UI', () => {
     expect(screen.getByRole('complementary', { name: 'Calculation results' })).toHaveTextContent('Cash room price');
     expect(screen.getByRole('link', { name: /Marriott terms/ })).toHaveAttribute('href', 'https://www.marriott.com/loyalty/terms/default.mi');
     expect(screen.getByLabelText('Nightly room rate (USD)')).toHaveValue(null);
+    for (const label of ['Cash room price basis', 'Award points basis', 'Are the two quotes comparable?']) expect(screen.getByLabelText(label, { exact: true })).toHaveAttribute('aria-label', label);
   });
   it('calculates independently from catalog data, shows the arithmetic and clears a stale result on edit', () => {
     render(<App />); fill(); set('Available points', '199999'); calculate();
