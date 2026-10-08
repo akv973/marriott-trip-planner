@@ -57,3 +57,7 @@ The explorer uses system fonts, CSS, and original decorative SVG. It has a skip 
 ## Stage 3 comparison
 
 Stage 3 adds `#/compare`, repeated `compare` slug parameters on all existing routes, pure 2–4 selection/row functions and shared evidence rendering. Facts and editorial remain separate. Costs, benefits and CPP are explicit unknowns/unavailable; no later engine exists. See ADR-009 and `property-comparison.md`. The manifest admits Stage 3 and rejects Stage 4. All six sourced catalog collections, benefit placeholder, dependencies and lockfile are unchanged.
+
+## Stage 4 manual economics
+
+Stage 4 adds `#/calculator`, standalone `lib/points/` validation/economics and dated primary-policy links. Null prices, fees, FX and balances are supported without substitution. Booking-value bands are independent from later hotel-fit scoring. See ADR-010 and `manual-points-calculator.md`. The manifest admits Stage 4 and rejects Stage 5. Catalog collections, benefits, dependencies and lockfile remain unchanged. Manual quotes are transient and cleared on reload; no integration or profile persistence is introduced.

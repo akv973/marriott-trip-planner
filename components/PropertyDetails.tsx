@@ -3,7 +3,7 @@ import type { ExplorerQuery } from '../lib/catalog/explorer';
 import { countryName, displayDate, fieldEvidence, FIELD_LABELS } from '../lib/catalog/presentation';
 import { EvidenceValue } from './EvidenceValue';
 import { CompareControl } from './CompareControl';
-import { explorerHref } from '../lib/navigation/routes';
+import { calculatorHref, explorerHref } from '../lib/navigation/routes';
 
 const GROUPS: { title: string; fields: EvidenceSubject[] }[] = [
   { title: 'Identity & location', fields: ['name', 'brandId', 'marriottCode', 'city', 'administrativeArea', 'country', 'region', 'latitude', 'longitude'] },
@@ -35,7 +35,7 @@ export function PropertyDetails({ catalog, property, query, asOf, comparisonSlug
       </div>
       <aside className="detail-sidebar" aria-label="Planning context">
         <section className="planning-note"><p className="eyebrow">A starting point</p><h2>Leave room for research.</h2><p>The catalog records a property’s identity and setting. A listing doesn’t confirm current operation, availability, or future brand affiliation.</p><p>Airport distances, where sourced, are approximate published figures rather than route estimates. Experience tags don’t establish service quality or guaranteed amenities.</p><p className="assessment-date">Evidence assessed as of {displayDate(asOf)}.</p></section>
-        <section className="unavailable-panel" aria-labelledby="booking-title"><h2 id="booking-title">Booking information</h2><dl><div><dt>Cash price</dt><dd>Unavailable</dd></div><div><dt>Award price</dt><dd>Unavailable</dd></div><div><dt>Elite breakfast</dt><dd>Unknown</dd></div><div><dt>Lounge access</dt><dd>Unknown</dd></div><div><dt>Resort / destination fees</dt><dd>Unknown</dd></div></dl><p>Check current terms and rates directly before making plans.</p></section>
+        <section className="unavailable-panel" aria-labelledby="booking-title"><h2 id="booking-title">Booking information</h2><dl><div><dt>Cash price</dt><dd>Unavailable</dd></div><div><dt>Award price</dt><dd>Unavailable</dd></div><div><dt>Elite breakfast</dt><dd>Unknown</dd></div><div><dt>Lounge access</dt><dd>Unknown</dd></div><div><dt>Resort / destination fees</dt><dd>Unknown</dd></div></dl><p>Check current terms and rates directly before making plans.</p><a className="primary-link" href={calculatorHref(query, comparisonSlugs, property.slug)}>Calculate with your own rates →</a></section>
         <section className="editorial-panel" aria-labelledby="editorial-title"><p className="eyebrow">Opinion, kept separate</p><h2 id="editorial-title">Editorial notes</h2>
           {!editorial.length ? <p>No editorial assessment yet. Quality ratings and recommended stay length are unknown.</p> : editorial.map((assessment) => <article key={assessment.id}>
             <span className="editorial-badge">{assessment.methodologyVersion.startsWith('desk-review') ? 'Editorial · desk review' : 'Editorial assessment'}</span><p>{assessment.rationale}</p>

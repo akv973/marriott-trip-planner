@@ -13,3 +13,5 @@
 | [009](ADR-009-property-comparison.md) | URL-backed 2–4 comparison, aligned rows and shared evidence |
 
 ADRs record architectural direction. Acceptance of a later-stage design does not mean that its implementation exists. Supersede decisions explicitly and retain their history.
+
+- [ADR-010: Independent manual single-stay economics](ADR-010-manual-points-calculator.md)
