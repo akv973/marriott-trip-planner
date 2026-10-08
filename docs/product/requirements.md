@@ -23,9 +23,9 @@ The long-term goal is multi-trip allocation of a points balance, certificates, c
 | --- | --- | --- |
 | 0 | Foundation | Complete |
 | 1 | Data and evidence models; approximately 25 sourced hotels | Strong schemas; no invented facts |
-| 2 | Explorer, filters, navigation, detail pages | Stage 2 authorized; meaningful explorer browser flows |
-| 3 | Comparison of 2–4 properties | Not authorized; unknown prices and benefits remain unavailable |
-| 4 | Manual cash/points assessment | Independent economics engine and regression fixtures |
+| 2 | Explorer, filters, navigation, detail pages | Complete; meaningful explorer browser flows |
+| 3 | Comparison of 2–4 properties | Stage 3 authorized; aligned facts/editorial and explicit unknowns |
+| 4 | Manual cash/points assessment | Not authorized; independent economics engine and regression fixtures |
 | 5 | Explainable recommendations | Eligibility, trip fit, economics, explanation |
 | 6 | Single- and multi-hotel trip builder | Safe partial totals and point balances |
 | 7 | Local profile, certificates, import/export | Versioned storage boundary; no login |

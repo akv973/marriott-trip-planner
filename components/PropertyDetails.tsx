@@ -1,7 +1,8 @@
 import type { Catalog, EvidenceSubject, Property } from '../types/catalog';
 import type { ExplorerQuery } from '../lib/catalog/explorer';
-import { countryName, displayDate, fieldEvidence, FIELD_LABELS, formatValue, humanize } from '../lib/catalog/presentation';
-import { isApplicable, isStale } from '../lib/catalog/evidence';
+import { countryName, displayDate, fieldEvidence, FIELD_LABELS } from '../lib/catalog/presentation';
+import { EvidenceValue } from './EvidenceValue';
+import { CompareControl } from './CompareControl';
 import { explorerHref } from '../lib/navigation/routes';
 
 const GROUPS: { title: string; fields: EvidenceSubject[] }[] = [
@@ -11,37 +12,21 @@ const GROUPS: { title: string; fields: EvidenceSubject[] }[] = [
 ];
 
 function Fact({ catalog, property, subject, asOf }: { catalog: Catalog; property: Property; subject: EvidenceSubject; asOf: string }) {
-  const evidence = fieldEvidence(catalog, property, subject, asOf);
-  return <div className="fact-row"><dt>{FIELD_LABELS[subject]}</dt><dd>
-    <div className={evidence.status === 'known' ? 'fact-value' : 'fact-value unknown-value'}>{evidence.label}</div>
-    {evidence.status === 'known' && <p className="fact-meta"><span className="confidence-badge">{evidence.confidence} confidence</span>{evidence.lastVerifiedAt && <span>Verified {displayDate(evidence.lastVerifiedAt)}</span>}{evidence.stale && <strong className="review-label">Stale evidence — refresh needed</strong>}</p>}
-    {!!evidence.claims.length && <details className="evidence-details"><summary>Sources & evidence ({evidence.claims.length})</summary>
-      <ul>{evidence.claims.map((claim) => {
-        const source = catalog.sources.find((record) => record.id === claim.sourceId);
-        return <li key={claim.id}>
-          <p className="claim-value">Claim: {formatValue(subject, claim.value, catalog)}</p>
-          <p>{claim.confidence} confidence · {claim.conflictStatus === 'disputed' ? 'Disputed' : 'No declared dispute'}{!isApplicable(claim, asOf) ? ' · Outside applicable date range' : ''}{isStale(claim, asOf) ? ' · Stale' : ''}</p>
-          {source ? <><a className="source-link" href={source.url} target="_blank" rel="noopener noreferrer">{source.title} <span aria-hidden="true">↗</span></a><p>{source.publisher} · {humanize(source.type)} · Accessed {displayDate(source.accessedAt)}</p>{source.notes && <p>{source.notes}</p>}</> : <p>Source unavailable</p>}
-          <p>Observed: {claim.observedAt ? displayDate(claim.observedAt) : 'Not recorded'}<br />Last verified: {claim.lastVerifiedAt ? displayDate(claim.lastVerifiedAt) : 'Not verified'}</p>
-          {(claim.validFrom || claim.validTo) && <p>Valid from {claim.validFrom ? displayDate(claim.validFrom) : 'unspecified'} to {claim.validTo ? displayDate(claim.validTo) : 'unspecified'}</p>}
-          {claim.notes && <p>{claim.notes}</p>}
-        </li>;
-      })}</ul>
-    </details>}
-  </dd></div>;
+  return <div className="fact-row"><dt>{FIELD_LABELS[subject]}</dt><dd><EvidenceValue catalog={catalog} property={property} subject={subject} asOf={asOf} /></dd></div>;
 }
 
-export function PropertyDetails({ catalog, property, query, asOf }: { catalog: Catalog; property: Property; query: ExplorerQuery; asOf: string }) {
+export function PropertyDetails({ catalog, property, query, asOf, comparisonSlugs = [], onToggle }: { catalog: Catalog; property: Property; query: ExplorerQuery; asOf: string; comparisonSlugs?: string[]; onToggle?: (slug: string) => void }) {
   const official = fieldEvidence(catalog, property, 'officialUrl', asOf);
   const editorial = catalog.editorialAssessments.filter((assessment) => assessment.propertyId === property.id);
   const brand = catalog.brands.find((record) => record.id === property.brandId)?.name;
   return <>
-    <a className="back-link" href={explorerHref(query)}>← Back to your collection</a>
+    <a className="back-link" href={explorerHref(query, comparisonSlugs)}>← Back to your collection</a>
     <section className="detail-hero" aria-labelledby="page-title"><p className="eyebrow">{brand}</p><h1 id="page-title" tabIndex={-1}>{property.name}</h1>
       <p className="detail-location">{property.city}, {countryName(property.country)} <span>·</span> {property.region}</p>
       {typeof official.value === 'string' ? <a className="primary-link" href={official.value} target="_blank" rel="noopener noreferrer">Official property page <span aria-hidden="true">↗</span></a> : <p className="unknown-value">Official property page: {official.label}</p>}
       {official.stale && <p className="review-label">The official locator evidence needs a refresh.</p>}
     </section>
+    <div className="detail-compare-control"><CompareControl property={property} slugs={comparisonSlugs} onToggle={onToggle} /></div>
     <div className="detail-layout">
       <div>
         <div className="facts-intro"><p className="eyebrow">Facts with a trail</p><h2>Know what’s behind the details.</h2><p>Confidence reflects the maintainer’s evidence assessment. Dates show when information was checked, and unknown values stay visible.</p></div>

@@ -26,7 +26,7 @@ test('explorer loads all properties with intact assets and responsive cards', as
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Find a stay worththe journey.');
   await expect(page.getByRole('status')).toHaveText('25 of 25 properties');
   await expect(page.locator('.property-card')).toHaveCount(25);
-  await expect(page.getByText('Planned', { exact: true })).toHaveCount(3);
+  await expect(page.getByText('Planned', { exact: true })).toHaveCount(2);
   await noOverflow(page);
   const cards = await page.locator('.property-card').evaluateAll((elements) => elements.slice(0, 2).map((element) => { const r = element.getBoundingClientRect(); return { left: r.left, top: r.top, right: r.right, bottom: r.bottom }; }));
   if (testInfo.project.name === 'narrow') {
@@ -119,7 +119,7 @@ test('detail facts, sources, unknown booking values and editorial remain distinc
   await expect(airport).toContainText('Approximate hotel-published distance');
   await noOverflow(page);
   await page.screenshot({ path: testInfo.outputPath(`dove-mountain-${testInfo.project.name}.png`), fullPage: true });
-  await expect(page.getByRole('button', { name: /Compare|Save|Add to trip/i })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /Save|Add to trip/i })).toHaveCount(0);
 });
 
 test('invalid routes and unsupported filters have a clear recovery path', async ({ page }) => {

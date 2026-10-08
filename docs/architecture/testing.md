@@ -1,6 +1,6 @@
 # Testing and validation
 
-## Current checks (Stage 2 — Property Explorer)
+## Current checks (Stage 3 — Property Comparison)
 
 | Command | Checks |
 | --- | --- |
@@ -45,3 +45,7 @@ The brief defines 15 stable scenarios: five-night points, four-night points, cas
 Create typed fixtures and independent expected results alongside each corresponding approved feature. Tests should verify substantive outcomes and edge cases rather than reproduce the implementation formula. Do not invent certificate limits, fifth-night-free eligibility, status guarantees, or fee waivers; verify policy with dated primary evidence first.
 
 Stage 1 implements domain and relationship checks, independent unknown/conflict/stale fixtures, deterministic health and production ingestion. Stage 2 implements browser explorer flows. Stage 4 adds economics cases. Stage 5 adds deterministic recommendation integration. Stage 6 adds trip totals and incomplete-pricing behavior. Stages 7–8 add storage/certificate and benefits fixtures. Unimplemented cases are pending, not passing.
+
+## Stage 3 comparison coverage
+
+Six comparison scenarios run at each desktop/narrow viewport (12 additional tests; 28 combined). They cover selection from explorer/details, query-preserving return links, reload/history, 2/3/4 aligned columns, source disclosures, unknown booking values, scroll containment, four-property capacity, replacement/removal/clear, and invalid/duplicate/oversized URL recovery. Comparison screenshots are included in the existing browser artifacts. Unit/DOM tests additionally cover pure selection/URL rules, Stage 4 rejection, unknown/zero/empty editorial values and preserved conflicted/stale/unverified/historical factual evidence.

@@ -268,3 +268,73 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
   .detail-sidebar > section { padding: 24px; }
 }
 @media (prefers-reduced-motion: reduce) { .property-card { transition: none; } }
+
+/* Stage 3: URL-backed selection and aligned, inspectable comparison. */
+.text-button { border: none; background: none; padding: 8px 0; color: var(--green); text-decoration: underline; text-underline-offset: 3px; font-size: 12px; }
+.compare-control { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 12px; cursor: pointer; width: 100%; }
+.compare-control input { appearance: auto; min-height: 18px; width: 18px; height: 18px; padding: 0; flex: 0 0 18px; accent-color: var(--green); }
+.compare-control:has(input:disabled) { color: var(--muted); cursor: default; }
+.compare-control.is-selected { font-weight: 600; }
+.comparison-hint { font-size: 12px; line-height: 1.8; color: #536254; margin: -12px 0 24px; }
+.detail-compare-control { padding-top: 16px; }
+.comparison-tray { border: 1px solid #c8d0c1; background: #e8ede3; border-radius: 4px; padding: 22px 26px; margin: 12px 0 24px; }
+.tray-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+.tray-heading .eyebrow { margin: 0; }
+.tray-heading > p:last-child { font-size: 12px; margin: 0; }
+.comparison-tray ul { list-style: none; padding: 0; margin: 18px 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.comparison-tray li { display: flex; align-items: center; gap: 10px; border: 1px solid #c8d0c1; border-radius: 3px; background: #fffefa; padding: 4px 8px 4px 12px; font-size: 11px; line-height: 1.6; max-width: 100%; }
+.comparison-tray li > span { overflow-wrap: anywhere; }
+.remove-comparison { border: none; background: none; color: var(--green); width: 36px; min-height: 36px; flex-shrink: 0; font-size: 22px; }
+.tray-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; font-size: 12px; }
+.comparison-warning { padding: 18px 24px; margin: 12px 0 24px; background: #f3e9df; border: 1px solid #d8bca6; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+.comparison-warning p { font-weight: 600; margin: 0; }
+.comparison-warning ul { margin: 10px 0; padding-left: 18px; }
+.comparison-hero { padding: 8px 0 30px; border-bottom: 1px solid var(--line); }
+.comparison-hero h1 { font-size: clamp(36px, 4.5vw, 54px); letter-spacing: -1.5px; }
+.comparison-hero > p:not(.eyebrow) { max-width: 680px; font-size: 14px; color: #536254; line-height: 1.8; margin: 20px 0; }
+.comparison-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 12px; }
+.comparison-actions > span { margin-left: auto; color: #536254; }
+.comparison-section { padding: 24px 0 42px; }
+.comparison-help, .comparison-footnote { font-size: 12px; line-height: 1.8; color: #536254; margin: 0 0 18px; }
+.comparison-footnote { margin: 20px 0 0; max-width: 850px; }
+.comparison-scroll { max-height: 75vh; overflow: auto; border: 1px solid #c8d0c1; border-radius: 4px; isolation: isolate; }
+.comparison-scroll:focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; }
+.comparison-table { border-collapse: separate; border-spacing: 0; table-layout: fixed; width: 100%; min-width: calc(168px + var(--property-count) * 236px); background: #fffefa; }
+.comparison-table caption { text-align: left; padding: 14px 20px; font-size: 12px; color: #536254; background: #f0f1e9; }
+.comparison-label-column { width: 168px; }
+.comparison-table th, .comparison-table td { text-align: left; vertical-align: top; padding: 18px; font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.comparison-table th:last-child, .comparison-table td:last-child { border-right: 0; }
+.comparison-table thead th { position: sticky; top: 0; z-index: 3; background: #e8ede3; font-weight: 400; }
+.comparison-table thead th a { display: block; font-family: Georgia, serif; font-size: 21px; line-height: 1.35; }
+.comparison-table thead th a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.comparison-table thead th .text-button { display: block; margin-top: 8px; }
+.comparison-table th[scope="row"], .comparison-table thead th:first-child { position: sticky; left: 0; z-index: 2; background: #f0f1e9; font-weight: 500; }
+.comparison-table thead th:first-child { z-index: 4; background: #dfe7d8; font-size: 11px; }
+.comparison-table .comparison-group th { padding: 12px 18px; background: #293b31; color: var(--cream); font-size: 11px; font-weight: 500; letter-spacing: .3px; }
+.comparison-table .comparison-group th { position: sticky; left: 0; }
+.comparison-table .fact-meta { margin-top: 8px; }
+.comparison-table .evidence-details li { padding: 10px; }
+.comparison-editorial td { background: #fdf8f1; }
+.editorial-row-label { display: block; font-size: 10px; font-weight: 400; color: #82442f; margin-top: 8px; }
+.comparison-assessment + .comparison-assessment { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
+.comparison-assessment p { margin: 12px 0; }
+.comparison-assessment .editorial-badge { margin-top: 0; }
+.comparison-empty { margin: 28px 0 48px; padding: 32px; background: #e8ede3; border-radius: 4px; }
+.comparison-empty p { font-size: 13px; line-height: 1.8; margin: 16px 0 24px; }
+.single-selection { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 13px; margin: 16px 0; }
+@media (max-width: 640px) {
+  nav { gap: 12px; font-size: 11px; }
+  .comparison-tray { padding: 20px; }
+  .tray-heading { display: block; }
+  .tray-heading > p:last-child { margin-top: 10px; }
+  .comparison-hero h1 { font-size: 36px; letter-spacing: -.8px; }
+  .comparison-hero > p:not(.eyebrow) { font-size: 13px; }
+  .comparison-actions { gap: 14px 20px; }
+  .comparison-table { min-width: calc(112px + var(--property-count) * 232px); }
+  .comparison-label-column { width: 112px; }
+  .comparison-table th, .comparison-table td { padding: 16px 12px; }
+  .comparison-table th[scope="row"] { font-size: 11px; }
+  .comparison-table thead th a { font-size: 20px; }
+  .comparison-table .comparison-group th { padding: 12px; }
+  .comparison-empty { padding: 26px; }
+}

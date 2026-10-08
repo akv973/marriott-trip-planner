@@ -1,6 +1,6 @@
 # Marriott Trip Planner
 
-An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 2 — Property Explorer.** Browse the existing 25-property catalog, combine filters, sort, and open sourced detail pages. Comparison, pricing, recommendations, trips, profiles, and maps remain planned.
+An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 3 — Property Comparison.** Browse the existing 25-property catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Pricing, recommendations, trips, profiles, and maps remain planned.
 
 ## Run locally
 
@@ -64,6 +64,8 @@ Open `http://localhost:4173/marriott-trip-planner/`. Do not use `vite preview` a
 - [Stage 1 implementation record](docs/stages/stage-1.md)
 - [Explorer behavior and URLs](docs/architecture/property-explorer.md)
 - [Stage 2 implementation record](docs/stages/stage-2.md)
+- [Comparison behavior and URLs](docs/architecture/property-comparison.md)
+- [Stage 3 implementation record](docs/stages/stage-3.md)
 
 ## CI and deployment
 
@@ -73,8 +75,8 @@ Source repository: [akv973/marriott-trip-planner](https://github.com/akv973/marr
 
 ## Stage discipline
 
-The next stage is **Stage 3 — Property Comparison**, only after explicit approval. The unchanged Stage 1 catalog contains 25 properties across six brands and 14 countries/territories, 25 sources and 260 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
+The next stage is **Stage 4 — Manual Points Calculator**, only after explicit approval. The unchanged Stage 1 catalog contains 25 properties across six brands and 14 countries/territories, 25 sources and 260 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
 
-Hash URLs preserve search, filters, and sort order through reloads and property-detail round trips. See [explorer behavior](docs/architecture/property-explorer.md) for supported filters and unknown handling.
+Hash URLs preserve comparison selections, search, filters, and sort order through reloads and property-detail round trips. See [explorer behavior](docs/architecture/property-explorer.md) for supported filters and unknown handling.
 
 No Marriott credentials, scraping, undocumented endpoints, or dynamic pricing are used. This tool is not affiliated with Marriott International.

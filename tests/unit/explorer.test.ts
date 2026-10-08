@@ -58,12 +58,12 @@ describe('Explorer queries', () => {
 describe('Static-host-safe navigation', () => {
   it('round trips detail URLs with search, every filter and sort selection', () => {
     const query = { ...DEFAULT_QUERY, q: 'spa & city?', destination: 'destination-test', country: 'US', region: 'North America', brand: 'brand-test', type: 'hotel', tag: 'spa', resort: 'unknown', destinationProperty: 'unknown', opening: 'unknown', renovation: '2018', sort: 'name-desc' as const };
-    expect(parseRoute(propertyHref('dove-mountain', query))).toEqual({ page: 'property', slug: 'dove-mountain', query });
-    expect(parseRoute(explorerHref(query))).toEqual({ page: 'explore', query, section: null });
+    expect(parseRoute(propertyHref('dove-mountain', query))).toEqual({ page: 'property', slug: 'dove-mountain', query, comparisonSlugs: [] });
+    expect(parseRoute(explorerHref(query))).toEqual({ page: 'explore', query, section: null, comparisonSlugs: [] });
   });
   it('handles the base, legacy anchors, malformed paths, and unsupported sorting', () => {
     expect(parseRoute('').page).toBe('explore');
-    expect(parseRoute('#roadmap')).toEqual({ page: 'explore', query: DEFAULT_QUERY, section: 'roadmap' });
+    expect(parseRoute('#roadmap')).toEqual({ page: 'explore', query: DEFAULT_QUERY, section: 'roadmap', comparisonSlugs: [] });
     for (const hash of ['#/properties/', '#/properties/%ZZ', '#/made-up', '#/properties/../x']) expect(parseRoute(hash).page).toBe('not-found');
     expect(parseRoute('#/explore?sort=quality&q=%3Cscript%3E').query).toEqual({ ...DEFAULT_QUERY, q: '<script>' });
   });

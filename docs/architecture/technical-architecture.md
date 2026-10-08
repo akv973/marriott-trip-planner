@@ -53,3 +53,7 @@ Pull requests and main pushes execute the same required checks. The deploy job d
 ## Assets and accessibility
 
 The explorer uses system fonts, CSS, and original decorative SVG. It has a skip link, named navigation, semantic landmarks, heading hierarchy, visible keyboard focus, and responsive breakpoints. DOM integration tests verify queries, details, unknowns, conflicts, staleness, and recovery. Chromium E2E checks cover desktop/narrow explorer flows, layout, assets, direct-link reloads, keyboard interaction, and all 25 detail pages. Screenshot inspection is reported separately from automated assertions.
+
+## Stage 3 comparison
+
+Stage 3 adds `#/compare`, repeated `compare` slug parameters on all existing routes, pure 2–4 selection/row functions and shared evidence rendering. Facts and editorial remain separate. Costs, benefits and CPP are explicit unknowns/unavailable; no later engine exists. See ADR-009 and `property-comparison.md`. The manifest admits Stage 3 and rejects Stage 4. All six sourced catalog collections, benefit placeholder, dependencies and lockfile are unchanged.
