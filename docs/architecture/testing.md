@@ -1,6 +1,6 @@
 # Testing and validation
 
-## Current checks (Stage 3 — Property Comparison)
+## Current checks (Stage 5 — Recommendation Engine)
 
 | Command | Checks |
 | --- | --- |
@@ -53,3 +53,7 @@ Six comparison scenarios run at each desktop/narrow viewport (12 additional test
 ## Stage 4 economics coverage
 
 Eight canonical economics fixtures plus discount, unknown/zero/invalid, currency, threshold and route boundaries are covered by the new unit suite. Six new DOM flows validate manual pricing and source disclosures. Four new browser scenarios run at each desktop/narrow viewport (eight additional; 36 combined). They cover transparent five-night assessment, unknown/invalid/comparability recovery, variable/total/FX modes and context/history/reload. The browser artifacts include `calculator-filled.png` and `calculator-result.png` for both viewports. Inspect these before claiming visual QA. Stage 5–8 behavior remains pending as documented in `manual-points-calculator.md`.
+
+## Stage 5 recommendation coverage
+
+Independent synthetic fixtures verify fit contributions, bounds/coverage, null preservation, deterministic replay/order, fresh/conflicted/stale/unverified evidence, current/closed/planned status, eligibility unknowns, budget paths, insufficient balance, dates/nights, manual quote economics, custom weights and graceful validation. DOM tests verify sourced/partial results, manual quote application, excluded recovery and source conflicts. Four new browser scenarios run at both viewports (8 new; 44 combined), on preview and live. Artifacts include `recommendations-full.png`, `recommendation-card.png` and `recommendation-economics.png`. Inspect screenshots independently. Certificates, benefit overrides, profiles and multi-hotel totals remain pending in their respective stages.

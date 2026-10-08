@@ -5,6 +5,7 @@ type RouteContext = { query: ExplorerQuery; comparisonSlugs: string[] };
 export type Route = RouteContext & ({ page: 'explore'; section: string | null }
   | { page: 'property'; slug: string }
   | { page: 'compare' }
+  | { page: 'recommendations' }
   | { page: 'calculator'; propertySlug: string | null }
   | { page: 'not-found' });
 
@@ -21,6 +22,7 @@ export function parseRoute(hash: string): Route {
     return { page: 'explore', query, comparisonSlugs, section: ['foundation', 'roadmap', 'main'].includes(path) ? path : null };
   }
   if (path === '/calculator') return { page: 'calculator', propertySlug: params.get('property')?.slice(0, 100) ?? null, query, comparisonSlugs };
+  if (path === '/recommendations') return { page: 'recommendations', query, comparisonSlugs };
   if (path === '/compare') return { page: 'compare', query, comparisonSlugs };
   if (/^\/properties\/[a-z][a-z0-9]*(-[a-z0-9]+)*$/.test(path)) return { page: 'property', slug: path.slice('/properties/'.length), query, comparisonSlugs };
   return { page: 'not-found', query, comparisonSlugs };
@@ -42,3 +44,5 @@ export function calculatorHref(query: ExplorerQuery = DEFAULT_QUERY, comparisonS
   const context = serializeQuery(query, comparisonSlugs);
   return `#/calculator${context}${propertySlug ? `${context ? '&' : '?'}property=${encodeURIComponent(propertySlug)}` : ''}`;
 }
+
+export const recommendationsHref = (query: ExplorerQuery = DEFAULT_QUERY, comparisonSlugs: string[] = []) => `#/recommendations${serializeQuery(query, comparisonSlugs)}`;

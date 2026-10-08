@@ -381,3 +381,36 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .calculator-policy { border-top: 1px solid #cbd4c5; margin-top: 24px; padding-top: 20px; }
 @media (max-width: 850px) { .calculator-layout { grid-template-columns: minmax(0, 1fr); } }
 @media (max-width: 520px) { .calculator-fields { grid-template-columns: minmax(0, 1fr); } .calculator-form fieldset, .calculator-results { padding: 20px; } .calculator-layout { gap: 24px; } .calculator-hero { padding-top: 20px; } }
+
+/* Stage 5: four independent, inspectable recommendation layers. */
+.recommendation-request { max-width: 940px; }
+.recommendation-tags { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 22px; }
+.recommendation-tags label, .recommendation-checkbox { display: inline-flex; align-items: center; gap: 9px; font-size: 12px; min-height: 44px; cursor: pointer; }
+.recommendation-checkbox { margin-top: 16px; }
+.recommendation-tags input, .recommendation-checkbox input { width: 17px; height: 17px; accent-color: var(--green); }
+.recommendation-methodology, .recommendation-quotes { max-width: 940px; border: 1px solid var(--line); padding: 22px; margin: 20px 0 28px; background: #faf9f5; border-radius: 4px; }
+.recommendation-methodology summary, .recommendation-quotes summary, .recommendation-audit summary, .fit-details summary, .explanation-details summary { font-size: 13px; font-weight: 600; cursor: pointer; min-height: 36px; line-height: 1.6; }
+.recommendation-methodology p, .recommendation-quotes p, .recommendation-results > p { font-size: 12px; line-height: 1.8; color: #536254; }
+.recommendation-quote { margin-top: 28px; }
+.recommendation-results { padding: 30px 0 55px; }
+.recommendation-results > h2 { font-size: 34px; }
+.recommendation-card { padding: 28px; border: 1px solid #bdc9b7; border-radius: 4px; background: #fffefa; margin: 28px 0; overflow-wrap: anywhere; }
+.recommendation-card-header { display: flex; align-items: start; justify-content: space-between; gap: 24px; }
+.recommendation-card h3 { font-size: 27px; line-height: 1.3; max-width: 660px; }
+.recommendation-card h3 a:hover { text-decoration: underline; }
+.fit-summary { display: flex; flex-direction: column; gap: 8px; min-width: 220px; font-size: 12px; padding: 15px; border: 1px solid #cbd4c5; background: #edf1e8; }
+.fit-summary strong { font-size: 16px; }
+.recommendation-summary { font-size: 13px; line-height: 1.8; padding: 18px 0; }
+.recommendation-layers { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; border-top: 1px solid var(--line); padding: 22px 0; }
+.recommendation-card h4 { font-size: 13px; margin: 0 0 12px; }
+.recommendation-layers section { min-width: 0; }
+.recommendation-card p, .recommendation-card li, .recommendation-card section > strong { font-size: 12px; line-height: 1.8; }
+.recommendation-card ul { padding-left: 20px; }
+.recommendation-card li { margin-bottom: 12px; }
+.fit-details, .explanation-details { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 14px; }
+.fit-components { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.fit-components > section { padding: 20px; background: #f2f3eb; min-width: 0; }
+.explanation-details > section { margin: 24px 0; }
+.recommendation-audit pre { overflow: auto; max-height: 500px; max-width: 100%; padding: 18px; background: #edf1e8; font-size: 11px; line-height: 1.6; }
+@media (max-width: 760px) { .recommendation-card-header { flex-direction: column; } .fit-summary { width: 100%; } .recommendation-layers, .fit-components { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 520px) { .recommendation-card { padding: 20px; } .recommendation-card h3 { font-size: 24px; } .recommendation-methodology, .recommendation-quotes { padding: 18px; } .recommendation-tags { gap: 8px 14px; } }
