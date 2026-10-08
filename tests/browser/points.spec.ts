@@ -22,7 +22,7 @@ test('manual five-night assessment, formula, balance and responsive screenshots'
   await calculate(page);
   await expect(results(page).getByRole('status')).toContainText('Excellent points use');
   await expect(results(page).getByRole('status')).toContainText('1.375¢');
-  await expect(results(page)).toContainText('1 more points needed');
+  await expect(results(page)).toContainText('1 more point needed');
   await expect(results(page)).toContainText('($2,850.00 − $100.00) × 1 ÷ 200,000 × 100');
   await expect(results(page)).toContainText('Discounted nights: 1');
   await expect(results(page).getByRole('link', { name: /Marriott terms/ })).toHaveAttribute('href', 'https://www.marriott.com/loyalty/terms/default.mi');

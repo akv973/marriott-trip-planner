@@ -35,10 +35,12 @@ export type CalculatorInput = z.infer<typeof calculatorSchema>;
 export type ValueBand = 'Excellent points use' | 'Good points use' | 'Approximately neutral' | 'Cash preferred' | 'Strongly cash preferred';
 
 export function classifyValue(ratio: number, thresholds: CalculatorInput['thresholds']): ValueBand {
-  if (ratio < thresholds.stronglyCash) return 'Strongly cash preferred';
-  if (ratio < thresholds.cash) return 'Cash preferred';
-  if (ratio < thresholds.good) return 'Approximately neutral';
-  if (ratio < thresholds.excellent) return 'Good points use';
+  // Treat machine-precision equality as the threshold, without rounding CPP.
+  const below = (threshold: number) => ratio < threshold && threshold - ratio > Number.EPSILON * Math.max(1, Math.abs(ratio), threshold) * 8;
+  if (below(thresholds.stronglyCash)) return 'Strongly cash preferred';
+  if (below(thresholds.cash)) return 'Cash preferred';
+  if (below(thresholds.good)) return 'Approximately neutral';
+  if (below(thresholds.excellent)) return 'Good points use';
   return 'Excellent points use';
 }
 
@@ -47,7 +49,10 @@ export const fractionDigits = (currency: string) => new Intl.NumberFormat('en', 
 const minor = (value: number, currency: string) => Math.round((value + Number.EPSILON) * 10 ** fractionDigits(currency));
 export function calculatePoints(input: unknown) {
   const parsed = calculatorSchema.safeParse(input);
-  if (!parsed.success) return { success: false as const, errors: parsed.error.issues.map((issue) => `${issue.path.join('.')}: ${issue.message}`) };
+  if (!parsed.success) {
+    const labels: Record<string, string> = { nights: 'Number of nights', currency: 'Quote currency', cashBasis: 'Cash price basis', cashRoom: 'Cash room price', cashTaxes: 'Cash taxes', cashFees: 'Cash mandatory fees', awardCash: 'Cash payable on award', awardBasis: 'Award points basis', awardPoints: 'Award points price', nightlyPoints: 'Points by night', fifthNight: 'Stay for 5, Pay for 4 eligibility', comparable: 'Quote comparability', usdPerCurrency: 'Manual USD exchange rate', valuationCpp: 'Personal point value', balance: 'Available points', thresholds: 'Assessment thresholds' };
+    return { success: false as const, errors: parsed.error.issues.map((issue) => `${labels[String(issue.path[0])] ?? 'Inputs'}: ${issue.message}`) };
+  }
   const v = parsed.data;
   const unit = 10 ** fractionDigits(v.currency);
   const warnings: string[] = [];
@@ -85,7 +90,7 @@ export function calculatePoints(input: unknown) {
   const awardEconomicCostUsd = pointsValue === null || awardCash === null || fx === null ? null : pointsValue + awardCash * fx;
   const pointsShortfall = v.balance === null || pointsSpent === null ? null : Math.max(0, pointsSpent - v.balance);
   const remainingBalance = v.balance === null || pointsSpent === null || pointsSpent > v.balance ? null : v.balance - pointsSpent;
-  if (pointsShortfall !== null && pointsShortfall > 0) warnings.push(`Insufficient points: ${pointsShortfall.toLocaleString('en-US')} more points needed. This calculation does not assume a points purchase or transfer.`);
+  if (pointsShortfall !== null && pointsShortfall > 0) warnings.push(`Insufficient points: ${pointsShortfall.toLocaleString('en-US')} more ${pointsShortfall === 1 ? 'point' : 'points'} needed. This calculation does not assume a points purchase or transfer.`);
   if (v.comparable !== 'same') warnings.push(v.comparable === 'different' ? 'Room, occupancy, inclusions or cancellation terms differ. CPP is illustrative; a booking assessment requires comparable products.' : 'Confirm the same room, occupancy, inclusions and cancellation terms before using a booking assessment.');
   if (pointsSpent === 0) warnings.push('Zero points spent: cents per point is undefined.');
   const band = cpp === null || v.valuationCpp === null || v.comparable !== 'same' ? null : classifyValue(cpp / v.valuationCpp, v.thresholds);

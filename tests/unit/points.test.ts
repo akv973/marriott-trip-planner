@@ -60,6 +60,7 @@ describe('Manual calculation boundaries', () => {
     expect(evaluate(pointsInput({ comparable: 'unknown' })).band).toBeNull();
   });
   it.each([[-0.1, 'Strongly cash preferred'], [0.5, 'Cash preferred'], [0.9, 'Approximately neutral'], [1.1, 'Good points use'], [1.5, 'Excellent points use']] as const)('classifies ratio %s at the documented boundary', (ratio, label) => expect(classifyValue(ratio, DEFAULT_THRESHOLDS)).toBe(label));
+  it.each([[800, 'Cash preferred'], [1440, 'Approximately neutral'], [1760, 'Good points use'], [2400, 'Excellent points use']] as const)('classifies exact personal-value boundary for avoided cash %s despite binary rounding', (cashRoom, band) => expect(evaluate(pointsInput({ cashBasis: 'total', cashRoom, cashTaxes: 0, cashFees: 0, awardCash: 0 })).band).toBe(band));
   it('supports configurable thresholds', () => expect(evaluate(pointsInput({ thresholds: { stronglyCash: 1, cash: 2, good: 3, excellent: 4 } })).band).toBe('Cash preferred'));
   it.each([
     { nights: 0 }, { nights: 2.5 }, { nights: 61 }, { cashRoom: -1 }, { awardPoints: 1.5 }, { balance: Infinity },

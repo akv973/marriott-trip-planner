@@ -23,7 +23,7 @@ describe('Manual points calculator UI', () => {
     expect(screen.getByRole('status')).toHaveTextContent('Excellent points use');
     expect(screen.getByRole('status')).toHaveTextContent('1.375¢');
     expect(screen.getByText(/\(\$2,850.00 − \$100.00\)/)).toHaveTextContent('200,000');
-    expect(screen.getByText(/Insufficient points/)).toHaveTextContent('1 more points');
+    expect(screen.getByText(/Insufficient points/)).toHaveTextContent('1 more point');
     set('Cash taxes, stay total', ''); expect(screen.queryByRole('status')).not.toBeInTheDocument(); calculate();
     expect(screen.getByRole('status')).toHaveTextContent('CPP unavailable');
     expect(screen.getByRole('complementary', { name: 'Calculation results' })).toHaveTextContent('Cash taxes');

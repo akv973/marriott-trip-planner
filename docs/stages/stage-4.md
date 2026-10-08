@@ -16,7 +16,7 @@ Marriott terms and official benefit guidance were reviewed before implementation
 
 ## Local validation completed
 
-Typecheck, lint, schema/reference/evidence validation and build pass. Unit tests: 130/130. Integration tests: 28/28. Eight canonical economics fixtures pass. Catalog health: 25 properties, zero invalid/schema/reference/critical-evidence/conflict/stale/unverified errors. All six catalog collections and empty benefits remain unchanged, as do dependencies and lockfile.
+Typecheck, lint, schema/reference/evidence validation and build pass. Unit tests: 134/134. Integration tests: 28/28. Eight canonical economics fixtures pass. Catalog health: 25 properties, zero invalid/schema/reference/critical-evidence/conflict/stale/unverified errors. All six catalog collections and empty benefits remain unchanged, as do dependencies and lockfile.
 
 The 36-test combined desktop/narrow browser suite, required PR CI, main deployment, live suite and screenshot inspection are pending. Local Chromium download returned a truncated ZIP; this does not count as a browser pass.
 
