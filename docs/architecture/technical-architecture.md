@@ -65,3 +65,7 @@ Stage 4 adds `#/calculator`, standalone `lib/points/` validation/economics and d
 ## Stage 5 recommendations
 
 Stage 5 adds `#/recommendations` and pure strict request/scoring functions in `lib/scoring/`. Eligibility, trip fit, existing points economics and structured explanations remain independently inspectable. Default/custom weights are versioned, unknown components retain weight and null values, and partial fit displays coverage/bounds. Quotes and preferences are transient; no trip or profile persistence is introduced. See ADR-011 and `recommendation-engine.md`. The manifest admits Stage 5 and rejects Stage 6; catalog collections, points business rules, dependencies and lockfile are unchanged.
+
+## Stage 6 trips
+
+Stage 6 adds `#/trips`, strict independent Trip/TripStay contracts and pure selected-booking totals in `lib/trips/`. Each stay delegates economics to the unchanged calculator. Unknown complete totals remain null alongside explicit known subtotals. Native currencies, manual USD conversion, weighted award redemption, whole-trip balance and chronology are inspectable. Trips and notes live in application memory across navigation and clear on reload. Stage 7 storage remains unimplemented. See ADR-012 and `trip-builder.md`. The manifest admits Stage 6 and rejects Stage 7; sourced catalog collections, earlier engines, dependencies and lockfile are unchanged.
