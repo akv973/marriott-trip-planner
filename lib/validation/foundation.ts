@@ -8,7 +8,7 @@ export const emptyCollectionSchema = z.array(z.never());
 export const foundationSchema = z.strictObject({
   schemaVersion: z.literal('0.1'),
   appId: z.literal('marriott-trip-planner'),
-  stage: z.union([z.literal(0), z.literal(1), z.literal(2)]),
+  stage: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3)]),
   deploymentTarget: z.literal('github-pages'),
   catalogState: z.enum(['unpopulated', 'seeded']),
   modules: z.array(z.strictObject({

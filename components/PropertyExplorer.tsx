@@ -5,15 +5,16 @@ import type { ExplorerQuery, FilterKey } from '../lib/catalog/explorer';
 import { countryName, displayDate, fieldEvidence, humanize } from '../lib/catalog/presentation';
 import { explorerHref, propertyHref } from '../lib/navigation/routes';
 import { ContourArt } from './ContourArt';
+import { CompareControl } from './CompareControl';
 
 const FILTER_LABELS: Record<FilterKey, string> = {
   destination: 'Destination', country: 'Country / territory', region: 'Region', brand: 'Brand', type: 'Property type',
   tag: 'Experience', resort: 'Resort designation', destinationProperty: 'Destination-property designation', opening: 'Opening year', renovation: 'Renovation year',
 };
 
-export function PropertyExplorer({ catalog, query, asOf }: { catalog: Catalog; query: ExplorerQuery; asOf: string }) {
+export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], onToggle }: { catalog: Catalog; query: ExplorerQuery; asOf: string; comparisonSlugs?: string[]; onToggle?: (slug: string) => void }) {
   const results = queryProperties(catalog, query);
-  const update = (key: keyof ExplorerQuery, value: string) => window.location.assign(explorerHref({ ...query, [key]: value }));
+  const update = (key: keyof ExplorerQuery, value: string) => window.location.assign(explorerHref({ ...query, [key]: value }, comparisonSlugs));
   function search(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     update('q', String(new FormData(event.currentTarget).get('q') ?? '').trim().slice(0, 200));
@@ -49,9 +50,10 @@ export function PropertyExplorer({ catalog, query, asOf }: { catalog: Catalog; q
         <div className="search-row"><input key={query.q} id="property-search" name="q" type="search" maxLength={200} defaultValue={query.q} placeholder="Property, destination, brand, or experience" />
           <button type="submit" className="primary-button">Search <span aria-hidden="true">↗</span></button></div>
       </form>
+      <p className="comparison-hint">Select 2–4 properties to compare their setting, sourced details, and editorial notes.</p>
       <div className="explorer-layout">
         <aside className="filter-panel" aria-label="Property filters">
-          <div className="filter-heading"><h2>Refine your collection</h2><a className="text-link" href={explorerHref()}>Reset all</a></div>
+          <div className="filter-heading"><h2>Refine your collection</h2><a className="text-link" href={explorerHref(undefined, comparisonSlugs)}>Reset all</a></div>
           {FILTER_KEYS.slice(0, 6).map(filter)}
           <details className="more-filters"><summary>More property details</summary>{FILTER_KEYS.slice(6).map(filter)}</details>
           <p className="filter-note">Filters use recorded facts and sourced setting tags. Unknown doesn’t mean no. Some details still need research.</p>
@@ -63,7 +65,7 @@ export function PropertyExplorer({ catalog, query, asOf }: { catalog: Catalog; q
             {query.q && <button onClick={() => update('q', '')} aria-label={`Remove search ${query.q}`}>Search: {query.q} <span aria-hidden="true">×</span></button>}
             {FILTER_KEYS.filter((key) => query[key]).map((key) => <button key={key} onClick={() => update(key, '')} aria-label={`Remove ${FILTER_LABELS[key]} filter`}>{FILTER_LABELS[key]}: {labelFor(key, query[key])} <span aria-hidden="true">×</span></button>)}
           </div>}
-          {!results.length ? <div className="no-results"><p className="eyebrow">A little room to explore</p><h2>No properties match these choices.</h2><p>Try another destination or remove a filter. The collection is curated, rather than a complete Marriott directory.</p><a className="primary-link" href={explorerHref()}>View all properties <span aria-hidden="true">↗</span></a></div> :
+          {!results.length ? <div className="no-results"><p className="eyebrow">A little room to explore</p><h2>No properties match these choices.</h2><p>Try another destination or remove a filter. The collection is curated, rather than a complete Marriott directory.</p><a className="primary-link" href={explorerHref(undefined, comparisonSlugs)}>View all properties <span aria-hidden="true">↗</span></a></div> :
             <div className="property-grid">{results.map((property) => {
               const type = fieldEvidence(catalog, property, 'propertyType', asOf);
               const tags = fieldEvidence(catalog, property, 'experienceTags', asOf);
@@ -71,10 +73,10 @@ export function PropertyExplorer({ catalog, query, asOf }: { catalog: Catalog; q
               return <article className="property-card" key={property.id}>
                 <div className="property-card-top"><span className="property-brand">{catalog.brands.find((brand) => brand.id === property.brandId)?.name}</span><span className="property-index" aria-hidden="true">↗</span></div>
                 <p className="property-location">{catalog.destinations.find((destination) => destination.id === property.destinationId)?.name} <span>·</span> {countryName(property.country)}</p>
-                <h2><a href={propertyHref(property.slug, query)}>{property.name}</a></h2>
+                <h2><a href={propertyHref(property.slug, query, comparisonSlugs)}>{property.name}</a></h2>
                 <p className="property-type">{type.label}{type.status === 'known' ? ` · ${type.confidence} confidence` : ''}</p>
                 <div className="tag-list" aria-label="Recorded experiences">{tags.value && Array.isArray(tags.value) ? tags.value.map((tag) => <span key={tag}>{humanize(tag)}</span>) : <span>{tags.label}</span>}</div>
-                <div className="property-card-bottom"><span>{identity.lastVerifiedAt ? `Identity verified ${displayDate(identity.lastVerifiedAt)}` : 'Identity needs review'}{identity.stale || type.stale || tags.stale ? ' · Evidence needs refresh' : ''}</span><a href={propertyHref(property.slug, query)} aria-label={`View details for ${property.name}`}>View details <span aria-hidden="true">→</span></a></div>
+                <div className="property-card-bottom"><span>{identity.lastVerifiedAt ? `Identity verified ${displayDate(identity.lastVerifiedAt)}` : 'Identity needs review'}{identity.stale || type.stale || tags.stale ? ' · Evidence needs refresh' : ''}</span><a href={propertyHref(property.slug, query, comparisonSlugs)} aria-label={`View details for ${property.name}`}>View details <span aria-hidden="true">→</span></a><CompareControl property={property} slugs={comparisonSlugs} onToggle={onToggle} /></div>
               </article>;
             })}</div>}
           <p className="results-note">Setting tags describe sourced activities or surroundings; they don’t rate hotel quality. Year sorts put unknown values last.</p>

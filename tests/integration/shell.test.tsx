@@ -18,8 +18,8 @@ describe('Validated explorer and detail pages', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Find a stay worth');
     expect(screen.getByRole('status')).toHaveTextContent('25 of 25 properties');
     expect(document.querySelectorAll('.property-card')).toHaveLength(25);
-    expect(screen.getAllByText('Planned', { exact: true })).toHaveLength(3);
-    expect(screen.queryByRole('button', { name: /compare|save|add to trip/i })).not.toBeInTheDocument();
+    expect(screen.getAllByText('Planned', { exact: true })).toHaveLength(2);
+    expect(screen.queryByRole('button', { name: /save|add to trip/i })).not.toBeInTheDocument();
   });
   it('restores combined filters from the URL and keeps context in detail links', () => {
     window.history.replaceState(null, '', '#/explore?country=TZ&tag=wildlife&sort=name-desc');
