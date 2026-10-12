@@ -34,6 +34,9 @@ describe('Sourced benefit contracts', () => {
       const b = structuredClone(benefits); Object.assign(b.rules[0]!, changes); expect(benefitBundleSchema.safeParse(b).success).toBe(false);
     }
   });
+  it('rejects repeated status selectors so unknown status cannot become a false match', () => {
+    const b=structuredClone(benefits);b.rules[0]!.selector.statuses=['gold','gold','gold','gold','gold','gold'];expect(benefitBundleSchema.safeParse(b).success).toBe(false);
+  });
   it('rejects orphaned references, duplicate IDs, nonofficial policy sources and missing reviews', () => {
     const b = structuredClone(benefits); b.rules[0]!.sourceIds = ['missing']; b.rules[1]!.id = b.rules[0]!.id; b.reviews.pop();
     expect(benefitReferenceErrors(b, catalog).length).toBeGreaterThan(2);
@@ -109,6 +112,10 @@ describe('Conflict, time and evidence handling', () => {
   it('does not hide a property restriction contradicting an official entitlement', () => {
     const { c,p,b }=cityFixture(); const o=b.rules.find(r=>r.id==='override-jw-tampa-lounge')!; o.outcome={...o.outcome,code:'fixture-denied',state:'excluded'};
     expect(effectiveBenefits(c,p,'platinum',asOf,b).results.find(r=>r.category==='lounge')!.conflict).toBe(true);
+  });
+  it('flags contradictory numeric entitlements across property and program layers', () => {
+    const b=structuredClone(benefits);const r=b.rules.find(r=>r.id==='bonus-platinum')!;b.rules.push({...structuredClone(r),id:'fixture-bonus-override',layer:'property',propertyId:'property-jw-tampa',outcome:{...r.outcome,code:'fixture-bonus',amount:100}});
+    expect(item('jw-tampa','platinum','bonus',b).conflict).toBe(true);
   });
   it('surfaces an explicitly disputed claim even when it is the only override', () => {
     const b=structuredClone(benefits); b.rules.find(r=>r.id==='override-jw-tampa-lounge')!.conflictStatus='disputed'; expect(item('jw-tampa','platinum','lounge',b).conflict).toBe(true);

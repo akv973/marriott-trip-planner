@@ -20,7 +20,7 @@ export function BenefitCard({ result, catalog, bundle = benefits }: { result: Ef
     <details className="benefit-trace"><summary>Inspect {BENEFIT_LABELS[result.category].toLowerCase()} rules & sources</summary>
       {!result.trace.length && <p>No sourced applicable rule.</p>}
       {result.trace.map(({ rule, match, selected, reasons }) => <div className={`benefit-rule ${selected ? 'rule-selected' : ''}`} key={rule.id}>
-        <p><strong>{humanize(rule.layer)} {rule.layer === 'property' ? 'override' : 'rule'}</strong> · {selected ? 'Selected / requires review' : 'Retained context'} · {humanize(match)}</p>
+        <p><strong>{humanize(rule.layer)} {rule.layer === 'property' ? 'override' : 'rule'}</strong> · {selected ? (result.outcome.state === 'unknown' ? 'Requires review' : 'Selected') : 'Retained context'} · {humanize(match)}</p>
         <p>{rule.outcome.label}</p><p>{rule.outcome.detail}</p>
         <p className="fact-meta">{rule.id} · {rule.confidence} confidence · {rule.section} · Verified {displayDate(rule.verifiedAt)}{rule.conflictStatus === 'disputed' ? ' · Disputed' : ''}</p>
         <p className="fact-meta">Status: {rule.selector.statuses.map(humanize).join(', ')}. Conditions: {Object.entries(rule.selector.conditions).map(([k,v]) => `${k}: ${String(v)}`).join('; ') || 'None'}.</p>
@@ -48,8 +48,8 @@ export function EliteBenefits({ catalog, profile, asOf, query, comparisonSlugs, 
   const status = previewStatus === 'profile' ? profile.status : previewStatus === 'unknown' ? null : previewStatus as UserProfile['status'];
   return <>
     <section className="benefits-hero"><p className="eyebrow">Know the terms of your stay</p><h1 id="page-title" tabIndex={-1}>Understand your elite benefits.</h1><p>See what your status offers, how a property changes the rules, and what still needs confirmation.</p></section>
-    <div className="benefits-controls"><label>Benefit property<select value={property?.slug ?? ''} onChange={e => window.location.assign(benefitsHref(query, comparisonSlugs, e.target.value))}>{!property && <option value="">Property unavailable</option>}{catalog.properties.map(p => <option key={p.id} value={p.slug}>{p.name}</option>)}</select></label>
-      <label>Benefit status preview<select value={previewStatus} onChange={e => setPreviewStatus(e.target.value)}><option value="profile">Use saved profile ({profile.status ? humanize(profile.status) : 'Unknown'})</option><option value="unknown">Unknown</option>{STATUSES.map(s => <option key={s} value={s}>{humanize(s)}</option>)}</select></label>
+    <div className="benefits-controls"><label>Benefit property<select aria-label="Benefit property" value={property?.slug ?? ''} onChange={e => window.location.assign(benefitsHref(query, comparisonSlugs, e.target.value))}>{!property && <option value="">Property unavailable</option>}{catalog.properties.map(p => <option key={p.id} value={p.slug}>{p.name}</option>)}</select></label>
+      <label>Benefit status preview<select aria-label="Benefit status preview" value={previewStatus} onChange={e => setPreviewStatus(e.target.value)}><option value="profile">Use saved profile ({profile.status ? humanize(profile.status) : 'Unknown'})</option><option value="unknown">Unknown</option>{STATUSES.map(s => <option key={s} value={s}>{humanize(s)}</option>)}</select></label>
       <p>Previewing another status leaves your saved profile unchanged. <a href={profileHref(query, comparisonSlugs)}>Edit profile</a>{property && <> · <a href={propertyHref(property.slug, query, comparisonSlugs)}>Property details</a></>}</p>
     </div>
     {property ? <BenefitPanel catalog={catalog} property={property} status={status} asOf={asOf} /> : <section className="not-found"><h2>Property unavailable in this catalog.</h2><a href={benefitsHref(query, comparisonSlugs)}>Choose a catalog property</a></section>}

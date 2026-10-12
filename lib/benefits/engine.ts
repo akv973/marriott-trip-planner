@@ -55,7 +55,7 @@ export function effectiveBenefits(catalog: Catalog, property: Property, status: 
     const active = selected.filter(t => t.match === 'applies');
     const codes = new Set(active.map(t => key(t.rule.outcome)));
     // Different layers normally refine policy. Opposing official entitlements still require review.
-    const opposing = active.filter(t => t.rule.layer === 'property' && t.rule.outcome.basis === 'elite').some(t => candidates.some(base => base.match === 'applies' && base.rule.layer !== 'property' && base.rule.outcome.basis === 'elite' && ((base.rule.outcome.state === 'excluded') !== (t.rule.outcome.state === 'excluded'))));
+    const opposing = active.filter(t => t.rule.layer === 'property' && t.rule.outcome.basis === 'elite').some(t => candidates.some(base => base.match === 'applies' && base.rule.layer !== 'property' && base.rule.outcome.basis === 'elite' && (((base.rule.outcome.state === 'excluded') !== (t.rule.outcome.state === 'excluded')) || (base.rule.outcome.amount != null && t.rule.outcome.amount != null && base.rule.outcome.amount !== t.rule.outcome.amount))));
     if (selected.some(t => t.rule.conflictStatus === 'disputed') || codes.size > 1 || opposing) {
       conflict = true; outcome = unknown('Requires review — official benefit evidence conflicts.'); reasons.push('Contradictory claims are retained below; no entitlement is asserted.');
     } else if (active.length && selected.every(t => t.match === 'applies' || (t.match === 'possible' && key(t.rule.outcome) === key(active[0]!.rule.outcome)))) {

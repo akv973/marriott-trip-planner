@@ -1,6 +1,6 @@
 # Marriott Trip Planner
 
-An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 7 — Local Bonvoy Profile.** Browse the existing 25-property catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Assess manual cash/points quotes with transparent arithmetic. Generate deterministic, inspectable recommendations with separate eligibility, trip fit, booking economics and explanations. Build multi-hotel trips with manual cash/points choices, notes and inspectable complete or partial totals. Profile and trips persist locally, with certificates, preferences and versioned JSON backup/restore. Maps remain planned.
+An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 8 — Elite Benefit Engine.** Browse the existing 25-property catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Assess manual cash/points quotes with transparent arithmetic. Generate deterministic, inspectable recommendations with separate eligibility, trip fit, booking economics and explanations. Build multi-hotel trips with manual cash/points choices, notes and inspectable complete or partial totals. Profile and trips persist locally, with certificates, preferences and versioned JSON backup/restore. Effective benefits use saved status and dated official rules, with property precedence and inspectable unknowns. Maps remain planned.
 
 ## Run locally
 
@@ -38,7 +38,7 @@ Open `http://localhost:4173/marriott-trip-planner/`. Do not use `vite preview` a
 | --- | --- |
 | `app/` | React entrypoint, hash navigation, explorer, details, and responsive CSS |
 | `components/` | Presentational building blocks |
-| `data/` | Manifest; properties, brands, destinations, sources, claims and editorial data; empty benefits |
+| `data/` | Manifest; properties, brands, destinations, sources, claims and editorial data; dated official benefit rules and property reviews |
 | `lib/validation/` | Strict Zod manifest/domain schemas |
 | `lib/catalog/` | Validated ingestion, evidence health, query/sort functions, and evidence presentation |
 | `lib/points/`, `lib/scoring/`, `lib/trips/` | Independent stay economics, recommendation layers and selected-booking trip aggregation |
@@ -76,7 +76,7 @@ Source repository: [akv973/marriott-trip-planner](https://github.com/akv973/marr
 
 ## Stage discipline
 
-The next stage is **Stage 8 — Elite Benefit Engine**, only after explicit approval. The unchanged Stage 1 catalog contains 25 properties across six brands and 14 countries/territories, 25 sources and 260 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
+The next stage is **Stage 9 — Catalog Expansion**, only after explicit approval. The unchanged Stage 1 catalog contains 25 properties across six brands and 14 countries/territories, 25 sources and 260 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
 
 Hash URLs preserve comparison selections, search, filters, and sort order through reloads and property-detail round trips. See [explorer behavior](docs/architecture/property-explorer.md) for supported filters and unknown handling.
 
@@ -98,7 +98,7 @@ Open `#/trips`, create a trip and add ordered hotel stays. Assign nights, select
 
 ## Stage 7 local profile
 
-Open `#/profile` for status, balance, personal valuation, Free Night Awards and travel preferences. New trips use the live profile balance/valuation until those fields are edited; blank overrides stay unknown. Profile and trips persist on reload. Export a private version-1 JSON backup to reconstruct the planner in another browser; import validates and previews before explicit whole-planner replacement. Save failures/invalid drafts preserve the last valid copy and show a status. Certificate planning supports one-night entries and the current 25,000-point top-off cap without inventing availability or certificate CPP. Status is stored only; effective elite benefits remain Stage 8. See [architecture](docs/architecture/local-bonvoy-profile.md), [ADR-013](docs/decisions/ADR-013-local-bonvoy-profile.md) and [Stage 7 report](docs/stages/stage-7.md).
+Open `#/profile` for status, balance, personal valuation, Free Night Awards and travel preferences. New trips use the live profile balance/valuation until those fields are edited; blank overrides stay unknown. Profile and trips persist on reload. Export a private version-1 JSON backup to reconstruct the planner in another browser; import validates and previews before explicit whole-planner replacement. Save failures/invalid drafts preserve the last valid copy and show a status. Certificate planning supports one-night entries and the current 25,000-point top-off cap without inventing availability or certificate CPP. Saved manual status now drives Stage 8 effective benefits; account status remains unverified. See [architecture](docs/architecture/local-bonvoy-profile.md), [ADR-013](docs/decisions/ADR-013-local-bonvoy-profile.md) and [Stage 7 report](docs/stages/stage-7.md).
 
 ## Stage 8 — Elite Benefit Engine
 
