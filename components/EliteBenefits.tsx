@@ -10,13 +10,16 @@ import { displayDate, humanize } from '../lib/catalog/presentation';
 import type { ExplorerQuery } from '../lib/catalog/explorer';
 import { benefitsHref, profileHref, propertyHref } from '../lib/navigation/routes';
 
+const contextLabels: Record<string, string> = { resort: 'Resort classification', convention: 'Convention hotel', lounge: 'Executive lounge', small: '25 rooms or fewer', scope: 'Loyalty program rules', regionGroup: 'Welcome-gift region' };
+const contextValues: Record<string, string> = { standard: 'Standard Bonvoy terms', 'all-inclusive': 'All-Inclusive supplemental terms', 'us-canada-europe': 'U.S., Canada or Europe', other: 'Outside U.S., Canada and Europe' };
+
 export function BenefitCard({ result, catalog, bundle = benefits }: { result: EffectiveBenefit; catalog: Catalog; bundle?: BenefitBundle }) {
   const sources = [...catalog.sources, ...bundle.sources];
   return <article className={`benefit-card benefit-${result.outcome.state}`} aria-label={BENEFIT_LABELS[result.category]}>
     <div className="benefit-card-top"><h3>{BENEFIT_LABELS[result.category]}</h3><span className="benefit-badge">{result.conflict ? 'Sources conflict' : result.outcome.state === 'included' ? 'Included in stay' : humanize(result.outcome.state)}</span></div>
     <p className="benefit-label">{result.outcome.label}</p><p>{result.outcome.detail}</p>
     <p className="fact-meta">{result.outcome.basis === 'included' ? 'Published stay inclusion' : result.outcome.basis === 'elite' ? 'Official elite rule' : 'Policy assessment'}</p>
-    {result.reasons.map(reason => <p className="benefit-reason" key={reason}>{reason}</p>)}
+    {result.outcome.state !== 'unknown' && result.reasons.map(reason => <p className="benefit-reason" key={reason}>{reason}</p>)}
     <details className="benefit-trace"><summary>Inspect {BENEFIT_LABELS[result.category].toLowerCase()} rules & sources</summary>
       {!result.trace.length && <p>No sourced applicable rule.</p>}
       {result.trace.map(({ rule, match, selected, reasons }) => <div className={`benefit-rule ${selected ? 'rule-selected' : ''}`} key={rule.id}>
@@ -36,7 +39,7 @@ export function BenefitPanel({ catalog, property, status, asOf, bundle = benefit
   return <section className="benefit-panel" aria-label="Effective elite benefits">
     <div className="section-heading"><div><p className="eyebrow">Benefits with a reason</p><h2>Your effective benefits.</h2></div><span className="quiet-label">{status ? humanize(status) : 'Status unknown'} · {displayDate(asOf)}</span></div>
     <p className="benefit-assumption">Assumes a participating property, an eligible direct paid or award stay, member presence and one personal room. Paid packages, upgrade awards and courtesy treatment are separate. These are planning rules; availability and your booked rate require confirmation.</p>
-    <details className="benefit-context"><summary>Inspect property conditions & review</summary><dl>{Object.entries(view.context).map(([key,value]) => <div key={key}><dt>{humanize(key)}</dt><dd>{value === null ? 'Unknown' : String(value)}</dd></div>)}</dl><p>{view.review?.notes ?? 'Property benefit review unavailable.'}</p>{view.review && <p className="fact-meta">Reviewed {displayDate(view.review.verifiedAt)}{view.reviewStale ? ' · Review needs refresh' : ''}</p>}<p className="fact-meta">Methodology {view.version} · Property override → brand rule → status rule. Contradictory official entitlements require review. Missing classifications preserve unknown results.</p></details>
+    <details className="benefit-context"><summary>Inspect property conditions & review</summary><dl>{Object.entries(view.context).map(([key,value]) => <div key={key}><dt>{contextLabels[key] ?? humanize(key)}</dt><dd>{value === null ? 'Unknown' : typeof value === 'boolean' ? (value ? 'Yes' : 'No') : (contextValues[String(value)] ?? String(value))}</dd></div>)}</dl><p>{view.review?.notes ?? 'Property benefit review unavailable.'}</p>{view.review && <p className="fact-meta">Reviewed {displayDate(view.review.verifiedAt)}{view.reviewStale ? ' · Review needs refresh' : ''}</p>}<p className="fact-meta">Methodology {view.version} · Property override → brand rule → status rule. Contradictory official entitlements require review. Missing classifications preserve unknown results.</p></details>
     <div className="benefit-grid">{view.results.map(result => <BenefitCard key={result.category} result={result} catalog={catalog} bundle={bundle} />)}</div>
     <aside className="benefit-editorial" aria-label="Editorial benefit observations"><span className="editorial-badge">Editorial observations · opinion</span>{!view.observations.length ? <p>No benefit treatment observations recorded. Upgrade likelihood and typical generosity are unknown.</p> : view.observations.map(o => <p key={o.id}>{o.text} <span className="fact-meta">Reviewed {displayDate(o.reviewedAt)}.</span></p>)}<p>Editorial observations never establish an entitlement or change official rule precedence.</p></aside>
   </section>;
