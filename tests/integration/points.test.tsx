@@ -6,7 +6,7 @@ beforeEach(() => { window.history.replaceState(null, '', '#/calculator'); vi.spy
 const set = (label: string, value: string) => fireEvent.change(screen.getByLabelText(label, { exact: false }), { target: { value } });
 const calculate = () => fireEvent.click(screen.getByRole('button', { name: 'Calculate value' }));
 const fill = () => {
-  set('Nightly room rate (USD)', '500'); set('Cash taxes, stay total', '250'); set('Cash mandatory fees, stay total', '100');
+  set('Personal value', '0.8'); set('Nightly room rate (USD)', '500'); set('Cash taxes, stay total', '250'); set('Cash mandatory fees, stay total', '100');
   set('Points per night before discount', '50000'); set('Award cash payable', '100');
   set('Stay for 5, Pay for 4 eligibility', 'eligible'); set('Are the two quotes comparable?', 'same');
 };
@@ -54,6 +54,6 @@ describe('Manual points calculator UI', () => {
   it('requires manual FX without changing the personal USD valuation', () => {
     render(<App />); set('Quote currency', 'BRL');
     expect(screen.getByLabelText(/Exchange rate/)).toHaveValue(null);
-    expect(screen.getByLabelText(/Personal value/)).toHaveValue(0.8);
+    expect(screen.getByLabelText(/Personal value/)).toHaveValue(null);
   });
 });

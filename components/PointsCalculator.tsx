@@ -5,6 +5,8 @@ import { comparisonHref, explorerHref, propertyHref } from '../lib/navigation/ro
 import { calculatePoints, CURRENCIES, DEFAULT_THRESHOLDS, formatMoney, formatPoints } from '../lib/points/calculator';
 import { POINTS_POLICY } from '../lib/points/policy';
 
+import type { UserProfile } from '../lib/profile/profile';
+
 type Form = {
   nights: string; currency: typeof CURRENCIES[number]; cashBasis: 'nightly' | 'total'; cashRoom: string; cashTaxes: string; cashFees: string; awardCash: string;
   awardBasis: 'flat' | 'varying' | 'total'; awardPoints: string; fifthNight: 'unknown' | 'eligible' | 'ineligible'; comparable: 'unknown' | 'same' | 'different';
@@ -15,8 +17,8 @@ const INITIAL: Form = { nights: '5', currency: 'USD', cashBasis: 'nightly', cash
 const numeric = (value: string) => value.trim() === '' ? null : Number(value);
 type Result = ReturnType<typeof calculatePoints>;
 
-export function PointsCalculator({ catalog, query, comparisonSlugs, propertySlug }: { catalog: Catalog; query: ExplorerQuery; comparisonSlugs: string[]; propertySlug: string | null }) {
-  const [form, setForm] = useState<Form>(INITIAL);
+export function PointsCalculator({ catalog, query, comparisonSlugs, propertySlug, profile }: { catalog: Catalog; query: ExplorerQuery; comparisonSlugs: string[]; propertySlug: string | null; profile?: UserProfile }) {
+  const [form, setForm] = useState<Form>(() => profile ? { ...INITIAL, balance: profile.balance?.toString() ?? '', valuationCpp: profile.valuationCpp?.toString() ?? '' } : INITIAL);
   const [nightly, setNightly] = useState<string[]>([]);
   const [result, setResult] = useState<Result | null>(null);
   useEffect(() => { if (result) document.getElementById('calculator-result-title')?.focus(); }, [result]);
@@ -61,11 +63,11 @@ export function PointsCalculator({ catalog, query, comparisonSlugs, propertySlug
           <label className="calculator-field">Are the two quotes comparable?<select aria-label="Are the two quotes comparable?" value={form.comparable} onChange={(e) => change('comparable', e.target.value as Form['comparable'])}><option value="unknown">Not confirmed</option><option value="same">Same products and terms</option><option value="different">Products or terms differ</option></select></label>
         </div></fieldset>
         <fieldset><legend>04 · Your assumptions</legend><div className="calculator-fields">
-          {numberField('valuationCpp', 'Personal value (USD cents per point)', 'Planning default: 0.8¢. Change it to your own value; this is not Marriott policy.')}
+          {numberField('valuationCpp', 'Personal value (USD cents per point)', 'Starts from your local profile. Blank leaves valuation unknown; 0.8¢ is an optional planning assumption, not Marriott policy.')}
           {numberField('balance', 'Available points (optional)', 'Blank leaves affordability unknown. No account connection.', true)}
           {form.currency !== 'USD' && numberField('usdPerCurrency', `Exchange rate (USD per 1 ${form.currency})`, 'Enter a manual rate for your quote. No exchange rate is fetched or assumed.')}
         </div><details className="calculator-thresholds"><summary>Assessment thresholds</summary><p>Compare actual CPP with your personal value. Ratios below the thresholds move through strongly cash, cash, neutral, good and excellent. These are configurable planning choices.</p><div className="calculator-fields">{numberField('stronglyCash', 'Strongly cash below ratio')}{numberField('cash', 'Cash below ratio')}{numberField('good', 'Good from ratio')}{numberField('excellent', 'Excellent from ratio')}</div><p>Defaults: {Object.values(DEFAULT_THRESHOLDS).join(' / ')} × your personal point value.</p></details></fieldset>
-        <div className="calculator-actions"><button className="primary-link" type="submit">Calculate value <span aria-hidden="true">→</span></button><button type="button" className="text-button" onClick={() => { setForm(INITIAL); setNightly([]); setResult(null); }}>Clear inputs</button></div>
+        <p className="calculator-help">Balance and valuation start from your profile. These inputs are manual overrides; blank stays unknown.</p>{profile && <button type="button" className="text-button" onClick={() => { setForm((f) => ({ ...f, balance: profile.balance?.toString() ?? '', valuationCpp: profile.valuationCpp?.toString() ?? '' })); setResult(null); }}>Use profile balance and valuation</button>}<div className="calculator-actions"><button className="primary-link" type="submit">Calculate value <span aria-hidden="true">→</span></button><button type="button" className="text-button" onClick={() => { setForm({ ...INITIAL, balance: profile?.balance?.toString() ?? '', valuationCpp: profile ? profile.valuationCpp?.toString() ?? '' : INITIAL.valuationCpp }); setNightly([]); setResult(null); }}>Clear inputs</button></div>
       </form>
       <aside className="calculator-results" aria-label="Calculation results">
         <p className="eyebrow">The booking economics</p><h2 id="calculator-result-title" tabIndex={-1}>Your cash-versus-points assessment</h2>

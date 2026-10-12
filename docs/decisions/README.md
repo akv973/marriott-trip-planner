@@ -19,3 +19,5 @@ ADRs record architectural direction. Acceptance of a later-stage design does not
 - [ADR-011: Separate recommendations and explicit partial fit](ADR-011-recommendation-engine.md)
 
 - [ADR-012: Ordered transient trips and selected-booking totals](ADR-012-trip-builder.md)
+
+- [ADR-013: Local Bonvoy profile](ADR-013-local-bonvoy-profile.md) — authorized Stage 7 persistence/defaults/certificate boundary.

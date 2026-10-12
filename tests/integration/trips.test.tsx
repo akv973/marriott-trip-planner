@@ -49,11 +49,11 @@ describe('Trip Builder editing and independent totals', () => {
     expect(summary()).toHaveTextContent('Total cash (EUR)€500.00'); expect(summary()).toHaveTextContent('Manual USD exchange rate');
     set('Exchange rate (USD per 1 EUR)', '1.2', first); expect(summary()).toHaveTextContent('$600.00');
   });
-  it('preserves in-memory trips across navigation without writing personal data to storage or URL', async () => {
+  it('persists trips across navigation while keeping personal data out of URLs', async () => {
     const local = vi.spyOn(Storage.prototype, 'setItem'); start(); set('Trip name', 'My trip'); set('Trip notes / planned activities', 'Private note');
     window.location.hash = '#/calculator?country=TZ'; fireEvent(window, new HashChangeEvent('hashchange')); expect(await screen.findByRole('heading', { level: 1 })).toHaveTextContent('Make your points');
     window.location.hash = '#/trips?country=TZ'; fireEvent(window, new HashChangeEvent('hashchange')); expect(await screen.findByLabelText('Trip name')).toHaveValue('My trip');
-    expect(screen.getByLabelText('Trip notes / planned activities')).toHaveValue('Private note'); expect(local).not.toHaveBeenCalled(); expect(window.location.hash).not.toContain('Private');
+    expect(screen.getByLabelText('Trip notes / planned activities')).toHaveValue('Private note'); expect(local).toHaveBeenCalled(); expect(window.location.hash).not.toContain('Private');
     expect(screen.getByRole('link', { name: 'Trip builder' })).toHaveAttribute('href', '#/trips?country=TZ');
   });
 });

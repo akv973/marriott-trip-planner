@@ -1,3 +1,4 @@
+import type { UserProfile } from '../lib/profile/profile';
 import { useEffect, useState } from 'react';
 import type { Catalog } from '../types/catalog';
 import type { ExplorerQuery } from '../lib/catalog/explorer';
@@ -31,7 +32,7 @@ function Candidate({ result, catalog, request, query, comparisonSlugs }: { resul
   </article>;
 }
 
-export function Recommendations({ catalog, asOf, query, comparisonSlugs }: { catalog: Catalog; asOf: string; query: ExplorerQuery; comparisonSlugs: string[] }) {
+export function Recommendations({ catalog, asOf, query, comparisonSlugs, profile }: { catalog: Catalog; asOf: string; query: ExplorerQuery; comparisonSlugs: string[]; profile?: UserProfile }) {
   const [input, setInput] = useState(() => initialRecommendationInput(asOf));
   const [result, setResult] = useState<ReturnType<typeof recommendProperties> | null>(null);
   const [quoteId, setQuoteId] = useState(catalog.properties[0]?.id ?? '');
@@ -46,7 +47,8 @@ export function Recommendations({ catalog, asOf, query, comparisonSlugs }: { cat
   const excluded = ready?.results.filter((r) => r.eligibility === 'excluded') ?? [];
   return <>
     <a className="back-link" href={explorerHref(query, comparisonSlugs)}>← Back to your collection</a>
-    <section className="calculator-hero"><p className="eyebrow">Your preferences · Sourced context · Visible uncertainty</p><h1 id="page-title" tabIndex={-1}>Find a fit. Understand the value.</h1><p>Start with required constraints and preferred experiences. Inspect trip fit alongside a separate booking assessment using optional quotes you enter. Entries clear on reload.</p></section>
+    <section className="calculator-hero"><p className="eyebrow">Your preferences · Sourced context · Visible uncertainty</p><h1 id="page-title" tabIndex={-1}>Find a fit. Understand the value.</h1><p>Start with required constraints and preferred experiences. Inspect trip fit alongside a separate booking assessment using optional quotes you enter. Request drafts clear on reload; your saved profile can be applied explicitly.</p></section>
+    {profile && <div className="profile-apply"><button className="text-button" onClick={() => { setInput((v) => ({ ...v, nights: profile.preferences.typicalNights ?? v.nights, preferredTags: [...profile.preferences.tripTypes], destinationId: profile.preferences.destinationIds.length === 1 ? profile.preferences.destinationIds[0]! : null, quotes: profile.preferences.typicalNights !== null && profile.preferences.typicalNights !== v.nights ? [] : v.quotes.map((q) => ({ ...q, calculator: { ...q.calculator, balance: profile.balance, valuationCpp: profile.valuationCpp } })) })); setResult(null); }}>Apply profile to request and quote assumptions</button><p>Applies trip types, typical duration, a single preferred destination and balance/valuation to existing quotes. Changed duration removes quotes. Multiple destinations remain unset; saved status and other preferences do not imply benefit or quality rules. Quote edits remain manual.</p></div>}
     <form className="calculator-form recommendation-request" noValidate aria-label="Recommendation preferences" onSubmit={(event) => { event.preventDefault(); setResult(recommendProperties(catalog, input)); }}>
       <fieldset><legend>01 · Required constraints</legend><div className="calculator-fields">
         <label className="calculator-field">Required country<select aria-label="Required country" value={input.country ?? ''} onChange={(e) => change('country', e.target.value || null)}><option value="">Any country</option>{[...new Set(catalog.properties.map((p) => p.country))].sort().map((code) => <option key={code} value={code}>{countryName(code)}</option>)}</select></label>

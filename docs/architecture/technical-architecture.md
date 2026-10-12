@@ -69,3 +69,7 @@ Stage 5 adds `#/recommendations` and pure strict request/scoring functions in `l
 ## Stage 6 trips
 
 Stage 6 adds `#/trips`, strict independent Trip/TripStay contracts and pure selected-booking totals in `lib/trips/`. Each stay delegates economics to the unchanged calculator. Unknown complete totals remain null alongside explicit known subtotals. Native currencies, manual USD conversion, weighted award redemption, whole-trip balance and chronology are inspectable. Trips and notes live in application memory across navigation and clear on reload. Stage 7 storage remains unimplemented. See ADR-012 and `trip-builder.md`. The manifest admits Stage 6 and rejects Stage 7; sourced catalog collections, earlier engines, dependencies and lockfile are unchanged.
+
+## Stage 7 local profile
+
+Stage 7 supersedes the earlier transient-only trip boundary with strict versioned local planner persistence behind a repository interface. Adds `#/profile`, manual status/balance/valuation/certificates/preferences and JSON backup/restore. Explicit inheritance flags keep trip manual overrides and unknowns distinct. Certificate planning delegates to a separate dated one-night assessment; the points/scoring engines and sourced catalog remain unchanged. The manifest admits Stage 7 and rejects Stage 8. See [local profile architecture](local-bonvoy-profile.md) and ADR-013. No elite benefit rules or authentication exist.

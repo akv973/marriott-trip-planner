@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 const fill = async (page: import('@playwright/test').Page) => {
+  await page.getByLabel('Personal value (USD cents per point)', { exact: true }).fill('0.8');
   await page.getByLabel('Nightly room rate (USD)', { exact: true }).fill('500');
   await page.getByLabel('Cash taxes, stay total (USD)', { exact: true }).fill('250');
   await page.getByLabel('Cash mandatory fees, stay total (USD)', { exact: true }).fill('100');
