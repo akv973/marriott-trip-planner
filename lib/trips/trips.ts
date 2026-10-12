@@ -59,6 +59,8 @@ export function calculateTrip(input: unknown, catalog: Catalog, asOf: string, pr
   const parsed = tripSchema.safeParse(input);
   if (!parsed.success) return { success: false as const, errors: parsed.error.issues.map((issue) => `${issue.path.join('.') || 'Trip'}: ${issue.message}`) };
   const trip = { ...parsed.data, balance: parsed.data.profileDefaults?.balance ? profile?.balance ?? null : parsed.data.balance, valuationCpp: parsed.data.profileDefaults?.valuationCpp ? profile?.valuationCpp ?? null : parsed.data.valuationCpp };
+  const resolved = tripSchema.safeParse(trip);
+  if (!resolved.success) return { success: false as const, errors: resolved.error.issues.map((i) => `Profile default ${i.path.join('.')}: ${i.message}`) };
   const certificateIds = trip.stays.filter((s) => s.bookingMethod === 'certificate' && s.certificate?.id).map((s) => s.certificate!.id);
   if (new Set(certificateIds).size !== certificateIds.length) return { success: false as const, errors: ['A certificate can be used only once within a trip.'] };
   const errors: string[] = [];
