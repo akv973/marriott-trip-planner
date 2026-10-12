@@ -1,1 +1,2608 @@
-[]
+{
+  "schemaVersion": 1,
+  "version": "bonvoy-benefits-2026-10-12",
+  "sources": [
+    {
+      "id": "benefit-source-terms",
+      "title": "Marriott Bonvoy terms, September 2026 revision",
+      "url": "https://www.marriott.com/loyalty/terms/default.mi",
+      "publisher": "Marriott International",
+      "type": "marriott-corporate",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-all-inclusive",
+      "title": "All-Inclusive by Marriott Bonvoy supplemental terms",
+      "url": "https://www.marriott.com/loyalty/terms/supplemental-terms/All-Inclusive.mi",
+      "publisher": "Marriott International",
+      "type": "marriott-corporate",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-small-properties",
+      "title": "Marriott 48-hour availability exclusions",
+      "url": "https://help.marriott.com/s/article/marriott-48-hour-guarantee",
+      "publisher": "Marriott International",
+      "type": "marriott-corporate",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-dove-mountain",
+      "title": "The Ritz-Carlton, Dove Mountain \u2014 official benefit review",
+      "url": "https://www.ritzcarlton.com/en/hotels/tusrz-the-ritz-carlton-dove-mountain/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-half-moon-bay",
+      "title": "The Ritz-Carlton, Half Moon Bay \u2014 official benefit review",
+      "url": "https://www.ritzcarlton.com/en/hotels/hafrz-the-ritz-carlton-half-moon-bay/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-lake-tahoe",
+      "title": "The Ritz-Carlton, Lake Tahoe \u2014 official benefit review",
+      "url": "https://www.ritzcarlton.com/en/hotels/rnorz-the-ritz-carlton-lake-tahoe/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-grand-cayman",
+      "title": "The Ritz-Carlton, Grand Cayman \u2014 official benefit review",
+      "url": "https://www.ritzcarlton.com/en/hotels/gcmrz-the-ritz-carlton-grand-cayman/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-st-regis-new-york",
+      "title": "The St. Regis New York \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/nycxr-the-st-regis-new-york/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-st-regis-aspen",
+      "title": "The St. Regis Aspen Resort \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/asexr-the-st-regis-aspen-resort/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-st-regis-maldives",
+      "title": "The St. Regis Maldives Vommuli Resort \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/mlexr-the-st-regis-maldives-vommuli-resort/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-st-regis-washington",
+      "title": "The St. Regis Washington, D.C. \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/wassx-the-st-regis-washington-dc/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-new-york-edition",
+      "title": "The New York EDITION \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/nyceb-the-new-york-edition/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-reykjavik-edition",
+      "title": "The Reykjavik EDITION \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/rekeb-the-reykjavik-edition/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-tokyo-edition-toranomon",
+      "title": "The Tokyo EDITION, Toranomon \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/tyoet-the-tokyo-edition-toranomon/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-miami-beach-edition",
+      "title": "The Miami Beach EDITION \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/miaeb-the-miami-beach-edition/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-gritti-palace",
+      "title": "The Gritti Palace, a Luxury Collection Hotel, Venice \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/vcegl-the-gritti-palace-a-luxury-collection-hotel-venice/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-mystique-santorini",
+      "title": "Mystique, a Luxury Collection Hotel, Santorini \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/jtrml-mystique-a-luxury-collection-hotel-santorini/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-imperial-vienna",
+      "title": "Hotel Imperial, a Luxury Collection Hotel, Vienna \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/vieil-hotel-imperial-a-luxury-collection-hotel-vienna/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-marques-de-riscal",
+      "title": "Hotel Marqu\u00e9s de Riscal, a Luxury Collection Hotel, Elciego \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/biolc-hotel-marques-de-riscal-a-luxury-collection-hotel-elciego/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-jw-sao-paulo",
+      "title": "JW Marriott Hotel Sao Paulo \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/saojw-jw-marriott-hotel-sao-paulo/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-jw-masai-mara",
+      "title": "JW Marriott Masai Mara Lodge \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/nbomj-jw-marriott-masai-mara-lodge/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-jw-nairobi",
+      "title": "JW Marriott Hotel Nairobi \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/nbojw-jw-marriott-hotel-nairobi/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-jw-tampa",
+      "title": "JW Marriott Tampa Water Street \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/tpajd-jw-marriott-tampa-water-street/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-jw-phuket",
+      "title": "JW Marriott Phuket Resort & Spa \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/hktjw-jw-marriott-phuket-resort-and-spa/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-mapito",
+      "title": "Mapito Safari Camp, Serengeti, Autograph Collection \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/jrosk-mapito-safari-camp-serengeti-autograph-collection/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-mereshi",
+      "title": "Mereshi Safari Camp Serengeti, Autograph Collection \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/lkymp-mereshi-safari-camp-serengeti-autograph-collection/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-cloudveil",
+      "title": "The Cloudveil, Autograph Collection \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/jacak-the-cloudveil-autograph-collection/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    },
+    {
+      "id": "benefit-source-elephant-weimar",
+      "title": "Hotel Elephant Weimar, Autograph Collection \u2014 official benefit review",
+      "url": "https://www.marriott.com/en-us/hotels/erfak-hotel-elephant-weimar-autograph-collection/overview/",
+      "publisher": "Marriott International",
+      "type": "marriott-property-page",
+      "accessedAt": "2026-10-12"
+    }
+  ],
+  "rules": [
+    {
+      "id": "bonus-member",
+      "category": "bonus",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "bonus-member",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "0% on base points",
+        "detail": "Qualifying paid charges only; award room rates earn no base points. This does not change the manual calculator.",
+        "amount": 0
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.a.i / b.i / c.i / d.i",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "bonus-silver",
+      "category": "bonus",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "silver"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "bonus-silver",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "10% on base points",
+        "detail": "Qualifying paid charges only; award room rates earn no base points. This does not change the manual calculator.",
+        "amount": 10
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.a.i / b.i / c.i / d.i",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "bonus-gold",
+      "category": "bonus",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "gold"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "bonus-gold",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "25% on base points",
+        "detail": "Qualifying paid charges only; award room rates earn no base points. This does not change the manual calculator.",
+        "amount": 25
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.a.i / b.i / c.i / d.i",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "bonus-platinum",
+      "category": "bonus",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "bonus-platinum",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "50% on base points",
+        "detail": "Qualifying paid charges only; award room rates earn no base points. This does not change the manual calculator.",
+        "amount": 50
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.a.i / b.i / c.i / d.i",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "bonus-titanium",
+      "category": "bonus",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "titanium"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "bonus-titanium",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "75% on base points",
+        "detail": "Qualifying paid charges only; award room rates earn no base points. This does not change the manual calculator.",
+        "amount": 75
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.a.i / b.i / c.i / d.i",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "bonus-ambassador",
+      "category": "bonus",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "bonus-ambassador",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "75% on base points",
+        "detail": "Qualifying paid charges only; award room rates earn no base points. This does not change the manual calculator.",
+        "amount": 75
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.a.i / b.i / c.i / d.i",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "breakfast-no-status",
+      "category": "breakfast",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "breakfast-no-status",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "No elite breakfast entitlement",
+        "detail": "Breakfast may be included by the booked rate or property; status alone provides none.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.b\u2013c",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "breakfast-luxury-choice",
+      "category": "breakfast",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-st-regis",
+          "brand-luxury-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "breakfast-luxury-choice",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "Breakfast as welcome choice",
+        "detail": "Select restaurant breakfast for the member and one room-sharing guest each night instead of points or an amenity.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "breakfast-ritz-edition",
+      "category": "breakfast",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-edition"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "breakfast-ritz-edition",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "No elite breakfast entitlement",
+        "detail": "The welcome gift is points; a breakfast-inclusive rate can still include meals.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "breakfast-resort-choice",
+      "category": "breakfast",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard",
+          "resort": true
+        }
+      },
+      "outcome": {
+        "code": "breakfast-resort-choice",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "Breakfast as welcome choice",
+        "detail": "Restaurant breakfast for member +1 each night is an available welcome choice at resorts.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "breakfast-city-lounge",
+      "category": "breakfast",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard",
+          "resort": false
+        }
+      },
+      "outcome": {
+        "code": "breakfast-city-lounge",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "Lounge breakfast / regional alternative",
+        "detail": "At an eligible non-resort lounge, breakfast depends on the published offering and hours. US/Canada and Europe have specified breakfast-or-750-points alternatives; confirm venue and choice.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iv",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "lounge-low-status",
+      "category": "lounge",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "lounge-low-status",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "No elite lounge entitlement",
+        "detail": "A qualifying room or paid access may offer entry.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iv",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "lounge-excluded-brands",
+      "category": "lounge",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-edition",
+          "brand-st-regis",
+          "brand-luxury-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "lounge-excluded-brands",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "No program lounge access",
+        "detail": "The program does not grant lounge entry at this brand. Physical lounge presence and paid access are separate.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iv",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "lounge-resort-excluded",
+      "category": "lounge",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard",
+          "resort": true
+        }
+      },
+      "outcome": {
+        "code": "lounge-resort-excluded",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "Resorts excluded from lounge guarantee",
+        "detail": "A property may publish a separate access offering.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iv",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "lounge-city-present",
+      "category": "lounge",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard",
+          "resort": false,
+          "lounge": true
+        }
+      },
+      "outcome": {
+        "code": "lounge-city-present",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "Elite lounge access, member +1",
+        "detail": "Entry during normal operating hours for the member and one guest in the same room.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iv",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "lounge-city-missing",
+      "category": "lounge",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard",
+          "resort": false,
+          "lounge": false
+        }
+      },
+      "outcome": {
+        "code": "lounge-city-missing",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "No physical lounge recorded",
+        "detail": "US/Canada and Europe may provide breakfast or 750 points per night under the program alternative.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iv",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "club-ritz-excluded",
+      "category": "club",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "club-ritz-excluded",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "Club access requires a qualifying booking",
+        "detail": "Elite status and a complimentary room or suite upgrade do not grant Ritz-Carlton Club access.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.b.iv / c.ii / c.iv",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "club-other-unknown",
+      "category": "club",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "club-other-unknown",
+        "state": "unknown",
+        "basis": "policy",
+        "label": "Premium club access unknown",
+        "detail": "An executive lounge entitlement does not establish access to every premium club product.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iv",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "roomupgrade-low-status",
+      "category": "roomUpgrade",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member",
+          "silver"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "roomupgrade-low-status",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "No elite upgrade entitlement",
+        "detail": "Any courtesy upgrade remains at property discretion.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.b.iv / c.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "roomupgrade-gold",
+      "category": "roomUpgrade",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "gold"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "roomupgrade-gold",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "Enhanced room, subject to availability",
+        "detail": "Gold enhanced rooms are assessed at arrival; suites are not specified as a Gold entitlement.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.b.iv",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "roomupgrade-platinum",
+      "category": "roomUpgrade",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "roomupgrade-platinum",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "Enhanced room, subject to availability",
+        "detail": "Applies to the personal room for the full stay, as available on arrival. The current terms include suites at Platinum and above; Ritz-Carlton direct Club access is excluded. No upgrade probability is assumed.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "suiteupgrade-low-status",
+      "category": "suiteUpgrade",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member",
+          "silver"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "suiteupgrade-low-status",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "No elite upgrade entitlement",
+        "detail": "Any courtesy upgrade remains at property discretion.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.b.iv / c.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "suiteupgrade-gold",
+      "category": "suiteUpgrade",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "gold"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "suiteupgrade-gold",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "No suite entitlement at Gold",
+        "detail": "Gold enhanced rooms are assessed at arrival; suites are not specified as a Gold entitlement.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.b.iv",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "suiteupgrade-platinum",
+      "category": "suiteUpgrade",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "suiteupgrade-platinum",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "Select suites, subject to availability",
+        "detail": "Applies to the personal room for the full stay, as available on arrival. The current terms include suites at Platinum and above; Ritz-Carlton direct Club access is excluded. No upgrade probability is assumed.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "late-member",
+      "category": "lateCheckout",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "late-member",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "No elite late checkout",
+        "detail": "Request any courtesy extension from the hotel.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.a\u2013c",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "late-silver",
+      "category": "lateCheckout",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "silver"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "late-silver",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "Priority late checkout request",
+        "detail": "Request on the departure morning; no specific time is guaranteed.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.a.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "late-gold",
+      "category": "lateCheckout",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "gold"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "late-gold",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "Up to 2 p.m., if available",
+        "detail": "Request on the morning of checkout.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.b.iii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "late-high-guaranteed",
+      "category": "lateCheckout",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard",
+          "resort": false,
+          "convention": false
+        }
+      },
+      "outcome": {
+        "code": "late-high-guaranteed",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "4 p.m. guaranteed under standard rules",
+        "detail": "Applies at properties confirmed to be neither a resort nor a convention hotel.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.v",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "late-high-resort",
+      "category": "lateCheckout",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard",
+          "resort": true
+        }
+      },
+      "outcome": {
+        "code": "late-high-conditional",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "Up to 4 p.m., if available",
+        "detail": "Resort and convention hotel checkout depends on availability.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.v",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "late-high-convention",
+      "category": "lateCheckout",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard",
+          "convention": true
+        }
+      },
+      "outcome": {
+        "code": "late-high-conditional",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "Up to 4 p.m., if available",
+        "detail": "Resort and convention hotel checkout depends on availability.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.v",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "welcome-low",
+      "category": "welcome",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member",
+          "silver"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "welcome-low",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "No elite welcome gift",
+        "detail": "Paid packages and courtesy amenities are separate.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.b\u2013c",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "welcome-gold",
+      "category": "welcome",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "gold"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-st-regis",
+          "brand-edition",
+          "brand-luxury-collection",
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "welcome-gold",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "500 points per stay",
+        "detail": "The Gold gift is once per stay for these six catalog brands.",
+        "amount": 500
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.b.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "welcome-ritz-edition",
+      "category": "welcome",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-ritz-carlton",
+          "brand-edition"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "welcome-ritz-edition",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "1,000 points per stay",
+        "detail": "No restaurant breakfast choice is supplied by this welcome rule.",
+        "amount": 1000
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "welcome-luxury",
+      "category": "welcome",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-st-regis",
+          "brand-luxury-collection"
+        ],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "welcome-luxury",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "1,000 points, amenity or breakfast",
+        "detail": "Choose one; breakfast covers member +1 each night, including resorts.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "welcome-jw-west-city",
+      "category": "welcome",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard",
+          "resort": false,
+          "regionGroup": "us-canada-europe"
+        }
+      },
+      "outcome": {
+        "code": "welcome-jw-west-city",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "1,000 points or $10 F&B credit per stay",
+        "detail": "US, Canada and Europe; credit is per stay, not per night.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "welcome-jw-other-city",
+      "category": "welcome",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard",
+          "resort": false,
+          "regionGroup": "other"
+        }
+      },
+      "outcome": {
+        "code": "welcome-jw-other-city",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "1,000 points or F&B amenity",
+        "detail": "Outside US, Canada and Europe; once per stay.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "welcome-jw-west-resort",
+      "category": "welcome",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard",
+          "resort": true,
+          "regionGroup": "us-canada-europe"
+        }
+      },
+      "outcome": {
+        "code": "welcome-jw-west-resort",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "1,000 points or nightly breakfast",
+        "detail": "US, Canada and Europe resorts; breakfast for member +1.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "welcome-jw-other-resort",
+      "category": "welcome",
+      "layer": "brand",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [
+          "brand-jw-marriott",
+          "brand-autograph-collection"
+        ],
+        "conditions": {
+          "scope": "standard",
+          "resort": true,
+          "regionGroup": "other"
+        }
+      },
+      "outcome": {
+        "code": "welcome-jw-other-resort",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "1,000 points, F&B amenity or breakfast",
+        "detail": "Other-region resorts; nightly breakfast for member +1.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.c.iii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "your24-low",
+      "category": "your24",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "your24-low",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "Ambassador only",
+        "detail": "Status is manually entered; account entitlement is not checked.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.e.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "your24-ambassador",
+      "category": "your24",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "your24-ambassador",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "Your24 request, subject to approval",
+        "detail": "Request through Ambassador Service by 3 p.m. hotel time two days before arrival; approval sets matching check-in and checkout times for one room.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.e.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "availability-low",
+      "category": "availability",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard"
+        }
+      },
+      "outcome": {
+        "code": "availability-low",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "Titanium / Ambassador only",
+        "detail": "This is not an award availability guarantee.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.d.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "availability-resort",
+      "category": "availability",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard",
+          "resort": true
+        }
+      },
+      "outcome": {
+        "code": "availability-resort",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "Resorts excluded",
+        "detail": "48-hour guaranteed availability is unavailable at resorts.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.d.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "availability-small",
+      "category": "availability",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "small": true
+        }
+      },
+      "outcome": {
+        "code": "availability-small",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "25 rooms or fewer excluded",
+        "detail": "Small properties are excluded even if sold out.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.d.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "availability-standard",
+      "category": "availability",
+      "layer": "status",
+      "propertyId": null,
+      "selector": {
+        "statuses": [
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {
+          "scope": "standard",
+          "resort": false,
+          "small": false
+        }
+      },
+      "outcome": {
+        "code": "availability-standard",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "48-hour paid-room guarantee with restrictions",
+        "detail": "Book a standard personal room by 3 p.m. hotel time at least 48 hours before arrival; limited-date exclusions apply. Prevailing rates and length-of-stay restrictions apply; awards and discounted/promotional rates are excluded.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-terms"
+      ],
+      "section": "\u00a74.3.d.ii",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-half-moon-bay-club",
+      "category": "club",
+      "layer": "property",
+      "propertyId": "property-half-moon-bay",
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-half-moon-bay-club",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "Club access requires a qualifying booking",
+        "detail": "The official property FAQ requires a Club booking and expressly excludes complimentary access through Bonvoy elite status.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-half-moon-bay"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-lake-tahoe-club",
+      "category": "club",
+      "layer": "property",
+      "propertyId": "property-lake-tahoe",
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-lake-tahoe-club",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "Club access requires a qualifying booking",
+        "detail": "The official property FAQ requires a Club booking and expressly excludes complimentary access through Bonvoy elite status.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-lake-tahoe"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-grand-cayman-club",
+      "category": "club",
+      "layer": "property",
+      "propertyId": "property-grand-cayman",
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-grand-cayman-club",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "Club access requires a qualifying booking",
+        "detail": "The official property FAQ requires a Club booking and expressly excludes complimentary access through Bonvoy elite status.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-grand-cayman"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-mystique-santorini-breakfast",
+      "category": "breakfast",
+      "layer": "property",
+      "propertyId": "property-mystique-santorini",
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-mystique-santorini-breakfast",
+        "state": "conditional",
+        "basis": "included",
+        "label": "Published complimentary breakfast \u2014 confirm scope",
+        "detail": "The official page advertises free breakfast. Confirm the booked plan, venue, hours and guest allowance; this is distinct from a status welcome choice.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-mystique-santorini"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-jw-sao-paulo-lounge",
+      "category": "lounge",
+      "layer": "property",
+      "propertyId": "property-jw-sao-paulo",
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-jw-sao-paulo-lounge",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "Elite lounge access, member +1",
+        "detail": "The official property page explicitly includes Platinum, Titanium and Ambassador plus one guest, during published operating hours.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-jw-sao-paulo"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-jw-sao-paulo-breakfast",
+      "category": "breakfast",
+      "layer": "property",
+      "propertyId": "property-jw-sao-paulo",
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-jw-sao-paulo-breakfast",
+        "state": "conditional",
+        "basis": "elite",
+        "label": "Breakfast in the executive lounge",
+        "detail": "The published executive lounge serves breakfast. Confirm hours and any restaurant alternative; restaurant breakfast is a separate offering.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-jw-sao-paulo"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-jw-masai-mara-breakfast",
+      "category": "breakfast",
+      "layer": "property",
+      "propertyId": "property-jw-masai-mara",
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-jw-masai-mara-breakfast",
+        "state": "included",
+        "basis": "included",
+        "label": "Breakfast in the published safari stay",
+        "detail": "Meals belong to the advertised safari package rather than an elite reward. Confirm the booked rate and meal inclusions directly.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-jw-masai-mara"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-jw-masai-mara-availability",
+      "category": "availability",
+      "layer": "property",
+      "propertyId": "property-jw-masai-mara",
+      "selector": {
+        "statuses": [
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-jw-masai-mara-availability",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "Excluded from the 48-hour guarantee",
+        "detail": "Marriott explicitly lists this property among its small-property exclusions.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-jw-masai-mara",
+        "benefit-source-small-properties"
+      ],
+      "section": "Official 48-hour guarantee property exclusion list",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-jw-nairobi-lounge",
+      "category": "lounge",
+      "layer": "property",
+      "propertyId": "property-jw-nairobi",
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-jw-nairobi-lounge",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "Elite lounge access, member +1",
+        "detail": "The official property page explicitly includes Platinum, Titanium and Ambassador plus one guest, during published operating hours.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-jw-nairobi"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-jw-nairobi-breakfast",
+      "category": "breakfast",
+      "layer": "property",
+      "propertyId": "property-jw-nairobi",
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-jw-nairobi-breakfast",
+        "state": "conditional",
+        "basis": "included",
+        "label": "Published complimentary breakfast \u2014 confirm scope",
+        "detail": "The official page advertises free breakfast. Confirm the booked plan, venue, hours and guest allowance; this is distinct from a status welcome choice.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-jw-nairobi"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-jw-tampa-lounge",
+      "category": "lounge",
+      "layer": "property",
+      "propertyId": "property-jw-tampa",
+      "selector": {
+        "statuses": [
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-jw-tampa-lounge",
+        "state": "eligible",
+        "basis": "elite",
+        "label": "Elite lounge access, member +1",
+        "detail": "The official property page explicitly includes Platinum, Titanium and Ambassador plus one guest, during published operating hours.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-jw-tampa"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-mapito-breakfast",
+      "category": "breakfast",
+      "layer": "property",
+      "propertyId": "property-mapito",
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-mapito-breakfast",
+        "state": "included",
+        "basis": "included",
+        "label": "Breakfast in the published safari stay",
+        "detail": "Meals belong to the advertised safari package rather than an elite reward. Confirm the booked rate and meal inclusions directly.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-mapito"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-mapito-availability",
+      "category": "availability",
+      "layer": "property",
+      "propertyId": "property-mapito",
+      "selector": {
+        "statuses": [
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-mapito-availability",
+        "state": "excluded",
+        "basis": "elite",
+        "label": "Excluded from the 48-hour guarantee",
+        "detail": "Marriott explicitly lists this property among its small-property exclusions.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-mapito",
+        "benefit-source-small-properties"
+      ],
+      "section": "Official 48-hour guarantee property exclusion list",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    },
+    {
+      "id": "override-mereshi-breakfast",
+      "category": "breakfast",
+      "layer": "property",
+      "propertyId": "property-mereshi",
+      "selector": {
+        "statuses": [
+          "member",
+          "silver",
+          "gold",
+          "platinum",
+          "titanium",
+          "ambassador"
+        ],
+        "brandIds": [],
+        "conditions": {}
+      },
+      "outcome": {
+        "code": "override-mereshi-breakfast",
+        "state": "conditional",
+        "basis": "included",
+        "label": "Published complimentary breakfast \u2014 confirm scope",
+        "detail": "The official page advertises free breakfast. Confirm the booked plan, venue, hours and guest allowance; this is distinct from a status welcome choice.",
+        "amount": null
+      },
+      "sourceIds": [
+        "benefit-source-mereshi"
+      ],
+      "section": "Official property overview / FAQ",
+      "verifiedAt": "2026-10-12",
+      "validFrom": null,
+      "validTo": null,
+      "conflictStatus": "none",
+      "confidence": "High"
+    }
+  ],
+  "reviews": [
+    {
+      "propertyId": "property-dove-mountain",
+      "sourceIds": [
+        "benefit-source-dove-mountain"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-half-moon-bay",
+      "sourceIds": [
+        "benefit-source-half-moon-bay"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-lake-tahoe",
+      "sourceIds": [
+        "benefit-source-lake-tahoe"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-grand-cayman",
+      "sourceIds": [
+        "benefit-source-grand-cayman"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-st-regis-new-york",
+      "sourceIds": [
+        "benefit-source-st-regis-new-york"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-st-regis-aspen",
+      "sourceIds": [
+        "benefit-source-st-regis-aspen"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-st-regis-maldives",
+      "sourceIds": [
+        "benefit-source-st-regis-maldives"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-st-regis-washington",
+      "sourceIds": [
+        "benefit-source-st-regis-washington"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-new-york-edition",
+      "sourceIds": [
+        "benefit-source-new-york-edition"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-reykjavik-edition",
+      "sourceIds": [
+        "benefit-source-reykjavik-edition"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-tokyo-edition-toranomon",
+      "sourceIds": [
+        "benefit-source-tokyo-edition-toranomon"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-miami-beach-edition",
+      "sourceIds": [
+        "benefit-source-miami-beach-edition"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-gritti-palace",
+      "sourceIds": [
+        "benefit-source-gritti-palace"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-mystique-santorini",
+      "sourceIds": [
+        "benefit-source-mystique-santorini"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-imperial-vienna",
+      "sourceIds": [
+        "benefit-source-imperial-vienna"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-marques-de-riscal",
+      "sourceIds": [
+        "benefit-source-marques-de-riscal"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-jw-sao-paulo",
+      "sourceIds": [
+        "benefit-source-jw-sao-paulo"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": true,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-jw-masai-mara",
+      "sourceIds": [
+        "benefit-source-jw-masai-mara"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": null,
+      "convention": null,
+      "lounge": null,
+      "notes": "Safari meals are published, but participation in the separate All-Inclusive by Marriott program is unconfirmed. Scope-dependent elite rules remain unknown."
+    },
+    {
+      "propertyId": "property-jw-nairobi",
+      "sourceIds": [
+        "benefit-source-jw-nairobi"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": true,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-jw-tampa",
+      "sourceIds": [
+        "benefit-source-jw-tampa"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": true,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-jw-phuket",
+      "sourceIds": [
+        "benefit-source-jw-phuket"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-mapito",
+      "sourceIds": [
+        "benefit-source-mapito"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": null,
+      "convention": null,
+      "lounge": null,
+      "notes": "Safari meals are published, but participation in the separate All-Inclusive by Marriott program is unconfirmed. Scope-dependent elite rules remain unknown."
+    },
+    {
+      "propertyId": "property-mereshi",
+      "sourceIds": [
+        "benefit-source-mereshi"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": null,
+      "convention": null,
+      "lounge": null,
+      "notes": "Safari meals are published, but participation in the separate All-Inclusive by Marriott program is unconfirmed. Scope-dependent elite rules remain unknown."
+    },
+    {
+      "propertyId": "property-cloudveil",
+      "sourceIds": [
+        "benefit-source-cloudveil"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    },
+    {
+      "propertyId": "property-elephant-weimar",
+      "sourceIds": [
+        "benefit-source-elephant-weimar"
+      ],
+      "verifiedAt": "2026-10-12",
+      "scope": "standard",
+      "convention": null,
+      "lounge": null,
+      "notes": "Official overview reviewed. No further elite exception is established by silence. Resort and convention classifications, lounge existence and operating hours are unknown unless separately sourced."
+    }
+  ],
+  "observations": [
+    {
+      "id": "observation-mapito",
+      "propertyId": "property-mapito",
+      "kind": "editorial",
+      "reviewedAt": "2026-10-12",
+      "text": "Included meals can reduce the incremental value of elite breakfast. This is planning judgment and does not predict upgrades or service treatment.",
+      "sourceIds": [
+        "benefit-source-mapito"
+      ]
+    },
+    {
+      "id": "observation-jw-masai-mara",
+      "propertyId": "property-jw-masai-mara",
+      "kind": "editorial",
+      "reviewedAt": "2026-10-12",
+      "text": "Included meals can reduce the incremental value of elite breakfast. This is planning judgment and does not predict upgrades or service treatment.",
+      "sourceIds": [
+        "benefit-source-jw-masai-mara"
+      ]
+    }
+  ]
+}

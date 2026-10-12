@@ -33,7 +33,7 @@ describe('Property comparison contract', () => {
     expect(toggleComparison(['mapito'], 'mereshi')).toEqual(['mapito', 'mereshi']);
   });
   it('keeps unsupported booking values explicit and never substitutes a zero', () => {
-    expect(UNAVAILABLE_COMPARISON_ROWS.map((row) => row.value)).toEqual(['Unavailable', 'Unavailable', 'Unavailable', 'Unknown', 'Unknown', 'Unknown', 'Unknown']);
+    expect(UNAVAILABLE_COMPARISON_ROWS.map((row) => row.value)).toEqual(['Unavailable', 'Unavailable', 'Unavailable', 'Unknown']);
   });
   it('keeps editorial unknowns, zero ratings, empty lists and stay length distinct', () => {
     const assessment = catalog.editorialAssessments[0]!;
@@ -42,11 +42,11 @@ describe('Property comparison contract', () => {
     expect(editorialComparisonValue({ ...assessment, strengths: [] }, 'strengths')).toBe('None recorded');
     expect(editorialComparisonValue({ ...assessment, recommendedStayLength: { minNights: 2, maxNights: 4 } }, 'recommendedStayLength')).toBe('2–4 nights');
   });
-  it('admits Stage 7 but rejects Stage 8 progression', () => {
+  it('admits Stage 8 but rejects Stage 9 progression', () => {
     const bundle = loadFoundation();
     expect(bundle.success).toBe(true);
     if (!bundle.success) throw new Error('Shipped bundle invalid');
-    expect(validateFoundation({ ...bundle.data, foundation: { ...bundle.data.foundation, stage: 8 } }).success).toBe(false);
+    expect(validateFoundation({ ...bundle.data, foundation: { ...bundle.data.foundation, stage: 9 } }).success).toBe(false);
   });
 });
 

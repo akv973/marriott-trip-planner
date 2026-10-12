@@ -99,3 +99,7 @@ Open `#/trips`, create a trip and add ordered hotel stays. Assign nights, select
 ## Stage 7 local profile
 
 Open `#/profile` for status, balance, personal valuation, Free Night Awards and travel preferences. New trips use the live profile balance/valuation until those fields are edited; blank overrides stay unknown. Profile and trips persist on reload. Export a private version-1 JSON backup to reconstruct the planner in another browser; import validates and previews before explicit whole-planner replacement. Save failures/invalid drafts preserve the last valid copy and show a status. Certificate planning supports one-night entries and the current 25,000-point top-off cap without inventing availability or certificate CPP. Status is stored only; effective elite benefits remain Stage 8. See [architecture](docs/architecture/local-bonvoy-profile.md), [ADR-013](docs/decisions/ADR-013-local-bonvoy-profile.md) and [Stage 7 report](docs/stages/stage-7.md).
+
+## Stage 8 — Elite Benefit Engine
+
+Sourced benefits for the existing 25 hotels, with manual saved status, separate status previews, inspectable precedence and official evidence. Unknown conditions and contradictory rules remain visible. See [architecture](docs/architecture/elite-benefit-engine.md), [property audit](docs/data-methodology/benefit-property-audit.md) and [stage report](docs/stages/stage-8.md). No catalog expansion, live pricing or account integration.

@@ -73,3 +73,7 @@ Stage 6 adds `#/trips`, strict independent Trip/TripStay contracts and pure sele
 ## Stage 7 local profile
 
 Stage 7 supersedes the earlier transient-only trip boundary with strict versioned local planner persistence behind a repository interface. Adds `#/profile`, manual status/balance/valuation/certificates/preferences and JSON backup/restore. Explicit inheritance flags keep trip manual overrides and unknowns distinct. Certificate planning delegates to a separate dated one-night assessment; the points/scoring engines and sourced catalog remain unchanged. The manifest admits Stage 7 and rejects Stage 8. See [local profile architecture](local-bonvoy-profile.md) and ADR-013. No elite benefit rules or authentication exist.
+
+## Stage 8 effective benefits
+
+Stage 8 admits the independent sourced benefit bundle and strict references, pure status/brand/property resolution and `#/benefits`. Details and comparison use saved status; transient previews do not change planner data. Missing conditions, stale rules and contradictions remain inspectable. Stage 7 saved schemas/engines and all 25 property records remain unchanged. Stage 9 is rejected. See [benefit architecture](elite-benefit-engine.md), ADR-014 and the 25-property audit.
