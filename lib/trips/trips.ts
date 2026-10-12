@@ -33,7 +33,7 @@ export const tripSchema = z.strictObject({
 });
 export type Trip = z.infer<typeof tripSchema>;
 export type TripStay = z.infer<typeof tripStaySchema>;
-export const TRIP_VERSION = 'trip-totals-1';
+export const TRIP_VERSION = 'trip-totals-2';
 export const EMPTY_PRICING: TripStay['pricing'] = {
   nights: 1, currency: 'USD', cashBasis: 'nightly', cashRoom: null, cashTaxes: null, cashFees: null,
   awardCash: null, awardBasis: 'total', awardPoints: null, nightlyPoints: [], fifthNight: 'unknown',

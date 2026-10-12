@@ -33,7 +33,7 @@ export function ExplorerApplication({ catalog, asOf }: { catalog: Catalog; asOf:
   const setWorkspace: React.Dispatch<React.SetStateAction<PlannerData['workspace']>> = (action) => changeData((current) => ({ ...current, workspace: typeof action === 'function' ? action(current.workspace) : action }));
   const replaceSaved = (next: PlannerData) => {
     const result = repository.save(next, true);
-    if (result.success) { dataRef.current = next; setData(next); }
+    dataRef.current = next; setData(next);
     setSaveState(result.success ? 'Saved in this browser.' : result.error!);
   };
   const [route, setRoute] = useState(() => parseRoute(window.location.hash));

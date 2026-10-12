@@ -12,7 +12,7 @@ Preferences include preferred/disliked brands (mutually exclusive), destinations
 
 Every user edit updates page memory and synchronously attempts one atomic planner write. Import/load validate structure, supported version, catalog references, unique trip/stay IDs, active selection and safe generated-ID sequence. Unknown numeric values remain null; confirmed zero remains zero. Invalid drafts, including nonfinite numeric state, never become JSON null through serialization. The last valid saved planner stays intact while drafts are invalid. Correct the draft to resume saving; reload restores the last valid copy. The visible save status discloses this boundary.
 
-Corrupt or unsupported stored data is retained untouched. Storage-denied/quota errors leave the page usable in memory and advise export. A repository compares the last read/written string before each save; a competing tab cannot be silently overwritten. This is conflict detection, not automatic tab synchronization. Export the page before reload or deliberately replace saved data from Profile. Import and explicit recovery call the replacement path only after successful validation. No partial import is applied.
+Corrupt or unsupported stored data is retained untouched. Storage-denied/quota errors leave the page usable in memory and advise export. A repository compares the last read/written string before each save; a competing tab cannot be silently overwritten. This is conflict detection, not automatic tab synchronization. Export the page before reload or deliberately replace saved data from Profile. Import and explicit recovery call the replacement path only after successful validation. A validated import still reconstructs in memory if browser storage denies the write, with a visible save-failure message; export remains available. No partial import is applied.
 
 No previous persisted profile schema existed. Version 1 is the first supported format; unsupported older/future envelopes fail with a useful message. No speculative migration or fallback strips fields. A later schema must add an explicit tested migration.
 
@@ -27,6 +27,8 @@ Export offers an actual JSON download plus an inspectable text copy. Import supp
 New UI trips inherit the live profile balance and valuation using two explicit flags, `profileDefaults.balance` and `.valuationCpp`. Editing either trip field disables that flag, including clearing it to an explicit manual unknown. “Use profile balance and valuation” re-enables both. Import/reload preserves these flags and numeric values; `calculateTrip` resolves the effective values without mutating stored inputs. Older valid Trip objects without flags retain their original manual values. Pure `createTrip` remains backwards compatible with the earlier editable 0.8¢ planning assumption.
 
 The standalone calculator initializes balance/valuation from the profile and retains normal editable inputs. Blank profile valuation means unknown, rather than an automatic 0.8¢ substitution. “Use profile balance and valuation” explicitly copies current values and clears stale results. Calculator and recommendation request drafts remain transient, as before; saved trips, including all their manual quotes, persist.
+
+Trip result methodology is `trip-totals-2`, reflecting the added profile-default and certificate contract. Cash/points-only arithmetic remains identical to Stage 6.
 
 ## Certificate rules and calculations
 
