@@ -1,3 +1,3 @@
-# Storage module
+# Local planner storage
 
-Reserved boundary for a later approved stage. No domain implementation exists in Stage 0.
+Stage 7 implements strict versioned planner backups and ProfileRepository/LocalStorageProfileRepository in planner.ts. See [architecture](../../docs/architecture/local-bonvoy-profile.md). No authentication/cloud persistence.

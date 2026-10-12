@@ -1,6 +1,6 @@
 # Marriott Trip Planner
 
-An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 6 — Trip Builder.** Browse the existing 25-property catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Assess manual cash/points quotes with transparent arithmetic. Generate deterministic, inspectable recommendations with separate eligibility, trip fit, booking economics and explanations. Build multi-hotel trips with manual cash/points choices, notes and inspectable complete or partial totals. Profiles and maps remain planned.
+An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 7 — Local Bonvoy Profile.** Browse the existing 25-property catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Assess manual cash/points quotes with transparent arithmetic. Generate deterministic, inspectable recommendations with separate eligibility, trip fit, booking economics and explanations. Build multi-hotel trips with manual cash/points choices, notes and inspectable complete or partial totals. Profile and trips persist locally, with certificates, preferences and versioned JSON backup/restore. Maps remain planned.
 
 ## Run locally
 
@@ -76,7 +76,7 @@ Source repository: [akv973/marriott-trip-planner](https://github.com/akv973/marr
 
 ## Stage discipline
 
-The next stage is **Stage 7 — Local Bonvoy Profile**, only after explicit approval. The unchanged Stage 1 catalog contains 25 properties across six brands and 14 countries/territories, 25 sources and 260 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
+The next stage is **Stage 8 — Elite Benefit Engine**, only after explicit approval. The unchanged Stage 1 catalog contains 25 properties across six brands and 14 countries/territories, 25 sources and 260 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
 
 Hash URLs preserve comparison selections, search, filters, and sort order through reloads and property-detail round trips. See [explorer behavior](docs/architecture/property-explorer.md) for supported filters and unknown handling.
 
@@ -86,12 +86,16 @@ No Marriott credentials, scraping, undocumented endpoints, or dynamic pricing ar
 
 Open `#/calculator`, use the navigation from a comparison, or choose “Calculate with your own rates” on a property detail. Enter comparable cash and award quotes, taxes, mandatory fees and cash still due on the award. Blank values remain unknown; explicit zero means confirmed no charge. Inspect the arithmetic, dated policy links, discount eligibility and configurable assessment thresholds. Non-USD quotes require manually entered FX for USD CPP. Rates are transient manual inputs, never catalog facts.
 
-See [calculator architecture](docs/architecture/manual-points-calculator.md) and [Stage 4 report](docs/stages/stage-4.md). Stage 4 remains preserved. No live pricing, certificates or profile persistence are introduced. Stage 6 reuses this engine for trip totals.
+See [calculator architecture](docs/architecture/manual-points-calculator.md) and [Stage 4 report](docs/stages/stage-4.md). Stage 4 remains preserved. No live pricing is introduced. Stage 6/7 reuse this unchanged points engine; Stage 7 adds an independent certificate assessment and local profile assumptions.
 
 ## Stage 5 recommendations
 
-Use `#/recommendations` for required constraints, preferred experiences, versioned configurable fit weights and optional manual property quotes. Sparse catalog ratings remain unknown; inspect components, coverage, possible score bounds and structured request/results JSON. Booking value and fit are separate. See [engine architecture](docs/architecture/recommendation-engine.md), [ADR-011](docs/decisions/ADR-011-recommendation-engine.md) and [Stage 5 report](docs/stages/stage-5.md). The recommendation engine remains unchanged in Stage 6.
+Use `#/recommendations` for required constraints, preferred experiences, versioned configurable fit weights and optional manual property quotes. Sparse catalog ratings remain unknown; inspect components, coverage, possible score bounds and structured request/results JSON. Booking value and fit are separate. See [engine architecture](docs/architecture/recommendation-engine.md), [ADR-011](docs/decisions/ADR-011-recommendation-engine.md) and [Stage 5 report](docs/stages/stage-5.md). The recommendation engine remains unchanged; Stage 7 provides explicit application of supported saved preferences and quote assumptions.
 
 ## Stage 6 trips
 
-Open `#/trips`, create a trip and add ordered hotel stays. Assign nights, select cash or points, enter manual quotes, record notes and inspect totals, partial subtotals, trip balance, chronology and structured JSON. Quotes invalidate when dates, nights, hotels, currencies or bases change. Trips/notes remain in application memory across navigation and clear on reload; balances are independent per trip. No local profile, storage/import/export, live pricing or Stage 7 implementation exists. See [Trip Builder architecture](docs/architecture/trip-builder.md), [ADR-012](docs/decisions/ADR-012-trip-builder.md) and [Stage 6 completion report](docs/stages/stage-6.md). Stage 6 is complete; stop before Stage 7.
+Open `#/trips`, create a trip and add ordered hotel stays. Assign nights, select cash or points, enter manual quotes, record notes and inspect totals, partial subtotals, trip balance, chronology and structured JSON. Quotes invalidate when dates, nights, hotels, currencies or bases change. Stage 7 persists trips/notes and manual quote inputs in this browser. Balances and certificate plans are independent per trip. No live pricing exists. See [Trip Builder architecture](docs/architecture/trip-builder.md), [ADR-012](docs/decisions/ADR-012-trip-builder.md) and [Stage 6 completion report](docs/stages/stage-6.md). Stage 6 behavior is preserved except its explicitly superseded reload boundary.
+
+## Stage 7 local profile
+
+Open `#/profile` for status, balance, personal valuation, Free Night Awards and travel preferences. New trips use the live profile balance/valuation until those fields are edited; blank overrides stay unknown. Profile and trips persist on reload. Export a private version-1 JSON backup to reconstruct the planner in another browser; import validates and previews before explicit whole-planner replacement. Save failures/invalid drafts preserve the last valid copy and show a status. Certificate planning supports one-night entries and the current 25,000-point top-off cap without inventing availability or certificate CPP. Status is stored only; effective elite benefits remain Stage 8. See [architecture](docs/architecture/local-bonvoy-profile.md), [ADR-013](docs/decisions/ADR-013-local-bonvoy-profile.md) and [Stage 7 report](docs/stages/stage-7.md).

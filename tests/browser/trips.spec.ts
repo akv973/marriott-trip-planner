@@ -44,7 +44,7 @@ test('separate trips, notes, hotel order/removal, navigation memory and reload b
   await page.getByRole('navigation').getByRole('link', { name: 'Points calculator', exact: true }).click(); await page.goBack();
   await expect(page.getByLabel('Trip name', { exact: true })).toHaveValue('Safari'); await expect(page.getByLabel('Trip notes / planned activities', { exact: true })).toHaveValue('<script>Notes stay text</script>');
   await page.getByRole('button', { name: 'Delete this trip', exact: true }).click(); await expect(page.getByLabel('Trip name', { exact: true })).toHaveValue('Desert');
-  await page.reload(); await expect(page.getByText('Your next journey starts here.', { exact: true })).toBeVisible(); await expect(page.getByLabel('Choose trip', { exact: true })).toHaveCount(0);
+  await page.reload(); await expect(page.getByLabel('Trip name', { exact: true })).toHaveValue('Desert'); await expect(page.getByLabel('Choose trip', { exact: true })).toHaveCount(1);
 });
 
 test('calculator reuse for flat and variable awards and no discount across separate hotels', async ({ page }) => {

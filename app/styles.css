@@ -451,3 +451,17 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
   .trip-stay .trip-section-heading { gap: 10px; }
   .trip-stay-result { padding: 16px; }
 }
+
+/* Stage 7: local profile and portable planner data. */
+.storage-status { padding: .7rem clamp(1rem, 4vw, 4rem); background: #f1efe9; font-size: .85rem; overflow-wrap: anywhere; }
+.profile-layout { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 2rem; padding: 0 clamp(1rem, 5vw, 5rem) 4rem; }
+.profile-layout > *, .profile-backup { min-width: 0; }
+.profile-backup { align-self: start; }
+.profile-backup textarea { width: 100%; box-sizing: border-box; font-family: monospace; font-size: .75rem; }
+.profile-backup input[type=file] { max-width: 100%; font-size: .8rem; }
+.profile-backup > .calculator-field { margin: 1.5rem 0; }
+.profile-certificate { border-top: 1px solid #d6d2c6; margin: 1.5rem 0; padding-top: 1rem; }
+.profile-preferences details { margin: 1rem 0; }
+.profile-apply { padding: 1rem clamp(1rem, 5vw, 5rem); }
+.import-preview, .certificate-choice { padding: 1rem; background: #eeece3; overflow-wrap: anywhere; }
+@media (max-width: 900px) { .profile-layout { grid-template-columns: minmax(0, 1fr); } }
