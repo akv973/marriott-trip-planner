@@ -1933,7 +1933,7 @@
     "nearestAirport": null,
     "openingYear": null,
     "renovationYear": null,
-    "roomCount": 260,
+    "roomCount": null,
     "isResort": true,
     "isDestinationProperty": null,
     "experienceTags": [

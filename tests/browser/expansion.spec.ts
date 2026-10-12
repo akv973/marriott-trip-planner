@@ -5,7 +5,7 @@ const card = (page: import('@playwright/test').Page, label: string) => page.getB
 
 test('expanded geographic filters, current sources, detail reload and editorial unknowns remain inspectable', async ({ page }, info) => {
   await page.goto('./#/explore?country=AU');
-  await expect(page.getByRole('status')).toHaveText('5 of 100 properties');
+  await expect(page.getByRole('status')).toHaveText('5 of 100 properties · filtered');
   await expect(page.locator('.property-card')).toHaveCount(5); await noOverflow(page);
   await page.screenshot({ path: info.outputPath('expansion-australia.png'), fullPage: true });
   await page.getByRole('link', { name: /View details for The Tasman/ }).click(); await page.reload();
@@ -17,9 +17,9 @@ test('expanded geographic filters, current sources, detail reload and editorial 
   await expect(fact(page, 'Opening year')).toContainText('Unknown');
   await noOverflow(page); await page.screenshot({ path: info.outputPath('expansion-tasman-details.png'), fullPage: true });
   await page.getByRole('link', { name: /Back to your collection/ }).click();
-  await expect(page.getByRole('status')).toHaveText('5 of 100 properties');
+  await expect(page.getByRole('status')).toHaveText('5 of 100 properties · filtered');
   await page.getByRole('combobox', { name: 'Country / territory' }).selectOption('PE');
-  await expect(page.getByRole('status')).toHaveText('4 of 100 properties'); await noOverflow(page);
+  await expect(page.getByRole('status')).toHaveText('4 of 100 properties · filtered'); await noOverflow(page);
 });
 
 test('new factual conflicts preserve evidence and withhold the current factual winner', async ({ page }, info) => {

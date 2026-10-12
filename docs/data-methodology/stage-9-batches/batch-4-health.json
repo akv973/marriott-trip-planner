@@ -133,14 +133,14 @@
   "totalSources": 85,
   "totalEvidenceClaims": 872,
   "confidenceCounts": {
-    "High": 616,
-    "Medium": 255,
+    "High": 615,
+    "Medium": 256,
     "Low": 0,
     "Unverified": 1
   },
   "confidencePercentages": {
-    "High": 70.64,
-    "Medium": 29.24,
+    "High": 70.53,
+    "Medium": 29.36,
     "Low": 0,
     "Unverified": 0.11
   },

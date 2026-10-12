@@ -41,14 +41,14 @@
   "officialCatalogSources": 100,
   "evidenceClaims": 1017,
   "confidenceCounts": {
-    "High": 716,
-    "Medium": 300,
+    "High": 715,
+    "Medium": 301,
     "Low": 0,
     "Unverified": 1
   },
   "confidencePercentages": {
-    "High": 70.4,
-    "Medium": 29.5,
+    "High": 70.3,
+    "Medium": 29.6,
     "Low": 0,
     "Unverified": 0.1
   },
@@ -68,7 +68,7 @@
     "nearestAirport": 3,
     "openingYear": 2,
     "renovationYear": 1,
-    "roomCount": 33,
+    "roomCount": 32,
     "isResort": 60,
     "isDestinationProperty": 0
   },
