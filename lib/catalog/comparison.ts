@@ -31,15 +31,12 @@ export const COMPARISON_FACT_GROUPS: { title: string; subjects: EvidenceSubject[
   { title: 'Sourced airport logistics', subjects: ['nearestAirport'] },
 ];
 
-// These dimensions have no admitted rates/benefit model in the Stage 3 catalog.
-// They are deliberately explicit, never inferred from the brand or setting.
+// Manual prices and fees remain unknown until entered. Stage 8 effective
+// benefit rows are resolved independently and no longer use this placeholder.
 export const UNAVAILABLE_COMPARISON_ROWS = [
   { label: 'Cash cost', value: 'Unavailable' },
   { label: 'Points cost', value: 'Unavailable' },
   { label: 'Cents per point', value: 'Unavailable' },
-  { label: 'Elite benefits', value: 'Unknown' },
-  { label: 'Elite breakfast', value: 'Unknown' },
-  { label: 'Lounge access', value: 'Unknown' },
   { label: 'Resort / destination fees', value: 'Unknown' },
 ] as const;
 

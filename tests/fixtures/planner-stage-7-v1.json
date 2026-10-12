@@ -1,0 +1,81 @@
+{
+  "appId": "marriott-trip-planner",
+  "schemaVersion": 1,
+  "exportedAt": "2026-10-12T12:00:00.000Z",
+  "data": {
+    "profile": {
+      "status": "platinum",
+      "balance": 1200000,
+      "valuationCpp": 0.8,
+      "certificates": [
+        {
+          "id": "certificate-one",
+          "label": "Saved 85k award",
+          "points": 85000,
+          "expiresOn": "2028-12-31",
+          "notes": "Stage 7 fixture"
+        }
+      ],
+      "preferences": {
+        "preferredBrands": [],
+        "dislikedBrands": [],
+        "destinationIds": [],
+        "tripTypes": [],
+        "typicalNights": null,
+        "luxuryLevel": null,
+        "cashSensitivity": null,
+        "hotelChanges": null,
+        "loungeImportance": null,
+        "suiteImportance": null
+      }
+    },
+    "workspace": {
+      "trips": [
+        {
+          "id": "trip-1",
+          "name": "Stage 7 saved trip",
+          "destination": "",
+          "travelWindow": "",
+          "travelers": null,
+          "notes": "Original saved planner",
+          "profileDefaults": {
+            "balance": true,
+            "valuationCpp": false
+          },
+          "balance": null,
+          "valuationCpp": null,
+          "stays": [
+            {
+              "id": "stay-2",
+              "propertyId": "property-jw-tampa",
+              "checkIn": null,
+              "bookingMethod": "points",
+              "reservationStatus": "idea",
+              "notes": "Keep this manual stay",
+              "observedAt": null,
+              "roomType": "",
+              "cancellation": "",
+              "pricing": {
+                "nights": 1,
+                "currency": "USD",
+                "cashBasis": "nightly",
+                "cashRoom": null,
+                "cashTaxes": null,
+                "cashFees": null,
+                "awardCash": 50,
+                "awardBasis": "total",
+                "awardPoints": 200000,
+                "nightlyPoints": [],
+                "fifthNight": "unknown",
+                "comparable": "unknown",
+                "usdPerCurrency": null
+              }
+            }
+          ]
+        }
+      ],
+      "activeId": "trip-1",
+      "sequence": 3
+    }
+  }
+}

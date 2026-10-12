@@ -33,7 +33,7 @@ describe('Property comparison UI', () => {
     expect(within(row('Room count')).getAllByRole('cell')).toHaveLength(count);
     expect(within(row('Cash cost')).getAllByText('Unavailable')).toHaveLength(count);
     expect(within(row('Cents per point')).getAllByText('Unavailable')).toHaveLength(count);
-    expect(within(row('Lounge access')).getAllByText('Unknown')).toHaveLength(count);
+    expect(within(row('Lounge access')).getAllByText('Unknown — confirmation needed')).toHaveLength(count);
     expect(screen.queryByRole('spinbutton')).not.toBeInTheDocument();
   });
   it('requires two properties and recovers after removing a comparison partner', async () => {

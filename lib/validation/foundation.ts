@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { catalogSchema } from './catalog';
+import { benefitBundleSchema, benefitReferenceErrors } from '../benefits/schema';
 import { assessCatalog } from '../catalog/health';
 
 // Benefits remain unimplemented until their separately authorized stage.
@@ -8,7 +9,7 @@ export const emptyCollectionSchema = z.array(z.never());
 export const foundationSchema = z.strictObject({
   schemaVersion: z.literal('0.1'),
   appId: z.literal('marriott-trip-planner'),
-  stage: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6), z.literal(7)]),
+  stage: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6), z.literal(7), z.literal(8)]),
   deploymentTarget: z.literal('github-pages'),
   catalogState: z.enum(['unpopulated', 'seeded']),
   modules: z.array(z.strictObject({
@@ -27,13 +28,15 @@ export const foundationBundleSchema = z.strictObject({
   properties: catalogSchema.shape.properties,
   brands: catalogSchema.shape.brands,
   destinations: catalogSchema.shape.destinations,
-  benefits: emptyCollectionSchema,
+  benefits: z.union([emptyCollectionSchema, benefitBundleSchema]),
   sources: catalogSchema.shape.sources,
   evidenceClaims: catalogSchema.shape.evidenceClaims,
   editorialAssessments: catalogSchema.shape.editorialAssessments,
 }).superRefine((bundle, ctx) => {
-  const { foundation, benefits: _benefits, ...catalog } = bundle;
-  void _benefits;
+  const { foundation, benefits, ...catalog } = bundle;
+  if (foundation.stage < 8 && !Array.isArray(benefits)) ctx.addIssue({ code: 'custom', message: 'Benefit engine requires authorized Stage 8.' });
+  if (foundation.stage === 8 && Array.isArray(benefits)) ctx.addIssue({ code: 'custom', message: 'Stage 8 requires sourced benefit rules.' });
+  if (!Array.isArray(benefits)) for (const message of benefitReferenceErrors(benefits, catalog)) ctx.addIssue({ code: 'custom', path: ['benefits'], message });
   if (foundation.stage === 0 && Object.values(catalog).some((records) => records.length > 0)) {
     ctx.addIssue({ code: 'custom', message: 'Stage 0 catalog must remain empty.' });
   }

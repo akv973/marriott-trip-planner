@@ -1,3 +1,8 @@
+import { BenefitCard } from './EliteBenefits';
+import { effectiveBenefits } from '../lib/benefits/engine';
+import { BENEFIT_LABELS } from '../lib/benefits/schema';
+import type { BenefitKey } from '../lib/benefits/schema';
+import type { UserProfile } from '../lib/profile/profile';
 import type { CSSProperties } from 'react';
 import type { Catalog, Property } from '../types/catalog';
 import type { ExplorerQuery } from '../lib/catalog/explorer';
@@ -6,8 +11,8 @@ import { displayDate, FIELD_LABELS } from '../lib/catalog/presentation';
 import { explorerHref, propertyHref } from '../lib/navigation/routes';
 import { EvidenceValue } from './EvidenceValue';
 
-export function PropertyComparison({ catalog, properties, query, asOf, onRemove, onClear }: {
-  catalog: Catalog; properties: Property[]; query: ExplorerQuery; asOf: string; onRemove: (slug: string) => void; onClear: () => void;
+export function PropertyComparison({ catalog, properties, query, asOf, onRemove, onClear, status = null }: {
+  catalog: Catalog; properties: Property[]; query: ExplorerQuery; asOf: string; onRemove: (slug: string) => void; onClear: () => void; status?: UserProfile['status'];
 }) {
   const slugs = properties.map((property) => property.slug);
   return <>
@@ -27,7 +32,8 @@ export function PropertyComparison({ catalog, properties, query, asOf, onRemove,
           {COMPARISON_FACT_GROUPS.map((group) => <tbody key={group.title}><tr className="comparison-group"><th colSpan={properties.length + 1} scope="rowgroup">{group.title}</th></tr>
             {group.subjects.map((subject) => <tr key={subject}><th scope="row">{FIELD_LABELS[subject]}</th>{properties.map((property) => <td key={property.id}><EvidenceValue catalog={catalog} property={property} subject={subject} asOf={asOf} /></td>)}</tr>)}
           </tbody>)}
-          <tbody><tr className="comparison-group"><th colSpan={properties.length + 1} scope="rowgroup">Booking costs & benefits — not yet researched</th></tr>{UNAVAILABLE_COMPARISON_ROWS.map((row) => <tr key={row.label}><th scope="row">{row.label}</th>{properties.map((property) => <td className="unknown-value" key={property.id}>{row.value}</td>)}</tr>)}</tbody>
+          <tbody><tr className="comparison-group"><th colSpan={properties.length + 1} scope="rowgroup">Manual booking costs — not yet entered</th></tr>{UNAVAILABLE_COMPARISON_ROWS.map((row) => <tr key={row.label}><th scope="row">{row.label}</th>{properties.map((property) => <td className="unknown-value" key={property.id}>{row.value}</td>)}</tr>)}</tbody>
+          <tbody className="comparison-benefits"><tr className="comparison-group"><th colSpan={properties.length + 1} scope="rowgroup">Effective benefits · {status ?? 'Status unknown'}</th></tr>{(Object.keys(BENEFIT_LABELS) as BenefitKey[]).map(category => <tr key={category}><th scope="row">{BENEFIT_LABELS[category]}</th>{properties.map(property => <td key={property.id}><BenefitCard catalog={catalog} result={effectiveBenefits(catalog, property, status, asOf).results.find(r => r.category === category)!} /></td>)}</tr>)}</tbody>
           <tbody className="comparison-editorial"><tr className="comparison-group"><th colSpan={properties.length + 1} scope="rowgroup">Editorial assessments — opinion</th></tr>
             <tr><th scope="row">Review context</th>{properties.map((property) => {
               const assessments = catalog.editorialAssessments.filter((assessment) => assessment.propertyId === property.id);
@@ -40,7 +46,7 @@ export function PropertyComparison({ catalog, properties, query, asOf, onRemove,
           </tbody>
         </table>
       </div>
-      <p className="comparison-footnote">Setting tags describe sourced activities or surroundings. They don’t guarantee amenities or hotel quality. Prices, fees, and benefits need current research; no booking value or recommendation is calculated here.</p>
+      <p className="comparison-footnote">Setting tags describe sourced activities or surroundings. They don’t guarantee amenities or hotel quality. Prices and fees remain manual; effective benefits use the saved status and sourced rules. no booking value or recommendation is calculated here.</p>
     </section>}
   </>;
 }
