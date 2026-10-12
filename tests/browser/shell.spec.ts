@@ -24,8 +24,8 @@ test('explorer loads all properties with intact assets and responsive cards', as
   const response = await page.goto('./', { waitUntil: 'networkidle' });
   expect(response?.status()).toBe(200);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Find a stay worththe journey.');
-  await expect(page.getByRole('status')).toHaveText('25 of 25 properties');
-  await expect(page.locator('.property-card')).toHaveCount(25);
+  await expect(page.getByRole('status')).toHaveText('100 of 100 properties');
+  await expect(page.locator('.property-card')).toHaveCount(100);
   await expect(page.getByText('Planned', { exact: true })).toHaveCount(0);
   await expect(page.getByText('Available', { exact: true })).toHaveCount(3);
   await noOverflow(page);
@@ -51,7 +51,7 @@ test('combined filters, sorting, detail reload, return context and browser histo
   await page.getByRole('combobox', { name: 'Experience', exact: true }).selectOption('wildlife');
   await page.getByRole('combobox', { name: 'Property type', exact: true }).selectOption('safari-camp');
   await page.getByRole('combobox', { name: 'Sort by' }).selectOption('name-desc');
-  await expect(page.getByRole('status')).toContainText('2 of 25');
+  await expect(page.getByRole('status')).toContainText('2 of 100');
   await expect(page.locator('.property-card h2').first()).toContainText('Mereshi');
   const filteredUrl = page.url();
   await page.screenshot({ path: testInfo.outputPath(`filtered-${testInfo.project.name}.png`), fullPage: true });
@@ -70,7 +70,7 @@ test('combined filters, sorting, detail reload, return context and browser histo
   await page.screenshot({ path: testInfo.outputPath(`mereshi-${testInfo.project.name}.png`), fullPage: true });
   await page.getByRole('link', { name: /Back to your collection/ }).click();
   await expect(page).toHaveURL(filteredUrl);
-  await expect(page.getByRole('status')).toContainText('2 of 25');
+  await expect(page.getByRole('status')).toContainText('2 of 100');
   await page.goBack();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('Mereshi');
   await page.goForward();
@@ -81,13 +81,13 @@ test('search, incompatible filters, removable selections and reset recover the c
   await page.goto('./');
   await page.getByRole('searchbox').fill('safari Tanzania');
   await page.getByRole('button', { name: 'Search', exact: true }).click();
-  await expect(page.getByRole('status')).toContainText('2 of 25');
+  await expect(page.getByRole('status')).toContainText('2 of 100');
   await page.getByRole('combobox', { name: 'Experience', exact: true }).selectOption('beach');
   await expect(page.getByRole('heading', { name: 'No properties match these choices.' })).toBeVisible();
   await page.getByRole('button', { name: 'Remove Experience filter' }).click();
-  await expect(page.getByRole('status')).toContainText('2 of 25');
+  await expect(page.getByRole('status')).toContainText('2 of 100');
   await page.getByRole('link', { name: 'Reset all' }).click();
-  await expect(page.getByRole('status')).toHaveText('25 of 25 properties');
+  await expect(page.getByRole('status')).toHaveText('100 of 100 properties');
   await expect(page.getByRole('searchbox')).toHaveValue('');
 });
 
@@ -97,11 +97,11 @@ test('year sorting puts unknowns last and unknown filters preserve missing facts
   await expect(page.locator('.property-card h2').nth(1)).toContainText('Hotel Imperial');
   await page.getByText('More property details', { exact: true }).click();
   await page.getByRole('combobox', { name: 'Opening year', exact: true }).selectOption('unknown');
-  await expect(page.getByRole('status')).toContainText('23 of 25');
+  await expect(page.getByRole('status')).toContainText('98 of 100');
   await page.getByRole('combobox', { name: 'Destination-property designation', exact: true }).selectOption('unknown');
-  await expect(page.getByRole('status')).toContainText('23 of 25');
+  await expect(page.getByRole('status')).toContainText('98 of 100');
   await page.reload();
-  await expect(page.getByRole('status')).toContainText('23 of 25');
+  await expect(page.getByRole('status')).toContainText('98 of 100');
   await noOverflow(page);
 });
 
@@ -127,13 +127,13 @@ test('invalid routes and unsupported filters have a clear recovery path', async 
   await page.goto('./#/properties/not-in-catalog');
   await expect(page.getByRole('heading', { name: 'Property not found.' })).toBeVisible();
   await page.getByRole('link', { name: /Return to the explorer/ }).click();
-  await expect(page.getByRole('status')).toHaveText('25 of 25 properties');
+  await expect(page.getByRole('status')).toHaveText('100 of 100 properties');
   await page.goto('./#/explore?brand=unsupported&country=unsupported&sort=quality');
   await expect(page.getByRole('heading', { name: 'No properties match these choices.' })).toBeVisible();
   await expect(page.getByRole('combobox', { name: 'Brand', exact: true })).toHaveValue('unsupported');
   await expect(page.getByRole('combobox', { name: 'Sort by' })).toHaveValue('name');
   await page.getByRole('link', { name: /View all properties/ }).click();
-  await expect(page.getByRole('status')).toHaveText('25 of 25 properties');
+  await expect(page.getByRole('status')).toHaveText('100 of 100 properties');
 });
 
 test('keyboard navigation, approach anchors and direct-fragment reloads work', async ({ page }) => {
@@ -141,7 +141,7 @@ test('keyboard navigation, approach anchors and direct-fragment reloads work', a
   await page.getByRole('searchbox').focus();
   await page.keyboard.type('Marques Riscal');
   await page.keyboard.press('Enter');
-  await expect(page.getByRole('status')).toContainText('1 of 25');
+  await expect(page.getByRole('status')).toContainText('1 of 100');
   await page.getByRole('link', { name: /View details for Hotel Marqués/ }).focus();
   await page.keyboard.press('Enter');
   await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
@@ -157,7 +157,7 @@ test('keyboard navigation, approach anchors and direct-fragment reloads work', a
 });
 
 test('every catalog property opens directly with safe optional values', async ({ page }) => {
-  test.setTimeout(90_000);
+  test.setTimeout(180_000);
   const errors: string[] = [];
   page.on('pageerror', (error) => errors.push(error.message));
   for (const property of properties) {

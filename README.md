@@ -1,6 +1,6 @@
 # Marriott Trip Planner
 
-An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 8 — Elite Benefit Engine.** Browse the existing 25-property catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Assess manual cash/points quotes with transparent arithmetic. Generate deterministic, inspectable recommendations with separate eligibility, trip fit, booking economics and explanations. Build multi-hotel trips with manual cash/points choices, notes and inspectable complete or partial totals. Profile and trips persist locally, with certificates, preferences and versioned JSON backup/restore. Effective benefits use saved status and dated official rules, with property precedence and inspectable unknowns. Maps remain planned.
+An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 9 — Catalog Expansion.** Browse the 100-property curated catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Assess manual cash/points quotes with transparent arithmetic. Generate deterministic, inspectable recommendations with separate eligibility, trip fit, booking economics and explanations. Build multi-hotel trips with manual cash/points choices, notes and inspectable complete or partial totals. Profile and trips persist locally, with certificates, preferences and versioned JSON backup/restore. Effective benefits use saved status and dated official rules, with property precedence and inspectable unknowns. Maps remain planned.
 
 ## Run locally
 
@@ -76,7 +76,7 @@ Source repository: [akv973/marriott-trip-planner](https://github.com/akv973/marr
 
 ## Stage discipline
 
-The next stage is **Stage 9 — Catalog Expansion**, only after explicit approval. The unchanged Stage 1 catalog contains 25 properties across six brands and 14 countries/territories, 25 sources and 260 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
+The next stage is **Stage 10 — Watchlist**, only after explicit approval. The catalog contains 100 properties across six brands, six regions and 34 countries/territories, with 100 official catalog sources and 1,017 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
 
 Hash URLs preserve comparison selections, search, filters, and sort order through reloads and property-detail round trips. See [explorer behavior](docs/architecture/property-explorer.md) for supported filters and unknown handling.
 
@@ -102,4 +102,8 @@ Open `#/profile` for status, balance, personal valuation, Free Night Awards and 
 
 ## Stage 8 — Elite Benefit Engine
 
-Sourced benefits for the existing 25 hotels, with manual saved status, separate status previews, inspectable precedence and official evidence. Unknown conditions and contradictory rules remain visible. See [architecture](docs/architecture/elite-benefit-engine.md), [property audit](docs/data-methodology/benefit-property-audit.md) and [stage report](docs/stages/stage-8.md). No catalog expansion, live pricing or account integration.
+Sourced benefits for the existing 25 hotels, with manual saved status, separate status previews, inspectable precedence and official evidence. Unknown conditions and contradictory rules remain visible. See [architecture](docs/architecture/elite-benefit-engine.md), [property audit](docs/data-methodology/benefit-property-audit.md) and [stage report](docs/stages/stage-8.md). Stage 9 now expands its coverage; no live pricing or account integration.
+
+## Stage 9 — Catalog Expansion
+
+75 additions in five reviewed batches, with official factual sources, separate editorial selection rationales, 100 benefit reviews and preserved conflicts. Run `npm run catalog:expansion` to verify cumulative batch health, baseline preservation and coverage. See [research audit](docs/data-methodology/catalog-expansion.md), [architecture](docs/architecture/catalog-expansion.md), [ADR-015](docs/decisions/ADR-015-reviewed-catalog-expansion.md) and [stage report](docs/stages/stage-9.md). Original IDs and version-one saved planners remain compatible. Stage 10 is unimplemented.

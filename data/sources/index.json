@@ -223,5 +223,680 @@
     "type": "marriott-property-page",
     "accessedAt": "2026-10-07",
     "notes": "Manually reviewed official overview, hotel introduction, and location section. Listing verifies identity/affiliation as observed, not current operating status or availability."
+  },
+  {
+    "id": "source-ritz-naples",
+    "title": "The Ritz-Carlton, Naples — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/rswrz-the-ritz-carlton-naples/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-amelia-island",
+    "title": "The Ritz-Carlton, Amelia Island — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/jaxam-the-ritz-carlton-amelia-island/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-sarasota",
+    "title": "The Ritz-Carlton, Sarasota — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/srqrz-the-ritz-carlton-sarasota/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-lake-oconee",
+    "title": "The Ritz-Carlton Reynolds, Lake Oconee — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/ahnrz-the-ritz-carlton-reynolds-lake-oconee/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-bachelor-gulch",
+    "title": "The Ritz-Carlton, Bachelor Gulch — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/whrrz-the-ritz-carlton-bachelor-gulch/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-laguna-niguel",
+    "title": "The Ritz-Carlton, Laguna Niguel — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/snarz-the-ritz-carlton-laguna-niguel/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-bacara",
+    "title": "The Ritz-Carlton Bacara, Santa Barbara — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/sbarz-the-ritz-carlton-bacara-santa-barbara/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-kapalua",
+    "title": "The Ritz-Carlton Maui, Kapalua — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/jhmrz-the-ritz-carlton-maui-kapalua/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-waikiki",
+    "title": "The Ritz-Carlton Residences, Waikiki Beach — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/hnlrr-the-ritz-carlton-residences-waikiki-beach/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-deer-valley",
+    "title": "The St. Regis Deer Valley — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/slcxr-the-st-regis-deer-valley/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-bal-harbour",
+    "title": "The St. Regis Bal Harbour Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/miaxr-the-st-regis-bal-harbour-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-longboat-key",
+    "title": "The St. Regis Longboat Key Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/srqls-the-st-regis-longboat-key-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-punta-mita",
+    "title": "The St. Regis Punta Mita Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/pvrxr-the-st-regis-punta-mita-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-kanai",
+    "title": "The St. Regis Kanai Resort, Riviera Maya — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/cunxr-the-st-regis-kanai-resort-riviera-maya/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-jw-marco-island",
+    "title": "JW Marriott Marco Island Beach Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/mrkfl-jw-marriott-marco-island-beach-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-venice",
+    "title": "The St. Regis Venice — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/vcexr-the-st-regis-venice/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-florence",
+    "title": "The St. Regis Florence — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/flrxr-the-st-regis-florence/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-rome",
+    "title": "The St. Regis Rome — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/romxr-the-st-regis-rome/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-mardavall",
+    "title": "The St. Regis Mardavall Mallorca Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/pmixr-the-st-regis-mardavall-mallorca-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-abama",
+    "title": "The Ritz-Carlton Tenerife, Abama — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/tfsrz-the-ritz-carlton-abama/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-penha-longa",
+    "title": "Penha Longa Resort — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/lisrz-Penha-Longa-Resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-madrid-edition",
+    "title": "The Madrid EDITION — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/madeb-the-madrid-edition/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official page explicitly calls this an urban resort; this flag is sourced, despite a city setting. Conventional hotel classification or event space does not establish convention classification."
+  },
+  {
+    "id": "source-barcelona-edition",
+    "title": "The Barcelona EDITION — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/bcneb-the-barcelona-edition/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-bodrum-edition",
+    "title": "The Bodrum EDITION — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/bjveb-the-bodrum-edition/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-santa-marina-mykonos",
+    "title": "Santa Marina, a Luxury Collection Resort, Mykonos — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/jmklc-santa-marina-a-luxury-collection-resort-mykonos/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-romanos-navarino",
+    "title": "The Romanos, a Luxury Collection Resort, Costa Navarino — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/klxlc-the-romanos-a-luxury-collection-resort-costa-navarino/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-prince-de-galles",
+    "title": "Prince de Galles, a Luxury Collection Hotel, Paris — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/parlc-prince-de-galles-a-luxury-collection-hotel-paris/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-domes-elounda",
+    "title": "Domes of Elounda, Autograph Collection — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/herak-domes-of-elounda-autograph-collection/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-domes-miramare",
+    "title": "Domes Miramare, a Luxury Collection Resort, Corfu — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/cfulc-domes-miramare-a-luxury-collection-resort-corfu/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-pine-cliffs-hotel",
+    "title": "Pine Cliffs Hotel, a Luxury Collection Resort, Algarve — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/faopl-pine-cliffs-hotel-a-luxury-collection-resort-algarve/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-kyoto",
+    "title": "The Ritz-Carlton, Kyoto — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/ukyrz-the-ritz-carlton-kyoto/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-nikko",
+    "title": "The Ritz-Carlton, Nikko — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/tyonz-the-ritz-carlton-nikko/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-bali",
+    "title": "The Ritz-Carlton, Bali — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/dpssw-the-ritz-carlton-bali/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-langkawi",
+    "title": "The Ritz-Carlton, Langkawi — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/lgkrz-the-ritz-carlton-langkawi/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-bali",
+    "title": "The St. Regis Bali Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/dpsxr-the-st-regis-bali-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-langkawi",
+    "title": "The St. Regis Langkawi — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/lgkxr-the-st-regis-langkawi/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-bangkok",
+    "title": "The St. Regis Bangkok — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/bkkxr-the-st-regis-bangkok/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-osaka",
+    "title": "The St. Regis Osaka — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/osaxr-the-st-regis-osaka/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-suiran-kyoto",
+    "title": "Suiran, a Luxury Collection Hotel, Kyoto — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/ukylc-suiran-a-luxury-collection-hotel-kyoto/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-iraph-sui",
+    "title": "IRAPH SUI, a Luxury Collection Hotel, Miyako Okinawa — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/okalc-iraph-sui-a-luxury-collection-hotel-miyako-okinawa/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-naka-island",
+    "title": "The Naka Island, a Luxury Collection Resort & Spa, Phuket — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/pyxlc-the-naka-island-a-luxury-collection-resort-and-spa-phuket/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-athenee-bangkok",
+    "title": "The Athenee Hotel, a Luxury Collection Hotel, Bangkok — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/bkkla-the-athenee-hotel-a-luxury-collection-hotel-bangkok/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-josun-palace",
+    "title": "Josun Palace, a Luxury Collection Hotel, Seoul Gangnam — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/sellc-josun-palace-a-luxury-collection-hotel-seoul-gangnam/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-tokyo-edition-ginza",
+    "title": "The Tokyo EDITION, Ginza — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/tyoeb-the-tokyo-edition-ginza/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-sanya-edition",
+    "title": "The Sanya EDITION — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/syxeb-the-sanya-edition/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-maldives",
+    "title": "The Ritz-Carlton Maldives, Fari Islands — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/mlera-the-ritz-carlton-maldives-fari-islands/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-al-maha",
+    "title": "Al Maha, a Luxury Collection Desert Resort & Spa, Dubai — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/dxbam-al-maha-a-luxury-collection-desert-resort-and-spa-dubai/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-bahrain",
+    "title": "The Ritz-Carlton, Bahrain — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/bahrz-the-ritz-carlton-bahrain/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-al-bustan",
+    "title": "Al Bustan Palace, a Ritz-Carlton Hotel — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/mctrz-al-bustan-palace-a-ritz-carlton-hotel/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Identity, location and setting reviewed. Conflicting open-and-operational advisory and July 2026 renovation/closure notice are retained as disputed operating evidence; current operating status and reopening date are unknown."
+  },
+  {
+    "id": "source-ritz-al-wadi",
+    "title": "The Ritz-Carlton Ras Al Khaimah, Al Wadi Desert — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/rktrw-the-ritz-carlton-ras-al-khaimah-al-wadi-desert/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-al-hamra",
+    "title": "The Ritz-Carlton Ras Al Khaimah, Al Hamra Beach — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/rktrz-the-ritz-carlton-ras-al-khaimah-al-hamra-beach/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-aruba",
+    "title": "The Ritz-Carlton, Aruba — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/auart-the-ritz-carlton-aruba/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-turks-caicos",
+    "title": "The Ritz-Carlton, Turks & Caicos — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/plsrt-the-ritz-carlton-turks-and-caicos/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-st-thomas",
+    "title": "The Ritz-Carlton, St. Thomas — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/sttrz-the-ritz-carlton-st-thomas/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-le-morne",
+    "title": "The St. Regis Le Morne Resort, Mauritius — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/mruxm-the-st-regis-le-morne-resort-mauritius/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-red-sea",
+    "title": "The St. Regis Red Sea Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/ejhxr-the-st-regis-red-sea-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-saadiyat",
+    "title": "The St. Regis Saadiyat Island Resort, Abu Dhabi — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/auhxr-the-st-regis-saadiyat-island-resort-abu-dhabi/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-jw-maldives",
+    "title": "JW Marriott Maldives Resort & Spa — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/mlejs-jw-marriott-maldives-resort-and-spa/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-jw-kaafu",
+    "title": "JW Marriott Maldives Kaafu Atoll Island Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/mlejm-jw-marriott-maldives-kaafu-atoll-island-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-al-wathba",
+    "title": "Al Wathba, a Luxury Collection Desert Resort & Spa, Abu Dhabi — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/auhlc-al-wathba-a-luxury-collection-desert-resort-and-spa-abu-dhabi/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-jw-gold-coast",
+    "title": "JW Marriott Gold Coast Resort & Spa — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/oolsp-jw-marriott-gold-coast-resort-and-spa/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-tasman-hobart",
+    "title": "The Tasman, a Luxury Collection Hotel, Hobart — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/hbalc-the-tasman-a-luxury-collection-hotel-hobart/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-perth",
+    "title": "The Ritz-Carlton, Perth — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/perrz-the-ritz-carlton-perth/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-melbourne",
+    "title": "The Ritz-Carlton, Melbourne — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/melrz-the-ritz-carlton-melbourne/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-pier-one-sydney",
+    "title": "Pier One Sydney Harbour, Autograph Collection — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/sydak-pier-one-sydney-harbour-autograph-collection/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-jw-rio",
+    "title": "JW Marriott Hotel Rio de Janeiro — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/riomc-jw-marriott-hotel-rio-de-janeiro/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-jw-cusco",
+    "title": "JW Marriott El Convento Cusco — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/cuzmc-jw-marriott-el-convento-cusco/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-tambo-del-inka",
+    "title": "Tambo del Inka, a Luxury Collection Resort & Spa, Valle Sagrado — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/cuztl-tambo-del-inka-a-luxury-collection-resort-and-spa-valle-sagrado/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-palacio-del-inka",
+    "title": "Palacio del Inka, a Luxury Collection Hotel, Cusco — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/cuzlc-palacio-del-inka-a-luxury-collection-hotel-cusco/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-hotel-paracas",
+    "title": "Hotel Paracas, a Luxury Collection Resort, Paracas — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/piolc-hotel-paracas-a-luxury-collection-resort-paracas/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-ritz-santiago",
+    "title": "The Ritz-Carlton, Santiago — official overview",
+    "url": "https://www.ritzcarlton.com/en/hotels/sclrz-the-ritz-carlton-santiago/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-jw-los-cabos",
+    "title": "JW Marriott Los Cabos Beach Resort & Spa — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/sjdjw-jw-marriott-los-cabos-beach-resort-and-spa/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-bermuda",
+    "title": "The St. Regis Bermuda Resort — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/bdaxr-the-st-regis-bermuda-resort/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-st-regis-chicago",
+    "title": "The St. Regis Chicago — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/chixr-the-st-regis-chicago/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
+  },
+  {
+    "id": "source-jw-venice",
+    "title": "JW Marriott Venice Resort & Spa — official overview",
+    "url": "https://www.marriott.com/en-us/hotels/vcejw-jw-marriott-venice-resort-and-spa/overview/",
+    "publisher": "Marriott International",
+    "type": "marriott-property-page",
+    "accessedAt": "2026-10-12",
+    "notes": "Official overview identity and location reviewed. Neutral experience tags reflect explicit setting/activities, not quality or inclusions. No operating status, prices, future availability or treatment probability inferred."
   }
 ]

@@ -1,0 +1,157 @@
+{
+  "stage": 9,
+  "target": 100,
+  "reviewedAt": "2026-10-12",
+  "baselineCommit": "b1d554442d6a3280df883a3b8539e323f7a20d15",
+  "baseline": {
+    "properties": {
+      "count": 25,
+      "sha256": "4a1400e68e8375b1010b5d2636b2b19a4580ff9d6a9117a5bdcc9977b8ee26a2"
+    },
+    "brands": {
+      "count": 6,
+      "sha256": "3b3c7cc82f2a13f63a142e98c769d6b7817e3417869d2efc98ac4eda69bd694a"
+    },
+    "destinations": {
+      "count": 24,
+      "sha256": "3aec9d89950721a0c609987ca77cbf47e43861a28feb3c7ece4de59280745f55"
+    },
+    "sources": {
+      "count": 25,
+      "sha256": "7a3cf0266aae3bcec2cd972244c98d297cb8f8e00a59014e6f0680547df9d72d"
+    },
+    "evidence": {
+      "count": 260,
+      "sha256": "01fb446824e5eaf6b92f002e533760803735704f71cd74dee5495a6b44b5050d"
+    },
+    "editorial": {
+      "count": 1,
+      "sha256": "bc633775739920402c0038d3a3ec97db9a692439bdd6340998ae5f405035f8ea"
+    }
+  },
+  "baselineBenefits": {
+    "sources": {
+      "count": 28,
+      "sha256": "e2856255480e1fd7491bafd5a68df43d348c0d69d0917dce3da1f902874e65a9"
+    },
+    "rules": {
+      "count": 58,
+      "sha256": "06a262cce28f3ca05b44d9e68c97597aa4c68a3a2edcbb4a494e6964bd658237"
+    },
+    "reviews": {
+      "count": 25,
+      "sha256": "d92d9e363ee8211770798fc9bbea133ea15a4044909b09ff7cb54f6392d9ee0a"
+    },
+    "observations": {
+      "count": 2,
+      "sha256": "31c410db5fa179fd5de2c4b86b65a05c4d113db55c91ed23aa154e306f091809"
+    }
+  },
+  "batches": [
+    {
+      "id": 1,
+      "reviewedAt": "2026-10-12",
+      "propertyIds": [
+        "property-ritz-naples",
+        "property-ritz-amelia-island",
+        "property-ritz-sarasota",
+        "property-ritz-lake-oconee",
+        "property-ritz-bachelor-gulch",
+        "property-ritz-laguna-niguel",
+        "property-ritz-bacara",
+        "property-ritz-kapalua",
+        "property-ritz-waikiki",
+        "property-st-regis-deer-valley",
+        "property-st-regis-bal-harbour",
+        "property-st-regis-longboat-key",
+        "property-st-regis-punta-mita",
+        "property-st-regis-kanai",
+        "property-jw-marco-island"
+      ]
+    },
+    {
+      "id": 2,
+      "reviewedAt": "2026-10-12",
+      "propertyIds": [
+        "property-st-regis-venice",
+        "property-st-regis-florence",
+        "property-st-regis-rome",
+        "property-st-regis-mardavall",
+        "property-ritz-abama",
+        "property-penha-longa",
+        "property-madrid-edition",
+        "property-barcelona-edition",
+        "property-bodrum-edition",
+        "property-santa-marina-mykonos",
+        "property-romanos-navarino",
+        "property-prince-de-galles",
+        "property-domes-elounda",
+        "property-domes-miramare",
+        "property-pine-cliffs-hotel"
+      ]
+    },
+    {
+      "id": 3,
+      "reviewedAt": "2026-10-12",
+      "propertyIds": [
+        "property-ritz-kyoto",
+        "property-ritz-nikko",
+        "property-ritz-bali",
+        "property-ritz-langkawi",
+        "property-st-regis-bali",
+        "property-st-regis-langkawi",
+        "property-st-regis-bangkok",
+        "property-st-regis-osaka",
+        "property-suiran-kyoto",
+        "property-iraph-sui",
+        "property-naka-island",
+        "property-athenee-bangkok",
+        "property-josun-palace",
+        "property-tokyo-edition-ginza",
+        "property-sanya-edition"
+      ]
+    },
+    {
+      "id": 4,
+      "reviewedAt": "2026-10-12",
+      "propertyIds": [
+        "property-ritz-maldives",
+        "property-al-maha",
+        "property-ritz-bahrain",
+        "property-al-bustan",
+        "property-ritz-al-wadi",
+        "property-ritz-al-hamra",
+        "property-ritz-aruba",
+        "property-ritz-turks-caicos",
+        "property-ritz-st-thomas",
+        "property-st-regis-le-morne",
+        "property-st-regis-red-sea",
+        "property-st-regis-saadiyat",
+        "property-jw-maldives",
+        "property-jw-kaafu",
+        "property-al-wathba"
+      ]
+    },
+    {
+      "id": 5,
+      "reviewedAt": "2026-10-12",
+      "propertyIds": [
+        "property-jw-gold-coast",
+        "property-tasman-hobart",
+        "property-ritz-perth",
+        "property-ritz-melbourne",
+        "property-pier-one-sydney",
+        "property-jw-rio",
+        "property-jw-cusco",
+        "property-tambo-del-inka",
+        "property-palacio-del-inka",
+        "property-hotel-paracas",
+        "property-ritz-santiago",
+        "property-jw-los-cabos",
+        "property-st-regis-bermuda",
+        "property-st-regis-chicago",
+        "property-jw-venice"
+      ]
+    }
+  ]
+}

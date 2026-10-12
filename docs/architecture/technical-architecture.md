@@ -77,3 +77,7 @@ Stage 7 supersedes the earlier transient-only trip boundary with strict versione
 ## Stage 8 effective benefits
 
 Stage 8 admits the independent sourced benefit bundle and strict references, pure status/brand/property resolution and `#/benefits`. Details and comparison use saved status; transient previews do not change planner data. Missing conditions, stale rules and contradictions remain inspectable. Stage 7 saved schemas/engines and all 25 property records remain unchanged. Stage 9 is rejected. See [benefit architecture](elite-benefit-engine.md), ADR-014 and the 25-property audit.
+
+## Stage 9 curated expansion
+
+Stage 9 appends 75 reviewed properties in five batches to the existing models and benefit bundle, with no changes to earlier business engines or saved-planner contracts. Static expansion audit joins schema gates; baseline hashes, explicit conflict inventories and full-catalog browser checks prevent silent regressions. The manifest admits Stage 9 and rejects Stage 10. See [expansion architecture](catalog-expansion.md) and ADR-015.

@@ -23,5 +23,1880 @@
     "rationale": "Editorial desk review based on the sourced setting and activities. No firsthand stay evaluation, quality rating, elite-benefit assessment, or hotel ranking is asserted.",
     "reviewedAt": "2026-10-07",
     "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-naples-desk-review",
+    "propertyId": "property-ritz-naples",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Naples planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Naples. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-amelia-island-desk-review",
+    "propertyId": "property-ritz-amelia-island",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Amelia Island planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Amelia Island. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-sarasota-desk-review",
+    "propertyId": "property-ritz-sarasota",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, golf, spa, culture experiences"
+    ],
+    "strengths": [
+      "Adds a Sarasota planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, golf, spa, culture experiences in Sarasota. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-lake-oconee-desk-review",
+    "propertyId": "property-ritz-lake-oconee",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in golf experiences"
+    ],
+    "strengths": [
+      "Adds a Greensboro planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering golf experiences in Greensboro. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-bachelor-gulch-desk-review",
+    "propertyId": "property-ritz-bachelor-gulch",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in mountain, ski, adventure experiences"
+    ],
+    "strengths": [
+      "Adds a Avon planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering mountain, ski, adventure experiences in Avon. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-laguna-niguel-desk-review",
+    "propertyId": "property-ritz-laguna-niguel",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Dana Point planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Dana Point. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-bacara-desk-review",
+    "propertyId": "property-ritz-bacara",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Santa Barbara planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa experiences in Santa Barbara. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-kapalua-desk-review",
+    "propertyId": "property-ritz-kapalua",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Kapalua planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Kapalua. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-waikiki-desk-review",
+    "propertyId": "property-ritz-waikiki",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Waikiki Beach planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Waikiki Beach. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-deer-valley-desk-review",
+    "propertyId": "property-st-regis-deer-valley",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in mountain, ski, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Park City planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering mountain, ski, spa experiences in Park City. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-bal-harbour-desk-review",
+    "propertyId": "property-st-regis-bal-harbour",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Bal Harbour - Miami Beach planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa experiences in Bal Harbour - Miami Beach. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-longboat-key-desk-review",
+    "propertyId": "property-st-regis-longboat-key",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Longboat Key planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa experiences in Longboat Key. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-punta-mita-desk-review",
+    "propertyId": "property-st-regis-punta-mita",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, culture experiences"
+    ],
+    "strengths": [
+      "Adds a Punta de Mita planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, culture experiences in Punta de Mita. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-kanai-desk-review",
+    "propertyId": "property-st-regis-kanai",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Solidaridad, Playa Del Carmen planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa experiences in Solidaridad, Playa Del Carmen. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-jw-marco-island-desk-review",
+    "propertyId": "property-jw-marco-island",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, golf, spa, family experiences"
+    ],
+    "strengths": [
+      "Adds a Marco Island planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, golf, spa, family experiences in Marco Island. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-venice-desk-review",
+    "propertyId": "property-st-regis-venice",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Venice planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, spa experiences in Venice. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-florence-desk-review",
+    "propertyId": "property-st-regis-florence",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, food, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Florence planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, food, spa experiences in Florence. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-rome-desk-review",
+    "propertyId": "property-st-regis-rome",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture experiences"
+    ],
+    "strengths": [
+      "Adds a Rome planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture experiences in Rome. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-mardavall-desk-review",
+    "propertyId": "property-st-regis-mardavall",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in spa, golf, food experiences"
+    ],
+    "strengths": [
+      "Adds a Palma de Mallorca planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering spa, golf, food experiences in Palma de Mallorca. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-abama-desk-review",
+    "propertyId": "property-ritz-abama",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa, food, family experiences"
+    ],
+    "strengths": [
+      "Adds a Tenerife planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa, food, family experiences in Tenerife. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-penha-longa-desk-review",
+    "propertyId": "property-penha-longa",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in golf, spa, food, family experiences"
+    ],
+    "strengths": [
+      "Adds a Sintra planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering golf, spa, food, family experiences in Sintra. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-madrid-edition-desk-review",
+    "propertyId": "property-madrid-edition",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, spa, food experiences"
+    ],
+    "strengths": [
+      "Adds a Madrid planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, spa, food experiences in Madrid. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-barcelona-edition-desk-review",
+    "propertyId": "property-barcelona-edition",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture experiences"
+    ],
+    "strengths": [
+      "Adds a Barcelona planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture experiences in Barcelona. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-bodrum-edition-desk-review",
+    "propertyId": "property-bodrum-edition",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Bodrum planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa experiences in Bodrum. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-santa-marina-mykonos-desk-review",
+    "propertyId": "property-santa-marina-mykonos",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Mykonos planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Mykonos. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-romanos-navarino-desk-review",
+    "propertyId": "property-romanos-navarino",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, golf, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Costa Navarino planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, golf, spa experiences in Costa Navarino. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-prince-de-galles-desk-review",
+    "propertyId": "property-prince-de-galles",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, food experiences"
+    ],
+    "strengths": [
+      "Adds a Paris planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, food experiences in Paris. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-domes-elounda-desk-review",
+    "propertyId": "property-domes-elounda",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa, culture, family experiences"
+    ],
+    "strengths": [
+      "Adds a Elounda - Crete planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa, culture, family experiences in Elounda - Crete. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-domes-miramare-desk-review",
+    "propertyId": "property-domes-miramare",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Corfu planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Corfu. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-pine-cliffs-hotel-desk-review",
+    "propertyId": "property-pine-cliffs-hotel",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, golf, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Albufeira planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, golf, spa experiences in Albufeira. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-kyoto-desk-review",
+    "propertyId": "property-ritz-kyoto",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, food, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Kyoto planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, food, spa experiences in Kyoto. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-nikko-desk-review",
+    "propertyId": "property-ritz-nikko",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in mountain, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Nikko planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering mountain, spa experiences in Nikko. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-bali-desk-review",
+    "propertyId": "property-ritz-bali",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa, family experiences"
+    ],
+    "strengths": [
+      "Adds a Nusa Dua planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa, family experiences in Nusa Dua. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-langkawi-desk-review",
+    "propertyId": "property-ritz-langkawi",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Langkawi planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Langkawi. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-bali-desk-review",
+    "propertyId": "property-st-regis-bali",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, culture, food experiences"
+    ],
+    "strengths": [
+      "Adds a Nusa Dua planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, culture, food experiences in Nusa Dua. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-langkawi-desk-review",
+    "propertyId": "property-st-regis-langkawi",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Langkawi planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa experiences in Langkawi. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-bangkok-desk-review",
+    "propertyId": "property-st-regis-bangkok",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, food experiences"
+    ],
+    "strengths": [
+      "Adds a Bangkok planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, food experiences in Bangkok. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-osaka-desk-review",
+    "propertyId": "property-st-regis-osaka",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture experiences"
+    ],
+    "strengths": [
+      "Adds a Osaka planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture experiences in Osaka. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-suiran-kyoto-desk-review",
+    "propertyId": "property-suiran-kyoto",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in culture, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Kyoto planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering culture, spa experiences in Kyoto. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-iraph-sui-desk-review",
+    "propertyId": "property-iraph-sui",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Miyakojima-city planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa experiences in Miyakojima-city. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-naka-island-desk-review",
+    "propertyId": "property-naka-island",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Phuket planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa experiences in Phuket. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-athenee-bangkok-desk-review",
+    "propertyId": "property-athenee-bangkok",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, food, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Bangkok planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, food, spa experiences in Bangkok. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-josun-palace-desk-review",
+    "propertyId": "property-josun-palace",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city experiences"
+    ],
+    "strengths": [
+      "Adds a Seoul planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city experiences in Seoul. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-tokyo-edition-ginza-desk-review",
+    "propertyId": "property-tokyo-edition-ginza",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture experiences"
+    ],
+    "strengths": [
+      "Adds a Tokyo planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture experiences in Tokyo. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-sanya-edition-desk-review",
+    "propertyId": "property-sanya-edition",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Sanya planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Sanya. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-maldives-desk-review",
+    "propertyId": "property-ritz-maldives",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, family experiences"
+    ],
+    "strengths": [
+      "Adds a Male planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, family experiences in Male. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-al-maha-desk-review",
+    "propertyId": "property-al-maha",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in desert, wildlife, adventure experiences"
+    ],
+    "strengths": [
+      "Adds a Dubai planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering desert, wildlife, adventure experiences in Dubai. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-bahrain-desk-review",
+    "propertyId": "property-ritz-bahrain",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Manama planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Manama. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-al-bustan-desk-review",
+    "propertyId": "property-al-bustan",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Muscat planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Muscat. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-al-wadi-desk-review",
+    "propertyId": "property-ritz-al-wadi",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in desert, wildlife experiences"
+    ],
+    "strengths": [
+      "Adds a Ras Al Khaimah planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering desert, wildlife experiences in Ras Al Khaimah. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-al-hamra-desk-review",
+    "propertyId": "property-ritz-al-hamra",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Ras Al Khaimah planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Ras Al Khaimah. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-aruba-desk-review",
+    "propertyId": "property-ritz-aruba",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa, family experiences"
+    ],
+    "strengths": [
+      "Adds a Palm Beach planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa, family experiences in Palm Beach. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-turks-caicos-desk-review",
+    "propertyId": "property-ritz-turks-caicos",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Providenciales planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Providenciales. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-st-thomas-desk-review",
+    "propertyId": "property-ritz-st-thomas",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a St. Thomas planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in St. Thomas. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-le-morne-desk-review",
+    "propertyId": "property-st-regis-le-morne",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach experiences"
+    ],
+    "strengths": [
+      "Adds a Le Morne planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach experiences in Le Morne. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-red-sea-desk-review",
+    "propertyId": "property-st-regis-red-sea",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Red Sea planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa experiences in Red Sea. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-saadiyat-desk-review",
+    "propertyId": "property-st-regis-saadiyat",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, golf, wildlife experiences"
+    ],
+    "strengths": [
+      "Adds a Abu Dhabi planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, golf, wildlife experiences in Abu Dhabi. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-jw-maldives-desk-review",
+    "propertyId": "property-jw-maldives",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa, family experiences"
+    ],
+    "strengths": [
+      "Adds a Shaviyani Atoll planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa, family experiences in Shaviyani Atoll. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-jw-kaafu-desk-review",
+    "propertyId": "property-jw-kaafu",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Kaafu Atoll planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa experiences in Kaafu Atoll. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-al-wathba-desk-review",
+    "propertyId": "property-al-wathba",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in desert, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Abu Dhabi planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering desert, spa experiences in Abu Dhabi. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-jw-gold-coast-desk-review",
+    "propertyId": "property-jw-gold-coast",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa, family experiences"
+    ],
+    "strengths": [
+      "Adds a Surfers Paradise planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa, family experiences in Surfers Paradise. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-tasman-hobart-desk-review",
+    "propertyId": "property-tasman-hobart",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, food experiences"
+    ],
+    "strengths": [
+      "Adds a Hobart planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, food experiences in Hobart. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-perth-desk-review",
+    "propertyId": "property-ritz-perth",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, food, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Perth planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, food, spa experiences in Perth. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-melbourne-desk-review",
+    "propertyId": "property-ritz-melbourne",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, food, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Melbourne planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, food, spa experiences in Melbourne. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-pier-one-sydney-desk-review",
+    "propertyId": "property-pier-one-sydney",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, food experiences"
+    ],
+    "strengths": [
+      "Adds a Sydney planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, food experiences in Sydney. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-jw-rio-desk-review",
+    "propertyId": "property-jw-rio",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, city experiences"
+    ],
+    "strengths": [
+      "Adds a Rio de Janeiro planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, city experiences in Rio de Janeiro. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-jw-cusco-desk-review",
+    "propertyId": "property-jw-cusco",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Cusco planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, spa experiences in Cusco. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-tambo-del-inka-desk-review",
+    "propertyId": "property-tambo-del-inka",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in mountain, culture, spa, adventure experiences"
+    ],
+    "strengths": [
+      "Adds a Urubamba planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering mountain, culture, spa, adventure experiences in Urubamba. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-palacio-del-inka-desk-review",
+    "propertyId": "property-palacio-del-inka",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, culture, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Cusco planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, culture, spa experiences in Cusco. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-hotel-paracas-desk-review",
+    "propertyId": "property-hotel-paracas",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa, adventure experiences"
+    ],
+    "strengths": [
+      "Adds a Paracas planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa, adventure experiences in Paracas. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-ritz-santiago-desk-review",
+    "propertyId": "property-ritz-santiago",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, spa, food experiences"
+    ],
+    "strengths": [
+      "Adds a Santiago planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, spa, food experiences in Santiago. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-jw-los-cabos-desk-review",
+    "propertyId": "property-jw-los-cabos",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, golf, spa experiences"
+    ],
+    "strengths": [
+      "Adds a San Jose del Cabo planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, golf, spa experiences in San Jose del Cabo. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-bermuda-desk-review",
+    "propertyId": "property-st-regis-bermuda",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in beach, spa, family experiences"
+    ],
+    "strengths": [
+      "Adds a St. George planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering beach, spa, family experiences in St. George. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-st-regis-chicago-desk-review",
+    "propertyId": "property-st-regis-chicago",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in city, food, spa experiences"
+    ],
+    "strengths": [
+      "Adds a Chicago planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering city, food, spa experiences in Chicago. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
+  },
+  {
+    "id": "editorial-jw-venice-desk-review",
+    "propertyId": "property-jw-venice",
+    "kind": "editorial",
+    "author": "Planner maintainer",
+    "hardwareQuality": null,
+    "serviceQuality": null,
+    "locationQuality": null,
+    "uniqueness": null,
+    "destinationWorthiness": null,
+    "eliteValuePotential": null,
+    "recommendedStayLength": null,
+    "idealTraveler": [
+      "Traveler interested in spa, food, family experiences"
+    ],
+    "strengths": [
+      "Adds a Venice planning option for the recorded experiences"
+    ],
+    "weaknesses": [
+      "Room condition, service consistency and upgrade outcomes have not been assessed"
+    ],
+    "rationale": "Selected for travelers considering spa, food, family experiences in Venice. This is a planning desk review of the sourced setting, not a firsthand evaluation or ranked hotel recommendation.",
+    "reviewedAt": "2026-10-12",
+    "methodologyVersion": "desk-review-1"
   }
 ]

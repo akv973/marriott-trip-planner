@@ -23,10 +23,10 @@ function cityFixture() {
 }
 
 describe('Sourced benefit contracts', () => {
-  it('validates all rules, official sources and exactly 25 property reviews without catalog growth', () => {
+  it('validates all rules, official sources and all 100 property reviews with sourced expansion', () => {
     expect(benefitBundleSchema.safeParse(benefits).success).toBe(true);
     expect(benefitReferenceErrors(benefits, catalog)).toEqual([]);
-    expect(benefits.reviews).toHaveLength(25); expect(catalog.properties).toHaveLength(25);
+    expect(benefits.reviews).toHaveLength(100); expect(catalog.properties).toHaveLength(100);
     expect(loadFoundation().success).toBe(true);
   });
   it('rejects malformed outcome, wrong layer, invalid dates and extra fields', () => {
@@ -51,7 +51,7 @@ describe('Status and brand entitlement matrix', () => {
       const a = effectiveBenefits(catalog, p, status, asOf); const b = effectiveBenefits(catalog, p, status, asOf);
       expect(a).toEqual(b); expect(a.results).toHaveLength(10);
       expect(a.results.find(r => r.category === 'bonus')!.outcome.amount).toBe([0,10,25,50,75,75][STATUSES.indexOf(status)]);
-      expect(a.results.filter(r => r.conflict)).toEqual([]);
+      expect(a.results.filter(r => r.conflict).map(r => r.category)).toEqual(p.slug === 'athenee-bangkok' && ['platinum','titanium','ambassador'].includes(status) ? ['lounge'] : []);
     }
     expect(JSON.stringify({ catalog, benefits })).toBe(before);
   });

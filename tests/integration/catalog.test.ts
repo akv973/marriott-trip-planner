@@ -7,18 +7,18 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { AS_OF, fixtureCatalog } from '../fixtures/catalog';
 
-describe('Shipped Stage 1 catalog ingestion', () => {
+describe('Shipped expanded catalog ingestion', () => {
   it('loads all six entity collections with verified baseline coverage', () => {
-    const result = loadCatalog('2026-10-07');
+    const result = loadCatalog('2026-10-12');
     expect(result.success).toBe(true);
     if (!result.success) throw new Error('Shipped catalog must validate.');
-    expect(result.data.properties).toHaveLength(25);
+    expect(result.data.properties).toHaveLength(100);
     expect(result.data.brands).toHaveLength(6);
-    expect(new Set(result.data.properties.map((property) => property.country)).size).toBe(14);
+    expect(new Set(result.data.properties.map((property) => property.country)).size).toBe(34);
     expect(result.data.editorialAssessments[0]?.kind).toBe('editorial');
     expect(result.health).toMatchObject({ schemaErrors: 0, orphanedReferences: 0, duplicateIds: 0, duplicateSlugs: 0,
-      missingCriticalEvidence: 0, conflictingSubjects: 0, incompleteRecords: 25, missingCoordinates: 25,
-      totalSources: 25, totalEvidenceClaims: 260, confidenceCounts: { High: 185, Medium: 75, Low: 0, Unverified: 0 } });
+      missingCriticalEvidence: 0, conflictingSubjects: 2, incompleteRecords: 100, missingCoordinates: 100,
+      totalSources: 100, totalEvidenceClaims: 1017 });
     expect(result.health.staleEvidence).toEqual([]);
   });
   it('keeps optional omissions safe throughout loading and health reporting', () => {
@@ -28,12 +28,12 @@ describe('Shipped Stage 1 catalog ingestion', () => {
       delete (property as Partial<typeof property>).longitude;
       delete (property as Partial<typeof property>).openingYear;
     }
-    expect(assessCatalog(catalog, '2026-10-07').success).toBe(true);
+    expect(assessCatalog(catalog, '2026-10-12').success).toBe(true);
   });
   it('reports affiliation staleness over time without mutating original data', () => {
     const result = loadCatalog('2027-05-01');
     expect(result.success).toBe(true);
-    expect(result.health.staleEvidence).toHaveLength(25);
+    expect(result.health.staleEvidence).toHaveLength(101);
     expect(rawCatalog.evidenceClaims[0]?.lastVerifiedAt).toBe('2026-10-07');
   });
   it('runs the CLI against external data and exits nonzero on structural errors', () => {

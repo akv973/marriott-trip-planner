@@ -34,7 +34,7 @@ PRs and merge-queue checks do not deploy. No personal access token or deploy key
 - Record the full main commit SHA and exact Actions run URL.
 - Verify **Required checks**, **Deploy GitHub Pages**, and **Live browser QA** succeeded for that SHA.
 - Record the literal Pages URL returned by the deployment, not an assumed future URL.
-- Open the live explorer at its repository base path. Confirm CSS/JS load, all 25 properties render, combined filters and sorting work, detail URLs reload, sources and unknowns remain visible, and mobile/desktop layouts behave correctly.
+- Open the live explorer at its repository base path. Confirm CSS/JS load, all 100 properties render, combined filters and sorting work, detail URLs reload, sources and unknowns remain visible, and mobile/desktop layouts behave correctly.
 - Confirm there are no failed external requests or invented hotel/rate values.
 
 Compare the live HTML and bundled asset bytes with the artifact built for the recorded commit. The dependent deployment job supplies the workflow-to-commit connection; matching bytes corroborate the live output. The app does not display an embedded commit identifier.

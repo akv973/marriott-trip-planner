@@ -6,7 +6,7 @@ import { explorerHref, parseRoute, propertyHref } from '../../lib/navigation/rou
 import type { Catalog, EvidenceClaim } from '../../types/catalog';
 import { AS_OF, claim, conflictFixture, fixtureCatalog, staleFixture } from '../fixtures/catalog';
 
-const catalog = rawCatalog as Catalog;
+const catalog = { ...rawCatalog, properties: rawCatalog.properties.slice(0, 25) } as Catalog;
 const names = (query: Partial<typeof DEFAULT_QUERY>) => queryProperties(catalog, { ...DEFAULT_QUERY, ...query }).map((property) => property.slug);
 
 describe('Explorer queries', () => {

@@ -263,5 +263,645 @@
     "sourceIds": [
       "source-elephant-weimar"
     ]
+  },
+  {
+    "id": "destination-naples-us",
+    "slug": "naples-us",
+    "name": "Naples",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-naples"
+    ]
+  },
+  {
+    "id": "destination-amelia-island-us",
+    "slug": "amelia-island-us",
+    "name": "Amelia Island",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-amelia-island"
+    ]
+  },
+  {
+    "id": "destination-sarasota-us",
+    "slug": "sarasota-us",
+    "name": "Sarasota",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-sarasota"
+    ]
+  },
+  {
+    "id": "destination-greensboro-us",
+    "slug": "greensboro-us",
+    "name": "Greensboro",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-lake-oconee"
+    ]
+  },
+  {
+    "id": "destination-avon-us",
+    "slug": "avon-us",
+    "name": "Avon",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-bachelor-gulch"
+    ]
+  },
+  {
+    "id": "destination-dana-point-us",
+    "slug": "dana-point-us",
+    "name": "Dana Point",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-laguna-niguel"
+    ]
+  },
+  {
+    "id": "destination-santa-barbara-us",
+    "slug": "santa-barbara-us",
+    "name": "Santa Barbara",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-bacara"
+    ]
+  },
+  {
+    "id": "destination-kapalua-us",
+    "slug": "kapalua-us",
+    "name": "Kapalua",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-kapalua"
+    ]
+  },
+  {
+    "id": "destination-waikiki-beach-us",
+    "slug": "waikiki-beach-us",
+    "name": "Waikiki Beach",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-waikiki"
+    ]
+  },
+  {
+    "id": "destination-park-city-us",
+    "slug": "park-city-us",
+    "name": "Park City",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-st-regis-deer-valley"
+    ]
+  },
+  {
+    "id": "destination-bal-harbour-miami-beach-us",
+    "slug": "bal-harbour-miami-beach-us",
+    "name": "Bal Harbour - Miami Beach",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-st-regis-bal-harbour"
+    ]
+  },
+  {
+    "id": "destination-longboat-key-us",
+    "slug": "longboat-key-us",
+    "name": "Longboat Key",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-st-regis-longboat-key"
+    ]
+  },
+  {
+    "id": "destination-punta-de-mita-mx",
+    "slug": "punta-de-mita-mx",
+    "name": "Punta de Mita",
+    "country": "MX",
+    "region": "North America",
+    "sourceIds": [
+      "source-st-regis-punta-mita"
+    ]
+  },
+  {
+    "id": "destination-solidaridad-playa-del-carmen-mx",
+    "slug": "solidaridad-playa-del-carmen-mx",
+    "name": "Solidaridad, Playa Del Carmen",
+    "country": "MX",
+    "region": "North America",
+    "sourceIds": [
+      "source-st-regis-kanai"
+    ]
+  },
+  {
+    "id": "destination-marco-island-us",
+    "slug": "marco-island-us",
+    "name": "Marco Island",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-jw-marco-island"
+    ]
+  },
+  {
+    "id": "destination-florence-it",
+    "slug": "florence-it",
+    "name": "Florence",
+    "country": "IT",
+    "region": "Europe",
+    "sourceIds": [
+      "source-st-regis-florence"
+    ]
+  },
+  {
+    "id": "destination-rome-it",
+    "slug": "rome-it",
+    "name": "Rome",
+    "country": "IT",
+    "region": "Europe",
+    "sourceIds": [
+      "source-st-regis-rome"
+    ]
+  },
+  {
+    "id": "destination-palma-de-mallorca-es",
+    "slug": "palma-de-mallorca-es",
+    "name": "Palma de Mallorca",
+    "country": "ES",
+    "region": "Europe",
+    "sourceIds": [
+      "source-st-regis-mardavall"
+    ]
+  },
+  {
+    "id": "destination-tenerife-es",
+    "slug": "tenerife-es",
+    "name": "Tenerife",
+    "country": "ES",
+    "region": "Europe",
+    "sourceIds": [
+      "source-ritz-abama"
+    ]
+  },
+  {
+    "id": "destination-sintra-pt",
+    "slug": "sintra-pt",
+    "name": "Sintra",
+    "country": "PT",
+    "region": "Europe",
+    "sourceIds": [
+      "source-penha-longa"
+    ]
+  },
+  {
+    "id": "destination-madrid-es",
+    "slug": "madrid-es",
+    "name": "Madrid",
+    "country": "ES",
+    "region": "Europe",
+    "sourceIds": [
+      "source-madrid-edition"
+    ]
+  },
+  {
+    "id": "destination-barcelona-es",
+    "slug": "barcelona-es",
+    "name": "Barcelona",
+    "country": "ES",
+    "region": "Europe",
+    "sourceIds": [
+      "source-barcelona-edition"
+    ]
+  },
+  {
+    "id": "destination-bodrum-tr",
+    "slug": "bodrum-tr",
+    "name": "Bodrum",
+    "country": "TR",
+    "region": "Asia",
+    "sourceIds": [
+      "source-bodrum-edition"
+    ]
+  },
+  {
+    "id": "destination-mykonos-gr",
+    "slug": "mykonos-gr",
+    "name": "Mykonos",
+    "country": "GR",
+    "region": "Europe",
+    "sourceIds": [
+      "source-santa-marina-mykonos"
+    ]
+  },
+  {
+    "id": "destination-costa-navarino-gr",
+    "slug": "costa-navarino-gr",
+    "name": "Costa Navarino",
+    "country": "GR",
+    "region": "Europe",
+    "sourceIds": [
+      "source-romanos-navarino"
+    ]
+  },
+  {
+    "id": "destination-paris-fr",
+    "slug": "paris-fr",
+    "name": "Paris",
+    "country": "FR",
+    "region": "Europe",
+    "sourceIds": [
+      "source-prince-de-galles"
+    ]
+  },
+  {
+    "id": "destination-elounda-crete-gr",
+    "slug": "elounda-crete-gr",
+    "name": "Elounda - Crete",
+    "country": "GR",
+    "region": "Europe",
+    "sourceIds": [
+      "source-domes-elounda"
+    ]
+  },
+  {
+    "id": "destination-corfu-gr",
+    "slug": "corfu-gr",
+    "name": "Corfu",
+    "country": "GR",
+    "region": "Europe",
+    "sourceIds": [
+      "source-domes-miramare"
+    ]
+  },
+  {
+    "id": "destination-albufeira-pt",
+    "slug": "albufeira-pt",
+    "name": "Albufeira",
+    "country": "PT",
+    "region": "Europe",
+    "sourceIds": [
+      "source-pine-cliffs-hotel"
+    ]
+  },
+  {
+    "id": "destination-kyoto-jp",
+    "slug": "kyoto-jp",
+    "name": "Kyoto",
+    "country": "JP",
+    "region": "Asia",
+    "sourceIds": [
+      "source-ritz-kyoto"
+    ]
+  },
+  {
+    "id": "destination-nikko-jp",
+    "slug": "nikko-jp",
+    "name": "Nikko",
+    "country": "JP",
+    "region": "Asia",
+    "sourceIds": [
+      "source-ritz-nikko"
+    ]
+  },
+  {
+    "id": "destination-nusa-dua-id",
+    "slug": "nusa-dua-id",
+    "name": "Nusa Dua",
+    "country": "ID",
+    "region": "Asia",
+    "sourceIds": [
+      "source-ritz-bali"
+    ]
+  },
+  {
+    "id": "destination-langkawi-my",
+    "slug": "langkawi-my",
+    "name": "Langkawi",
+    "country": "MY",
+    "region": "Asia",
+    "sourceIds": [
+      "source-ritz-langkawi"
+    ]
+  },
+  {
+    "id": "destination-bangkok-th",
+    "slug": "bangkok-th",
+    "name": "Bangkok",
+    "country": "TH",
+    "region": "Asia",
+    "sourceIds": [
+      "source-st-regis-bangkok"
+    ]
+  },
+  {
+    "id": "destination-osaka-jp",
+    "slug": "osaka-jp",
+    "name": "Osaka",
+    "country": "JP",
+    "region": "Asia",
+    "sourceIds": [
+      "source-st-regis-osaka"
+    ]
+  },
+  {
+    "id": "destination-miyakojima-city-jp",
+    "slug": "miyakojima-city-jp",
+    "name": "Miyakojima-city",
+    "country": "JP",
+    "region": "Asia",
+    "sourceIds": [
+      "source-iraph-sui"
+    ]
+  },
+  {
+    "id": "destination-seoul-kr",
+    "slug": "seoul-kr",
+    "name": "Seoul",
+    "country": "KR",
+    "region": "Asia",
+    "sourceIds": [
+      "source-josun-palace"
+    ]
+  },
+  {
+    "id": "destination-sanya-cn",
+    "slug": "sanya-cn",
+    "name": "Sanya",
+    "country": "CN",
+    "region": "Asia",
+    "sourceIds": [
+      "source-sanya-edition"
+    ]
+  },
+  {
+    "id": "destination-male-mv",
+    "slug": "male-mv",
+    "name": "Male",
+    "country": "MV",
+    "region": "Asia",
+    "sourceIds": [
+      "source-ritz-maldives"
+    ]
+  },
+  {
+    "id": "destination-dubai-ae",
+    "slug": "dubai-ae",
+    "name": "Dubai",
+    "country": "AE",
+    "region": "Asia",
+    "sourceIds": [
+      "source-al-maha"
+    ]
+  },
+  {
+    "id": "destination-manama-bh",
+    "slug": "manama-bh",
+    "name": "Manama",
+    "country": "BH",
+    "region": "Asia",
+    "sourceIds": [
+      "source-ritz-bahrain"
+    ]
+  },
+  {
+    "id": "destination-muscat-om",
+    "slug": "muscat-om",
+    "name": "Muscat",
+    "country": "OM",
+    "region": "Asia",
+    "sourceIds": [
+      "source-al-bustan"
+    ]
+  },
+  {
+    "id": "destination-ras-al-khaimah-ae",
+    "slug": "ras-al-khaimah-ae",
+    "name": "Ras Al Khaimah",
+    "country": "AE",
+    "region": "Asia",
+    "sourceIds": [
+      "source-ritz-al-wadi"
+    ]
+  },
+  {
+    "id": "destination-palm-beach-aw",
+    "slug": "palm-beach-aw",
+    "name": "Palm Beach",
+    "country": "AW",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-aruba"
+    ]
+  },
+  {
+    "id": "destination-providenciales-tc",
+    "slug": "providenciales-tc",
+    "name": "Providenciales",
+    "country": "TC",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-turks-caicos"
+    ]
+  },
+  {
+    "id": "destination-st-thomas-vi",
+    "slug": "st-thomas-vi",
+    "name": "St. Thomas",
+    "country": "VI",
+    "region": "North America",
+    "sourceIds": [
+      "source-ritz-st-thomas"
+    ]
+  },
+  {
+    "id": "destination-le-morne-mu",
+    "slug": "le-morne-mu",
+    "name": "Le Morne",
+    "country": "MU",
+    "region": "Africa",
+    "sourceIds": [
+      "source-st-regis-le-morne"
+    ]
+  },
+  {
+    "id": "destination-red-sea-sa",
+    "slug": "red-sea-sa",
+    "name": "Red Sea",
+    "country": "SA",
+    "region": "Asia",
+    "sourceIds": [
+      "source-st-regis-red-sea"
+    ]
+  },
+  {
+    "id": "destination-abu-dhabi-ae",
+    "slug": "abu-dhabi-ae",
+    "name": "Abu Dhabi",
+    "country": "AE",
+    "region": "Asia",
+    "sourceIds": [
+      "source-st-regis-saadiyat"
+    ]
+  },
+  {
+    "id": "destination-shaviyani-atoll-mv",
+    "slug": "shaviyani-atoll-mv",
+    "name": "Shaviyani Atoll",
+    "country": "MV",
+    "region": "Asia",
+    "sourceIds": [
+      "source-jw-maldives"
+    ]
+  },
+  {
+    "id": "destination-kaafu-atoll-mv",
+    "slug": "kaafu-atoll-mv",
+    "name": "Kaafu Atoll",
+    "country": "MV",
+    "region": "Asia",
+    "sourceIds": [
+      "source-jw-kaafu"
+    ]
+  },
+  {
+    "id": "destination-surfers-paradise-au",
+    "slug": "surfers-paradise-au",
+    "name": "Surfers Paradise",
+    "country": "AU",
+    "region": "Oceania",
+    "sourceIds": [
+      "source-jw-gold-coast"
+    ]
+  },
+  {
+    "id": "destination-hobart-au",
+    "slug": "hobart-au",
+    "name": "Hobart",
+    "country": "AU",
+    "region": "Oceania",
+    "sourceIds": [
+      "source-tasman-hobart"
+    ]
+  },
+  {
+    "id": "destination-perth-au",
+    "slug": "perth-au",
+    "name": "Perth",
+    "country": "AU",
+    "region": "Oceania",
+    "sourceIds": [
+      "source-ritz-perth"
+    ]
+  },
+  {
+    "id": "destination-melbourne-au",
+    "slug": "melbourne-au",
+    "name": "Melbourne",
+    "country": "AU",
+    "region": "Oceania",
+    "sourceIds": [
+      "source-ritz-melbourne"
+    ]
+  },
+  {
+    "id": "destination-sydney-au",
+    "slug": "sydney-au",
+    "name": "Sydney",
+    "country": "AU",
+    "region": "Oceania",
+    "sourceIds": [
+      "source-pier-one-sydney"
+    ]
+  },
+  {
+    "id": "destination-rio-de-janeiro-br",
+    "slug": "rio-de-janeiro-br",
+    "name": "Rio de Janeiro",
+    "country": "BR",
+    "region": "South America",
+    "sourceIds": [
+      "source-jw-rio"
+    ]
+  },
+  {
+    "id": "destination-cusco-pe",
+    "slug": "cusco-pe",
+    "name": "Cusco",
+    "country": "PE",
+    "region": "South America",
+    "sourceIds": [
+      "source-jw-cusco"
+    ]
+  },
+  {
+    "id": "destination-urubamba-pe",
+    "slug": "urubamba-pe",
+    "name": "Urubamba",
+    "country": "PE",
+    "region": "South America",
+    "sourceIds": [
+      "source-tambo-del-inka"
+    ]
+  },
+  {
+    "id": "destination-paracas-pe",
+    "slug": "paracas-pe",
+    "name": "Paracas",
+    "country": "PE",
+    "region": "South America",
+    "sourceIds": [
+      "source-hotel-paracas"
+    ]
+  },
+  {
+    "id": "destination-santiago-cl",
+    "slug": "santiago-cl",
+    "name": "Santiago",
+    "country": "CL",
+    "region": "South America",
+    "sourceIds": [
+      "source-ritz-santiago"
+    ]
+  },
+  {
+    "id": "destination-san-jose-del-cabo-mx",
+    "slug": "san-jose-del-cabo-mx",
+    "name": "San Jose del Cabo",
+    "country": "MX",
+    "region": "North America",
+    "sourceIds": [
+      "source-jw-los-cabos"
+    ]
+  },
+  {
+    "id": "destination-st-george-s-bm",
+    "slug": "st-george-s-bm",
+    "name": "St George's",
+    "country": "BM",
+    "region": "North America",
+    "sourceIds": [
+      "source-st-regis-bermuda"
+    ]
+  },
+  {
+    "id": "destination-chicago-us",
+    "slug": "chicago-us",
+    "name": "Chicago",
+    "country": "US",
+    "region": "North America",
+    "sourceIds": [
+      "source-st-regis-chicago"
+    ]
   }
 ]

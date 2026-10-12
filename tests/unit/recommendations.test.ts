@@ -145,9 +145,9 @@ describe('Stage 5 deterministic recommendation layers', () => {
     expect(recommendProperties(scoredCatalog(), { ...input, quotes: [{ ...quote, observedAt: '2027-01-01' }] }).success).toBe(false);
     expect(recommendProperties(scoredCatalog(), { ...input, quotes: [{ ...quote, propertyId: 'property-missing' }] }).success).toBe(false);
   });
-  it('keeps the unchanged 25-property catalog usable with honestly partial scores', () => {
-    const result = run(catalogSchema.parse(rawCatalog), { ...initialRecommendationInput('2026-10-08'), preferredTags: ['wildlife'] });
-    expect(result.results).toHaveLength(25); expect(result.results.every((r) => r.fit.score === null && r.economics === null)).toBe(true);
+  it('keeps the expanded 100-property catalog usable with honestly partial scores', () => {
+    const result = run(catalogSchema.parse(rawCatalog), { ...initialRecommendationInput('2026-10-12'), preferredTags: ['wildlife'] });
+    expect(result.results).toHaveLength(100); expect(result.results.every((r) => r.fit.score === null && r.economics === null)).toBe(true);
     expect(result.results[0]!.fit.components.find((c) => c.key === 'experience')?.score).toBe(100);
   });
 });
