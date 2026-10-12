@@ -34,7 +34,7 @@ test('profile changes update detail benefits and importing the previous backup r
  await page.goto('./#/profile');await page.getByLabel('Bonvoy status',{exact:true}).selectOption('gold');await page.goto('./#/properties/jw-tampa');await expect(card(page,'Lounge access')).toContainText('No elite lounge entitlement');
  await nav(page,'Profile');await page.getByLabel('Planner JSON',{exact:true}).fill(backup);await page.getByRole('button',{name:'Review import',exact:true}).click();await page.getByRole('button',{name:'Import and replace planner',exact:true}).click();await page.goto('./#/properties/jw-tampa');await expect(card(page,'Lounge access')).toContainText('Elite lounge access, member +1');await page.reload();await expect(card(page,'Elite points bonus')).toContainText('50%');await noOverflow(page);
 });
-test('all 25 catalog properties render all benefit categories without page errors',async({page})=>{
- test.setTimeout(90000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));const properties=JSON.parse(readFileSync(new URL('../../data/properties/index.json',import.meta.url),'utf8')) as {slug:string}[];
+test('all 100 catalog properties render all benefit categories without page errors',async({page})=>{
+ test.setTimeout(180000);const errors:string[]=[];page.on('pageerror',e=>errors.push(e.message));const properties=JSON.parse(readFileSync(new URL('../../data/properties/index.json',import.meta.url),'utf8')) as {slug:string}[];
  for(const p of properties){await page.goto(`./#/benefits?property=${p.slug}`);await expect(page.locator('.benefit-grid > article')).toHaveCount(10);await noOverflow(page);}expect(errors).toEqual([]);
 });

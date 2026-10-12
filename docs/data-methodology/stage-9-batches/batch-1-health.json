@@ -1,0 +1,97 @@
+{
+  "asOf": "2026-10-12",
+  "stalenessPolicy": {
+    "defaultDays": 365,
+    "bySubject": {
+      "brandId": 180,
+      "operatingStatus": 90
+    }
+  },
+  "totalProperties": 40,
+  "validRecords": 40,
+  "invalidRecords": 0,
+  "completeRecords": 0,
+  "incompleteRecords": 40,
+  "incompletePropertyIds": [
+    "property-dove-mountain",
+    "property-half-moon-bay",
+    "property-lake-tahoe",
+    "property-grand-cayman",
+    "property-st-regis-new-york",
+    "property-st-regis-aspen",
+    "property-st-regis-maldives",
+    "property-st-regis-washington",
+    "property-new-york-edition",
+    "property-reykjavik-edition",
+    "property-tokyo-edition-toranomon",
+    "property-miami-beach-edition",
+    "property-gritti-palace",
+    "property-mystique-santorini",
+    "property-imperial-vienna",
+    "property-marques-de-riscal",
+    "property-jw-sao-paulo",
+    "property-jw-masai-mara",
+    "property-jw-nairobi",
+    "property-jw-tampa",
+    "property-jw-phuket",
+    "property-mapito",
+    "property-mereshi",
+    "property-cloudveil",
+    "property-elephant-weimar",
+    "property-ritz-naples",
+    "property-ritz-amelia-island",
+    "property-ritz-sarasota",
+    "property-ritz-lake-oconee",
+    "property-ritz-bachelor-gulch",
+    "property-ritz-laguna-niguel",
+    "property-ritz-bacara",
+    "property-ritz-kapalua",
+    "property-ritz-waikiki",
+    "property-st-regis-deer-valley",
+    "property-st-regis-bal-harbour",
+    "property-st-regis-longboat-key",
+    "property-st-regis-punta-mita",
+    "property-st-regis-kanai",
+    "property-jw-marco-island"
+  ],
+  "schemaErrors": 0,
+  "orphanedReferences": 0,
+  "duplicateIds": 0,
+  "duplicateSlugs": 0,
+  "missingCriticalEvidence": 0,
+  "missingCriticalEvidenceDetails": [],
+  "missingOptionalEvidence": 0,
+  "staleEvidence": [],
+  "conflictingSubjects": 1,
+  "conflictingClaims": 2,
+  "conflicts": [
+    {
+      "propertyId": "property-st-regis-deer-valley",
+      "subject": "roomCount",
+      "claimIds": [
+        "claim-st-regis-deer-valley-roomcount-conflict-1",
+        "claim-st-regis-deer-valley-roomcount-conflict-2"
+      ]
+    }
+  ],
+  "unverifiedClaims": 0,
+  "missingCoordinates": 40,
+  "missingDestinationMetadata": 0,
+  "totalSources": 40,
+  "totalEvidenceClaims": 414,
+  "confidenceCounts": {
+    "High": 294,
+    "Medium": 120,
+    "Low": 0,
+    "Unverified": 0
+  },
+  "confidencePercentages": {
+    "High": 71.01,
+    "Medium": 28.99,
+    "Low": 0,
+    "Unverified": 0
+  },
+  "confidenceDenominator": "All schema-valid evidence claims, including historic and unknown claims.",
+  "evidenceAssessed": true,
+  "errors": []
+}

@@ -9,7 +9,7 @@ test('deterministic sourced recommendations, inspectable layers and responsive s
   await page.getByLabel('Required country', { exact: true }).selectOption('TZ');
   await page.getByRole('group', { name: 'Preferred experiences' }).getByLabel('Wildlife', { exact: true }).check();
   await generate(page);
-  await expect(page.getByRole('status')).toHaveText('2 candidates · 23 excluded · trip-fit-1');
+  await expect(page.getByRole('status')).toHaveText('2 candidates · 98 excluded · trip-fit-1');
   await expect(page.getByRole('heading', { name: 'Your recommendations' })).toBeFocused();
   const cards = page.getByRole('article', { name: /Recommendation for/ });
   expect(await cards.count()).toBe(2);
@@ -29,8 +29,8 @@ test('deterministic sourced recommendations, inspectable layers and responsive s
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => innerWidth));
   await page.screenshot({ path: testInfo.outputPath('recommendations-full.png'), fullPage: true });
   await card.scrollIntoViewIfNeeded(); await page.screenshot({ path: testInfo.outputPath('recommendation-card.png') });
-  await page.getByRole('button', { name: 'Show excluded properties (23)' }).click();
-  await expect(page.getByRole('article', { name: /Recommendation for/ })).toHaveCount(25);
+  await page.getByRole('button', { name: 'Show excluded properties (98)' }).click();
+  await expect(page.getByRole('article', { name: /Recommendation for/ })).toHaveCount(100);
   expect(errors).toEqual([]);
 });
 
@@ -59,11 +59,11 @@ test('validation, required unknowns, no-match recovery and custom weights', asyn
   await page.goto('./#/recommendations');
   await page.getByLabel('Required country', { exact: true }).selectOption('TZ');
   await page.getByLabel('Require lounge access').check(); await generate(page);
-  await expect(page.getByRole('status')).toHaveText('2 candidates · 23 excluded · trip-fit-1');
+  await expect(page.getByRole('status')).toHaveText('2 candidates · 98 excluded · trip-fit-1');
   await page.getByRole('article', { name: /Recommendation for Mapito/ }).getByText('04 · Why this candidate / what needs review', { exact: true }).click();
   await expect(page.getByRole('article', { name: /Recommendation for Mapito/ })).toContainText('lounge presence and elite access are not assumed');
   await page.getByLabel('Required recorded experience', { exact: true }).selectOption('ski'); await generate(page);
-  await expect(page.getByRole('status')).toHaveText('0 candidates · 25 excluded · trip-fit-1');
+  await expect(page.getByRole('status')).toHaveText('0 candidates · 100 excluded · trip-fit-1');
   await expect(page.getByText('No candidate meets the known required constraints.', { exact: false })).toBeVisible();
   await page.getByText('Scoring methodology and configurable weights', { exact: true }).click();
   await page.getByLabel('Property quality weight (%)', { exact: true }).fill('20'); await generate(page);
@@ -72,7 +72,7 @@ test('validation, required unknowns, no-match recovery and custom weights', asyn
   await expect(page.getByRole('status')).toContainText('trip-fit-1-custom');
   await page.getByRole('button', { name: 'Clear recommendation inputs' }).click();
   await expect(page.getByLabel('Require lounge access')).not.toBeChecked(); await generate(page);
-  await expect(page.getByRole('status')).toHaveText('25 candidates · 0 excluded · trip-fit-1');
+  await expect(page.getByRole('status')).toHaveText('100 candidates · 0 excluded · trip-fit-1');
 });
 
 test('recommendation navigation preserves earlier feature context and supports history/reload', async ({ page }) => {

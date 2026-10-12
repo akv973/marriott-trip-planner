@@ -1,0 +1,211 @@
+{
+  "stage": 9,
+  "asOf": "2026-10-12",
+  "properties": 100,
+  "additions": 75,
+  "countries": 34,
+  "destinations": 88,
+  "regions": {
+    "Africa": 5,
+    "Asia": 30,
+    "Europe": 21,
+    "North America": 32,
+    "Oceania": 5,
+    "South America": 7
+  },
+  "brands": {
+    "brand-autograph-collection": 6,
+    "brand-edition": 9,
+    "brand-jw-marriott": 13,
+    "brand-luxury-collection": 20,
+    "brand-ritz-carlton": 30,
+    "brand-st-regis": 22
+  },
+  "experiences": {
+    "adventure": 7,
+    "beach": 48,
+    "city": 33,
+    "culture": 27,
+    "desert": 4,
+    "family": 11,
+    "food": 20,
+    "golf": 11,
+    "mountain": 8,
+    "national-park": 1,
+    "safari": 3,
+    "ski": 4,
+    "spa": 61,
+    "wildlife": 7
+  },
+  "catalogSources": 100,
+  "officialCatalogSources": 100,
+  "evidenceClaims": 1017,
+  "confidenceCounts": {
+    "High": 715,
+    "Medium": 301,
+    "Low": 0,
+    "Unverified": 1
+  },
+  "confidencePercentages": {
+    "High": 70.3,
+    "Medium": 29.6,
+    "Low": 0,
+    "Unverified": 0.1
+  },
+  "criticalIdentityCoverage": {
+    "covered": 400,
+    "total": 400
+  },
+  "schemaErrors": 0,
+  "missingCriticalEvidence": 0,
+  "missingOptionalEvidence": 0,
+  "staleClaims": 0,
+  "unverifiedClaims": 1,
+  "conflictingSubjects": 2,
+  "conflictingClaims": 4,
+  "optionalKnown": {
+    "latitude": 0,
+    "nearestAirport": 3,
+    "openingYear": 2,
+    "renovationYear": 1,
+    "roomCount": 32,
+    "isResort": 60,
+    "isDestinationProperty": 0
+  },
+  "editorialAssessments": 76,
+  "benefitReviews": 100,
+  "benefitRules": 82,
+  "propertyOverrides": 38,
+  "unknownProgramScope": 6,
+  "benefitContradictions": [
+    {
+      "propertyId": "property-athenee-bangkok",
+      "category": "lounge"
+    }
+  ],
+  "platinumEffectiveStates": {
+    "breakfast": {
+      "eligible": 43,
+      "conditional": 9,
+      "excluded": 37,
+      "included": 2,
+      "unknown": 9
+    },
+    "lounge": {
+      "eligible": 4,
+      "conditional": 0,
+      "excluded": 85,
+      "included": 0,
+      "unknown": 11
+    },
+    "club": {
+      "eligible": 0,
+      "conditional": 0,
+      "excluded": 30,
+      "included": 0,
+      "unknown": 70
+    },
+    "roomUpgrade": {
+      "eligible": 0,
+      "conditional": 93,
+      "excluded": 1,
+      "included": 0,
+      "unknown": 6
+    },
+    "suiteUpgrade": {
+      "eligible": 0,
+      "conditional": 93,
+      "excluded": 1,
+      "included": 0,
+      "unknown": 6
+    },
+    "lateCheckout": {
+      "eligible": 0,
+      "conditional": 57,
+      "excluded": 1,
+      "included": 0,
+      "unknown": 42
+    },
+    "welcome": {
+      "eligible": 86,
+      "conditional": 0,
+      "excluded": 0,
+      "included": 0,
+      "unknown": 14
+    },
+    "bonus": {
+      "eligible": 100,
+      "conditional": 0,
+      "excluded": 0,
+      "included": 0,
+      "unknown": 0
+    },
+    "your24": {
+      "eligible": 0,
+      "conditional": 0,
+      "excluded": 94,
+      "included": 0,
+      "unknown": 6
+    },
+    "availability": {
+      "eligible": 0,
+      "conditional": 0,
+      "excluded": 94,
+      "included": 0,
+      "unknown": 6
+    }
+  },
+  "batchHealth": [
+    {
+      "batch": 1,
+      "properties": 40,
+      "claims": 414,
+      "errors": 0,
+      "missingCriticalEvidence": 0,
+      "conflictingSubjects": 1,
+      "benefitReviews": 40,
+      "benefitReferenceErrors": 0
+    },
+    {
+      "batch": 2,
+      "properties": 55,
+      "claims": 567,
+      "errors": 0,
+      "missingCriticalEvidence": 0,
+      "conflictingSubjects": 1,
+      "benefitReviews": 55,
+      "benefitReferenceErrors": 0
+    },
+    {
+      "batch": 3,
+      "properties": 70,
+      "claims": 715,
+      "errors": 0,
+      "missingCriticalEvidence": 0,
+      "conflictingSubjects": 1,
+      "benefitReviews": 70,
+      "benefitReferenceErrors": 0
+    },
+    {
+      "batch": 4,
+      "properties": 85,
+      "claims": 872,
+      "errors": 0,
+      "missingCriticalEvidence": 0,
+      "conflictingSubjects": 2,
+      "benefitReviews": 85,
+      "benefitReferenceErrors": 0
+    },
+    {
+      "batch": 5,
+      "properties": 100,
+      "claims": 1017,
+      "errors": 0,
+      "missingCriticalEvidence": 0,
+      "conflictingSubjects": 2,
+      "benefitReviews": 100,
+      "benefitReferenceErrors": 0
+    }
+  ],
+  "errors": []
+}

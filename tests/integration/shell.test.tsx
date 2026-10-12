@@ -12,19 +12,19 @@ beforeEach(() => {
 });
 
 describe('Validated explorer and detail pages', () => {
-  it('loads the shipped catalog and renders all 25 properties with no later-stage controls', () => {
+  it('loads the shipped catalog and renders all 100 properties with no later-stage controls', () => {
     expect(catalog.loadFoundation().success).toBe(true);
     render(<App />);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Find a stay worth');
-    expect(screen.getByRole('status')).toHaveTextContent('25 of 25 properties');
-    expect(document.querySelectorAll('.property-card')).toHaveLength(25);
+    expect(screen.getByRole('status')).toHaveTextContent('100 of 100 properties');
+    expect(document.querySelectorAll('.property-card')).toHaveLength(100);
     expect(screen.queryByText('Planned', { exact: true })).not.toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /save|add to trip/i })).not.toBeInTheDocument();
   });
   it('restores combined filters from the URL and keeps context in detail links', () => {
     window.history.replaceState(null, '', '#/explore?country=TZ&tag=wildlife&sort=name-desc');
     render(<App />);
-    expect(screen.getByRole('status')).toHaveTextContent('2 of 25');
+    expect(screen.getByRole('status')).toHaveTextContent('2 of 100');
     expect(screen.getByRole('combobox', { name: 'Country / territory' })).toHaveValue('TZ');
     expect(screen.getByRole('link', { name: /View details for Mereshi/ })).toHaveAttribute('href', '#/properties/mereshi?country=TZ&tag=wildlife&sort=name-desc');
   });

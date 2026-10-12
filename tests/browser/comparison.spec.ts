@@ -26,13 +26,13 @@ test('select from filtered explorer and details, compare, reload, return, and us
   await page.goBack();
   await expect(page.getByRole('table')).toBeVisible();
   await page.getByRole('link', { name: /Back to your collection/ }).click();
-  await expect(page.getByRole('status')).toContainText('2 of 25');
+  await expect(page.getByRole('status')).toContainText('2 of 100');
   await expect(page.getByRole('combobox', { name: 'Sort by' })).toHaveValue('name-desc');
   await expect(page.getByRole('checkbox', { name: /Compare Mapito/ })).toBeChecked();
   await page.goBack();
   await expect(page.getByRole('table')).toBeVisible();
   await page.goForward();
-  await expect(page.getByRole('status')).toContainText('2 of 25');
+  await expect(page.getByRole('status')).toContainText('2 of 100');
 });
 
 for (const count of [2, 3, 4]) test(`${count}-property metrics align with responsive scrolling and evidence`, async ({ page }, testInfo) => {
