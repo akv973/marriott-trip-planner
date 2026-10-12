@@ -29,8 +29,8 @@ test('deterministic sourced recommendations, inspectable layers and responsive s
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => innerWidth));
   await page.screenshot({ path: testInfo.outputPath('recommendations-full.png'), fullPage: true });
   await card.scrollIntoViewIfNeeded(); await page.screenshot({ path: testInfo.outputPath('recommendation-card.png') });
-  await page.getByRole('button', { name: 'Show excluded properties (23)' }).click();
-  await expect(page.getByRole('article', { name: /Recommendation for/ })).toHaveCount(25);
+  await page.getByRole('button', { name: 'Show excluded properties (98)' }).click();
+  await expect(page.getByRole('article', { name: /Recommendation for/ })).toHaveCount(100);
   expect(errors).toEqual([]);
 });
 
@@ -72,7 +72,7 @@ test('validation, required unknowns, no-match recovery and custom weights', asyn
   await expect(page.getByRole('status')).toContainText('trip-fit-1-custom');
   await page.getByRole('button', { name: 'Clear recommendation inputs' }).click();
   await expect(page.getByLabel('Require lounge access')).not.toBeChecked(); await generate(page);
-  await expect(page.getByRole('status')).toHaveText('25 candidates · 0 excluded · trip-fit-1');
+  await expect(page.getByRole('status')).toHaveText('100 candidates · 0 excluded · trip-fit-1');
 });
 
 test('recommendation navigation preserves earlier feature context and supports history/reload', async ({ page }) => {
