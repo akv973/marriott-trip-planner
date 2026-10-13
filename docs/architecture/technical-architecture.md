@@ -89,3 +89,7 @@ Adds `#/watchlist`, an independent strict WatchTarget contract in `lib/watchlist
 ## Stage 11 optional maps
 
 Adds a dated coordinate overlay, normal source/claim provenance and optional property/comparison/trip maps. Base catalog records and saved planner contracts remain unchanged. Geographic context uses vendored Natural Earth land, with deliberate optional OSM street detail, inspectable unknowns, ordered repeat visits and failure containment. Manifest admits Stage 11 and rejects Stage 12. See [maps architecture](maps.md), ADR-017 and [map sourcing/licensing](../data-methodology/map-sources.md).
+
+## Stage 12 research boundary
+
+Stage 12 completes a [sourced provider assessment](../data-methodology/dynamic-data-research.md) and [ADR-018](../decisions/ADR-018-dynamic-data-research-gate.md), with a recommendation to defer integration pending qualification and separate approval. Cash/award capabilities and opening-event evidence remain distinct. No provider interface or engine is implemented. Runtime manifest remains Stage 11; source, catalog, storage/backups, dependencies and workflows stay unchanged. Any later secret-bearing provider needs a separately approved service rather than secrets in this static app. Rights for persistent/exported observations cannot be assumed from API access.
