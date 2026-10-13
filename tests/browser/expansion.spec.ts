@@ -48,7 +48,7 @@ test('published Waikiki exclusions and the Athenee policy contradiction remain d
   await expect(card(page, 'Club access')).toContainText('Club access requires a qualifying booking');
 });
 
-test('new property selections persist in trips and version-one backups', async ({ page }) => {
+test('new property selections persist in trips and current-version backups', async ({ page }) => {
   await page.goto('./#/trips');
   await page.getByRole('button', { name: 'Create trip', exact: true }).click();
   await page.getByRole('button', { name: 'Add hotel stay', exact: true }).click();
@@ -59,5 +59,5 @@ test('new property selections persist in trips and version-one backups', async (
   await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Profile', exact: true }).click();
   await page.getByRole('button', { name: 'Export planner JSON', exact: true }).click();
   const data = JSON.parse(await page.getByLabel('Planner JSON', { exact: true }).inputValue());
-  expect(data.schemaVersion).toBe(1); expect(JSON.stringify(data.data)).toContain('property-tasman-hobart');
+  expect(data.schemaVersion).toBe(2); expect(JSON.stringify(data.data)).toContain('property-tasman-hobart');
 });

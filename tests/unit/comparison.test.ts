@@ -42,11 +42,11 @@ describe('Property comparison contract', () => {
     expect(editorialComparisonValue({ ...assessment, strengths: [] }, 'strengths')).toBe('None recorded');
     expect(editorialComparisonValue({ ...assessment, recommendedStayLength: { minNights: 2, maxNights: 4 } }, 'recommendedStayLength')).toBe('2–4 nights');
   });
-  it('admits Stage 9 but rejects Stage 10 progression', () => {
+  it('admits Stage 10 but rejects Stage 11 progression', () => {
     const bundle = loadFoundation();
     expect(bundle.success).toBe(true);
     if (!bundle.success) throw new Error('Shipped bundle invalid');
-    expect(validateFoundation({ ...bundle.data, foundation: { ...bundle.data.foundation, stage: 10 } }).success).toBe(false);
+    expect(validateFoundation({ ...bundle.data, foundation: { ...bundle.data.foundation, stage: 11 } }).success).toBe(false);
   });
 });
 

@@ -14,7 +14,7 @@ test('Stage 7 saved backup loads intact and its status drives property and compa
  await noOverflow(page);await page.screenshot({path:info.outputPath('benefits-property-precedence.png'),fullPage:true});
  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('marriott-trip-planner:v1')!).data)).toEqual(original);
  await nav(page,'Trip builder');await expect(page.getByLabel('Trip name',{exact:true})).toHaveValue('Stage 7 saved trip');await expect(page.getByLabel('Stay notes',{exact:true})).toHaveValue('Keep this manual stay');
- await nav(page,'Profile');await page.getByRole('button',{name:'Export planner JSON',exact:true}).click();const after=JSON.parse(await page.getByLabel('Planner JSON',{exact:true}).inputValue());expect(after.data).toEqual(original);expect(after.schemaVersion).toBe(1);
+ await nav(page,'Profile');await page.getByRole('button',{name:'Export planner JSON',exact:true}).click();const after=JSON.parse(await page.getByLabel('Planner JSON',{exact:true}).inputValue());expect(after.data).toEqual({...original,watchlist:[]});expect(after.schemaVersion).toBe(2);
  await page.goto('./#/compare?compare=jw-tampa&compare=half-moon-bay');await expect(page.locator('tbody.comparison-benefits')).toContainText('Club access requires a qualifying booking');await expect(page.locator('tbody.comparison-benefits')).toContainText('Elite lounge access, member +1');await noOverflow(page);
 });
 test('status previews recalculate rules and preserve saved profile on reload',async({page},info)=>{

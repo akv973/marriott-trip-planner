@@ -12,14 +12,15 @@ beforeEach(() => {
 });
 
 describe('Validated explorer and detail pages', () => {
-  it('loads the shipped catalog and renders all 100 properties with no later-stage controls', () => {
+  it('loads the shipped catalog and renders all 100 properties with watchlist controls', () => {
     expect(catalog.loadFoundation().success).toBe(true);
     render(<App />);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Find a stay worth');
     expect(screen.getByRole('status')).toHaveTextContent('100 of 100 properties');
     expect(document.querySelectorAll('.property-card')).toHaveLength(100);
     expect(screen.queryByText('Planned', { exact: true })).not.toBeInTheDocument();
-    expect(screen.queryByRole('button', { name: /save|add to trip/i })).not.toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: /Save to watchlist:/ })).toHaveLength(100);
+    expect(screen.queryByRole('button', { name: /add to trip/i })).not.toBeInTheDocument();
   });
   it('restores combined filters from the URL and keeps context in detail links', () => {
     window.history.replaceState(null, '', '#/explore?country=TZ&tag=wildlife&sort=name-desc');

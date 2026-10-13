@@ -1,5 +1,7 @@
 # Stage 7 local Bonvoy profile and planner persistence
 
+Stage 10 extends this original storage contract with watchlists and version-2 export, retaining tested strict version-1 import. See [current watchlist and backup architecture](watchlist.md). The historical Stage 7 contract below remains supported as a migration source.
+
 ## Contracts and boundaries
 
 `lib/profile/profile.ts` defines strict runtime-validated UserProfile and Certificate schemas plus the independent, dated one-night certificate assessment. Profile status, balance, personal USD cents-per-point valuation and optional preferences start unknown. Certificates retain independent ID, label, points value, exact expiry and notes; unknown value/expiry remain null. Profile fields and quote/reservation inputs are user assertions, never catalog evidence. Stage 8 benefit rules remain absent; status does not imply breakfast, lounge access or upgrade eligibility.

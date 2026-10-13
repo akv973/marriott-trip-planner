@@ -505,3 +505,24 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
   .benefit-context dl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .benefit-card { padding: 1.2rem; }
 }
+
+/* Stage 10: local target planning */
+.watchlist-content { padding: 0 0 80px; }
+.watchlist-add { display: flex; align-items: end; gap: 20px; max-width: 840px; }
+.watchlist-add .calculator-field { flex: 1; min-width: 0; }
+.watchlist-add .primary-link { flex-shrink: 0; margin-bottom: 0; }
+.watchlist-count { color: var(--muted); font-size: 13px; margin: 20px 0 30px; }
+.watchlist-grid { display: grid; gap: 24px; }
+.watch-target, .watchlist-empty { padding: clamp(20px, 3vw, 38px); background: #faf9f5; border: 1px solid var(--line); border-radius: 8px; min-width: 0; }
+.watch-target-heading { display: flex; align-items: start; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
+.watch-target h2 { font-family: Georgia, serif; font-weight: 400; font-size: clamp(24px, 3vw, 34px); margin: 8px 0; overflow-wrap: anywhere; }
+.watch-target fieldset { border: 0; padding: 0; margin: 0 0 20px; min-width: 0; }
+.watch-target-notes { grid-column: 1 / -1; }
+.watch-target-errors { color: #9b2c26; margin-bottom: 20px; overflow-wrap: anywhere; }
+.watch-control { white-space: normal; text-align: left; }
+.detail-compare-control { display: flex; flex-wrap: wrap; gap: 20px; }
+@media (max-width: 680px) {
+  .watchlist-add, .watch-target-heading { flex-direction: column; align-items: stretch; }
+  .watchlist-add .primary-link { align-self: start; }
+}
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }

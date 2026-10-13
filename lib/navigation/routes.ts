@@ -8,6 +8,7 @@ export type Route = RouteContext & ({ page: 'explore'; section: string | null }
   | { page: 'recommendations' }
   | { page: 'trips' }
   | { page: 'profile' }
+  | { page: 'watchlist'; propertySlug: string | null }
   | { page: 'benefits'; propertySlug: string | null }
   | { page: 'calculator'; propertySlug: string | null }
   | { page: 'not-found' });
@@ -27,6 +28,7 @@ export function parseRoute(hash: string): Route {
   if (path === '/calculator') return { page: 'calculator', propertySlug: params.get('property')?.slice(0, 100) ?? null, query, comparisonSlugs };
   if (path === '/recommendations') return { page: 'recommendations', query, comparisonSlugs };
   if (path === '/benefits') return { page: 'benefits', propertySlug: params.get('property')?.slice(0, 100) ?? null, query, comparisonSlugs };
+  if (path === '/watchlist') return { page: 'watchlist', propertySlug: params.get('property')?.slice(0, 100) ?? null, query, comparisonSlugs };
   if (path === '/profile') return { page: 'profile', query, comparisonSlugs };
   if (path === '/trips') return { page: 'trips', query, comparisonSlugs };
   if (path === '/compare') return { page: 'compare', query, comparisonSlugs };
@@ -60,4 +62,9 @@ export const profileHref = (query: ExplorerQuery = DEFAULT_QUERY, comparisonSlug
 export function benefitsHref(query: ExplorerQuery = DEFAULT_QUERY, comparisonSlugs: string[] = [], propertySlug?: string) {
   const context = serializeQuery(query, comparisonSlugs);
   return `#/benefits${context}${propertySlug ? `${context ? '&' : '?'}property=${encodeURIComponent(propertySlug)}` : ''}`;
+}
+
+export function watchlistHref(query: ExplorerQuery = DEFAULT_QUERY, comparisonSlugs: string[] = [], propertySlug?: string) {
+  const context = serializeQuery(query, comparisonSlugs);
+  return `#/watchlist${context}${propertySlug ? `${context ? '&' : '?'}property=${encodeURIComponent(propertySlug)}` : ''}`;
 }

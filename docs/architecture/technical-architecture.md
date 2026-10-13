@@ -81,3 +81,7 @@ Stage 8 admits the independent sourced benefit bundle and strict references, pur
 ## Stage 9 curated expansion
 
 Stage 9 appends 75 reviewed properties in five batches to the existing models and benefit bundle, with no changes to earlier business engines or saved-planner contracts. Static expansion audit joins schema gates; baseline hashes, explicit conflict inventories and full-catalog browser checks prevent silent regressions. The manifest admits Stage 9 and rejects Stage 10. See [expansion architecture](catalog-expansion.md) and ADR-015.
+
+## Stage 10 local watchlist
+
+Adds `#/watchlist`, an independent strict WatchTarget contract in `lib/watchlist/`, explorer/detail saving and editable desired travel windows, nightly cash/points rates, currency, priority and notes. Targets never become observed quotes, catalog claims, scoring inputs or trip spending. Version-2 whole-planner backups include watchlist; strict version-1 import adds only an empty watchlist. Retains the original repository/key and draft/conflict/quota protections. Manifest admits Stage 10 and rejects Stage 11. See [watchlist architecture](watchlist.md) and ADR-016. No monitoring, external pricing, scraping, account integration or maps.

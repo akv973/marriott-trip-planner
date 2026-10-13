@@ -3,6 +3,7 @@ import type { Catalog } from '../../types/catalog';
 import { profileSchema, emptyProfile } from '../profile/profile';
 import { tripSchema } from '../trips/trips';
 import { idSchema } from '../validation/catalog';
+import { watchlistSchema } from '../watchlist/watchlist';
 
 export const STORAGE_KEY = 'marriott-trip-planner:v1';
 export const MAX_IMPORT_BYTES = 5_000_000;
@@ -13,10 +14,14 @@ export const workspaceSchema = z.strictObject({ trips: z.array(tripSchema).max(1
   if (ids.some((id) => /^(trip|stay)-\d+$/.test(id) && Number(id.split('-')[1]) >= w.sequence)) ctx.addIssue({ code: 'custom', message: 'ID sequence would overwrite an existing trip or stay.' });
 });
 export type TripWorkspace = z.infer<typeof workspaceSchema>;
-export const plannerSchema = z.strictObject({ profile: profileSchema, workspace: workspaceSchema });
+const legacyPlannerSchema = z.strictObject({ profile: profileSchema, workspace: workspaceSchema });
+export const plannerSchema = legacyPlannerSchema.extend({ watchlist: watchlistSchema });
 export type PlannerData = z.infer<typeof plannerSchema>;
-export const emptyPlanner = (): PlannerData => ({ profile: emptyProfile(), workspace: { trips: [], activeId: null, sequence: 1 } });
-export const exportSchema = z.strictObject({ appId: z.literal('marriott-trip-planner'), schemaVersion: z.literal(1), exportedAt: z.iso.datetime(), data: plannerSchema });
+export const emptyPlanner = (): PlannerData => ({ profile: emptyProfile(), workspace: { trips: [], activeId: null, sequence: 1 }, watchlist: [] });
+const envelopeFields = { appId: z.literal('marriott-trip-planner'), exportedAt: z.iso.datetime() };
+const legacyExportSchema = z.strictObject({ ...envelopeFields, schemaVersion: z.literal(1), data: legacyPlannerSchema });
+export const exportSchema = z.strictObject({ ...envelopeFields, schemaVersion: z.literal(2), data: plannerSchema });
+const importSchema = z.discriminatedUnion('schemaVersion', [legacyExportSchema, exportSchema]);
 export function validatePlanner(input: unknown, catalog: Catalog) {
   const parsed = plannerSchema.safeParse(input);
   if (!parsed.success) return { success: false as const, errors: parsed.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`) };
@@ -25,20 +30,21 @@ export function validatePlanner(input: unknown, catalog: Catalog) {
   for (const id of [...p.preferredBrands, ...p.dislikedBrands]) if (!catalog.brands.some((b) => b.id === id)) errors.push(`Unknown brand: ${id}`);
   for (const id of p.destinationIds) if (!catalog.destinations.some((d) => d.id === id)) errors.push(`Unknown destination: ${id}`);
   for (const trip of parsed.data.workspace.trips) for (const stay of trip.stays) if (!catalog.properties.some((p) => p.id === stay.propertyId)) errors.push(`Unknown property: ${stay.propertyId}`);
+  for (const target of parsed.data.watchlist) if (!catalog.properties.some((p) => p.id === target.propertyId)) errors.push(`Unknown watch property: ${target.propertyId}`);
   return errors.length ? { success: false as const, errors } : { success: true as const, data: parsed.data };
 }
 export function importPlanner(json: string, catalog: Catalog) {
   if (new TextEncoder().encode(json).length > MAX_IMPORT_BYTES) return { success: false as const, errors: ['Import exceeds the 5 MB limit.'] };
   try {
-    const envelope = exportSchema.safeParse(JSON.parse(json));
-    if (!envelope.success) return { success: false as const, errors: ['Unsupported or malformed planner JSON. Only schema version 1 is supported; no data was replaced.', ...envelope.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`)] };
-    return validatePlanner(envelope.data.data, catalog);
+    const envelope = importSchema.safeParse(JSON.parse(json));
+    if (!envelope.success) return { success: false as const, errors: ['Unsupported or malformed planner JSON. Schema versions 1 and 2 are supported; no data was replaced.', ...envelope.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`)] };
+    return validatePlanner(envelope.data.schemaVersion === 1 ? { ...envelope.data.data, watchlist: [] } : envelope.data.data, catalog);
   } catch { return { success: false as const, errors: ['JSON could not be read. No data was replaced.'] }; }
 }
 export function exportPlanner(data: PlannerData, catalog: Catalog, exportedAt = new Date().toISOString()) {
   const checked = validatePlanner(data, catalog);
   if (!checked.success) throw new Error('Correct invalid drafts before exporting.');
-  const json = JSON.stringify(exportSchema.parse({ appId: 'marriott-trip-planner', schemaVersion: 1, exportedAt, data: checked.data }), null, 2);
+  const json = JSON.stringify(exportSchema.parse({ appId: 'marriott-trip-planner', schemaVersion: 2, exportedAt, data: checked.data }), null, 2);
   if (new TextEncoder().encode(json).length > MAX_IMPORT_BYTES) throw new Error('Planner exceeds the 5 MB backup limit.');
   return json;
 }

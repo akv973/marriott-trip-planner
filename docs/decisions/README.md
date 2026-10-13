@@ -25,3 +25,5 @@ ADRs record architectural direction. Acceptance of a later-stage design does not
 - [ADR-014: Sourced effective benefits](ADR-014-elite-benefit-engine.md) — Stage 8.
 
 - [ADR-015 — Reviewed catalog expansion](ADR-015-reviewed-catalog-expansion.md)
+
+- [ADR-016: Local watchlist and compatible version-two backups](ADR-016-local-watchlist.md)
