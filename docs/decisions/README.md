@@ -29,3 +29,5 @@ ADRs record architectural direction. Acceptance of a later-stage design does not
 - [ADR-016: Local watchlist and compatible version-two backups](ADR-016-local-watchlist.md)
 
 - [ADR-017: Optional evidence-backed maps](ADR-017-optional-evidence-backed-maps.md).
+
+- [ADR-018: Dynamic data research and provider approval gate](ADR-018-dynamic-data-research-gate.md) — research complete; no provider approved or Stage 13 implementation authorized.

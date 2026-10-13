@@ -2,7 +2,7 @@
 
 Read `docs/product/project-brief.md`, `docs/architecture/technical-architecture.md`, and the latest stage report before changing this project. The attached brief governs the product.
 
-- Execute only the explicitly authorized stage. Stage 11 — Maps is complete and is the current stage. Stage 12 is not authorized.
+- Execute only the explicitly authorized stage. Stage 12 — Dynamic Data Research is complete; the application remains Stage 11 — Maps. No provider is approved. Stage 13 is not authorized.
 - Stop after each stage's completion report. Approval for a stage does not authorize the next stage.
 - Inspect Git state, architecture documents, and relevant tests before edits.
 - Keep factual data separate from editorial judgment. Unknown is a supported value; never replace unknown rates with zero.
@@ -10,6 +10,7 @@ Read `docs/product/project-brief.md`, `docs/architecture/technical-architecture.
 - Keep business rules outside UI components. Stage 1 domain models are implemented; the independent Stage 4 points engine is implemented; the four-layer Stage 5 recommendation engine is implemented; the Stage 6 trip aggregation engine is implemented; Stage 7 local profile, certificate assessment and versioned persistence are implemented; the independent Stage 8 benefit engine is implemented; Stage 10 independent watch target validation and compatible v2 backups are implemented; Stage 11 optional coordinate evidence, geography and lazy maps are implemented; later-stage engines remain unimplemented.
 - Run `npm run check` after substantive changes and update documentation. Run browser flows when a stage introduces them.
 - Use focused commits and pull requests. A remote deployment is verified only when its workflow and exact deployed URL are confirmed.
+- Stage 12 is documentation only. Before any separately authorized Stage 13 work, read `docs/data-methodology/dynamic-data-research.md` and ADR-018; satisfy the provider qualification gates. No scraping, provider code, monitoring, account integration or paid commitment is authorized by the research recommendation.
 - Do not claim Stage 0 catalog validation verifies hotel facts. Stage 1 schema/reference checks require separately reviewed evidence; optional gaps are allowed.
 
 ## Current file boundaries
