@@ -71,6 +71,8 @@ Seats.aero's August 12, 2026 terms require visible attribution/linking and comme
 
 **Assessment/disposition:** useful external human research tool; no public documented API license, redistribution right, collection schedule or SLA was established. Do not parse its pages, alerts or emails into the application as an undeclared provider. Low integration maintenance if used only externally; high/unknown burden for unsupported automation. Preserve the mismatch between future cash-support help wording and any broader marketing claims.
 
+The membership help also describes daily-change functionality as forthcoming, while the alert help describes it as a Platinum option. That documentation conflict remains unresolved; do not treat either wording as a contracted feature guarantee.
+
 ### AwardWallet Hotel Award Search API
 
 **Documented facts.** Documentation includes a Marriott request, queued asynchronous searches, callback delivery after website parsing, optional loyalty credentials, cash-comparison fields and multiple error/challenge states (S35). Its API overview directs pricing/access inquiries to the provider (S36).

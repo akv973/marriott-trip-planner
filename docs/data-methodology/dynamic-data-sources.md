@@ -122,7 +122,7 @@ Odynn — [Current Terms of Service](https://www.odynn.com/legal/terms-of-servic
 
 ## S30
 
-MaxMyPoint — [Membership help](https://help.maxmypoint.com/home/membership). Official indexed documentation. Free/paid plans and more frequent Platinum checking; no universal per-hotel freshness SLA established.
+MaxMyPoint — [Membership help](https://help.maxmypoint.com/home/membership). Official indexed documentation. Free/paid plans and more frequent Platinum checking; no universal per-hotel freshness SLA established. Its forthcoming daily-change wording conflicts with S32's feature description.
 
 ## S31
 

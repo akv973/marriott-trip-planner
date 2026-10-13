@@ -2,7 +2,7 @@
 
 Stage: **12 — Dynamic Data Research**
 
-Status: **Research PASS; repository delivery checks pending.** This draft records completed research and local validation. Final CI evidence will be added before delivery. Stage 13 has not begun.
+Status: **PASS. Stage 12 research is complete.** No integration provider is approved. Stage 13 has not begun.
 
 ## Produced
 
@@ -29,11 +29,14 @@ Local checks on Node 24.19.0, with the committed lockfile and Pages base path:
 | Lint | PASS |
 | Strict schemas, catalog baseline and coordinate gates | PASS |
 | Unit / integration combined regression | **368/368 PASS** |
+| Research PR unit / integration tests | **304/304 / 64/64 PASS** |
+| Research PR production-preview desktop/narrow browser checks | **100/100 PASS** |
 | Production build | PASS |
 | Research source IDs / relative assessment and ADR links | PASS; 42 entries, no missing references |
 | Non-document tracked changes | **0** |
 | New flows / new tests / manual desktop/narrow screenshot review | N/A — documentation-only stage |
-| Repository PR CI / main workflow | Pending delivery verification |
+| Repository research PR CI | **SUCCESS** — linked below |
+| Served application files versus Pages build | **5/5 exact byte matches**, HTTP 200 |
 
 The existing large-main-bundle advisory remains; no bundle remediation is part of this research stage. CI still runs the existing desktop/narrow browser regression suite. No source-provider performance or live-price accuracy was tested.
 
@@ -45,19 +48,37 @@ The existing large-main-bundle advisory remains; no bundle remediation is part o
 | Schema / critical / known-optional evidence errors | 0 / 0 / 0 |
 | Conflicting subjects / claims | 2 / 4, preserved |
 | Unverified claims | 1, preserved |
+| Stale claims | 0 |
+| Catalog sources / factual claims | 200 / 1,217, unchanged |
 | Mapped / unmapped | 100 / 0, unchanged |
+| Stable catalog IDs / official URLs / unique known Marriott codes | 100 / 100 / 100; provider matching still untested |
 | New catalog facts / new pricing observations | 0 / 0 |
 | Measured provider coverage of 100 properties | **Not assessed**; not zero and not inferred from marketing |
 | Approved integration providers | **0** |
 
-Build/deployed file equality and repository CI will be recorded after delivery verification.
+Git diff against the Stage 11 baseline contains exactly eight Markdown files and **no non-document changes**. Runtime, data, dependencies, tests and workflows are identical. Provider mapping has not been inferred from the catalog's known Marriott codes.
+
+Direct HTTPS reads at the existing deployment match the locally checked Pages build:
+
+| Served file | SHA-256 |
+| --- | --- |
+| index.html | `a5288959b5883c5d6c97ffbb77a8d3b72e4ff433e65fc44dd2e0b401c519ea5d` |
+| assets/GeographicMap-DRd0aJHH.js | `4bc7f99d400de2168dd06ba5986cacdc8de47573495dd97e18f38591a52fac78` |
+| assets/index-BTv5aw4d.css | `de7c5b64f5d980adc9ae9a8d1a40d78a3cbb8a3bd4828aeb8b850f0bca66f83e` |
+| assets/index-CNeVpfvJ.js | `6418c448faeb3e2d8cff1c73c5671c4cd82ccb846c35956313e243fd7f929c5e` |
+| assets/land-B4KBD8fO.json | `b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5` |
 
 ## Commit and deployment
 
 - Stage 11 repository baseline: `8f1a08143aef43a1495b0fca50691bf9a6caa308`.
 - Existing application deployment: [https://akv973.github.io/marriott-trip-planner/](https://akv973.github.io/marriott-trip-planner/).
 - Existing verified Stage 11 [main checks/deployment/live QA](https://github.com/akv973/marriott-trip-planner/actions/runs/38341208640).
-- Stage 12 PR, commit and CI evidence: pending repository delivery. A commit cannot contain its own SHA; the final delivery identifies the final full SHA.
+- Research commit: `87dfde8cf47be00f38598b76ca01c4babcf9ae37`.
+- [Stage 12 PR #24](https://github.com/akv973/marriott-trip-planner/pull/24) — merged after successful required checks.
+- [Research PR CI](https://github.com/akv973/marriott-trip-planner/actions/runs/38343806259) — **SUCCESS**; logs show 304 unit, 64 integration and 100 browser tests passed.
+- Stage 12 merge/main commit: `b0904f49031fadd10aea804041f7fca0ddd26e11`.
+
+A documentation-only completion record follows the checked research merge. It finalizes this report and retains a MaxMyPoint documentation conflict; it changes no application files. The final delivery identifies that full repository SHA and its main workflow/deployment evidence. A commit cannot contain its own SHA or the result of its future workflow. Application behavior and all five served build hashes remain the verified Stage 11 version.
 
 ## Known limitations and unresolved issues
 
