@@ -393,7 +393,7 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .recommendation-methodology p, .recommendation-quotes p, .recommendation-results > p { font-size: 12px; line-height: 1.8; color: #536254; }
 .recommendation-quote { margin-top: 28px; }
 .recommendation-results { padding: 30px 0 55px; }
-.recommendation-results > h2 { font-size: 34px; }
+.recommendation-results > h2 { font-size: 34px; overflow-wrap: anywhere; }
 .recommendation-card { padding: 28px; border: 1px solid #bdc9b7; border-radius: 4px; background: #fffefa; margin: 28px 0; overflow-wrap: anywhere; }
 .recommendation-card-header { display: flex; align-items: start; justify-content: space-between; gap: 24px; }
 .recommendation-card h3 { font-size: 27px; line-height: 1.3; max-width: 660px; }
