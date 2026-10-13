@@ -182,7 +182,9 @@ export function optimizePortfolio(input: unknown, scenario: unknown, catalog: Ca
     visit(0, 0, 0, 0, 0, 0, 0);
     for (const strategy of STRATEGIES) if (best[strategy]) {
       const b = best[strategy]!;
-      b.options = original.map((r) => b.options[ordered.indexOf(r)]!);
+      // Strategies can share the same winning candidate. Reorder copies so one
+      // strategy cannot reorder another strategy's ledger a second time.
+      best[strategy] = { ...b, options: original.map((r) => b.options[ordered.indexOf(r)]!) };
     }
     rows.splice(0, rows.length, ...original);
   }

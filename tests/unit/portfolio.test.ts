@@ -84,6 +84,15 @@ describe('Deterministic manual multi-trip allocation', () => {
   it('never alters a reserved cash choice even when a better alternative exists', () => {
     const d = portfolioFixture(); d.workspace.trips[0]!.stays[0]!.reservationStatus = 'reserved'; expect(plan(run(d), 'cash-conservation').allocations[0]!.method).toBe('cash');
   });
+  it('restores saved ledger order once when several strategies share a candidate and a fixed stay is last', () => {
+    const d = portfolioFixture(); const s = d.workspace.trips[2]!.stays[0]!; s.reservationStatus = 'reserved'; s.bookingMethod = 'points';
+    const r = run(d);
+    for (const strategy of ['cash-conservation', 'redemption-value', 'balanced'] as const) {
+      const p = plan(r, strategy); expect(p.allocations.map((a) => a.method)).toEqual(['cash', 'cash', 'points']);
+      expect(p.allocations.map((a) => a.points)).toEqual([0, 0, 80000]); expect(p.cashUsd.total).toBe(1600); expect(p.remainingPoints).toBe(20000);
+    }
+    expect(run(d)).toEqual(r);
+  });
   it('reports fixed points shortfalls before discretionary optimization', () => {
     const d = portfolioFixture(); d.profile.balance = 1; const s = d.workspace.trips[0]!.stays[0]!; s.bookingMethod = 'points'; s.reservationStatus = 'reserved'; expect(optimizePortfolio(d, portfolioRequest(), catalog).success).toBe(false);
   });
