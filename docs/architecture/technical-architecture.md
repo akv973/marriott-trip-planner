@@ -85,3 +85,7 @@ Stage 9 appends 75 reviewed properties in five batches to the existing models an
 ## Stage 10 local watchlist
 
 Adds `#/watchlist`, an independent strict WatchTarget contract in `lib/watchlist/`, explorer/detail saving and editable desired travel windows, nightly cash/points rates, currency, priority and notes. Targets never become observed quotes, catalog claims, scoring inputs or trip spending. Version-2 whole-planner backups include watchlist; strict version-1 import adds only an empty watchlist. Retains the original repository/key and draft/conflict/quota protections. Manifest admits Stage 10 and rejects Stage 11. See [watchlist architecture](watchlist.md) and ADR-016. No monitoring, external pricing, scraping, account integration or maps.
+
+## Stage 11 optional maps
+
+Adds a dated coordinate overlay, normal source/claim provenance and optional property/comparison/trip maps. Base catalog records and saved planner contracts remain unchanged. Geographic context uses vendored Natural Earth land, with deliberate optional OSM street detail, inspectable unknowns, ordered repeat visits and failure containment. Manifest admits Stage 11 and rejects Stage 12. See [maps architecture](maps.md), ADR-017 and [map sourcing/licensing](../data-methodology/map-sources.md).

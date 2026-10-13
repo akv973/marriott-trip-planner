@@ -1,6 +1,6 @@
 # Marriott Trip Planner
 
-An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 10 — Watchlist.** Browse the 100-property curated catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Assess manual cash/points quotes with transparent arithmetic. Generate deterministic, inspectable recommendations with separate eligibility, trip fit, booking economics and explanations. Build multi-hotel trips with manual cash/points choices, notes and inspectable complete or partial totals. Profile, trips and watch targets persist locally, with certificates, preferences and versioned JSON backup/restore. Effective benefits use saved status and dated official rules, with property precedence and inspectable unknowns. Maps remain planned.
+An independent, evidence-backed Marriott Bonvoy travel portfolio planner. **Current implementation: Stage 11 — Maps.** Browse the 100-property curated catalog, combine filters, sort, and open sourced detail pages. Select 2–4 properties for an aligned, sourced comparison. Assess manual cash/points quotes with transparent arithmetic. Generate deterministic, inspectable recommendations with separate eligibility, trip fit, booking economics and explanations. Build multi-hotel trips with manual cash/points choices, notes and inspectable complete or partial totals. Profile, trips and watch targets persist locally, with certificates, preferences and versioned JSON backup/restore. Effective benefits use saved status and dated official rules, with property precedence and inspectable unknowns. Optional property, comparison and trip maps show sourced locations and ordered geography.
 
 ## Run locally
 
@@ -76,7 +76,7 @@ Source repository: [akv973/marriott-trip-planner](https://github.com/akv973/marr
 
 ## Stage discipline
 
-The next stage is **Stage 10 — Watchlist**, only after explicit approval. The catalog contains 100 properties across six brands, six regions and 34 countries/territories, with 100 official catalog sources and 1,017 claims. Coordinates remain unknown; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
+The next stage is **Stage 12 — Dynamic Data Research**, only after explicit approval. The catalog contains 100 properties across six brands, six regions and 34 countries/territories, with 100 official catalog sources and 1,017 claims. Stage 11 adds a dated 100-property coordinate evidence overlay; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
 
 Hash URLs preserve comparison selections, search, filters, and sort order through reloads and property-detail round trips. See [explorer behavior](docs/architecture/property-explorer.md) for supported filters and unknown handling.
 
@@ -110,4 +110,8 @@ Sourced benefits for the existing 25 hotels, with manual saved status, separate 
 
 ## Stage 10 — Watchlist
 
-Save properties from the explorer/details or create separate travel-window targets in `#/watchlist`. Dates, desired nightly cash/points rates, currency, priority and notes stay local. Blank values remain unknown; targets do not imply available prices or affect trip spending. Version-2 JSON backups contain profile, trips and watchlist; genuine version-1 backups/saved planners migrate with an empty watchlist and preserve prior fields. See [architecture](docs/architecture/watchlist.md), [ADR-016](docs/decisions/ADR-016-local-watchlist.md) and [stage report](docs/stages/stage-10.md). No automated monitoring or Stage 11 maps.
+Save properties from the explorer/details or create separate travel-window targets in `#/watchlist`. Dates, desired nightly cash/points rates, currency, priority and notes stay local. Blank values remain unknown; targets do not imply available prices or affect trip spending. Version-2 JSON backups contain profile, trips and watchlist; genuine version-1 backups/saved planners migrate with an empty watchlist and preserve prior fields. See [architecture](docs/architecture/watchlist.md), [ADR-016](docs/decisions/ADR-016-local-watchlist.md) and [stage report](docs/stages/stage-10.md). No automated monitoring. Stage 11 now adds optional maps.
+
+## Stage 11 — Maps
+
+Show geographic maps in property details, comparison and Trip Builder. Published official pins have normal dated source evidence. The list remains independent; unknown locations stay explicit. The bundled Natural Earth overview supports fit/world views and keyboard pan/zoom; OSM street detail is optional and recovers from provider failures. Trip numbering preserves saved order and repeat visits; connections are not travel routes. v1 planners and v2 backups remain compatible. Run `npm run validate:maps`. See [architecture](docs/architecture/maps.md), [licensing/sourcing](docs/data-methodology/map-sources.md), [ADR-017](docs/decisions/ADR-017-optional-evidence-backed-maps.md) and [stage report](docs/stages/stage-11.md). No Stage 12 work.

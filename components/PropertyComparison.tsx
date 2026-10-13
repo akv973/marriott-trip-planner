@@ -1,3 +1,5 @@
+import { MapPanel } from './MapPanel';
+import { propertyStops } from '../lib/maps/geography';
 import { BenefitCard } from './EliteBenefits';
 import { effectiveBenefits } from '../lib/benefits/engine';
 import { BENEFIT_LABELS } from '../lib/benefits/schema';
@@ -48,5 +50,6 @@ export function PropertyComparison({ catalog, properties, query, asOf, onRemove,
       </div>
       <p className="comparison-footnote">Setting tags describe sourced activities or surroundings. They don’t guarantee amenities or hotel quality. Prices and fees remain manual; effective benefits use the saved status and sourced rules. no booking value or recommendation is calculated here.</p>
     </section>}
+    {properties.length >= 2 && <MapPanel title="Compared property locations" stops={propertyStops(catalog, properties, asOf)} query={query} comparisonSlugs={slugs} />}
   </>;
 }

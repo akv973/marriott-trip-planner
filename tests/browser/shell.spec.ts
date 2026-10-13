@@ -112,7 +112,7 @@ test('detail facts, sources, unknown booking values and editorial remain distinc
   await expect(page.getByText('Editorial · desk review', { exact: true })).toBeVisible();
   const booking = page.getByRole('region', { name: 'Booking information' });
   await expect(booking.getByText('Unavailable', { exact: true })).toHaveCount(2);
-  for (const label of ['Latitude', 'Longitude', 'Opening year', 'Operating status']) await expect(page.locator('.fact-row').filter({ has: page.getByText(label, { exact: true }) })).toContainText('Unknown');
+  for (const label of ['Opening year', 'Operating status']) await expect(page.locator('.fact-row').filter({ has: page.getByText(label, { exact: true }) })).toContainText('Unknown');
   const airport = page.locator('.fact-row').filter({ has: page.getByText('Nearest airport', { exact: true }) });
   await expect(airport).toContainText('about 53.9 km');
   await airport.locator('summary').click();

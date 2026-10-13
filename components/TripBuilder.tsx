@@ -1,3 +1,5 @@
+import { MapPanel } from './MapPanel';
+import { tripStops } from '../lib/maps/geography';
 import type { UserProfile } from '../lib/profile/profile';
 import { CERTIFICATE_POLICY } from '../lib/profile/profile';
 import type { TripWorkspace } from '../lib/storage/planner';
@@ -90,5 +92,6 @@ export function TripBuilder({ catalog, asOf, query, comparisonSlugs, workspace, 
         <details className="recommendation-audit"><summary>Inspect trip and structured totals (JSON)</summary><pre>{JSON.stringify(result, null, 2)}</pre></details>
       </>}<div className="calculator-policy"><h3>Calculation context</h3><p>Existing calculator policy: {POINTS_POLICY.version}, reviewed {POINTS_POLICY.verifiedAt}. <a href={POINTS_POLICY.terms} target="_blank" rel="noopener noreferrer">Marriott terms ↗</a> · <a href={POINTS_POLICY.fifthNightHelp} target="_blank" rel="noopener noreferrer">Stay for 5, Pay for 4 ↗</a></p><p>No live rates or fee waivers are assumed. Certificate stays contribute confirmed top-off points and manual award cash. Certificate opportunity cost, paid-stay earnings, card rewards, transport and activities are excluded. CPP and economic planning cost are withheld for trips using certificates. Manual prices and plans are separate from catalog evidence and editorial judgments.</p></div></aside>
     </div>}
+    {trip && <MapPanel key={trip.id} title="Trip geography" stops={tripStops(catalog, trip, asOf)} itinerary query={query} comparisonSlugs={comparisonSlugs} />}
   </>;
 }
