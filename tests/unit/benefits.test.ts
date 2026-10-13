@@ -145,11 +145,11 @@ describe('Conflict, time and evidence handling', () => {
     const b=structuredClone(benefits); b.observations.push({ id:'fixture-opinion',propertyId:'property-jw-tampa',kind:'editorial',reviewedAt:asOf,text:'Synthetic: every guest gets a suite',sourceIds:[] });
     expect(assess('jw-tampa','gold',b).results).toEqual(assess('jw-tampa','gold').results);
   });
-  it('reconstructs a Stage 7 v1 backup exactly and derives benefits without adding saved fields', () => {
+  it('reconstructs a planner backup exactly and derives benefits without adding saved fields', () => {
     const planner=emptyPlanner(); planner.profile.status='ambassador'; planner.profile.balance=1200000;
     const backup=exportPlanner(planner,catalog,'2026-10-12T00:00:00Z'); const restored=importPlanner(backup,catalog); expect(restored.success).toBe(true);
     if(!restored.success) throw new Error(); expect(restored.data).toEqual(planner); const before=JSON.stringify(restored.data);
     assess('dove-mountain',restored.data.profile.status); expect(JSON.stringify(restored.data)).toBe(before);
-    expect(JSON.parse(backup).schemaVersion).toBe(1); expect(backup).not.toContain('benefit');
+    expect(JSON.parse(backup).schemaVersion).toBe(2); expect(backup).not.toContain('benefit');
   });
 });
