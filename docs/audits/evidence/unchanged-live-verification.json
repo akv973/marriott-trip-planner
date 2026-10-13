@@ -1,0 +1,37 @@
+[
+  {
+    "path": "assets/GeographicMap-D4EqxXwp.js",
+    "status": 200,
+    "localSha256": "9765af40e99a09be8cc730d85b70d4f372ae249bcd7af63c8c2afc1982e3d57e",
+    "servedSha256": "9765af40e99a09be8cc730d85b70d4f372ae249bcd7af63c8c2afc1982e3d57e",
+    "match": true
+  },
+  {
+    "path": "assets/index-Bo6Y8_w6.css",
+    "status": 200,
+    "localSha256": "ab9cb4f0dbc9db80f4dc46d82df16b3118b07c359ef83c80a6029fc227edd8db",
+    "servedSha256": "ab9cb4f0dbc9db80f4dc46d82df16b3118b07c359ef83c80a6029fc227edd8db",
+    "match": true
+  },
+  {
+    "path": "assets/index-Bu0T7HCQ.js",
+    "status": 200,
+    "localSha256": "39dc9bf50982d5c53b419cfae136bee83d10a5b8b548b44b97bf24e733927815",
+    "servedSha256": "39dc9bf50982d5c53b419cfae136bee83d10a5b8b548b44b97bf24e733927815",
+    "match": true
+  },
+  {
+    "path": "assets/land-B4KBD8fO.json",
+    "status": 200,
+    "localSha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+    "servedSha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+    "match": true
+  },
+  {
+    "path": "index.html",
+    "status": 200,
+    "localSha256": "c319768511f02f8a34cef35def91c61486b9f4aed1c57a6b542cda1d2e1be468",
+    "servedSha256": "c319768511f02f8a34cef35def91c61486b9f4aed1c57a6b542cda1d2e1be468",
+    "match": true
+  }
+]
