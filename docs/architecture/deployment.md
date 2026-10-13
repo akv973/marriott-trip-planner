@@ -55,3 +55,7 @@ Update the workflow base path, runbook URLs, and any explicit base-path verifica
 ## Primary reference
 
 [Vite: Deploying a Static Site — GitHub Pages](https://vite.dev/guide/static-deploy.html), consulted during Stage 0, explains project base paths, Pages enablement, and the official Actions workflow pattern.
+
+## Stage 10 verification
+
+The local Watchlist is available at `#/watchlist` with keyboard-accessible explorer/detail saving, nullable desired rates/dates/priority, local reload persistence and compatible version-2 backups. Strict version-1 imports preserve old profile/trip fields and add an empty watchlist. See [Watchlist architecture](watchlist.md) and the [completion report](../stages/stage-10.md). The unchanged workflow runs 90 preview and 90 live desktop/narrow browser checks, including all previous features. Main application commit `51306812faf88309976cfbb0c03324d31dc4f3ed` passed checks, deployment and live QA in [run 38329031343](https://github.com/akv973/marriott-trip-planner/actions/runs/38329031343); its live HTML/JS/CSS matched the recorded build bytes exactly.

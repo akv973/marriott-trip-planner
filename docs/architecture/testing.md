@@ -1,6 +1,6 @@
 # Testing and validation
 
-## Current checks (Stage 6 — Trip Builder)
+## Current checks (Stage 10 — Watchlist)
 
 | Command | Checks |
 | --- | --- |
@@ -12,7 +12,7 @@
 | `npm run test:integration` | Shipped catalog JSON → schemas/references/evidence → explorer/detail UI; sources, unknowns, conflict/stale fixtures; invalid-data fallback |
 | `npm run catalog:health` | Dated health, optional gaps, conflicts, staleness and confidence denominators |
 | `npm run build` | Production bundle |
-| `npm run test:browser` | Chromium desktop/narrow explorer, combined filters, sorting, details, history/reloads, keyboard, all 25 pages, assets and overflow |
+| `npm run test:browser` | Chromium desktop/narrow explorer, combined filters, sorting, details, history/reloads, keyboard, all 100 pages, assets and overflow |
 
 `npm run check` groups typecheck, lint, schema validation, both Vitest projects, and build. The CI workflow runs unit and integration suites separately to make failures easy to diagnose.
 
