@@ -66,11 +66,15 @@ test('legacy backup, rejected replacement and another-tab conflict preserve save
   await other.locator('.storage-status').screenshot({ path: info.outputPath('audit-tab-conflict.png') }); await other.reload(); await expect(other.getByLabel('Profile points balance', { exact: true })).toHaveValue('123456'); await other.close();
 });
 
-test('denied storage reads and quota failures retain exportable in-memory work', async ({ page }) => {
+test('denied storage reads and quota failures retain exportable in-memory work', async ({ page, browser }) => {
   await page.addInitScript(() => { Storage.prototype.getItem = () => { throw new Error('Blocked storage'); }; Storage.prototype.setItem = () => { throw new Error('QuotaExceededError'); }; });
-  await page.goto('./#/profile'); await expect(page.locator('.storage-status')).toContainText('unavailable'); await page.getByLabel('Profile points balance', { exact: true }).fill('123456'); await expect(page.locator('.storage-status')).toContainText('Changes remain in memory');
+  await page.goto('./#/profile'); await expect(page.locator('.storage-status')).toContainText('unavailable'); await page.getByLabel('Profile points balance', { exact: true }).fill('123456'); await expect(page.locator('.storage-status')).toContainText('Export this page before reloading');
   await page.getByRole('button', { name: 'Export planner JSON', exact: true }).click(); expect(JSON.parse(await page.getByLabel('Planner JSON', { exact: true }).inputValue()).data.profile.balance).toBe(123456);
   await nav(page, 'Portfolio').click(); await expect(page.locator('.portfolio-start')).toContainText('123,456 points');
+  const quota = await browser.newPage({ viewport: page.viewportSize()! });
+  await quota.addInitScript(() => { Storage.prototype.setItem = () => { throw new Error('QuotaExceededError'); }; });
+  await quota.goto(new URL('./', page.url()).href + '#/profile'); await quota.getByLabel('Profile points balance', { exact: true }).fill('654321'); await expect(quota.locator('.storage-status')).toContainText('Changes remain in memory');
+  await quota.getByRole('button', { name: 'Export planner JSON', exact: true }).click(); expect(JSON.parse(await quota.getByLabel('Planner JSON', { exact: true }).inputValue()).data.profile.balance).toBe(654321); await quota.close();
 });
 
 test('keyboard route focus, control names, optional map and horizontal ledgers are usable', async ({ page }, info) => {
