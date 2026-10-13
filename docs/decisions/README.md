@@ -31,3 +31,5 @@ ADRs record architectural direction. Acceptance of a later-stage design does not
 - [ADR-017: Optional evidence-backed maps](ADR-017-optional-evidence-backed-maps.md).
 
 - [ADR-018: Dynamic data research and provider approval gate](ADR-018-dynamic-data-research-gate.md) — research complete; no provider approved or Stage 13 implementation authorized.
+
+- [ADR-019: Manual portfolio allocation before dynamic integration](ADR-019-manual-portfolio-sequencing.md) — explicit authorization for Stage 14 with Stage 13 deferred; Stage 15 remains unauthorized.

@@ -7,6 +7,7 @@ export type Route = RouteContext & ({ page: 'explore'; section: string | null }
   | { page: 'compare' }
   | { page: 'recommendations' }
   | { page: 'trips' }
+  | { page: 'portfolio' }
   | { page: 'profile' }
   | { page: 'watchlist'; propertySlug: string | null }
   | { page: 'benefits'; propertySlug: string | null }
@@ -30,6 +31,7 @@ export function parseRoute(hash: string): Route {
   if (path === '/benefits') return { page: 'benefits', propertySlug: params.get('property')?.slice(0, 100) ?? null, query, comparisonSlugs };
   if (path === '/watchlist') return { page: 'watchlist', propertySlug: params.get('property')?.slice(0, 100) ?? null, query, comparisonSlugs };
   if (path === '/profile') return { page: 'profile', query, comparisonSlugs };
+  if (path === '/portfolio') return { page: 'portfolio', query, comparisonSlugs };
   if (path === '/trips') return { page: 'trips', query, comparisonSlugs };
   if (path === '/compare') return { page: 'compare', query, comparisonSlugs };
   if (/^\/properties\/[a-z][a-z0-9]*(-[a-z0-9]+)*$/.test(path)) return { page: 'property', slug: path.slice('/properties/'.length), query, comparisonSlugs };
@@ -68,3 +70,5 @@ export function watchlistHref(query: ExplorerQuery = DEFAULT_QUERY, comparisonSl
   const context = serializeQuery(query, comparisonSlugs);
   return `#/watchlist${context}${propertySlug ? `${context ? '&' : '?'}property=${encodeURIComponent(propertySlug)}` : ''}`;
 }
+
+export const portfolioHref = (query: ExplorerQuery = DEFAULT_QUERY, comparisonSlugs: string[] = []) => `#/portfolio${serializeQuery(query, comparisonSlugs)}`;

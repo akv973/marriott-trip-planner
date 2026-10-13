@@ -9,7 +9,7 @@ export const emptyCollectionSchema = z.array(z.never());
 export const foundationSchema = z.strictObject({
   schemaVersion: z.literal('0.1'),
   appId: z.literal('marriott-trip-planner'),
-  stage: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6), z.literal(7), z.literal(8), z.literal(9), z.literal(10), z.literal(11)]),
+  stage: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5), z.literal(6), z.literal(7), z.literal(8), z.literal(9), z.literal(10), z.literal(11), z.literal(14)]),
   deploymentTarget: z.literal('github-pages'),
   catalogState: z.enum(['unpopulated', 'seeded']),
   modules: z.array(z.strictObject({
@@ -35,7 +35,7 @@ export const foundationBundleSchema = z.strictObject({
 }).superRefine((bundle, ctx) => {
   const { foundation, benefits, ...catalog } = bundle;
   if (foundation.stage < 8 && !Array.isArray(benefits)) ctx.addIssue({ code: 'custom', message: 'Benefit engine requires authorized Stage 8.' });
-  if (foundation.stage >= 8 && Array.isArray(benefits)) ctx.addIssue({ code: 'custom', message: 'Stages 8–11 require sourced benefit rules.' });
+  if (foundation.stage >= 8 && Array.isArray(benefits)) ctx.addIssue({ code: 'custom', message: 'Stages 8 and later require sourced benefit rules.' });
   if (!Array.isArray(benefits)) for (const message of benefitReferenceErrors(benefits, catalog)) ctx.addIssue({ code: 'custom', path: ['benefits'], message });
   if (foundation.stage === 0 && Object.values(catalog).some((records) => records.length > 0)) {
     ctx.addIssue({ code: 'custom', message: 'Stage 0 catalog must remain empty.' });
