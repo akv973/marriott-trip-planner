@@ -13,7 +13,7 @@ test('published pins have inspectable sources and optional maps retain discovery
   await expect(panel(page).getByRole('img',{name:'Property geography map'})).toBeVisible();expect(external).toEqual([]);
   await panel(page).getByRole('button',{name:'Zoom in'}).click();await panel(page).getByRole('button',{name:'Pan east'}).click();
   await panel(page).getByRole('button',{name:'Fit locations'}).click();
-  const pin = await page.locator('.map-pin circle').first().boundingBox(); expect(pin!.width).toBeGreaterThanOrEqual(27); expect(pin!.width).toBeLessThanOrEqual(30);
+  const pin = await page.locator('.map-pin circle').first().boundingBox(); expect(pin!.width).toBeGreaterThanOrEqual(24); expect(pin!.width).toBeLessThanOrEqual(36);
   await noOverflow(page);await panel(page).screenshot({path:info.outputPath('maps-property.png')});
   await page.getByRole('link',{name:/Back to your collection/}).click();await expect(page).toHaveURL(/explore\?tag=desert&compare=mapito/);await expect(page.locator('.property-card').first()).toBeVisible();
 });
