@@ -14,7 +14,7 @@ Planner persistence contracts **do not change**: original storage key, strict ve
 
 An unreserved stay offers cash, points and any eligible certificate alternative only when dates, observation date, both cost choices, fees, currency conversion and product comparability are known. Future observation dates and past stays require review and retain the manual choice. Quotes older than 30 days are still dated scenarios, with explicit reconfirmation warnings. No missing prices or future availability are inferred.
 
-Reserved choices are fixed. Incomplete comparisons retain their selected manual method, show missing information and contribute nullable totals alongside known subtotals. Unknown fixed points/certificate commitments withhold new resource spending. Unknown profile balance withholds positive discretionary points but supports confirmed zero-point choices. Missing personal valuation withholds the balanced strategy. Known fixed commitments over balance and duplicate fixed certificate IDs return review errors without an allocation.
+Reserved choices are fixed. Incomplete comparisons retain their selected manual method, show missing information and contribute nullable totals alongside known subtotals. Unknown fixed points/certificate commitments withhold new resource spending. Unknown profile balance withholds positive discretionary points but supports confirmed zero-point choices. Missing personal valuation withholds the balanced strategy. A fixed points booking with an incomplete dated comparable cash/award comparison withholds the redemption-value strategy: an unknown fixed numerator does not cancel when alternative denominators differ, so it is never replaced with zero for CPP ranking. Known fixed commitments over balance and duplicate fixed certificate IDs return review errors without an allocation.
 
 Reserved stays outside selection reserve points/certificates before selected-trip allocation. Their cash is outside selected-trip totals and budget. Unselected unreserved ideas are not commitments. The profile balance must represent the **pre-allocation pool including all modeled commitments**; users whose booked awards were already deducted must adjust the balance or the modeled commitments together. No account synchronization establishes that relationship.
 
@@ -22,7 +22,7 @@ Certificate ID is a global single-use resource. Every top-off consumes the same 
 
 ## Objectives, units and deterministic search
 
-Methodology: `manual-portfolio-1`. All strategies consider the same feasible alternatives and constraints. Search visits fixed commitments first; choices are in stable method/expiry/ID order. Returned ledger uses original saved trip/stay order. Balance is depleted once per allocation; outside commitments are deducted once before it.
+Methodology: `manual-portfolio-1`. All strategies consider the same feasible alternatives and constraints. Search visits fixed commitments first; choices are in stable ASCII method/expiry/ID order independent of browser locale. Returned ledger uses original saved trip/stay order. Balance is depleted once per allocation; outside commitments are deducted once before it.
 
 | Strategy | Primary objective | Tie breaks |
 | --- | --- | --- |

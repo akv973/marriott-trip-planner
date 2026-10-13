@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { optimizePortfolio, SEARCH_NODE_LIMIT } from '../../lib/portfolio/optimizer';
 import type { Strategy } from '../../lib/portfolio/optimizer';
 import { exportPlanner, importPlanner } from '../../lib/storage/planner';
@@ -104,6 +104,18 @@ describe('Deterministic manual multi-trip allocation', () => {
   it('withholds new resource spending if a fixed points commitment is unknown', () => {
     const d = portfolioFixture(); const s = d.workspace.trips[0]!.stays[0]!; s.bookingMethod = 'points'; s.pricing.awardPoints = null;
     const p = plan(run(d), 'cash-conservation'); expect(p.points.total).toBeNull(); expect(p.points.knownSubtotal).toBe(0); expect(p.remainingPoints).toBeNull(); expect(p.allocations.slice(1).map((a) => a.method)).toEqual(['cash', 'cash']);
+  });
+  it('withholds aggregate CPP optimization when fixed award value is unknown, without treating it as zero', () => {
+    const d = portfolioFixture(); d.profile.balance = 200000; const s = d.workspace.trips[0]!.stays[0]!; s.bookingMethod = 'points'; s.pricing.cashTaxes = null;
+    const r = run(d); const value = r.plans.find((p) => p.strategy === 'redemption-value')!; expect(value.available).toBe(false);
+    if (!value.available) expect(value.reason).toMatch(/aggregate CPP cannot be ranked/);
+    expect(plan(r, 'cash-conservation').cashUsd.total).toBe(400); expect(plan(r, 'cash-conservation').assessmentComplete).toBe(false);
+    s.pricing.cashTaxes = 0; expect(plan(run(d), 'redemption-value').redemptionCpp).not.toBeNull();
+  });
+  it('keeps traversal and tie results independent of ambient locale collation', () => {
+    const d = portfolioFixture(); d.profile.certificates = [cert('cert-y', 60000), cert('cert-j', 60000)]; const q = portfolioRequest(); q.certificateEligibleStayIds = ['stop-2'];
+    const expected = run(d, q); const collator = vi.spyOn(String.prototype, 'localeCompare').mockImplementation(() => { throw new Error('Ambient collation must not affect allocation.'); });
+    try { expect(run(d, q)).toEqual(expected); } finally { collator.mockRestore(); }
   });
   it('distinguishes zero balance, unknown balance, zero prices and missing personal valuation', () => {
     const d = portfolioFixture(); d.profile.balance = 0; expect(plan(run(d), 'cash-conservation').remainingPoints).toBe(0);
