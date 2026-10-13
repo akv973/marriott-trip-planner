@@ -32,6 +32,10 @@ test('keyboard disclosure and 320px comparison keep source text readable and scr
   await expect(airport).toContainText('1 mile = 1.609344 km'); await expect(airport.getByRole('link')).toBeVisible(); await expect(summary).toBeFocused();
   const detail = airport.locator('details'); await expect(detail).toHaveAttribute('open','');
   expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(320);
+  const region = page.getByRole('region', {name:'Scrollable property comparison table'});
+  await region.evaluate((element) => { const cell = element.querySelector('tbody tr:not(.comparison-group) td')!; element.scrollLeft += cell.getBoundingClientRect().left - element.getBoundingClientRect().left - 1; });
+  const rowLabel = await airport.locator('..').getByRole('rowheader').boundingBox(); const cell = await airport.boundingBox();
+  expect(rowLabel!.x + rowLabel!.width).toBeLessThanOrEqual(cell!.x + 1);
   await airport.screenshot({path:info.outputPath('usability-source-disclosure-320.png')});
 });
 test('cold engine startup responds to a real search and defers optional map assets', async ({browser,baseURL},info) => {

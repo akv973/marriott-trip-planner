@@ -339,6 +339,13 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
   .comparison-empty { padding: 26px; }
 }
 
+/* At the smallest widths, a sticky label leaves less room than one property
+   column. Let labels scroll so evidence can be read without being covered. */
+@media (max-width: 380px) {
+  .comparison-table th[scope="row"], .comparison-table thead th:first-child,
+  .comparison-table .comparison-group th { left: auto; }
+}
+
 /* Stage 4: manual inputs and an inspectable economics summary. */
 .site-header { flex-wrap: wrap; }
 .site-header nav { gap: 20px; flex-wrap: wrap; }

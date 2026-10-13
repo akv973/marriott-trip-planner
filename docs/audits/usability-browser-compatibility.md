@@ -11,7 +11,9 @@ Baseline: `v1.0.0` at `4a2cdc9c32e4c2be1269c4cdb7203113d56aaee8`. Authorized sco
 | UX-003, medium | Keyboard-remove a hotel stay; focus is lost when the activated button disappears. | Focus the remaining Hotel selector or Add hotel stay. |
 | UX-004, low | Firefox at 320px reports a 321px document on Recommendations: the unbroken word in the 34px results heading exceeds its 280px container. | Allow that heading to wrap within its container. Font, layout and content remain unchanged. |
 
-The three new keyboard regressions failed on the released application before correction. Firefox's map-pin client rectangle reported roughly 234px while its screenshot showed a correct approximately 28px painted circle. This is a test-measurement issue: the assertion now checks local SVG geometry transformed into screen coordinates, with the same 24–36px bounds. No map behavior or geographic data was changed. Instrumentation and environment failures are distinguished from application findings.
+| UX-005, medium | At 320px, horizontally scroll an expanded comparison source column into view. A sticky 112px row label covers its left edge; a 232px property column cannot fit in the remaining 168px. | At widths up to 380px, let row labels scroll horizontally while keeping header vertical stickiness and larger-screen behavior. |
+
+The three new keyboard regressions and source-occlusion assertion failed on the released application before correction. Firefox's map-pin client rectangle reported roughly 234px while its screenshot showed a correct approximately 28px painted circle. This is a test-measurement issue: the assertion now checks local SVG geometry transformed into screen coordinates, with the same 24–36px bounds. No map behavior or geographic data was changed. Instrumentation and environment failures are distinguished from application findings.
 
 ## Matrix and isolation
 
