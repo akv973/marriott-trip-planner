@@ -35,7 +35,7 @@ describe('Validated explorer and detail pages', () => {
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('The Ritz-Carlton, Dove Mountain');
     expect(screen.getByRole('link', { name: /Back to your collection/ })).toHaveAttribute('href', '#/explore?tag=desert');
     const identity = screen.getByRole('region', { name: 'Identity & location' });
-    expect(within(identity).getByText('Latitude').nextElementSibling).toHaveTextContent('Unknown');
+    expect(within(identity).getByText('Latitude').nextElementSibling).toHaveTextContent('32.467144');
     expect(screen.getByText('Editorial · desk review')).toBeInTheDocument();
     const booking = screen.getByRole('region', { name: 'Booking information' });
     expect(within(booking).getAllByText('Unavailable')).toHaveLength(2);

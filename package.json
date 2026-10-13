@@ -10,7 +10,7 @@
     "dev": "vite --host 0.0.0.0",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --max-warnings=0",
-    "validate:schema": "node --import tsx scripts/validate-foundation.ts && npm run validate:catalog && npm run catalog:expansion",
+    "validate:schema": "node --import tsx scripts/validate-foundation.ts && npm run validate:catalog && npm run catalog:expansion && npm run validate:maps",
     "catalog:health": "node --import tsx scripts/catalog-health.ts",
     "test": "vitest",
     "test:unit": "vitest run --project unit",
@@ -21,7 +21,8 @@
     "preview": "vite preview --host 0.0.0.0",
     "check": "npm run typecheck && npm run lint && npm run validate:schema && npm run test:ci && npm run build",
     "validate:catalog": "node --import tsx scripts/validate-catalog.ts",
-    "catalog:expansion": "node --import tsx scripts/catalog-expansion-health.ts"
+    "catalog:expansion": "node --import tsx scripts/catalog-expansion-health.ts",
+    "validate:maps": "node --import tsx scripts/validate-maps.ts"
   },
   "dependencies": {
     "react": "^19.2.0",

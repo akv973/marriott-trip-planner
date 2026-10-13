@@ -1,3 +1,5 @@
+import { MapPanel } from './MapPanel';
+import { propertyStops } from '../lib/maps/geography';
 import { WatchControl } from './WatchControl';
 import type { WatchControlProps } from './WatchControl';
 import { BenefitPanel } from './EliteBenefits';
@@ -32,6 +34,7 @@ export function PropertyDetails({ catalog, property, query, asOf, comparisonSlug
       {official.stale && <p className="review-label">The official locator evidence needs a refresh.</p>}
     </section>
     <div className="detail-compare-control"><WatchControl property={property} onWatch={onWatch} watchedIds={watchedIds} /><CompareControl property={property} slugs={comparisonSlugs} onToggle={onToggle} /></div>
+    <MapPanel title="Property location" stops={propertyStops(catalog, [property], asOf)} query={query} comparisonSlugs={comparisonSlugs} />
     <div className="detail-layout">
       <div>
         <div className="facts-intro"><p className="eyebrow">Facts with a trail</p><h2>Know what’s behind the details.</h2><p>Confidence reflects the maintainer’s evidence assessment. Dates show when information was checked, and unknown values stay visible.</p></div>

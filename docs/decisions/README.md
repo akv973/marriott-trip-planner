@@ -27,3 +27,5 @@ ADRs record architectural direction. Acceptance of a later-stage design does not
 - [ADR-015 — Reviewed catalog expansion](ADR-015-reviewed-catalog-expansion.md)
 
 - [ADR-016: Local watchlist and compatible version-two backups](ADR-016-local-watchlist.md)
+
+- [ADR-017: Optional evidence-backed maps](ADR-017-optional-evidence-backed-maps.md).

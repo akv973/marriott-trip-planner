@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { rawCatalog } from '../lib/catalog/catalog';
+import { catalogAt } from '../lib/catalog/catalog';
 import { assessCatalog } from '../lib/catalog/health';
 
 // Explicit dates make regression checks repeatable; production defaults to today.
@@ -17,7 +17,7 @@ try {
   for (let index = 0; index < args.length; index += 2) {
     if (!['--as-of', '--input'].includes(args[index]!)) throw new Error(`Unknown option: ${args[index]}`);
   }
-  const input: unknown = file ? JSON.parse(readFileSync(file, 'utf8')) : rawCatalog;
+  const input: unknown = file ? JSON.parse(readFileSync(file, 'utf8')) : catalogAt(asOf);
   const result = assessCatalog(input, asOf);
   console.log(JSON.stringify(result.health, null, 2));
   if (!result.success) process.exitCode = 1;
