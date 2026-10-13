@@ -43,6 +43,13 @@ describe('Read-only portfolio scenario flows', () => {
     expect(screen.getByRole('navigation').querySelector('[aria-current="page"]')).toHaveTextContent('Portfolio');
     expect(within(screen.getByRole('navigation')).getByRole('link', { name: 'Trip builder' })).toHaveAttribute('href', '#/trips?country=TZ&compare=jw-tampa');
   });
+  it('withholds redemption ranking for an unknown fixed award value while exposing other incomplete assessments', () => {
+    const d = portfolioFixture('property-jw-tampa'); d.profile.balance = 200000; d.workspace.trips[0]!.stays[0]!.bookingMethod = 'points'; d.workspace.trips[0]!.stays[0]!.pricing.cashTaxes = null;
+    const before = seed(d); render(<App />);
+    expect(card('Redemption value').getByText(/aggregate CPP cannot be ranked/)).toBeInTheDocument();
+    expect(card('Cash conservation').getByText('Incomplete assessment')).toBeInTheDocument(); expect(card('Balanced').getByText('Incomplete assessment')).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button', { name: 'Inspect redemption value' })); expect(screen.queryByRole('table')).not.toBeInTheDocument(); expect(localStorage.getItem(STORAGE_KEY)).toBe(before);
+  });
   it('shows empty and corrupt-storage states without invented pricing or loss', () => {
     localStorage.setItem(STORAGE_KEY, 'future data'); render(<App />); expect(screen.getByText(/Saved data needs review/)).toBeInTheDocument(); expect(screen.getByText(/Create saved trips/)).toBeInTheDocument(); expect(localStorage.getItem(STORAGE_KEY)).toBe('future data');
   });

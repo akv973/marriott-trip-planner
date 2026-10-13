@@ -41,7 +41,7 @@ test('unknown chosen cash and fixed resource uncertainty stay partial', async ({
   await expect(card(page, 'Cash conservation')).toContainText('Incomplete assessment'); await expect(card(page, 'Cash conservation')).toContainText('$400.00 · partial'); await expect(page.getByRole('article', { name: 'Allocation 1', exact: true })).toContainText('Cash quote, taxes or mandatory fees unknown.');
   await page.locator('.portfolio-strategies').screenshot({ path: info.outputPath('portfolio-incomplete.png') }); await noOverflow(page);
   await page.evaluate(() => { const e = JSON.parse(localStorage.getItem('marriott-trip-planner:v1')!); e.data.workspace.trips[0].stays[0].bookingMethod = 'points'; e.data.workspace.trips[0].stays[0].pricing.awardPoints = null; localStorage.setItem('marriott-trip-planner:v1', JSON.stringify(e)); }); await page.reload();
-  await expect(page.getByRole('status').filter({ hasText: 'New points and certificate allocations are withheld' })).toBeVisible(); await expect(card(page, 'Cash conservation')).toContainText('Unknown');
+  await expect(page.getByRole('status').filter({ hasText: 'New points and certificate allocations are withheld' })).toBeVisible(); await expect(card(page, 'Cash conservation')).toContainText('Unknown'); await expect(card(page, 'Redemption value')).toContainText('aggregate CPP cannot be ranked');
 });
 test('reserved resources outside selection remain held; duplicate certificate fails closed', async ({ page }, info) => {
   const d: PlannerData = portfolioFixture('property-jw-tampa'); d.workspace.trips[0]!.stays[0]!.bookingMethod = 'points'; d.workspace.trips[0]!.stays[0]!.reservationStatus = 'reserved'; await seed(page, d);

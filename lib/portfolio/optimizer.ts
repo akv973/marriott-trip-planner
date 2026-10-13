@@ -37,6 +37,8 @@ type Row = { tripId: string; tripName: string; weight: number; stay: TripStay; p
   checkOut: string | null; cashQuote: number | null; awardQuote: number | null; options: Option[];
   fixed: boolean; missing: string[]; warnings: string[]; fifthNightSavings: number | null; freeNightIndices: number[] };
 const cents = (n: number) => Math.round((n + Number.EPSILON) * 100);
+// IDs and policy dates are ASCII. Keep search order independent of browser locale.
+const compare = (a: string, b: string) => a < b ? -1 : a > b ? 1 : 0;
 const total = (ns: (number | null)[]) => {
   const known = ns.filter((n): n is number => n !== null);
   return { total: known.length === ns.length ? known.reduce((a, b) => a + b, 0) : null,
@@ -141,12 +143,17 @@ export function optimizePortfolio(input: unknown, scenario: unknown, catalog: Ca
   if (data.profile.valuationCpp === null) warnings.push('Profile point valuation unknown. Balanced strategy is unavailable.');
   if (outside.length) warnings.push('Reserved stays outside the selection reserve points and certificates. Their cash is outside the selected-trip budget and totals.');
   if (!rows.length) warnings.push('Select trips containing hotel stays to compare allocations.');
-  const dated = rows.filter((r) => r.stay.checkIn && r.checkOut).sort((a, b) => a.stay.checkIn!.localeCompare(b.stay.checkIn!) || a.stay.id.localeCompare(b.stay.id));
+  const dated = rows.filter((r) => r.stay.checkIn && r.checkOut).sort((a, b) => compare(a.stay.checkIn!, b.stay.checkIn!) || compare(a.stay.id, b.stay.id));
   for (let i = 1; i < dated.length; i++) if (dated[i]!.stay.checkIn! < dated[i - 1]!.checkOut!) warnings.push(`Dates overlap: ${dated[i - 1]!.stay.id} and ${dated[i]!.stay.id}. Separate rooms or travelers are not assumed.`);
   const available = data.profile.balance === null || outsidePoints.total === null ? null : data.profile.balance - outsidePoints.total;
   const used = new Set(ids);
   const choices: Option[] = [];
   const best: Partial<Record<Strategy, Candidate>> = {};
+  // An unknown fixed award numerator does not cancel when candidate point
+  // denominators differ. Withhold CPP ranking rather than substituting zero.
+  const incompleteRedemption = rows.some((r) => r.fixed && r.options[0]!.method === 'points' &&
+    (r.options[0]!.cashAvoidedUsd === null || r.options[0]!.points === null || r.missing.length > 0));
+  if (incompleteRedemption) warnings.push('A fixed points booking has an incomplete value comparison. Redemption-value strategy is withheld until its dated comparable cash and award costs are known.');
   let nodes = 0; let limited = false; let feasible = 0;
   const budget = request.cashBudgetUsd === null ? null : cents(request.cashBudgetUsd);
   function visit(index: number, cashCents: number, points: number, awardAvoidedCents: number, awardPoints: number, weightedCashCents: number, weightedAvoidedCents: number) {
@@ -156,12 +163,12 @@ export function optimizePortfolio(input: unknown, scenario: unknown, catalog: Ca
     if (index === rows.length) {
       feasible++;
       const candidate = { options: [...choices], cashCents, points, awardAvoidedCents, awardPoints, weightedCashCents, weightedAvoidedCents, key: choices.map((o) => `${o.method}:${o.certificateId ?? ''}`).join('|') };
-      for (const strategy of STRATEGIES) if (strategy !== 'balanced' || data.profile.valuationCpp !== null) if (better(candidate, best[strategy], strategy, data.profile.valuationCpp)) best[strategy] = candidate;
+      for (const strategy of STRATEGIES) if ((strategy !== 'balanced' || data.profile.valuationCpp !== null) && (strategy !== 'redemption-value' || !incompleteRedemption)) if (better(candidate, best[strategy], strategy, data.profile.valuationCpp)) best[strategy] = candidate;
       return;
     }
     const row = rows[index]!;
     // Cash first ensures a quickly available baseline; all other ordering is stable.
-    const options = row.options.slice().sort((a, b) => a.method.localeCompare(b.method) || (data.profile.certificates.find((c) => c.id === a.certificateId)?.expiresOn ?? '').localeCompare(data.profile.certificates.find((c) => c.id === b.certificateId)?.expiresOn ?? '') || (a.certificateId ?? '').localeCompare(b.certificateId ?? ''));
+    const options = row.options.slice().sort((a, b) => compare(a.method, b.method) || compare(data.profile.certificates.find((c) => c.id === a.certificateId)?.expiresOn ?? '', data.profile.certificates.find((c) => c.id === b.certificateId)?.expiresOn ?? '') || compare(a.certificateId ?? '', b.certificateId ?? ''));
     for (const option of options) {
       if (!row.fixed && (unknownCommitment && option.method !== 'cash' || available === null && (option.points ?? 0) > 0 || option.certificateId !== null && used.has(option.certificateId))) continue;
       choices.push(option);
@@ -192,7 +199,7 @@ export function optimizePortfolio(input: unknown, scenario: unknown, catalog: Ca
   if (limited) warnings.push(`Search reached ${SEARCH_NODE_LIMIT.toLocaleString('en-US')} nodes. Results are the best evaluated feasible plans; global optimality is unverified. Reduce the selection to complete search.`);
   const plans = STRATEGIES.map((strategy) => {
     const candidate = best[strategy];
-    if (!candidate) return { strategy, label: STRATEGY_LABELS[strategy], available: false as const, reason: strategy === 'balanced' && data.profile.valuationCpp === null ? 'Personal point valuation is unknown.' : limited ? 'No feasible plan found before the search limit.' : 'No allocation fits known points and cash constraints.' };
+    if (!candidate) return { strategy, label: STRATEGY_LABELS[strategy], available: false as const, reason: strategy === 'balanced' && data.profile.valuationCpp === null ? 'Personal point valuation is unknown.' : strategy === 'redemption-value' && incompleteRedemption ? 'A fixed points booking has an incomplete value comparison; aggregate CPP cannot be ranked.' : limited ? 'No feasible plan found before the search limit.' : 'No allocation fits known points and cash constraints.' };
     let remaining = unknownCommitment ? null : available;
     const held = new Set(outside.flatMap((r) => r.options[0]!.certificateId ? [r.options[0]!.certificateId!] : []));
     const allocations = rows.map((row, i) => {
