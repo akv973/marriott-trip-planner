@@ -4,7 +4,7 @@ Audit date: **2026-10-13**. Scope: the existing manual application through Stage
 
 ## Recommendation
 
-**Candidate ready for approval; production readiness verification is pending.** No unresolved blocking application defect remains in the tested candidate. The three demonstrated defects are fixed and all required local/preview checks pass. Automatic approval review rejected merging PR #27 because it would update `main` and trigger production deployment; therefore the candidate has not been merged or deployed. Approval to merge/deploy is required before completing the existing gated main workflow, live browser audit and exact candidate-build byte verification. No release tag has been created.
+**PASS — ready for a manual-planner release within the audited scope.** PR #27 was merged at the separately approved head `1ba7e8d6a0293a41a8859d7e42aa844df0120276`. The three demonstrated defects are deployed and verified on the public site. Required checks, deployment and all 126 live browser checks passed in the existing gated workflow. No unresolved blocking application defect remains in this tested scope. Remaining manual-data, performance, repository-protection and browser/device limitations are listed below. This recommendation does not promote a version or create a release tag.
 
 ## Demonstrated findings and fixes
 
@@ -33,18 +33,19 @@ Baseline `npm run check`: **341 unit + 71 integration = 412 passed**. After corr
 | Verification | Result |
 | --- | --- |
 | Local full check, Node 24.19.0 | PASS, 345 unit / 72 integration |
-| Required CI checks, final application candidate | PASS, 345 unit / 72 integration |
-| Chromium production preview, 1366×900 / 390×844 | **126/126 PASS**, no skips/retries/flaky cases |
+| Required main CI checks, deployed application | PASS, 345 unit / 72 integration |
+| Main Chromium production preview, 1366×900 / 390×844 | **126/126 PASS**, no skips/retries/flaky cases |
+| Live Chromium regressions and three fixes, same widths | **126/126 PASS**, no skips/retries/flaky cases |
 | Route reflow at 320 / 768 / 1366 px | PASS, all nine principal routes |
-| Visual QA | PASS; 14 final audit screenshots reviewed, plus comparison/incomplete/infeasible/certificate states |
-| Existing live deployment | **5/5 HTTP 200 and exact SHA-256 matches** to unchanged Stage 14 build |
-| Candidate merge / deployment / live audit | **BLOCKED pending approval**, not claimed as verified |
+| Visual QA | PASS; 14 live audit screenshots are byte-identical to the reviewed preview, including 320/768/1366 reflow; live ledger and narrow strategy views also inspected |
+| Deployed build verification | **5/5 HTTP 200 and exact SHA-256 matches** among served files, CI Pages artifact and local exact-commit build |
+| Approved merge / gated Pages deployment / live audit | **SUCCESS**, workflow 38474476979 |
 
-[Audit PR #27](https://github.com/akv973/marriott-trip-planner/pull/27). The final preview workflow is [38472464878](https://github.com/akv973/marriott-trip-planner/actions/runs/38472464878). Its candidate application SHA is `7f442de8975e245aa3037088fa8667a3aafd9263`. A following documentation-only audit-record commit does not change the tested application.
+[Audit PR #27](https://github.com/akv973/marriott-trip-planner/pull/27) is merged. The deployed application commit is **`14db5a3c65d226df73d739e1e9877aff6cd66de3`**. [Main workflow 38474476979](https://github.com/akv973/marriott-trip-planner/actions/runs/38474476979) completed successfully with required checks, Pages deployment and live browser QA. The existing exact production URL is [https://akv973.github.io/marriott-trip-planner/](https://akv973.github.io/marriott-trip-planner/). A subsequent documentation-only completion record changes no application bytes and does not replace this deployed commit.
 
 ## Loading measurements
 
-Final production-preview samples use cache disabled, 4× CPU slowdown, 150 ms latency and 200,000 bytes/s download. Each sample loads the catalog and completes a real search. These are controlled lab observations, not field Core Web Vitals or a formal performance-budget certification.
+Candidate preview samples from workflow 38472464878 use cache disabled, 4× CPU slowdown, 150 ms latency and 200,000 bytes/s download. Each sample loads the catalog and completes a real search. These are controlled lab observations, not field Core Web Vitals or a formal performance-budget certification.
 
 | Width | LCP samples (ms) | Median LCP | Completed-search samples (ms) | Median completed search |
 | --- | --- | --- | --- | --- |
@@ -56,6 +57,23 @@ Initial JS transfers approximately 203 KB compressed and decodes to 1,252,005 by
 Five local pure-engine samples of the capped 18-stay search visited 100,000 nodes in 58–94 ms. These Node timings are context only, not browser interaction guarantees. The existing limit still discloses unverified optimality.
 
 Raw evidence: [desktop loading](evidence/loading-desktop.json), [narrow loading](evidence/loading-narrow.json), [browser summary](evidence/preview-summary.json), and [unchanged live file hashes](evidence/unchanged-live-verification.json).
+
+## Live verification completion
+
+The live suite independently reproduces AUD-001, AUD-002 and AUD-003 through a restored planner with no active trip, two converted EUR stays and an empty trip. Trip builder and Portfolio both show USD 225.04; the empty trip carries its known zero-point balance; saved trip editing opens immediately. Loading/navigation/reloading the read-only scenario preserves stored planner bytes. Both desktop and narrow cases pass. The realistic discover/compare/calculate/save/optimize/watch/export/restore journey, existing browser regressions and 320/768/1366 reflow checks also pass on the public deployment.
+
+Fourteen live audit screenshots match the independently reviewed preview byte-for-byte, including the three-fix ledger, realistic journey, storage-conflict warning, keyboard-scrolled ledger and three reflow widths. Direct visual inspection of the live wide ledger and narrow strategy stack confirms readable values and controls. Existing comparison, incomplete, infeasible and certificate layouts remain covered.
+
+Three cold live samples per width use the same cache-disabled 4× CPU, 150 ms latency and 200,000-byte/s download settings:
+
+| Width | Live LCP samples (ms) | Median LCP | Completed-search samples (ms) | Median completed search |
+| --- | --- | --- | --- | --- |
+| Desktop 1366 px | 2,228 / 1,920 / 1,932 | 1,932 ms | 2,671 / 2,434 / 2,411 | 2,434 ms |
+| Narrow 390 px | 2,228 / 1,916 / 1,924 | 1,924 ms | 2,697 / 2,426 / 2,395 | 2,426 ms |
+
+Maximum live long tasks are 300 ms desktop / 295 ms narrow under the CPU slowdown. Optional map renderer/land requests remain absent from initial discovery. These lab measurements support usability under the tested conditions without certifying field Core Web Vitals or all devices.
+
+Raw final evidence: [live browser summary](evidence/live-browser-summary.json), [live desktop loading](evidence/live-loading-desktop.json), [live narrow loading](evidence/live-loading-narrow.json), and [served/CI/local build hashes](evidence/deployed-build-verification.json).
 
 ## Preservation
 
@@ -69,17 +87,19 @@ Catalog health remains 100 valid properties, zero schema or missing-evidence err
 - The profile is a pre-allocation pool that includes modeled reserved commitments. If account points were already deducted, users must reconcile the entered pool and modeled commitments together.
 - Unknown costs and resources remain explicit; incomplete assessments and capped searches cannot certify full feasibility or global optimality. Scenario settings reset on leaving/reloading; backups reconstruct default scenarios.
 - Browser data is local to the device/browser; private backups are needed for transfer and recovery. Another tab can block stale writes. Full/blocked storage needs export before closing the page.
-- The existing main-bundle size advisory remains (approximately 1.25 MB decoded / 204 KB gzip). Optional maps load later. Throttled measurements and the resulting release assessment are recorded below; no broad performance refactor was authorized by this audit.
+- The existing main-bundle size advisory remains (approximately 1.25 MB decoded / 204 KB gzip). Optional maps load later. Throttled measurements and the resulting release assessment are recorded above; no broad performance refactor was authorized by this audit.
 - Main branch protection is not enabled, as verified through the GitHub branch endpoint. The existing Actions workflow gates Pages deployment on required checks, but repository-level prevention of direct main writes is not configured. No repository settings were changed.
 - Browser automation uses Chromium, including narrow-screen emulation. Physical iOS/Android devices, Safari/Firefox, actual screen-reader sessions and field Core Web Vitals are not certified by these checks.
 - Future points earnings, transfers/purchases, certificate opportunity cost, transport/activities and unentered taxes/fees remain excluded.
 
 ## Evidence record
 
-- Baseline main remains `b58f1deb218176d86485159718f21ce039ab7696`; deployed application remains `e7c237866507c87465252ce23e94085b204c252a`, validated/deployed in [38464235081](https://github.com/akv973/marriott-trip-planner/actions/runs/38464235081).
+- Historical baseline main was `b58f1deb218176d86485159718f21ce039ab7696`; its deployed application was `e7c237866507c87465252ce23e94085b204c252a`, validated/deployed in [38464235081](https://github.com/akv973/marriott-trip-planner/actions/runs/38464235081).
 - Candidate changes: `b00dfca5ac91b75e737f3452ee969e1f6cd3f3ef`; corrected storage audit: `7f442de8975e245aa3037088fa8667a3aafd9263`.
 - Initial preview [38471608097](https://github.com/akv973/marriott-trip-planner/actions/runs/38471608097) documents the two test-assertion failures. Final preview [38472464878](https://github.com/akv973/marriott-trip-planner/actions/runs/38472464878) succeeds.
 - [Final browser evidence artifact 11852426550](https://github.com/akv973/marriott-trip-planner/actions/runs/38472464878/artifacts/11852426550) contains all 126 results and screenshots. All 14 final audit screenshots match the independently inspected initial layouts byte-for-byte. Images include the realistic journey, corrected FX/empty-trip ledger, stale-tab warnings, keyboard ledger and 320/768/1366 reflow. Additional inspected comparison, incomplete, infeasible and certificate layouts remain readable.
-- Direct checks of the existing exact production URL [https://akv973.github.io/marriott-trip-planner/](https://akv973.github.io/marriott-trip-planner/) on the audit date match the unchanged baseline HTML, JS, CSS, map renderer and land JSON. This proves production preservation, **not deployment of these fixes**.
+- Pre-merge production-preservation checks matched five unchanged Stage 14 files; that historical evidence is retained. Final post-deployment checks match all five updated served files to both the local exact-commit build and the actual CI Pages artifact.
+- Approved PR head: `1ba7e8d6a0293a41a8859d7e42aa844df0120276`. Merge/deployed application: `14db5a3c65d226df73d739e1e9877aff6cd66de3`. [Main workflow 38474476979](https://github.com/akv973/marriott-trip-planner/actions/runs/38474476979): all three jobs **SUCCESS**.
+- Main preview evidence [11852479056](https://github.com/akv973/marriott-trip-planner/actions/runs/38474476979/artifacts/11852479056), deployed Pages artifact [11852209703](https://github.com/akv973/marriott-trip-planner/actions/runs/38474476979/artifacts/11852209703), and live evidence [11854380208](https://github.com/akv973/marriott-trip-planner/actions/runs/38474476979/artifacts/11854380208) tie the tests and asset bytes to that deployed commit.
 
-Approval to merge PR #27 will permit the remaining gated main CI, deployment, live audit and served-candidate verification. Stages 13, 15 and 16 and any release tag remain outside this approval.
+**Audit complete.** The manual application is deployed and verified. This completion record changes documentation/evidence only; the deployed application SHA above remains authoritative. Stages 13, 15 and 16 and any release tag remain unauthorized.

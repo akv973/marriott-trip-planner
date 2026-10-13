@@ -2,7 +2,7 @@
 
 Read `docs/product/project-brief.md`, `docs/architecture/technical-architecture.md`, and the latest stage report before changing this project. The attached brief governs the product.
 
-- Current authorization: release-readiness audit of the existing manual application, with fixes only for demonstrated defects. Stages 13, 15 and 16 and release tags remain unauthorized. Execute only the explicitly authorized stage. Stage 12 — Dynamic Data Research is complete; Stage 14 — Portfolio Optimization is authorized independently using manual dated pricing (ADR-019). Stage 13 remains deferred. No provider is approved; Stage 15 is not authorized.
+- The release-readiness audit of the existing manual application is complete; its three demonstrated fixes are merged, deployed and verified. No further implementation stage is authorized. Stages 13, 15 and 16 and release tags remain unauthorized. Execute only the explicitly authorized stage. Stage 12 — Dynamic Data Research is complete; Stage 14 — Portfolio Optimization is authorized independently using manual dated pricing (ADR-019). Stage 13 remains deferred. No provider is approved; Stage 15 is not authorized.
 - Stop after each stage's completion report. Approval for a stage does not authorize the next stage.
 - Inspect Git state, architecture documents, and relevant tests before edits.
 - Keep factual data separate from editorial judgment. Unknown is a supported value; never replace unknown rates with zero.

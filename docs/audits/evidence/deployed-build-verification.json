@@ -1,0 +1,53 @@
+{
+  "deployedCommit": "14db5a3c65d226df73d739e1e9877aff6cd66de3",
+  "workflowRun": 38474476979,
+  "deploymentUrl": "https://akv973.github.io/marriott-trip-planner/",
+  "checkedAt": "2026-10-13T22:05:03.923463+00:00",
+  "files": [
+    {
+      "path": "assets/GeographicMap-BCozVULc.js",
+      "status": 200,
+      "localSha256": "a44734fc4ed2825656a4c5877bc01444aa6b29d2f09ee18e534b8091aa024522",
+      "servedSha256": "a44734fc4ed2825656a4c5877bc01444aa6b29d2f09ee18e534b8091aa024522",
+      "match": true,
+      "artifactSha256": "a44734fc4ed2825656a4c5877bc01444aa6b29d2f09ee18e534b8091aa024522",
+      "artifactMatch": true
+    },
+    {
+      "path": "assets/index-BnPNud1i.js",
+      "status": 200,
+      "localSha256": "f52165f77c3aa8f624d0fd31d62dcb61b52cdc423811d92b3b0148219ef06e5d",
+      "servedSha256": "f52165f77c3aa8f624d0fd31d62dcb61b52cdc423811d92b3b0148219ef06e5d",
+      "match": true,
+      "artifactSha256": "f52165f77c3aa8f624d0fd31d62dcb61b52cdc423811d92b3b0148219ef06e5d",
+      "artifactMatch": true
+    },
+    {
+      "path": "assets/index-Bo6Y8_w6.css",
+      "status": 200,
+      "localSha256": "ab9cb4f0dbc9db80f4dc46d82df16b3118b07c359ef83c80a6029fc227edd8db",
+      "servedSha256": "ab9cb4f0dbc9db80f4dc46d82df16b3118b07c359ef83c80a6029fc227edd8db",
+      "match": true,
+      "artifactSha256": "ab9cb4f0dbc9db80f4dc46d82df16b3118b07c359ef83c80a6029fc227edd8db",
+      "artifactMatch": true
+    },
+    {
+      "path": "assets/land-B4KBD8fO.json",
+      "status": 200,
+      "localSha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+      "servedSha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+      "match": true,
+      "artifactSha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+      "artifactMatch": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "localSha256": "702bcd7caf708e0ad760a0daaef51c81ec03f528d5f4d53abb94ce0257c7a6d6",
+      "servedSha256": "702bcd7caf708e0ad760a0daaef51c81ec03f528d5f4d53abb94ce0257c7a6d6",
+      "match": true,
+      "artifactSha256": "702bcd7caf708e0ad760a0daaef51c81ec03f528d5f4d53abb94ce0257c7a6d6",
+      "artifactMatch": true
+    }
+  ]
+}

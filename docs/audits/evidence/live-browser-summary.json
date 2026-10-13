@@ -1,0 +1,116 @@
+{
+  "deployedCommit": "14db5a3c65d226df73d739e1e9877aff6cd66de3",
+  "workflowRun": 38474476979,
+  "liveArtifactId": 11854380208,
+  "previewArtifactId": 11852479056,
+  "deploymentArtifactId": 11852209703,
+  "deploymentUrl": "https://akv973.github.io/marriott-trip-planner/",
+  "stats": {
+    "startTime": "2026-10-13T22:04:17.121Z",
+    "duration": 180569.386,
+    "expected": 126,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "previewStats": {
+    "startTime": "2026-10-13T21:59:52.703Z",
+    "duration": 209134.361,
+    "expected": 126,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "projects": [
+    "desktop: 1366x900",
+    "narrow: 390x844"
+  ],
+  "extraReflowWidths": [
+    320,
+    768,
+    1366
+  ],
+  "liveAuditImages": 14,
+  "imagesIdenticalToReviewedPreview": 14,
+  "auditScenarios": [
+    {
+      "title": "real manual journey: discover, compare, calculate, save two hotels, optimize, watch, and restore",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "audit fixes are visible after restoring inactive trips, rounded FX and an empty trip",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "legacy backup, rejected replacement and another-tab conflict preserve saved work",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "denied storage reads and quota failures retain exportable in-memory work",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "keyboard route focus, control names, optional map and horizontal ledgers are usable",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "320px phone, tablet and desktop reflow preserve navigation and visible controls",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "cold-load measurements and lazy maps document loading cost under network and CPU throttling",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "real manual journey: discover, compare, calculate, save two hotels, optimize, watch, and restore",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "audit fixes are visible after restoring inactive trips, rounded FX and an empty trip",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "legacy backup, rejected replacement and another-tab conflict preserve saved work",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "denied storage reads and quota failures retain exportable in-memory work",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "keyboard route focus, control names, optional map and horizontal ledgers are usable",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "320px phone, tablet and desktop reflow preserve navigation and visible controls",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "cold-load measurements and lazy maps document loading cost under network and CPU throttling",
+      "project": "narrow",
+      "status": "expected"
+    }
+  ],
+  "requiredChecks": {
+    "unitTests": 345,
+    "integrationTests": 72,
+    "previewBrowserTests": 126,
+    "liveBrowserTests": 126,
+    "checks": "success",
+    "deployment": "success",
+    "liveQA": "success"
+  }
+}

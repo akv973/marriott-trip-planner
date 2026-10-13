@@ -1,0 +1,122 @@
+{
+  "cpuSlowdown": 4,
+  "latencyMs": 150,
+  "downloadBytesPerSecond": 200000,
+  "samples": [
+    {
+      "elapsedToSearchMs": 2671,
+      "metrics": {
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 460
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 2228
+          }
+        ],
+        "lcp": 2228,
+        "longTasks": [
+          192,
+          300
+        ]
+      },
+      "navigation": [
+        {
+          "duration": 1638
+        }
+      ],
+      "resources": [
+        {
+          "name": "index-BnPNud1i.js",
+          "transferBytes": 206042,
+          "decodedBytes": 1252005,
+          "duration": 1228.699999999997
+        },
+        {
+          "name": "index-Bo6Y8_w6.css",
+          "transferBytes": 8907,
+          "decodedBytes": 40238,
+          "duration": 237.59999999999127
+        }
+      ]
+    },
+    {
+      "elapsedToSearchMs": 2434,
+      "metrics": {
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 432
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 1920
+          }
+        ],
+        "lcp": 1920,
+        "longTasks": [
+          201
+        ]
+      },
+      "navigation": [
+        {
+          "duration": 1459.699999999997
+        }
+      ],
+      "resources": [
+        {
+          "name": "index-BnPNud1i.js",
+          "transferBytes": 206042,
+          "decodedBytes": 1252005,
+          "duration": 1227
+        },
+        {
+          "name": "index-Bo6Y8_w6.css",
+          "transferBytes": 8907,
+          "decodedBytes": 40238,
+          "duration": 237.60000000000582
+        }
+      ]
+    },
+    {
+      "elapsedToSearchMs": 2411,
+      "metrics": {
+        "paints": [
+          {
+            "name": "first-paint",
+            "startTime": 432
+          },
+          {
+            "name": "first-contentful-paint",
+            "startTime": 1932
+          }
+        ],
+        "lcp": 1932,
+        "longTasks": [
+          229
+        ]
+      },
+      "navigation": [
+        {
+          "duration": 1470.5
+        }
+      ],
+      "resources": [
+        {
+          "name": "index-BnPNud1i.js",
+          "transferBytes": 206042,
+          "decodedBytes": 1252005,
+          "duration": 1232.5
+        },
+        {
+          "name": "index-Bo6Y8_w6.css",
+          "transferBytes": 8907,
+          "decodedBytes": 40238,
+          "duration": 241.29999999998836
+        }
+      ]
+    }
+  ]
+}
