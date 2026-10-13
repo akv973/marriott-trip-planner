@@ -479,9 +479,9 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .benefits-hero h1 { max-width: 850px; font-size: clamp(2.3rem, 5vw, 4.3rem); line-height: 1.1; }
 .benefits-hero > p:last-child { max-width: 680px; font-size: 1.12rem; line-height: 1.7; }
 .benefits-controls { display: grid; grid-template-columns: 2fr 1fr; gap: 1.2rem; background: #f0eee8; padding-block: 1.5rem; border-radius: 14px; }
-.benefits-controls label { display: grid; gap: .6rem; font-weight: 600; min-width: 0; overflow: clip; overflow-clip-margin: 4px; }
+.benefits-controls label { display: grid; gap: .6rem; font-weight: 600; min-width: 0; overflow: clip; }
 .benefits-controls select { width: 100%; min-width: 0; padding: .85rem; background: #fff; border: 1px solid #c4c6bc; border-radius: 6px; font: inherit; }
-.benefits-controls select:focus-visible { outline: 2px solid var(--clay); outline-offset: 2px; }
+.benefits-controls select:focus-visible { outline: 2px solid var(--clay); outline-offset: -3px; }
 .benefits-controls > p { grid-column: 1 / -1; margin: 0; line-height: 1.6; }
 .benefit-assumption { max-width: 950px; line-height: 1.7; color: #5c6459; }
 .benefit-context { margin-block: 1.5rem; background: #f0eee8; padding: 1rem 1.2rem; border-radius: 10px; overflow-wrap: anywhere; }
