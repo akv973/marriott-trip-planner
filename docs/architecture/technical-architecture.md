@@ -93,3 +93,7 @@ Adds a dated coordinate overlay, normal source/claim provenance and optional pro
 ## Stage 12 research boundary
 
 Stage 12 completes a [sourced provider assessment](../data-methodology/dynamic-data-research.md) and [ADR-018](../decisions/ADR-018-dynamic-data-research-gate.md), with a recommendation to defer integration pending qualification and separate approval. Cash/award capabilities and opening-event evidence remain distinct. No provider interface or engine is implemented. Runtime manifest remains Stage 11; source, catalog, storage/backups, dependencies and workflows stay unchanged. Any later secret-bearing provider needs a separately approved service rather than secrets in this static app. Rights for persistent/exported observations cannot be assumed from API access.
+
+## Stage 14 manual portfolio boundary
+
+By explicit user-approved sequencing (ADR-019), Stage 14 adds a pure portfolio allocation engine and `#/portfolio` using dated manual stay quotes. Stage 13 stays deferred and Stage 15 is unauthorized. Shared profile resources, fixed reserved commitments, independent strategy objectives, incomplete assessments, bounded deterministic search and inspectable ledgers live outside UI components. Existing trip/points/certificate/benefit engines, original storage key and v1/v2 backup contracts are unchanged. The runtime manifest admits Stage 14 while rejecting Stage 12/13/15 progression. See [portfolio architecture](portfolio-optimization.md).

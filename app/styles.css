@@ -555,3 +555,45 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
   .map-choice { grid-template-columns: minmax(0, 1fr); }
   .map-attribution { font-size: 10px; }
 }
+
+/* Stage 14: portfolio scenarios reuse the established calculator language. */
+.portfolio-controls, .portfolio-ledger, .portfolio-strategies { margin: 2rem 0; min-width: 0; }
+.portfolio-controls { padding: clamp(1.1rem, 3vw, 2rem); border: 1px solid var(--line, #d6ded6); border-radius: 14px; background: #fff; }
+.portfolio-controls h2, .portfolio-ledger h2 { margin-top: 0; }
+.portfolio-start { display: flex; flex-wrap: wrap; gap: .75rem 2rem; margin-bottom: 1rem; }
+.portfolio-start p { display: grid; gap: .3rem; margin: 0; }
+.portfolio-controls > .calculator-field { max-width: 36rem; margin: 1.5rem 0; }
+.portfolio-trip-control { border: 1px solid #d6ded6; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.portfolio-trip-control legend { font-weight: 650; padding: 0 .4rem; }
+.portfolio-trip-control > .calculator-field { max-width: 22rem; margin: 1rem 0; }
+.portfolio-check { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .7rem 0; line-height: 1.6; }
+.portfolio-check input { width: 1.1rem; height: 1.1rem; flex: 0 0 auto; }
+.portfolio-check span { flex-basis: 100%; font-size: .82rem; color: #59665c; }
+.portfolio-strategy-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.portfolio-strategy-card { display: flex; flex-direction: column; gap: .6rem; background: #fff; border: 1px solid #d6ded6; border-radius: 12px; padding: clamp(1rem, 2vw, 1.5rem); min-width: 0; }
+.portfolio-strategy-card.is-selected { border-color: #284d3b; box-shadow: inset 0 3px #284d3b; }
+.portfolio-strategy-card h3, .portfolio-strategy-card p { margin: 0; }
+.portfolio-strategy-card .primary-link { margin-top: auto; align-self: flex-start; }
+.portfolio-metrics { display: grid; gap: .65rem; margin: 1rem 0; }
+.portfolio-metrics > div { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px solid #eef0e9; padding-bottom: .5rem; }
+.portfolio-metrics dt { color: #59665c; font-size: .86rem; }
+.portfolio-metrics dd { margin: 0; text-align: right; font-weight: 600; overflow-wrap: anywhere; }
+.portfolio-table-scroll { overflow-x: auto; border: 1px solid #d6ded6; border-radius: 8px; margin: 1.5rem 0; }
+.portfolio-table-scroll table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.portfolio-table-scroll caption { text-align: left; padding: 1rem; font-weight: 600; background: #eef2eb; }
+.portfolio-table-scroll th, .portfolio-table-scroll td { text-align: left; padding: 1rem; border-bottom: 1px solid #d6ded6; }
+.portfolio-stays { display: grid; gap: 1rem; }
+.portfolio-stay { border: 1px solid #d6ded6; border-radius: 10px; padding: clamp(1rem, 3vw, 2rem); background: #fff; min-width: 0; }
+.portfolio-stay .section-heading { margin-bottom: 1rem; }
+.portfolio-stay .section-heading h3 { margin: 0; }
+.portfolio-stay .portfolio-metrics { max-width: 50rem; }
+.portfolio-controls details, .portfolio-stay details { margin: 1rem 0; line-height: 1.65; }
+.portfolio-controls summary, .portfolio-stay summary { cursor: pointer; font-weight: 600; }
+.portfolio-ledger li, .portfolio-stay p { overflow-wrap: anywhere; }
+@media (max-width: 850px) { .portfolio-strategy-grid { grid-template-columns: 1fr; } }
+@media (max-width: 500px) {
+  .portfolio-metrics > div { flex-direction: column; gap: .2rem; }
+  .portfolio-metrics dd { text-align: left; }
+  .portfolio-stay .section-heading { align-items: flex-start; flex-direction: column; gap: .75rem; }
+  .portfolio-table-scroll th, .portfolio-table-scroll td { padding: .65rem; min-width: 6rem; }
+}
