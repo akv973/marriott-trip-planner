@@ -38,3 +38,7 @@ Personal data is transient. Ten trips/thirty stays are UI/schema bounds, not sav
 ## Verification
 
 Independent expected outcomes cover mixed multi-property totals, exact calculator delegation, edit/replay immutability, unknown/zero selected prices, unknown alternatives, trip-wide balance and incomplete minimum shortfalls, separate-stay discount boundaries, FX/currency rounding, weighted/comparable redemption, dates/order/gaps/overlaps, notes/quote age, empty trips, invalid/duplicate/oversized inputs and static-host URL context. DOM and desktop/narrow browser scenarios cover edit invalidation, multiple trips/notes, removal/reorder, live recalculation, partial totals, nightly modes, FX, JSON/evidence, history and reload, alongside every earlier feature regression. Browser screenshots must be inspected before declaring visual QA.
+
+## Release audit arithmetic correction
+
+USD conversions are rounded per stay before summation, matching the portfolio ledger. Cash avoided uses the difference of separately rounded cash and award USD costs. Unknowns remain null. Valid restored planners with no active trip display the first saved trip without changing the saved envelope on load.

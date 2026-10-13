@@ -82,7 +82,7 @@ export function calculateTrip(input: unknown, catalog: Catalog, asOf: string, pr
     if (stay.observedAt === null) warnings.push('Quote observation date unknown.');
     else if (stay.observedAt > asOf) warnings.push('Quote observation date is in the future; review your entry.');
     else if (Date.parse(`${asOf}T00:00:00Z`) - Date.parse(`${stay.observedAt}T00:00:00Z`) > 30 * 86400000) warnings.push('Manual quote is over 30 days old; reconfirm pricing.');
-    return [{ stay, propertyId: property.id, propertyName: property.name, checkOut: checkout(stay.checkIn, stay.pricing.nights), economics, certificateAssessment, selectedCash, selectedPoints, cashUsd: selectedCash === null || economics.fx === null ? null : selectedCash * economics.fx, missing, warnings }];
+    return [{ stay, propertyId: property.id, propertyName: property.name, checkOut: checkout(stay.checkIn, stay.pricing.nights), economics, certificateAssessment, selectedCash, selectedPoints, cashUsd: selectedCash === null || economics.fx === null ? null : round(selectedCash * economics.fx, 'USD'), missing, warnings }];
   });
   if (errors.length) return { success: false as const, errors };
   const cashByCurrency = [...new Set(stays.map((entry) => entry.stay.pricing.currency))].sort().map((currency) => {
@@ -94,7 +94,7 @@ export function calculateTrip(input: unknown, catalog: Catalog, asOf: string, pr
   const cashUsd = { ...usd, total: usd.total === null ? null : round(usd.total, 'USD'), knownSubtotal: round(usd.knownSubtotal, 'USD') };
   const awards = stays.filter((entry) => entry.stay.bookingMethod !== 'cash');
   const usesCertificates = awards.some((e) => e.stay.bookingMethod === 'certificate');
-  const avoided = sum(awards.map((entry) => entry.economics.netCashAvoided === null || entry.economics.fx === null ? null : entry.economics.netCashAvoided * entry.economics.fx));
+  const avoided = sum(awards.map((entry) => entry.economics.cashTotal === null || entry.economics.awardCash === null || entry.economics.fx === null ? null : round(round(entry.economics.cashTotal * entry.economics.fx, 'USD') - round(entry.economics.awardCash * entry.economics.fx, 'USD'), 'USD')));
   const redemptionCpp = usesCertificates || !awards.length || points.total === null || points.total === 0 || avoided.total === null || awards.some((entry) => entry.stay.pricing.comparable !== 'same') ? null : avoided.total * 100 / points.total;
   const warnings: string[] = [];
   for (let i = 1; i < stays.length; i++) {

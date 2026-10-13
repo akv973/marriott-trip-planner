@@ -220,10 +220,11 @@ export function optimizePortfolio(input: unknown, scenario: unknown, catalog: Ca
     const cpp = pointsAwards.some((a) => a.missing.length) || avoided.total === null || spent.total === null || spent.total === 0 ? null : avoided.total * 100 / spent.total;
     return { strategy, label: STRATEGY_LABELS[strategy], available: true as const, assessmentComplete, optimal: !limited && assessmentComplete,
       allocations, points, cashUsd, cashByCurrency: [...new Set(allocations.map((a) => a.currency))].sort().map((currency) => ({ currency, ...cashTotal(allocations.filter((a) => a.currency === currency).map((a) => a.cash), fractionDigits(currency)) })),
-      tripTotals: trips.map((trip) => {
+      tripTotals: trips.map((trip, index) => {
         const group = allocations.filter((a) => a.tripId === trip.id);
+        const preceding = allocations.filter((a) => trips.slice(0, index + 1).some((t) => t.id === a.tripId));
         return { tripId: trip.id, tripName: trip.name, points: total(group.map((a) => a.points)), cashUsd: cashTotal(group.map((a) => a.cashUsd)),
-          remainingPoints: group.length ? group[group.length - 1]!.remainingPoints : null,
+          remainingPoints: preceding.length ? preceding[preceding.length - 1]!.remainingPoints : unknownCommitment ? null : available,
           usedCertificateIds: group.flatMap((a) => a.certificateId ? [a.certificateId] : []) };
       }),
       remainingPoints: unknownCommitment ? null : remaining,
