@@ -76,7 +76,7 @@ Source repository: [akv973/marriott-trip-planner](https://github.com/akv973/marr
 
 ## Stage discipline
 
-The next stage is **Stage 12 — Dynamic Data Research**, only after explicit approval. The catalog contains 100 properties across six brands, six regions and 34 countries/territories, with 100 official catalog sources and 1,017 claims. Stage 11 adds a dated 100-property coordinate evidence overlay; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
+The next stage is **Stage 12 — Dynamic Data Research**, only after explicit approval. The catalog contains 100 properties across six brands, six regions and 34 countries/territories, with 100 original catalog sources and 1,017 original claims. Stage 11 adds 100 coordinate sources and 200 claims in a dated 100-property evidence overlay; optional incompleteness is reported separately from validity. Validation cannot independently prove the truth of researched facts.
 
 Hash URLs preserve comparison selections, search, filters, and sort order through reloads and property-detail round trips. See [explorer behavior](docs/architecture/property-explorer.md) for supported filters and unknown handling.
 
