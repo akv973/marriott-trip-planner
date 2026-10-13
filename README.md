@@ -123,3 +123,7 @@ Research assesses cash and award support separately, access/costs, permitted use
 ## Stage 14 — Manual portfolio allocation
 
 At `#/portfolio`, compare cash conservation, points-only redemption value and balanced allocation across saved trips. One shared profile balance and certificate inventory prevent double spending; reserved stays remain fixed, including reservations outside selected trips. Inspect per-stay/per-trip points, cash, top-offs, fifth-night savings and remaining balances. Unknown quotes stay incomplete. Scenario priorities/budget/eligibility controls are transient and do not change saved choices or existing v1/v2 backups. Search limits are explicit. See [architecture](docs/architecture/portfolio-optimization.md), [ADR-019](docs/decisions/ADR-019-manual-portfolio-sequencing.md) and [Stage 14 report](docs/stages/stage-14.md). Stage 13 is deferred; Stage 15 has not begun.
+
+## Release-readiness audit
+
+See [the manual planner audit](docs/audits/manual-release-readiness.md) for demonstrated fixes, verification, remaining limitations and the release recommendation. No release tag or later stage is authorized by this audit.
