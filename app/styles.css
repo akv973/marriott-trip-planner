@@ -339,6 +339,13 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
   .comparison-empty { padding: 26px; }
 }
 
+/* At the smallest widths, a sticky label leaves less room than one property
+   column. Let labels scroll so evidence can be read without being covered. */
+@media (max-width: 380px) {
+  .comparison-table th[scope="row"], .comparison-table thead th:first-child,
+  .comparison-table .comparison-group th { left: auto; }
+}
+
 /* Stage 4: manual inputs and an inspectable economics summary. */
 .site-header { flex-wrap: wrap; }
 .site-header nav { gap: 20px; flex-wrap: wrap; }
@@ -393,7 +400,7 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .recommendation-methodology p, .recommendation-quotes p, .recommendation-results > p { font-size: 12px; line-height: 1.8; color: #536254; }
 .recommendation-quote { margin-top: 28px; }
 .recommendation-results { padding: 30px 0 55px; }
-.recommendation-results > h2 { font-size: 34px; }
+.recommendation-results > h2 { font-size: 34px; overflow-wrap: anywhere; }
 .recommendation-card { padding: 28px; border: 1px solid #bdc9b7; border-radius: 4px; background: #fffefa; margin: 28px 0; overflow-wrap: anywhere; }
 .recommendation-card-header { display: flex; align-items: start; justify-content: space-between; gap: 24px; }
 .recommendation-card h3 { font-size: 27px; line-height: 1.3; max-width: 660px; }
@@ -464,6 +471,8 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .profile-preferences details { margin: 1rem 0; }
 .profile-apply { padding: 1rem clamp(1rem, 5vw, 5rem); }
 .import-preview, .certificate-choice { padding: 1rem; background: #eeece3; overflow-wrap: anywhere; }
+.certificate-choice .calculator-field { overflow: clip; }
+.certificate-choice select:focus-visible { outline: 2px solid var(--clay); outline-offset: -3px; }
 @media (max-width: 900px) { .profile-layout { grid-template-columns: minmax(0, 1fr); } }
 
 /* Stage 8: independently inspectable benefits and policy context. */
@@ -472,8 +481,9 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .benefits-hero h1 { max-width: 850px; font-size: clamp(2.3rem, 5vw, 4.3rem); line-height: 1.1; }
 .benefits-hero > p:last-child { max-width: 680px; font-size: 1.12rem; line-height: 1.7; }
 .benefits-controls { display: grid; grid-template-columns: 2fr 1fr; gap: 1.2rem; background: #f0eee8; padding-block: 1.5rem; border-radius: 14px; }
-.benefits-controls label { display: grid; gap: .6rem; font-weight: 600; min-width: 0; }
+.benefits-controls label { display: grid; gap: .6rem; font-weight: 600; min-width: 0; overflow: clip; }
 .benefits-controls select { width: 100%; min-width: 0; padding: .85rem; background: #fff; border: 1px solid #c4c6bc; border-radius: 6px; font: inherit; }
+.benefits-controls select:focus-visible { outline: 2px solid var(--clay); outline-offset: -3px; }
 .benefits-controls > p { grid-column: 1 / -1; margin: 0; line-height: 1.6; }
 .benefit-assumption { max-width: 950px; line-height: 1.7; color: #5c6459; }
 .benefit-context { margin-block: 1.5rem; background: #f0eee8; padding: 1rem 1.2rem; border-radius: 10px; overflow-wrap: anywhere; }
@@ -579,6 +589,7 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .portfolio-metrics dt { color: #59665c; font-size: .86rem; }
 .portfolio-metrics dd { margin: 0; text-align: right; font-weight: 600; overflow-wrap: anywhere; }
 .portfolio-table-scroll { overflow-x: auto; border: 1px solid #d6ded6; border-radius: 8px; margin: 1.5rem 0; }
+.portfolio-table-scroll:focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; }
 .portfolio-table-scroll table { width: 100%; border-collapse: collapse; font-size: .9rem; }
 .portfolio-table-scroll caption { text-align: left; padding: 1rem; font-weight: 600; background: #eef2eb; }
 .portfolio-table-scroll th, .portfolio-table-scroll td { text-align: left; padding: 1rem; border-bottom: 1px solid #d6ded6; }

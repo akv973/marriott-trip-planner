@@ -18,7 +18,7 @@ jobs:
   validate:
     name: Required checks
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -45,9 +45,9 @@ jobs:
         run: npm run build
         env:
           VITE_BASE_PATH: /marriott-trip-planner/
-      - name: Install browser for explorer QA
-        run: npx playwright install --with-deps chromium
-      - name: Desktop and narrow browser checks
+      - name: Install browsers for compatibility QA
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Desktop, narrow and tablet browser checks
         run: npm run test:browser
       - name: Upload local browser QA evidence
         if: always()
@@ -88,7 +88,7 @@ jobs:
     needs: deploy
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -99,9 +99,9 @@ jobs:
           cache: npm
       - name: Install
         run: npm ci
-      - name: Install browser for live QA
-        run: npx playwright install --with-deps chromium
-      - name: Inspect live desktop and narrow explorer
+      - name: Install browsers for live QA
+        run: npx playwright install --with-deps chromium firefox webkit
+      - name: Inspect live browser and viewport matrix
         run: npm run test:browser
         env:
           PLAYWRIGHT_BASE_URL: https://akv973.github.io/marriott-trip-planner/

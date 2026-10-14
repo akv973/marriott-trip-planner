@@ -2,7 +2,16 @@ import { expect, test } from '@playwright/test';
 import type { Page } from '@playwright/test';
 const nav = async (page: Page, name: string) => page.getByRole('navigation').getByRole('link', { name, exact: true }).click();
 const totals = (page: Page) => page.getByRole('complementary', { name: 'Trip totals' });
-const noOverflow = async (page: Page) => expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => innerWidth));
+const noOverflow = async (page: Page) => {
+  const size = await page.evaluate(() => ({ document: document.documentElement.scrollWidth, viewport: innerWidth }));
+  if (size.document > size.viewport) {
+    console.log('Overflow evidence', await page.evaluate(() => [...document.querySelectorAll('main *')].filter(e => e.scrollWidth > e.clientWidth).map(e => ({ tag: e.tagName, class: e.className, text: e.textContent?.slice(0, 100), width: e.clientWidth, scrollWidth: e.scrollWidth }))));
+    const certificate = page.locator('.certificate-choice');
+    if (await certificate.count()) await certificate.screenshot({ path: test.info().outputPath('certificate-overflow.png') });
+    else await page.screenshot({ path: test.info().outputPath('profile-overflow.png') });
+  }
+  expect(size.document).toBeLessThanOrEqual(size.viewport);
+};
 const fillProfile = async (page: Page) => { await page.goto('./#/profile'); await page.getByLabel('Bonvoy status', { exact: true }).selectOption('ambassador'); await page.getByLabel('Profile points balance', { exact: true }).fill('300000'); await page.getByLabel('Profile value (USD cents per point)', { exact: true }).fill('1'); };
 test('profile and trips survive reload and reconstruct exactly from downloadable versioned backup', async ({ page }, testInfo) => {
   await fillProfile(page); await page.getByLabel('Typical stay length (nights)', { exact: true }).fill('6'); await page.getByLabel('Lounge importance', { exact: true }).selectOption('high'); await page.getByRole('button', { name: 'Add certificate', exact: true }).click();
@@ -26,6 +35,7 @@ test('profile changes recalculate inherited trips; manual unknowns and calculato
 test('certificate top-off cap, unknowns, expiry and quote review are inspectable', async ({ page }, testInfo) => {
   await fillProfile(page); await page.getByRole('button', { name: 'Add certificate', exact: true }).click(); await page.getByLabel('Award label', { exact: true }).fill('85k award'); await page.getByLabel('Certificate points value', { exact: true }).fill('85000'); await page.getByLabel('Certificate expiry', { exact: true }).fill('2028-12-31');
   await nav(page, 'Trip builder'); await page.getByRole('button', { name: 'Create trip', exact: true }).click(); await page.getByRole('button', { name: 'Add hotel stay', exact: true }).click(); await page.getByLabel('Check-in date', { exact: true }).fill('2028-12-31'); await page.getByLabel('Booking method', { exact: true }).selectOption('certificate'); const id = await page.getByLabel('Certificate', { exact: true }).locator('option').nth(1).getAttribute('value'); await page.getByLabel('Certificate', { exact: true }).selectOption(id!); await page.getByLabel('Standard-room night points before certificate', { exact: true }).fill('110000'); await page.getByLabel('Award cash payable, stay total (USD)', { exact: true }).fill('20'); await expect(totals(page)).toContainText('Known points subtotal'); await page.getByLabel('Certificate night eligibility', { exact: true }).selectOption('eligible'); await expect(totals(page)).toContainText('25,000 points'); await expect(totals(page)).toContainText('275,000 points');
+  await noOverflow(page); await page.getByLabel('Certificate night eligibility', { exact: true }).focus(); await expect(page.getByLabel('Certificate night eligibility', { exact: true })).toBeFocused();
   await page.getByText('Inspect stay arithmetic & assumptions', { exact: true }).click(); await noOverflow(page); await page.screenshot({ path: testInfo.outputPath('certificate-trip.png'), fullPage: true });
   await page.getByLabel('Standard-room night points before certificate', { exact: true }).fill('110001'); await expect(totals(page)).toContainText('25,000-point top-off limit'); await expect(totals(page)).toContainText('Known points subtotal'); await page.getByLabel('Standard-room night points before certificate', { exact: true }).fill('110000'); await page.getByLabel('Check-in date', { exact: true }).fill('2029-01-01'); await expect(totals(page)).toContainText('after certificate expiry'); await expect(page.getByLabel('Standard-room night points before certificate', { exact: true })).toBeEmpty(); await page.reload(); await expect(page.getByLabel('Certificate night eligibility', { exact: true })).toHaveValue('unknown');
 });

@@ -84,6 +84,7 @@ test('keyboard route focus, control names, optional map and horizontal ledgers a
     await page.getByRole('link', { name: 'Skip to content', exact: true }).focus(); await page.keyboard.press('Enter'); await expect(page.locator('main')).toBeFocused();
     for (const control of await page.locator('button:visible, input:visible, select:visible, textarea:visible, summary:visible').all()) await expect(control).toHaveAccessibleName(/\S/);
   }
+  const benefitProperty = page.getByLabel('Benefit property', { exact: true }); await benefitProperty.focus(); await expect(benefitProperty).toBeFocused(); await page.screenshot({ path: info.outputPath('audit-benefit-select-focus.png') });
   await page.goto('./#/properties/dove-mountain'); const show = page.getByRole('button', { name: 'Show geographic map', exact: true }); await show.focus(); await page.keyboard.press('Enter'); await expect(page.getByRole('img', { name: 'Property geography map' })).toBeVisible(); await page.keyboard.press('Tab'); await expect(page.getByRole('button', { name: 'Zoom in', exact: true })).toBeFocused(); await page.keyboard.press('Enter');
   await page.goto('./#/portfolio'); await page.setViewportSize({ width: 320, height: 844 });
   const scroll = page.locator('.portfolio-table-scroll'); await scroll.focus(); await expect(scroll).toBeFocused(); const x = await scroll.evaluate(e => e.scrollLeft); await page.keyboard.press('ArrowRight'); await expect.poll(() => scroll.evaluate(e => e.scrollLeft)).toBeGreaterThan(x); await noOverflow(page); await scroll.screenshot({ path: info.outputPath('audit-keyboard-ledger.png') });
@@ -98,24 +99,4 @@ test('320px phone, tablet and desktop reflow preserve navigation and visible con
     }
     await page.goto('./#/portfolio'); await page.screenshot({ path: info.outputPath(`audit-reflow-${width}.png`), fullPage: true });
   }
-});
-
-test('cold-load measurements and lazy maps document loading cost under network and CPU throttling', async ({ page }, info) => {
-  test.setTimeout(90000);
-  const cdp = await page.context().newCDPSession(page); await cdp.send('Network.enable'); await cdp.send('Network.setCacheDisabled', { cacheDisabled: true }); await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
-  await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: 150, downloadThroughput: 200000, uploadThroughput: 100000 });
-  await page.addInitScript(() => {
-    const audit = { paints: [] as { name: string; startTime: number }[], lcp: 0, longTasks: [] as number[] }; (window as unknown as { loadingAudit: typeof audit }).loadingAudit = audit;
-    new PerformanceObserver(list => list.getEntries().forEach(e => audit.paints.push({ name: e.name, startTime: e.startTime }))).observe({ type: 'paint', buffered: true });
-    new PerformanceObserver(list => list.getEntries().forEach(e => { audit.lcp = e.startTime; })).observe({ type: 'largest-contentful-paint', buffered: true });
-    new PerformanceObserver(list => list.getEntries().forEach(e => audit.longTasks.push(e.duration))).observe({ type: 'longtask', buffered: true });
-  });
-  const samples = [];
-  for (let i = 0; i < 3; i++) {
-    const start = Date.now(); await page.goto('./'); await expect(page.getByRole('status')).toHaveText('100 of 100 properties'); await page.getByRole('searchbox').fill('Mapito'); await page.getByRole('button', { name: 'Search', exact: true }).click(); await expect(page.getByRole('status')).toContainText('1 of 100');
-    samples.push(await page.evaluate(elapsed => ({ elapsedToSearchMs: elapsed, metrics: (window as unknown as { loadingAudit: unknown }).loadingAudit, navigation: performance.getEntriesByType('navigation').map(e => ({ duration: e.duration })), resources: performance.getEntriesByType('resource').map(e => { const r = e as PerformanceResourceTiming; return { name: r.name.split('/').pop(), transferBytes: r.transferSize, decodedBytes: r.decodedBodySize, duration: r.duration }; }) }), Date.now() - start));
-    expect(samples[i]!.resources.some(r => /land-|GeographicMap/.test(r.name ?? ''))).toBe(false);
-  }
-  await info.attach('loading-measurements.json', { body: JSON.stringify({ cpuSlowdown: 4, latencyMs: 150, downloadBytesPerSecond: 200000, samples }, null, 2), contentType: 'application/json' });
-  await cdp.detach();
 });

@@ -30,7 +30,7 @@ test('explorer loads all properties with intact assets and responsive cards', as
   await expect(page.getByText('Available', { exact: true })).toHaveCount(3);
   await noOverflow(page);
   const cards = await page.locator('.property-card').evaluateAll((elements) => elements.slice(0, 2).map((element) => { const r = element.getBoundingClientRect(); return { left: r.left, top: r.top, right: r.right, bottom: r.bottom }; }));
-  if (testInfo.project.name === 'narrow') {
+  if (page.viewportSize()!.width <= 760) {
     expect(Math.abs(cards[0]!.left - cards[1]!.left)).toBeLessThan(1);
     expect(cards[1]!.top).toBeGreaterThan(cards[0]!.bottom);
   } else {
@@ -40,7 +40,9 @@ test('explorer loads all properties with intact assets and responsive cards', as
   expect(assetResponses.filter((asset) => /\/assets\/.*\.(js|css)$/.test(asset.url))).toHaveLength(2);
   expect(brokenAssets).toEqual([]); expect(applicationErrors).toEqual([]);
   await page.screenshot({ path: testInfo.outputPath(`explorer-viewport-${testInfo.project.name}.png`) });
-  await page.screenshot({ path: testInfo.outputPath(`explorer-${testInfo.project.name}.png`), fullPage: true });
+  // Firefox limits screenshot dimensions; capture the full catalog in bounded strips.
+  const height = await page.evaluate(() => document.documentElement.scrollHeight);
+  for (let y = 0; y < height; y += 16000) await page.screenshot({ path: testInfo.outputPath(`explorer-${testInfo.project.name}-${y}.png`), fullPage: true, clip: { x: 0, y, width: page.viewportSize()!.width, height: Math.min(16000, height - y) } });
   await testInfo.attach('browser-evidence.json', { body: Buffer.from(JSON.stringify({ url: page.url(), cards, assetResponses, applicationErrors, brokenAssets }, null, 2)), contentType: 'application/json' });
 });
 
