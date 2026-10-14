@@ -471,6 +471,8 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .profile-preferences details { margin: 1rem 0; }
 .profile-apply { padding: 1rem clamp(1rem, 5vw, 5rem); }
 .import-preview, .certificate-choice { padding: 1rem; background: #eeece3; overflow-wrap: anywhere; }
+.certificate-choice .calculator-field { overflow: clip; }
+.certificate-choice select:focus-visible { outline: 2px solid var(--clay); outline-offset: -3px; }
 @media (max-width: 900px) { .profile-layout { grid-template-columns: minmax(0, 1fr); } }
 
 /* Stage 8: independently inspectable benefits and policy context. */

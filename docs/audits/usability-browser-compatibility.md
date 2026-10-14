@@ -10,11 +10,11 @@ Baseline: `v1.0.0` at `4a2cdc9c32e4c2be1269c4cdb7203113d56aaee8`. Authorized sco
 | UX-002, medium | Keyboard-remove a certificate; focus is lost when the activated button disappears. | Apply the same focus recovery to the remaining Award label or Add certificate. |
 | UX-003, medium | Keyboard-remove a hotel stay; focus is lost when the activated button disappears. | Focus the remaining Hotel selector or Add hotel stay. |
 | UX-004, low | Firefox at 320px reports a 321px document on Recommendations: the unbroken word in the 34px results heading exceeds its 280px container. | Allow that heading to wrap within its container. Font, layout and content remain unchanged. |
-
 | UX-005, medium | At 320px, horizontally scroll an expanded comparison source column into view. A sticky 112px row label covers its left edge; a 232px property column cannot fit in the remaining 168px. | At widths up to 380px, let row labels scroll horizontally while keeping header vertical stickiness and larger-screen behavior. |
-
 | UX-006, medium | In WebKit, the portfolio ledger overflow container cannot receive focus, preventing keyboard horizontal scrolling. Chromium/Firefox made the scroll container implicitly focusable. | Give the existing ledger region an explicit tab stop, accessible name and visible focus outline. |
 | UX-007, low | WebKit at 320px exposes a 369px document on Benefits despite correctly sized selector boxes: native selector content contributes to parent overflow. | Clip the selectors’ containing labels and draw the focus outline inside each control so it stays visible in WebKit. Native selection and the full option inventory are preserved. |
+
+| UX-008, low | WebKit at 390px, with a confirmed certificate night and expanded arithmetic, exposes a 423px document. The long native eligibility selection contributes to parent overflow. | Contain only the certificate-choice selector labels and keep their focus outlines inside the controls. Certificate choices, calculations and full option labels are preserved. |
 
 The three new keyboard regressions, source-occlusion assertion, and WebKit ledger-focus/reflow checks failed on the released application before correction. Firefox's map-pin client rectangle reported roughly 234px while its screenshot showed a correct approximately 28px painted circle. This is a test-measurement issue: the assertion now checks local SVG geometry transformed into screen coordinates, with the same 24–36px bounds. No map behavior or geographic data was changed. Instrumentation and environment failures are distinguished from application findings.
 
@@ -30,7 +30,7 @@ Keyboard checks cover route heading focus, skip link, named controls, result foc
 
 ## Validation and deployment
 
-Baseline `npm run check`: 345 unit and 72 integration tests passed on Node 24.19.0. Candidate and remote verification results will be recorded after completion. The existing workflow continues to gate Pages deployment on successful Required checks. It now installs all three engines and repeats the expanded matrix on the public URL after deployment. Chromium-only CDP throttling is isolated in `loading.spec.ts`; Firefox/WebKit are not described as supporting that instrumentation.
+Baseline `npm run check`: 345 unit and 72 integration tests passed on Node 24.19.0. The first complete expanded CI run passed 436/437 browser checks and reproduced UX-008 in the WebKit narrow certificate journey. It blocked merge and deployment; final verification results are recorded after the correction. The existing workflow continues to gate Pages deployment on successful Required checks. It now installs all three engines and repeats the expanded matrix on the public URL after deployment. Chromium-only CDP throttling is isolated in `loading.spec.ts`; Firefox/WebKit are not described as supporting that instrumentation.
 
 Cold startup records three new-context samples per engine/viewport, time to a successful search, navigation/resource timings, browser version, and supported performance entry types. Optional map chunks/land assets must remain absent during discovery. These unthrottled samples are lab observations, not field Core Web Vitals. The separate Chromium experiment uses 4× CPU slowdown, 150ms latency and 200,000 bytes/s download. CI runs two workers; concurrent runner work can affect measured timings. No performance guarantee or redesign is inferred from these samples.
 
