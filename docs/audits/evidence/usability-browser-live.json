@@ -1,0 +1,201 @@
+{
+  "provenance": {
+    "workflowRun": 38503318741,
+    "commit": "b778581b26fabd459916de2136e9713177f1544f",
+    "artifactId": 11867267893,
+    "environment": "https://akv973.github.io/marriott-trip-planner/"
+  },
+  "stats": {
+    "startTime": "2026-10-14T03:04:23.695Z",
+    "duration": 429186.16099999996,
+    "expected": 437,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "counts": {
+    "desktop": {
+      "expected": 68
+    },
+    "narrow": {
+      "expected": 68
+    },
+    "firefox-desktop": {
+      "expected": 67
+    },
+    "firefox-narrow": {
+      "expected": 67
+    },
+    "webkit-desktop": {
+      "expected": 67
+    },
+    "webkit-narrow": {
+      "expected": 67
+    },
+    "chromium-tablet": {
+      "expected": 11
+    },
+    "firefox-tablet": {
+      "expected": 11
+    },
+    "webkit-tablet": {
+      "expected": 11
+    }
+  },
+  "loading": [
+    {
+      "project": "desktop",
+      "version": "153.0.8010.12",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "searchSamplesMs": [
+        526,
+        550,
+        499
+      ],
+      "medianSearchMs": 526
+    },
+    {
+      "project": "narrow",
+      "version": "153.0.8010.12",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "searchSamplesMs": [
+        520,
+        516,
+        543
+      ],
+      "medianSearchMs": 520
+    },
+    {
+      "project": "firefox-desktop",
+      "version": "155.0",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "searchSamplesMs": [
+        626,
+        1137,
+        680
+      ],
+      "medianSearchMs": 680
+    },
+    {
+      "project": "firefox-narrow",
+      "version": "155.0",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "searchSamplesMs": [
+        660,
+        1257,
+        659
+      ],
+      "medianSearchMs": 660
+    },
+    {
+      "project": "webkit-desktop",
+      "version": "26.6",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "searchSamplesMs": [
+        668,
+        700,
+        721
+      ],
+      "medianSearchMs": 700
+    },
+    {
+      "project": "webkit-narrow",
+      "version": "26.6",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "searchSamplesMs": [
+        735,
+        667,
+        741
+      ],
+      "medianSearchMs": 735
+    },
+    {
+      "project": "chromium-tablet",
+      "version": "153.0.8010.12",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "searchSamplesMs": [
+        492,
+        545,
+        524
+      ],
+      "medianSearchMs": 524
+    },
+    {
+      "project": "firefox-tablet",
+      "version": "155.0",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "searchSamplesMs": [
+        738,
+        729,
+        636
+      ],
+      "medianSearchMs": 729
+    },
+    {
+      "project": "webkit-tablet",
+      "version": "26.6",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "searchSamplesMs": [
+        734,
+        686,
+        645
+      ],
+      "medianSearchMs": 686
+    }
+  ],
+  "throttled": [
+    {
+      "project": "desktop",
+      "searchSamplesMs": [
+        2765,
+        2403,
+        2512
+      ],
+      "lcpSamplesMs": [
+        2212,
+        1856,
+        1952
+      ]
+    },
+    {
+      "project": "narrow",
+      "searchSamplesMs": [
+        2659,
+        2334,
+        2470
+      ],
+      "lcpSamplesMs": [
+        2196,
+        1832,
+        1944
+      ]
+    }
+  ]
+}

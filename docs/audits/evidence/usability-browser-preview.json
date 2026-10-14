@@ -1,0 +1,201 @@
+{
+  "provenance": {
+    "workflowRun": 38502224002,
+    "commit": "83b4bfa0e0e88526d26dedb7195859e2dcb47b4b",
+    "artifactId": 11866409068,
+    "environment": "production preview"
+  },
+  "stats": {
+    "startTime": "2026-10-14T02:41:33.891Z",
+    "duration": 582085.624,
+    "expected": 437,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "counts": {
+    "desktop": {
+      "expected": 68
+    },
+    "narrow": {
+      "expected": 68
+    },
+    "firefox-desktop": {
+      "expected": 67
+    },
+    "firefox-narrow": {
+      "expected": 67
+    },
+    "webkit-desktop": {
+      "expected": 67
+    },
+    "webkit-narrow": {
+      "expected": 67
+    },
+    "chromium-tablet": {
+      "expected": 11
+    },
+    "firefox-tablet": {
+      "expected": 11
+    },
+    "webkit-tablet": {
+      "expected": 11
+    }
+  },
+  "loading": [
+    {
+      "project": "desktop",
+      "version": "153.0.8010.12",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "searchSamplesMs": [
+        705,
+        764,
+        727
+      ],
+      "medianSearchMs": 727
+    },
+    {
+      "project": "narrow",
+      "version": "153.0.8010.12",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "searchSamplesMs": [
+        757,
+        679,
+        628
+      ],
+      "medianSearchMs": 679
+    },
+    {
+      "project": "firefox-desktop",
+      "version": "155.0",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "searchSamplesMs": [
+        997,
+        933,
+        995
+      ],
+      "medianSearchMs": 995
+    },
+    {
+      "project": "firefox-narrow",
+      "version": "155.0",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "searchSamplesMs": [
+        867,
+        892,
+        1034
+      ],
+      "medianSearchMs": 892
+    },
+    {
+      "project": "webkit-desktop",
+      "version": "26.6",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "searchSamplesMs": [
+        930,
+        972,
+        1016
+      ],
+      "medianSearchMs": 972
+    },
+    {
+      "project": "webkit-narrow",
+      "version": "26.6",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "searchSamplesMs": [
+        923,
+        756,
+        909
+      ],
+      "medianSearchMs": 909
+    },
+    {
+      "project": "chromium-tablet",
+      "version": "153.0.8010.12",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "searchSamplesMs": [
+        696,
+        748,
+        661
+      ],
+      "medianSearchMs": 696
+    },
+    {
+      "project": "firefox-tablet",
+      "version": "155.0",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "searchSamplesMs": [
+        830,
+        895,
+        842
+      ],
+      "medianSearchMs": 842
+    },
+    {
+      "project": "webkit-tablet",
+      "version": "26.6",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "searchSamplesMs": [
+        852,
+        876,
+        869
+      ],
+      "medianSearchMs": 869
+    }
+  ],
+  "throttled": [
+    {
+      "project": "desktop",
+      "searchSamplesMs": [
+        3655,
+        3650,
+        3261
+      ],
+      "lcpSamplesMs": [
+        2808,
+        2796,
+        2400
+      ]
+    },
+    {
+      "project": "narrow",
+      "searchSamplesMs": [
+        3390,
+        3118,
+        3250
+      ],
+      "lcpSamplesMs": [
+        2704,
+        2260,
+        2432
+      ]
+    }
+  ]
+}

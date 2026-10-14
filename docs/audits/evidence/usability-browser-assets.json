@@ -1,0 +1,81 @@
+{
+  "deployedCommit": "b778581b26fabd459916de2136e9713177f1544f",
+  "verifiedAt": "2026-10-14T03:04:45.358320+00:00",
+  "url": "https://akv973.github.io/marriott-trip-planner/",
+  "files": [
+    {
+      "path": "assets/GeographicMap-CoZxvp9e.js",
+      "status": 200,
+      "bytes": 7598,
+      "expectedSha256": "9e85817338d14b7fd5d0ef73e9efe3cb2f396a8899eb6c6c312eeae549ff3638",
+      "servedSha256": "9e85817338d14b7fd5d0ef73e9efe3cb2f396a8899eb6c6c312eeae549ff3638",
+      "match": true
+    },
+    {
+      "path": "assets/index-BK4VGD9N.js",
+      "status": 200,
+      "bytes": 1252696,
+      "expectedSha256": "f5cef8c1c00263806c8bcfd9c27f3918c9a616b4a41c462929e1f75fb32fcdd1",
+      "servedSha256": "f5cef8c1c00263806c8bcfd9c27f3918c9a616b4a41c462929e1f75fb32fcdd1",
+      "match": true
+    },
+    {
+      "path": "assets/index-CA8VgMWW.css",
+      "status": 200,
+      "bytes": 40738,
+      "expectedSha256": "f6f3d1d28d9ef1066b7da45ca002c475dc7105ab6923d05f95b29e6b76d78dd1",
+      "servedSha256": "f6f3d1d28d9ef1066b7da45ca002c475dc7105ab6923d05f95b29e6b76d78dd1",
+      "match": true
+    },
+    {
+      "path": "assets/land-B4KBD8fO.json",
+      "status": 200,
+      "bytes": 114475,
+      "expectedSha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+      "servedSha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+      "match": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 671,
+      "expectedSha256": "fc261726538435ed3a4a4b49e84cb4492ab92a91cc66b1fc5f295b4c16a12e0f",
+      "servedSha256": "fc261726538435ed3a4a4b49e84cb4492ab92a91cc66b1fc5f295b4c16a12e0f",
+      "match": true
+    }
+  ],
+  "allMatch": true,
+  "workflowRun": 38503318741,
+  "pagesBuildComparison": {
+    "commit": "b778581b26fabd459916de2136e9713177f1544f",
+    "pagesArtifactId": 11866936343,
+    "files": [
+      {
+        "path": "index.html",
+        "sha256": "fc261726538435ed3a4a4b49e84cb4492ab92a91cc66b1fc5f295b4c16a12e0f",
+        "match": true
+      },
+      {
+        "path": "assets/index-CA8VgMWW.css",
+        "sha256": "f6f3d1d28d9ef1066b7da45ca002c475dc7105ab6923d05f95b29e6b76d78dd1",
+        "match": true
+      },
+      {
+        "path": "assets/index-BK4VGD9N.js",
+        "sha256": "f5cef8c1c00263806c8bcfd9c27f3918c9a616b4a41c462929e1f75fb32fcdd1",
+        "match": true
+      },
+      {
+        "path": "assets/GeographicMap-CoZxvp9e.js",
+        "sha256": "9e85817338d14b7fd5d0ef73e9efe3cb2f396a8899eb6c6c312eeae549ff3638",
+        "match": true
+      },
+      {
+        "path": "assets/land-B4KBD8fO.json",
+        "sha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+        "match": true
+      }
+    ],
+    "allMatch": true
+  }
+}
