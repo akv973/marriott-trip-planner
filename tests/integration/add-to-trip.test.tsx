@@ -31,7 +31,10 @@ describe('Add to trip application flow', () => {
   });
   it('cancels from Explorer with no writes/sequence change and returns focus to the invoking button', () => {
     navigate('#/explore?q=Mapito&country=TZ&compare=jw-tampa'); render(<App />);
-    const trigger = screen.getByRole('button', { name: /Add to trip: Mapito/ }); trigger.focus(); fireEvent.click(trigger); set('New trip name', 'Discard this'); click('Cancel');
+    const trigger = screen.getByRole('button', { name: /Add to trip: Mapito/ }); trigger.focus(); fireEvent.click(trigger); const destination = screen.getByLabelText('Destination trip');
+    fireEvent.keyDown(destination, { key: 'Tab', shiftKey: true }); expect(screen.getByRole('button', { name: 'Cancel' })).toHaveFocus();
+    fireEvent.keyDown(screen.getByRole('button', { name: 'Cancel' }), { key: 'Tab' }); expect(destination).toHaveFocus();
+    set('New trip name', 'Discard this'); click('Cancel');
     expect(trigger).toHaveFocus(); expect(localStorage.getItem(STORAGE_KEY)).toBeNull(); expect(window.location.hash).toBe('#/explore?q=Mapito&country=TZ&compare=jw-tampa');
     open(); expect(screen.getByLabelText('New trip name')).toHaveValue('Untitled trip');
   });

@@ -4,7 +4,7 @@ Separately authorized on **2026-10-17 (America/New_York)**. This bounded manual-
 
 ## Scope and implementation
 
-Explorer cards and property details offer **Add to trip**. A keyboard-accessible native dialog lets the user select an existing trip or create a named trip. Opening/cancelling makes no planner write, and Cancel/Escape restores the invoking control's focus. Confirmation adds exactly one independent stay, opens its trip, focuses/scrolls to its Hotel selector, and keeps query/filter/sort/comparison context. A return link opens the original Explorer/detail URL. Back/forward navigation does not replay the addition.
+Explorer cards and property details offer **Add to trip**. A keyboard-accessible native dialog cycles Tab/Shift+Tab through its enabled controls and lets the user select an existing trip or create a named trip. Opening/cancelling makes no planner write, and Cancel/Escape restores the invoking control's focus. Confirmation adds exactly one independent stay, opens its trip, focuses/scrolls to its Hotel selector, and keeps query/filter/sort/comparison context. A return link opens the original Explorer/detail URL. Back/forward navigation does not replay the addition.
 
 Shared workspace commands reuse `createTrip`, `createStay`, explicit profile inheritance, monotonic trip/stay IDs and the current workspace schema. New trip plus first stay is atomic. Existing 10-trip/30-stay limits, invalid drafts, exhausted sequences and ID collisions fail without partial changes. Full trips are visible but disabled; eligible trips remain usable. A synchronous submission latch prevents duplicate confirmation events; deliberately reopening allows another separate stay at the same hotel.
 

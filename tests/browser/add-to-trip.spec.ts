@@ -22,7 +22,7 @@ test('keyboard Explorer flow cancels without writes, creates once, focuses the n
   await expect(destination(page)).toBeFocused();
   await page.getByLabel('New trip name', { exact: true }).fill('Discard this'); await page.keyboard.press('Escape');
   await expect(page.getByRole('dialog')).toHaveCount(0); await expect(trigger(page)).toBeFocused(); expect(await bytes(page)).toBe(before); expect(page.url()).toBe(origin);
-  await page.keyboard.press('Enter'); await expect(page.getByLabel('New trip name', { exact: true })).toHaveValue('Untitled trip');
+  await page.keyboard.press('Enter'); await expect(page.getByLabel('New trip name', { exact: true })).toHaveValue('Untitled trip'); await expect(destination(page)).toBeFocused();
   // Shift+Tab wraps within the native modal, never reaching page navigation.
   await page.keyboard.press('Shift+Tab'); await expect(page.getByRole('button', { name: 'Cancel', exact: true })).toBeFocused();
   await page.keyboard.press('Tab'); await expect(destination(page)).toBeFocused();
@@ -77,7 +77,9 @@ test('storage quota and competing-tab failures preserve saved plans and disclose
   await seed(page, legacy); await openExplorer(page); await trigger(page).click(); const before = await bytes(page);
   await page.evaluate(() => { Storage.prototype.setItem = () => { throw new Error('QuotaExceededError'); }; }); await submit(page).click();
   await expect(page.locator('.storage-status')).toContainText('Could not save'); expect(await bytes(page)).toBe(before); expect(await page.getByLabel('Hotel', { exact: true }).count()).toBe(legacy.data.workspace.trips[0]!.stays.length + 1);
-  await page.reload(); await openExplorer(page); await trigger(page).click();
+  await page.reload(); await expect(page.getByLabel('Trip name', { exact: true })).toHaveValue(legacy.data.workspace.trips[0]!.name);
+  await expect(page.getByLabel('Hotel', { exact: true })).toHaveCount(legacy.data.workspace.trips[0]!.stays.length);
+  await nav(page, 'Explorer').click(); await page.getByRole('searchbox').fill('Mapito'); await page.getByRole('button', { name: 'Search', exact: true }).click(); await trigger(page).click();
   await page.evaluate(key => { const envelope = JSON.parse(localStorage.getItem(key)!); envelope.data.profile.balance = 123; localStorage.setItem(key, JSON.stringify(envelope)); }, key);
   const competing = await bytes(page); await submit(page).click(); await expect(page.locator('.storage-status')).toContainText('changed in another tab'); expect(await bytes(page)).toBe(competing);
   await nav(page, 'Profile').click(); await page.getByRole('button', { name: 'Export planner JSON', exact: true }).click(); expect(JSON.parse(await page.getByLabel('Planner JSON').inputValue()).data.workspace.trips[0].stays).toHaveLength(legacy.data.workspace.trips[0]!.stays.length + 1);

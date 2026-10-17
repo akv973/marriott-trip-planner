@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import type { Property } from '../types/catalog';
 import type { TripWorkspace } from '../lib/storage/planner';
 import { MAX_STAYS, MAX_TRIPS } from '../lib/trips/workspace';
@@ -21,9 +21,15 @@ export function AddToTripDialog({ property, workspace, onCancel, onConfirm }: {
   const [error, setError] = useState('');
   const newTrip = target === '';
   const blocked = newTrip ? workspace.trips.length >= MAX_TRIPS : !available.some((trip) => trip.id === target);
-  useEffect(() => { dialog.current?.showModal(); destination.current?.focus(); }, []);
+  useLayoutEffect(() => { dialog.current?.showModal(); destination.current?.focus(); }, []);
   const cancel = () => { dialog.current?.close(); onCancel(); };
-  return <dialog ref={dialog} className="add-trip-dialog" aria-labelledby="add-trip-title" aria-describedby="add-trip-description" onCancel={(event) => { event.preventDefault(); cancel(); }}>
+  return <dialog ref={dialog} className="add-trip-dialog" aria-labelledby="add-trip-title" aria-describedby="add-trip-description" onCancel={(event) => { event.preventDefault(); cancel(); }} onKeyDown={(event) => {
+    if (event.key !== 'Tab') return;
+    const controls = [...event.currentTarget.querySelectorAll<HTMLElement>('select:not(:disabled), input:not(:disabled), button:not(:disabled)')];
+    const first = controls[0]; const last = controls.at(-1);
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+  }}>
     <form onSubmit={(event) => {
       event.preventDefault();
       if (submitted.current || blocked) return;
