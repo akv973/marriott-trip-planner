@@ -1,0 +1,55 @@
+{
+  "deployedCommit": "056874b4a35bc7ebc809eada2f8c13819e47b660",
+  "verifiedAt": "2026-10-17T19:05:44.732863+00:00",
+  "url": "https://akv973.github.io/marriott-trip-planner/",
+  "workflowRun": 39059105765,
+  "pagesArtifactId": 12110049761,
+  "files": [
+    {
+      "path": "assets/GeographicMap-C1z7BX4Z.js",
+      "status": 200,
+      "bytes": 7598,
+      "expectedSha256": "c8bdb45a75275b15876692d4244c114c93df93b345b9133630d18eb92e850600",
+      "pagesArtifactSha256": "c8bdb45a75275b15876692d4244c114c93df93b345b9133630d18eb92e850600",
+      "servedSha256": "c8bdb45a75275b15876692d4244c114c93df93b345b9133630d18eb92e850600",
+      "match": true
+    },
+    {
+      "path": "assets/index-DCk51iL3.css",
+      "status": 200,
+      "bytes": 41434,
+      "expectedSha256": "658b6c569f2d791563f73ddb72182bd1bdee520d8f4f259462a728b473da5a9f",
+      "pagesArtifactSha256": "658b6c569f2d791563f73ddb72182bd1bdee520d8f4f259462a728b473da5a9f",
+      "servedSha256": "658b6c569f2d791563f73ddb72182bd1bdee520d8f4f259462a728b473da5a9f",
+      "match": true
+    },
+    {
+      "path": "assets/index-ib0PwWca.js",
+      "status": 200,
+      "bytes": 1257739,
+      "expectedSha256": "6507fc02610a0f4a09616c06c7d945439c013c10e95ab462dae53145665047b8",
+      "pagesArtifactSha256": "6507fc02610a0f4a09616c06c7d945439c013c10e95ab462dae53145665047b8",
+      "servedSha256": "6507fc02610a0f4a09616c06c7d945439c013c10e95ab462dae53145665047b8",
+      "match": true
+    },
+    {
+      "path": "assets/land-B4KBD8fO.json",
+      "status": 200,
+      "bytes": 114475,
+      "expectedSha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+      "pagesArtifactSha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+      "servedSha256": "b1a1e0a3a069594bc9867c22e39143fa7c470300c1947a05f266fa2a0dc0e1c5",
+      "match": true
+    },
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 671,
+      "expectedSha256": "c13ddee5eab0bc6784f8af0955140843a15fc4d9e4f76023f0ee39ddbc9cbbc7",
+      "pagesArtifactSha256": "c13ddee5eab0bc6784f8af0955140843a15fc4d9e4f76023f0ee39ddbc9cbbc7",
+      "servedSha256": "c13ddee5eab0bc6784f8af0955140843a15fc4d9e4f76023f0ee39ddbc9cbbc7",
+      "match": true
+    }
+  ],
+  "allMatch": true
+}

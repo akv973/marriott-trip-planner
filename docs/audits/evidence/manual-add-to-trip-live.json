@@ -1,0 +1,273 @@
+{
+  "provenance": {
+    "workflowRun": 39059105765,
+    "commit": "056874b4a35bc7ebc809eada2f8c13819e47b660",
+    "artifactId": 12111565427,
+    "environment": "live"
+  },
+  "stats": {
+    "startTime": "2026-10-17T18:55:21.113Z",
+    "duration": 480686.592,
+    "expected": 482,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "counts": {
+    "desktop": {
+      "expected": 73
+    },
+    "narrow": {
+      "expected": 73
+    },
+    "firefox-desktop": {
+      "expected": 72
+    },
+    "firefox-narrow": {
+      "expected": 72
+    },
+    "webkit-desktop": {
+      "expected": 72
+    },
+    "webkit-narrow": {
+      "expected": 72
+    },
+    "chromium-tablet": {
+      "expected": 16
+    },
+    "firefox-tablet": {
+      "expected": 16
+    },
+    "webkit-tablet": {
+      "expected": 16
+    }
+  },
+  "addToTrip": [
+    {
+      "title": "keyboard Explorer flow cancels without writes, creates once, focuses the new stay, and retains history/context",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "details append to a selected inactive v1 trip, permit repeat stays, persist and reconstruct exact v2 backups",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "full trips and the trip limit are explicit; another eligible trip remains usable and cancellation is inert",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "storage quota and competing-tab failures preserve saved plans and disclose the in-memory addition",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "320px dialog reflows with long trip names and rejects blank new names without changing plans",
+      "project": "desktop",
+      "status": "expected"
+    },
+    {
+      "title": "keyboard Explorer flow cancels without writes, creates once, focuses the new stay, and retains history/context",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "details append to a selected inactive v1 trip, permit repeat stays, persist and reconstruct exact v2 backups",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "full trips and the trip limit are explicit; another eligible trip remains usable and cancellation is inert",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "storage quota and competing-tab failures preserve saved plans and disclose the in-memory addition",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "320px dialog reflows with long trip names and rejects blank new names without changing plans",
+      "project": "narrow",
+      "status": "expected"
+    },
+    {
+      "title": "keyboard Explorer flow cancels without writes, creates once, focuses the new stay, and retains history/context",
+      "project": "firefox-desktop",
+      "status": "expected"
+    },
+    {
+      "title": "details append to a selected inactive v1 trip, permit repeat stays, persist and reconstruct exact v2 backups",
+      "project": "firefox-desktop",
+      "status": "expected"
+    },
+    {
+      "title": "full trips and the trip limit are explicit; another eligible trip remains usable and cancellation is inert",
+      "project": "firefox-desktop",
+      "status": "expected"
+    },
+    {
+      "title": "storage quota and competing-tab failures preserve saved plans and disclose the in-memory addition",
+      "project": "firefox-desktop",
+      "status": "expected"
+    },
+    {
+      "title": "320px dialog reflows with long trip names and rejects blank new names without changing plans",
+      "project": "firefox-desktop",
+      "status": "expected"
+    },
+    {
+      "title": "keyboard Explorer flow cancels without writes, creates once, focuses the new stay, and retains history/context",
+      "project": "firefox-narrow",
+      "status": "expected"
+    },
+    {
+      "title": "details append to a selected inactive v1 trip, permit repeat stays, persist and reconstruct exact v2 backups",
+      "project": "firefox-narrow",
+      "status": "expected"
+    },
+    {
+      "title": "full trips and the trip limit are explicit; another eligible trip remains usable and cancellation is inert",
+      "project": "firefox-narrow",
+      "status": "expected"
+    },
+    {
+      "title": "storage quota and competing-tab failures preserve saved plans and disclose the in-memory addition",
+      "project": "firefox-narrow",
+      "status": "expected"
+    },
+    {
+      "title": "320px dialog reflows with long trip names and rejects blank new names without changing plans",
+      "project": "firefox-narrow",
+      "status": "expected"
+    },
+    {
+      "title": "keyboard Explorer flow cancels without writes, creates once, focuses the new stay, and retains history/context",
+      "project": "webkit-desktop",
+      "status": "expected"
+    },
+    {
+      "title": "details append to a selected inactive v1 trip, permit repeat stays, persist and reconstruct exact v2 backups",
+      "project": "webkit-desktop",
+      "status": "expected"
+    },
+    {
+      "title": "full trips and the trip limit are explicit; another eligible trip remains usable and cancellation is inert",
+      "project": "webkit-desktop",
+      "status": "expected"
+    },
+    {
+      "title": "storage quota and competing-tab failures preserve saved plans and disclose the in-memory addition",
+      "project": "webkit-desktop",
+      "status": "expected"
+    },
+    {
+      "title": "320px dialog reflows with long trip names and rejects blank new names without changing plans",
+      "project": "webkit-desktop",
+      "status": "expected"
+    },
+    {
+      "title": "keyboard Explorer flow cancels without writes, creates once, focuses the new stay, and retains history/context",
+      "project": "webkit-narrow",
+      "status": "expected"
+    },
+    {
+      "title": "details append to a selected inactive v1 trip, permit repeat stays, persist and reconstruct exact v2 backups",
+      "project": "webkit-narrow",
+      "status": "expected"
+    },
+    {
+      "title": "full trips and the trip limit are explicit; another eligible trip remains usable and cancellation is inert",
+      "project": "webkit-narrow",
+      "status": "expected"
+    },
+    {
+      "title": "storage quota and competing-tab failures preserve saved plans and disclose the in-memory addition",
+      "project": "webkit-narrow",
+      "status": "expected"
+    },
+    {
+      "title": "320px dialog reflows with long trip names and rejects blank new names without changing plans",
+      "project": "webkit-narrow",
+      "status": "expected"
+    },
+    {
+      "title": "keyboard Explorer flow cancels without writes, creates once, focuses the new stay, and retains history/context",
+      "project": "chromium-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "details append to a selected inactive v1 trip, permit repeat stays, persist and reconstruct exact v2 backups",
+      "project": "chromium-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "full trips and the trip limit are explicit; another eligible trip remains usable and cancellation is inert",
+      "project": "chromium-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "storage quota and competing-tab failures preserve saved plans and disclose the in-memory addition",
+      "project": "chromium-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "320px dialog reflows with long trip names and rejects blank new names without changing plans",
+      "project": "chromium-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "keyboard Explorer flow cancels without writes, creates once, focuses the new stay, and retains history/context",
+      "project": "firefox-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "details append to a selected inactive v1 trip, permit repeat stays, persist and reconstruct exact v2 backups",
+      "project": "firefox-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "full trips and the trip limit are explicit; another eligible trip remains usable and cancellation is inert",
+      "project": "firefox-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "storage quota and competing-tab failures preserve saved plans and disclose the in-memory addition",
+      "project": "firefox-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "320px dialog reflows with long trip names and rejects blank new names without changing plans",
+      "project": "firefox-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "keyboard Explorer flow cancels without writes, creates once, focuses the new stay, and retains history/context",
+      "project": "webkit-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "details append to a selected inactive v1 trip, permit repeat stays, persist and reconstruct exact v2 backups",
+      "project": "webkit-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "full trips and the trip limit are explicit; another eligible trip remains usable and cancellation is inert",
+      "project": "webkit-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "storage quota and competing-tab failures preserve saved plans and disclose the in-memory addition",
+      "project": "webkit-tablet",
+      "status": "expected"
+    },
+    {
+      "title": "320px dialog reflows with long trip names and rejects blank new names without changing plans",
+      "project": "webkit-tablet",
+      "status": "expected"
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,492 @@
+{
+  "preview": {
+    "workflowRun": 39058194765,
+    "commit": "c272f7bccd6f3253b97ade7531adf70910e7f52e",
+    "artifactId": 12110742089,
+    "imagesInspected": 42
+  },
+  "live": {
+    "workflowRun": 39059105765,
+    "commit": "056874b4a35bc7ebc809eada2f8c13819e47b660",
+    "artifactId": 12111565427
+  },
+  "comparisons": [
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-desktop/add-trip-new-dialog.png",
+      "project": "desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "b69d9737f2b674789299221ae607b9ddabcfb0139d6486bb1805e6362d2dc883",
+      "liveSha256": "b69d9737f2b674789299221ae607b9ddabcfb0139d6486bb1805e6362d2dc883",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-desktop/add-trip-arrival.png",
+      "project": "desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "3afb1df7e1d567ac8e238c2947fe066a88a386934a7b4247d317ac80441a776e",
+      "liveSha256": "3afb1df7e1d567ac8e238c2947fe066a88a386934a7b4247d317ac80441a776e",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-details-append-fb691-econstruct-exact-v2-backups-desktop/add-trip-existing-dialog.png",
+      "project": "desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "0307261ea1eb11f7df460f10690c7b3ac95d98b7ad6633552aa99b6a7b70e20e",
+      "liveSha256": "0307261ea1eb11f7df460f10690c7b3ac95d98b7ad6633552aa99b6a7b70e20e",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-full-trips-and-cfad2-e-and-cancellation-is-inert-desktop/add-trip-limits.png",
+      "project": "desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "9afbdfcddc6e2cbf713b0d1e1d86384e591d0b214b3352917e23f2520e2ce5c0",
+      "liveSha256": "9afbdfcddc6e2cbf713b0d1e1d86384e591d0b214b3352917e23f2520e2ce5c0",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-narrow/add-trip-new-dialog.png",
+      "project": "narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "91615d33901b32adc830f588b2f5c25ddde303a8ee045af1a9b8eff2616bb409",
+      "liveSha256": "91615d33901b32adc830f588b2f5c25ddde303a8ee045af1a9b8eff2616bb409",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-narrow/add-trip-arrival.png",
+      "project": "narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "88a20f07b5cbaf6b135b653a6a838e54bb3e9637db8629e70935719d94ed5df4",
+      "liveSha256": "88a20f07b5cbaf6b135b653a6a838e54bb3e9637db8629e70935719d94ed5df4",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-details-append-fb691-econstruct-exact-v2-backups-narrow/add-trip-existing-dialog.png",
+      "project": "narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "c1d7c312e1dfe7fc2fbcd273f32660203f65bf1769bb673a4c5767b22249ac2e",
+      "liveSha256": "c1d7c312e1dfe7fc2fbcd273f32660203f65bf1769bb673a4c5767b22249ac2e",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-full-trips-and-cfad2-e-and-cancellation-is-inert-narrow/add-trip-limits.png",
+      "project": "narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "3aa648f7adb5d3415b3db2fa40f84d145fa2c702f4815118ab46372d2bc8be17",
+      "liveSha256": "3aa648f7adb5d3415b3db2fa40f84d145fa2c702f4815118ab46372d2bc8be17",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-chromium-tablet/add-trip-new-dialog.png",
+      "project": "chromium-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "cd01cb22f160afd0aef6a5b6d455edddb6511e0aa1510826d4286d4b236b251c",
+      "liveSha256": "cd01cb22f160afd0aef6a5b6d455edddb6511e0aa1510826d4286d4b236b251c",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-chromium-tablet/add-trip-arrival.png",
+      "project": "chromium-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "5b986137c4a8e62355c7992605aad82fbf51a278ebc095429c666b2c1c92aad8",
+      "liveSha256": "5b986137c4a8e62355c7992605aad82fbf51a278ebc095429c666b2c1c92aad8",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-details-append-fb691-econstruct-exact-v2-backups-chromium-tablet/add-trip-existing-dialog.png",
+      "project": "chromium-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "aacc9ee64454c6df0da11d67771239e06729342d5606792b11d48d008be273b7",
+      "liveSha256": "aacc9ee64454c6df0da11d67771239e06729342d5606792b11d48d008be273b7",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-full-trips-and-cfad2-e-and-cancellation-is-inert-chromium-tablet/add-trip-limits.png",
+      "project": "chromium-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "4358d74e80425f3fa56c76b7e91cf4e94c727a34ba6f72c3b7d856717f43654f",
+      "liveSha256": "4358d74e80425f3fa56c76b7e91cf4e94c727a34ba6f72c3b7d856717f43654f",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-320px-dialog-r-bed6d-ames-without-changing-plans-desktop/add-trip-320-existing.png",
+      "project": "320px",
+      "size": [
+        320,
+        700
+      ],
+      "previewSha256": "1592366ead8c761d76c305974b543b14d00a0d3b9e33273606da76643fa7edcc",
+      "liveSha256": "1592366ead8c761d76c305974b543b14d00a0d3b9e33273606da76643fa7edcc",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-320px-dialog-r-bed6d-ames-without-changing-plans-desktop/add-trip-320-new.png",
+      "project": "320px",
+      "size": [
+        320,
+        700
+      ],
+      "previewSha256": "1c17b04a7176920f34e1044d409aff913525aba647f4760fe43dc34cfde597ca",
+      "liveSha256": "1c17b04a7176920f34e1044d409aff913525aba647f4760fe43dc34cfde597ca",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-firefox-desktop/add-trip-new-dialog.png",
+      "project": "firefox-desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "2652d897b36c528eb8c295076acee6c59947d81950949256bc2e309fc6e788f2",
+      "liveSha256": "2652d897b36c528eb8c295076acee6c59947d81950949256bc2e309fc6e788f2",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-firefox-desktop/add-trip-arrival.png",
+      "project": "firefox-desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "239c07618f860be12df63588d71b0550fc66765f85ce6302d1890ac4d2b3c69c",
+      "liveSha256": "239c07618f860be12df63588d71b0550fc66765f85ce6302d1890ac4d2b3c69c",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-details-append-fb691-econstruct-exact-v2-backups-firefox-desktop/add-trip-existing-dialog.png",
+      "project": "firefox-desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "d08759d5fd9e119670cf182be87f8672ac222c5db47b542e7fd1457a20d880b1",
+      "liveSha256": "d08759d5fd9e119670cf182be87f8672ac222c5db47b542e7fd1457a20d880b1",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-full-trips-and-cfad2-e-and-cancellation-is-inert-firefox-desktop/add-trip-limits.png",
+      "project": "firefox-desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "9ea94d2f51cba793529e5ad8c9e0b8129f5036283cfc07d5c05b854645c44b32",
+      "liveSha256": "9ea94d2f51cba793529e5ad8c9e0b8129f5036283cfc07d5c05b854645c44b32",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-firefox-narrow/add-trip-new-dialog.png",
+      "project": "firefox-narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "b5fff376c4e85c4651b2384b4dad54e5aff435c981f7ace85781ac85f163c21b",
+      "liveSha256": "b5fff376c4e85c4651b2384b4dad54e5aff435c981f7ace85781ac85f163c21b",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-firefox-narrow/add-trip-arrival.png",
+      "project": "firefox-narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "934633eabb84539f248e790e26d28c430f684315d9dbcbb309d9f0f732f7d648",
+      "liveSha256": "934633eabb84539f248e790e26d28c430f684315d9dbcbb309d9f0f732f7d648",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-details-append-fb691-econstruct-exact-v2-backups-firefox-narrow/add-trip-existing-dialog.png",
+      "project": "firefox-narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "05b60c6459bce92fca17ca6bab0fd7d743bbad4c27cc5f832031e2909c16e99e",
+      "liveSha256": "05b60c6459bce92fca17ca6bab0fd7d743bbad4c27cc5f832031e2909c16e99e",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-full-trips-and-cfad2-e-and-cancellation-is-inert-firefox-narrow/add-trip-limits.png",
+      "project": "firefox-narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "ca458b576d54c0b59ea3aa5cb409210e0eb29fa636637c5b4461736428f9042c",
+      "liveSha256": "ca458b576d54c0b59ea3aa5cb409210e0eb29fa636637c5b4461736428f9042c",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-firefox-tablet/add-trip-new-dialog.png",
+      "project": "firefox-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "eb65e3d2470f3befa0bc3bc7b9e7ec2d562f93c8293a4f3f679816acfdde3741",
+      "liveSha256": "eb65e3d2470f3befa0bc3bc7b9e7ec2d562f93c8293a4f3f679816acfdde3741",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-firefox-tablet/add-trip-arrival.png",
+      "project": "firefox-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "36f8c7ff4167f94a9aceea8de79c617ef694cadfbca1707fe63170a8f4c9143e",
+      "liveSha256": "36f8c7ff4167f94a9aceea8de79c617ef694cadfbca1707fe63170a8f4c9143e",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-details-append-fb691-econstruct-exact-v2-backups-firefox-tablet/add-trip-existing-dialog.png",
+      "project": "firefox-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "cebb530ff3218a1cf485db4c06e940d5d6b669f4d7866831521567af0b4519cb",
+      "liveSha256": "cebb530ff3218a1cf485db4c06e940d5d6b669f4d7866831521567af0b4519cb",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-full-trips-and-cfad2-e-and-cancellation-is-inert-firefox-tablet/add-trip-limits.png",
+      "project": "firefox-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "f7205ea70d668e006b00eb78c41eced157160f1ba1abdc15f022fcade5bb3f33",
+      "liveSha256": "f7205ea70d668e006b00eb78c41eced157160f1ba1abdc15f022fcade5bb3f33",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-320px-dialog-r-bed6d-ames-without-changing-plans-firefox-desktop/add-trip-320-existing.png",
+      "project": "320px",
+      "size": [
+        320,
+        700
+      ],
+      "previewSha256": "0bb8d7d3e513dfcaa4153da5fa3258b01c189a29ff7e41072d22990c102bd7db",
+      "liveSha256": "0bb8d7d3e513dfcaa4153da5fa3258b01c189a29ff7e41072d22990c102bd7db",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-320px-dialog-r-bed6d-ames-without-changing-plans-firefox-desktop/add-trip-320-new.png",
+      "project": "320px",
+      "size": [
+        320,
+        700
+      ],
+      "previewSha256": "093527c31de24fae78c1d12033479d230d17b2b7f855723bd24ddcb132e4b95e",
+      "liveSha256": "093527c31de24fae78c1d12033479d230d17b2b7f855723bd24ddcb132e4b95e",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-webkit-desktop/add-trip-new-dialog.png",
+      "project": "webkit-desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "73dcecb3c856f8d3ada33a4fb1decfdb38335b6dcccfb9c3baece8a1049ebb8c",
+      "liveSha256": "73dcecb3c856f8d3ada33a4fb1decfdb38335b6dcccfb9c3baece8a1049ebb8c",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-webkit-desktop/add-trip-arrival.png",
+      "project": "webkit-desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "ef9e8d38e2119abe314b56e87bcb0032adbefd0cd8b014b591363d14ffac38ef",
+      "liveSha256": "ef9e8d38e2119abe314b56e87bcb0032adbefd0cd8b014b591363d14ffac38ef",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-details-append-fb691-econstruct-exact-v2-backups-webkit-desktop/add-trip-existing-dialog.png",
+      "project": "webkit-desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "62da8de827093cf2de5dae03b3fb4bcce8edf143d4fcfd670d300b4b4d1e09f9",
+      "liveSha256": "62da8de827093cf2de5dae03b3fb4bcce8edf143d4fcfd670d300b4b4d1e09f9",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-full-trips-and-cfad2-e-and-cancellation-is-inert-webkit-desktop/add-trip-limits.png",
+      "project": "webkit-desktop",
+      "size": [
+        1366,
+        900
+      ],
+      "previewSha256": "0b04eeb2490541e76fa777890cbce1aed97866835e469e0051779b08c2dcd025",
+      "liveSha256": "3ad622601c7604add9dfccc3120966585a19de894ad7a4995a1d9e614cdc3891",
+      "byteIdentical": false,
+      "review": "PASS: inspected live WebKit layouts and preview/live difference crops; no layout or usability defect observed."
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-webkit-narrow/add-trip-new-dialog.png",
+      "project": "webkit-narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "f0c3dd552af92771eff057728044f1eafaa5e85bb4bb7238d4f3b70620c8ff98",
+      "liveSha256": "f0c3dd552af92771eff057728044f1eafaa5e85bb4bb7238d4f3b70620c8ff98",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-webkit-narrow/add-trip-arrival.png",
+      "project": "webkit-narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "9d4768d053f73c8b75fbf4717d5a39a800ebcf75522d41ae3845503ef62cafc4",
+      "liveSha256": "9d4768d053f73c8b75fbf4717d5a39a800ebcf75522d41ae3845503ef62cafc4",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-details-append-fb691-econstruct-exact-v2-backups-webkit-narrow/add-trip-existing-dialog.png",
+      "project": "webkit-narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "5675ca1dd6b1b58818464a9d43b02fbd0c7b87ab3a95924d7419cd8a7b3739ec",
+      "liveSha256": "5675ca1dd6b1b58818464a9d43b02fbd0c7b87ab3a95924d7419cd8a7b3739ec",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-full-trips-and-cfad2-e-and-cancellation-is-inert-webkit-narrow/add-trip-limits.png",
+      "project": "webkit-narrow",
+      "size": [
+        390,
+        844
+      ],
+      "previewSha256": "3213712ed9a79906535dcfbd7f2e40131058bdb849a0d5d33fc2cb481c9b3d3e",
+      "liveSha256": "888c443d2ff685a796f41049be86be7299eab162ffcb6739812262c480c67914",
+      "byteIdentical": false,
+      "review": "PASS: inspected live WebKit layouts and preview/live difference crops; no layout or usability defect observed."
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-webkit-tablet/add-trip-new-dialog.png",
+      "project": "webkit-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "4db04422e7ef8deb066a1a125fdbd30667e8bceb40ac160ca405f127a6e59b4f",
+      "liveSha256": "4db04422e7ef8deb066a1a125fdbd30667e8bceb40ac160ca405f127a6e59b4f",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-keyboard-Explo-1a426-and-retains-history-context-webkit-tablet/add-trip-arrival.png",
+      "project": "webkit-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "d4303b4b661cc23ead25fe72e134d765c96e6edd60d7fd4185eddbd604dfcb83",
+      "liveSha256": "d4303b4b661cc23ead25fe72e134d765c96e6edd60d7fd4185eddbd604dfcb83",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-details-append-fb691-econstruct-exact-v2-backups-webkit-tablet/add-trip-existing-dialog.png",
+      "project": "webkit-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "65443091bc027658ba1b7067981d65f61ebaa64c65c220c87dedb6c4c397a1f5",
+      "liveSha256": "65443091bc027658ba1b7067981d65f61ebaa64c65c220c87dedb6c4c397a1f5",
+      "byteIdentical": true
+    },
+    {
+      "path": "add-to-trip-full-trips-and-cfad2-e-and-cancellation-is-inert-webkit-tablet/add-trip-limits.png",
+      "project": "webkit-tablet",
+      "size": [
+        768,
+        1024
+      ],
+      "previewSha256": "75e71572cb2d991b3cc1643d38ad6f117ec9dd50fe209ae9bd5e6e10d9fd15ac",
+      "liveSha256": "89936022f1016549f8ec4d038de94f9b306849b3d39ea997970ded45fa50aa75",
+      "byteIdentical": false,
+      "review": "PASS: inspected live WebKit layouts and preview/live difference crops; no layout or usability defect observed."
+    },
+    {
+      "path": "add-to-trip-320px-dialog-r-bed6d-ames-without-changing-plans-webkit-desktop/add-trip-320-existing.png",
+      "project": "320px",
+      "size": [
+        320,
+        700
+      ],
+      "previewSha256": "0df86bc495a4a29978ee653caec10c579edad82b09ff63e8f69c15a4025b3db8",
+      "liveSha256": "ca3183c810e5ed00d67e285b36eb19cb47c4976629c435b30c9e31475c1b4c9f",
+      "byteIdentical": false,
+      "review": "PASS: inspected live WebKit layouts and preview/live difference crops; no layout or usability defect observed."
+    },
+    {
+      "path": "add-to-trip-320px-dialog-r-bed6d-ames-without-changing-plans-webkit-desktop/add-trip-320-new.png",
+      "project": "320px",
+      "size": [
+        320,
+        700
+      ],
+      "previewSha256": "00355886bb6c204df30372234b70fe6311497e424f289bc00330a7a0c4f0c468",
+      "liveSha256": "3c5548b8161f08f63db2dfa647eb116cbfbc68e603493d2a007d48230f1c543b",
+      "byteIdentical": false,
+      "review": "PASS: inspected live WebKit layouts and preview/live difference crops; no layout or usability defect observed."
+    }
+  ],
+  "byteIdenticalCount": 37,
+  "selectedCount": 42,
+  "review": {
+    "result": "PASS",
+    "previewImagesInspected": 42,
+    "liveImagesMatchedByteForByte": 37,
+    "additionalLiveWebKitImagesInspected": 14,
+    "differingImagesReviewedSideBySide": 5,
+    "scope": "New/existing dialogs, new-stay Hotel focus/scroll, limits and 320px long-name reflow across three engines and desktop/narrow/tablet viewports."
+  }
+}
