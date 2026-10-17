@@ -63,6 +63,14 @@ describe('Add to trip application flow', () => {
     const denial = vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('Quota'); }); click('Add stay and open trip');
     expect(screen.getByText(/Could not save to this browser/)).toBeInTheDocument(); expect(localStorage.getItem(STORAGE_KEY)).toBe(before); expect(screen.getAllByLabelText('Hotel').at(-1)).toHaveFocus(); denial.mockRestore();
   });
+  it('rejects invalid workspace drafts without a partial write and retries after correction', () => {
+    render(<App />); open(); click('Add stay and open trip'); const before = localStorage.getItem(STORAGE_KEY);
+    set('Trip name', ''); navigate(`#/properties/${property.slug}`); open(); click('Add stay and open trip');
+    expect(screen.getByRole('alert')).toHaveTextContent('Correct invalid trip drafts'); expect(localStorage.getItem(STORAGE_KEY)).toBe(before);
+    expect(screen.getByRole('dialog')).toBeInTheDocument(); click('Cancel'); navigate('#/trips');
+    expect(screen.getAllByLabelText('Hotel')).toHaveLength(1); set('Trip name', 'Corrected trip'); navigate(`#/properties/${property.slug}`); open(); click('Add stay and open trip');
+    expect(saved().workspace.trips[0].stays).toHaveLength(2); expect(screen.getAllByLabelText('Hotel').at(-1)).toHaveFocus();
+  });
   it('shows validation errors without partial additions and allows retry after choosing a valid name', () => {
     render(<App />); open(); set('New trip name', ' '); expect(screen.getByRole('button', { name: 'Add stay and open trip' })).toBeDisabled();
     set('New trip name', 'Valid trip'); click('Add stay and open trip'); expect(saved().workspace.trips).toHaveLength(1);
