@@ -1,3 +1,5 @@
+import { AddToTripDialog } from '../components/AddToTrip';
+import { addPropertyToTrip } from '../lib/trips/workspace';
 import { PortfolioOptimizer } from '../components/PortfolioOptimizer';
 import { Watchlist } from '../components/Watchlist';
 import { createWatchTarget, MAX_WATCH_TARGETS } from '../lib/watchlist/watchlist';
@@ -42,9 +44,11 @@ export function ExplorerApplication({ catalog, asOf }: { catalog: Catalog; asOf:
     dataRef.current = next; setData(next);
     setSaveState(result.success ? 'Saved in this browser.' : result.error!);
   };
+  const [pendingAdd, setPendingAdd] = useState<{ property: Property; trigger: HTMLButtonElement; origin: string } | null>(null);
+  const [arrival, setArrival] = useState<{ tripId: string; stayId: string; returnHref: string } | null>(null);
   const [route, setRoute] = useState(() => parseRoute(window.location.hash));
   useEffect(() => {
-    const onHashChange = () => setRoute(parseRoute(window.location.hash));
+    const onHashChange = () => { setPendingAdd(null); setRoute(parseRoute(window.location.hash)); };
     window.addEventListener('hashchange', onHashChange);
     return () => window.removeEventListener('hashchange', onHashChange);
   }, []);
@@ -65,16 +69,30 @@ export function ExplorerApplication({ catalog, asOf }: { catalog: Catalog; asOf:
     const href = watchlistHref(route.query, slugs, property.slug);
     window.location.assign(href); setRoute(parseRoute(href));
   };
-  const watchControls = { onWatch, watchedIds: data.watchlist.map((t) => t.propertyId) };
+  const onAddToTrip = (property: Property, trigger: HTMLButtonElement) => setPendingAdd({ property, trigger, origin: route.page === 'property' ? propertyHref(route.slug, route.query, slugs) : explorerHref(route.query, slugs) });
+  const confirmAdd = (tripId: string | null, name: string) => {
+    if (!pendingAdd || !catalog.properties.some((p) => p.id === pendingAdd.property.id)) return 'Choose a property from the catalog.';
+    const result = addPropertyToTrip(dataRef.current.workspace, pendingAdd.property.id, tripId, dataRef.current.profile, name);
+    if (!result.success) return result.error;
+    setWorkspace(result.workspace);
+    setArrival({ tripId: result.tripId, stayId: result.id, returnHref: pendingAdd.origin });
+    setPendingAdd(null);
+    const href = tripsHref(route.query, slugs);
+    window.location.assign(href); setRoute(parseRoute(href));
+    return null;
+  };
+  const watchControls = { onAddToTrip, onWatch, watchedIds: data.watchlist.map((t) => t.propertyId) };
   const section = route.page === 'explore' ? route.section : null;
   const pageKey = `${route.page}:${property?.slug ?? (route.page === 'benefits' || route.page === 'watchlist' ? route.propertySlug : '')}:${route.page === 'compare' ? slugs.join(',') : ''}`;
   useEffect(() => {
     if (section) document.getElementById(section)?.scrollIntoView();
     else {
       window.scrollTo?.(0, 0);
-      document.getElementById('page-title')?.focus({ preventScroll: true });
+      const stay = route.page === 'trips' && arrival?.tripId === dataRef.current.workspace.activeId ? document.getElementById(`stay-${arrival!.stayId}-hotel`) : null;
+      if (stay) { stay.focus(); stay.scrollIntoView({ block: 'center' }); }
+      else document.getElementById('page-title')?.focus({ preventScroll: true });
     }
-  }, [pageKey, section]);
+  }, [pageKey, section, arrival, route.page]);
   useEffect(() => {
     document.title = `${property ? property.name : route.page === 'portfolio' ? 'Portfolio Optimization' : route.page === 'watchlist' ? 'Watchlist' : route.page === 'benefits' ? 'Elite Benefit Engine' : route.page === 'profile' ? 'Local Bonvoy Profile' : route.page === 'trips' ? 'Trip Builder' : route.page === 'recommendations' ? 'Recommendations' : route.page === 'calculator' ? 'Manual Points Calculator' : route.page === 'compare' ? 'Property Comparison' : route.page === 'explore' ? 'Property Explorer' : 'Property not found'} · Marriott Trip Planner`;
   }, [property, route.page]);
@@ -85,8 +103,9 @@ export function ExplorerApplication({ catalog, asOf }: { catalog: Catalog; asOf:
     <main id="main" tabIndex={-1}><div className="storage-status" aria-live="polite">{saveState}</div>
       {!!selection.issues.length && <div className="comparison-warning" role="alert"><p>Some comparison selections need review.</p><ul>{selection.issues.map((issue) => <li key={issue}>{issue}</li>)}</ul><button className="text-button" onClick={() => setSelection(slugs)}>Keep valid selections</button></div>}
       <ComparisonTray properties={selection.properties} query={route.query} onRemove={onRemove} onClear={onClear} comparing={route.page === 'compare'} />
-      {route.page === 'portfolio' ? <PortfolioOptimizer data={data} catalog={catalog} asOf={asOf} query={route.query} comparisonSlugs={slugs} /> : route.page === 'watchlist' ? <Watchlist key={route.propertySlug ?? 'watchlist'} catalog={catalog} targets={data.watchlist} setTargets={setTargets} query={route.query} comparisonSlugs={slugs} propertySlug={route.propertySlug} /> : route.page === 'benefits' ? <EliteBenefits catalog={catalog} profile={data.profile} asOf={asOf} query={route.query} comparisonSlugs={slugs} propertySlug={route.propertySlug} /> : route.page === 'profile' ? <BonvoyProfile catalog={catalog} data={data} setData={changeData} onReplaceSaved={replaceSaved} /> : route.page === 'trips' ? <TripBuilder catalog={catalog} asOf={asOf} query={route.query} comparisonSlugs={slugs} workspace={data.workspace} setWorkspace={setWorkspace} profile={data.profile} /> : route.page === 'recommendations' ? <Recommendations profile={data.profile} catalog={catalog} asOf={asOf} query={route.query} comparisonSlugs={slugs} /> : route.page === 'calculator' ? <PointsCalculator profile={data.profile} key={route.propertySlug ?? 'manual'} catalog={catalog} query={route.query} comparisonSlugs={slugs} propertySlug={route.propertySlug} /> : route.page === 'compare' ? <PropertyComparison status={data.profile.status} catalog={catalog} properties={selection.properties} query={route.query} asOf={asOf} onRemove={onRemove} onClear={onClear} /> : route.page === 'explore' ? <PropertyExplorer {...watchControls} catalog={catalog} query={route.query} asOf={asOf} comparisonSlugs={slugs} onToggle={onToggle} /> : property ? <PropertyDetails {...watchControls} status={data.profile.status} catalog={catalog} property={property} query={route.query} asOf={asOf} comparisonSlugs={slugs} onToggle={onToggle} /> : <section className="not-found"><p className="eyebrow">An uncharted corner</p><h1 id="page-title" tabIndex={-1}>Property not found.</h1><p>This link doesn’t identify a property in the curated collection.</p><a className="primary-link" href={explorerHref(route.query, slugs)}>Return to the explorer <span aria-hidden="true">→</span></a></section>}
+      {route.page === 'portfolio' ? <PortfolioOptimizer data={data} catalog={catalog} asOf={asOf} query={route.query} comparisonSlugs={slugs} /> : route.page === 'watchlist' ? <Watchlist key={route.propertySlug ?? 'watchlist'} catalog={catalog} targets={data.watchlist} setTargets={setTargets} query={route.query} comparisonSlugs={slugs} propertySlug={route.propertySlug} /> : route.page === 'benefits' ? <EliteBenefits catalog={catalog} profile={data.profile} asOf={asOf} query={route.query} comparisonSlugs={slugs} propertySlug={route.propertySlug} /> : route.page === 'profile' ? <BonvoyProfile catalog={catalog} data={data} setData={changeData} onReplaceSaved={replaceSaved} /> : route.page === 'trips' ? <TripBuilder catalog={catalog} asOf={asOf} query={route.query} comparisonSlugs={slugs} workspace={data.workspace} setWorkspace={setWorkspace} profile={data.profile} returnHref={arrival?.returnHref} /> : route.page === 'recommendations' ? <Recommendations profile={data.profile} catalog={catalog} asOf={asOf} query={route.query} comparisonSlugs={slugs} /> : route.page === 'calculator' ? <PointsCalculator profile={data.profile} key={route.propertySlug ?? 'manual'} catalog={catalog} query={route.query} comparisonSlugs={slugs} propertySlug={route.propertySlug} /> : route.page === 'compare' ? <PropertyComparison status={data.profile.status} catalog={catalog} properties={selection.properties} query={route.query} asOf={asOf} onRemove={onRemove} onClear={onClear} /> : route.page === 'explore' ? <PropertyExplorer {...watchControls} catalog={catalog} query={route.query} asOf={asOf} comparisonSlugs={slugs} onToggle={onToggle} /> : property ? <PropertyDetails {...watchControls} status={data.profile.status} catalog={catalog} property={property} query={route.query} asOf={asOf} comparisonSlugs={slugs} onToggle={onToggle} /> : <section className="not-found"><p className="eyebrow">An uncharted corner</p><h1 id="page-title" tabIndex={-1}>Property not found.</h1><p>This link doesn’t identify a property in the curated collection.</p><a className="primary-link" href={explorerHref(route.query, slugs)}>Return to the explorer <span aria-hidden="true">→</span></a></section>}
       {route.page === 'explore' && <ProjectNotes />}
+      {pendingAdd && (route.page === 'explore' || route.page === 'property') && <AddToTripDialog property={pendingAdd.property} workspace={data.workspace} onConfirm={confirmAdd} onCancel={() => { const trigger = pendingAdd.trigger; setPendingAdd(null); trigger.focus(); }} />}
     </main><footer><p>Marriott Trip Planner <span>·</span> Thoughtful travel, explained.</p><p>Independent planning tool. Not affiliated with Marriott International.</p></footer>
   </>;
 }

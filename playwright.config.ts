@@ -17,7 +17,7 @@ export default defineConfig({
       { name: `${browserName}-narrow`, testIgnore: '**/loading.spec.ts', use: { browserName, viewport: { width: 390, height: 844 } } },
     ]),
     ...(['chromium', 'firefox', 'webkit'] as const).map(browserName => ({
-      name: `${browserName}-tablet`, testMatch: /(?:release-audit|usability)\.spec\.ts/,
+      name: `${browserName}-tablet`, testMatch: /(?:release-audit|usability|add-to-trip)\.spec\.ts/,
       use: { browserName, viewport: { width: 768, height: 1024 } },
     })),
   ],
