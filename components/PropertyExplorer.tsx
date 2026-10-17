@@ -1,3 +1,5 @@
+import { AddToTripControl } from './AddToTrip';
+import type { AddToTripProps } from './AddToTrip';
 import { WatchControl } from './WatchControl';
 import type { WatchControlProps } from './WatchControl';
 import type { FormEvent } from 'react';
@@ -14,7 +16,7 @@ const FILTER_LABELS: Record<FilterKey, string> = {
   tag: 'Experience', resort: 'Resort designation', destinationProperty: 'Destination-property designation', opening: 'Opening year', renovation: 'Renovation year',
 };
 
-export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], onToggle, onWatch, watchedIds }: WatchControlProps & { catalog: Catalog; query: ExplorerQuery; asOf: string; comparisonSlugs?: string[]; onToggle?: (slug: string) => void }) {
+export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], onToggle, onWatch, watchedIds, onAddToTrip }: WatchControlProps & AddToTripProps & { catalog: Catalog; query: ExplorerQuery; asOf: string; comparisonSlugs?: string[]; onToggle?: (slug: string) => void }) {
   const results = queryProperties(catalog, query);
   const update = (key: keyof ExplorerQuery, value: string) => window.location.assign(explorerHref({ ...query, [key]: value }, comparisonSlugs));
   function search(event: FormEvent<HTMLFormElement>) {
@@ -78,7 +80,7 @@ export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], o
                 <h2><a href={propertyHref(property.slug, query, comparisonSlugs)}>{property.name}</a></h2>
                 <p className="property-type">{type.label}{type.status === 'known' ? ` · ${type.confidence} confidence` : ''}</p>
                 <div className="tag-list" aria-label="Recorded experiences">{tags.value && Array.isArray(tags.value) ? tags.value.map((tag) => <span key={tag}>{humanize(tag)}</span>) : <span>{tags.label}</span>}</div>
-                <div className="property-card-bottom"><span>{identity.lastVerifiedAt ? `Identity verified ${displayDate(identity.lastVerifiedAt)}` : 'Identity needs review'}{identity.stale || type.stale || tags.stale ? ' · Evidence needs refresh' : ''}</span><a href={propertyHref(property.slug, query, comparisonSlugs)} aria-label={`View details for ${property.name}`}>View details <span aria-hidden="true">→</span></a><CompareControl property={property} slugs={comparisonSlugs} onToggle={onToggle} /><WatchControl property={property} onWatch={onWatch} watchedIds={watchedIds} /></div>
+                <div className="property-card-bottom"><span>{identity.lastVerifiedAt ? `Identity verified ${displayDate(identity.lastVerifiedAt)}` : 'Identity needs review'}{identity.stale || type.stale || tags.stale ? ' · Evidence needs refresh' : ''}</span><a href={propertyHref(property.slug, query, comparisonSlugs)} aria-label={`View details for ${property.name}`}>View details <span aria-hidden="true">→</span></a><CompareControl property={property} slugs={comparisonSlugs} onToggle={onToggle} /><AddToTripControl property={property} onAddToTrip={onAddToTrip} /><WatchControl property={property} onWatch={onWatch} watchedIds={watchedIds} /></div>
               </article>;
             })}</div>}
           <p className="results-note">Setting tags describe sourced activities or surroundings; they don’t rate hotel quality. Year sorts put unknown values last.</p>

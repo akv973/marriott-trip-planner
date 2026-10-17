@@ -1,3 +1,5 @@
+import { addWorkspaceTrip, addWorkspaceStay, MAX_TRIPS, MAX_STAYS } from '../lib/trips/workspace';
+import { useState } from 'react';
 import { useRemovalFocus } from './useRemovalFocus';
 import { MapPanel } from './MapPanel';
 import { tripStops } from '../lib/maps/geography';
@@ -9,7 +11,7 @@ import type { Dispatch, SetStateAction } from 'react';
 import type { Catalog } from '../types/catalog';
 import type { ExplorerQuery } from '../lib/catalog/explorer';
 import { propertyHref } from '../lib/navigation/routes';
-import { calculateTrip, checkout, createStay, createTrip, EMPTY_PRICING } from '../lib/trips/trips';
+import { calculateTrip, checkout, createStay, EMPTY_PRICING } from '../lib/trips/trips';
 import type { Trip, TripStay } from '../lib/trips/trips';
 import { CURRENCIES, formatMoney, formatPoints } from '../lib/points/calculator';
 import { POINTS_POLICY } from '../lib/points/policy';
@@ -18,19 +20,22 @@ import { EvidenceValue } from './EvidenceValue';
 const number = (value: string) => value.trim() === '' ? null : Number(value);
 const shown = (value: number | null) => value === null || !Number.isFinite(value) ? '' : value;
 
-export function TripBuilder({ catalog, asOf, query, comparisonSlugs, workspace, setWorkspace, profile }: { catalog: Catalog; asOf: string; query: ExplorerQuery; comparisonSlugs: string[]; workspace: TripWorkspace; profile?: UserProfile; setWorkspace: Dispatch<SetStateAction<TripWorkspace>> }) {
+export function TripBuilder({ catalog, asOf, query, comparisonSlugs, workspace, setWorkspace, profile, returnHref }: { catalog: Catalog; asOf: string; query: ExplorerQuery; comparisonSlugs: string[]; workspace: TripWorkspace; profile?: UserProfile; returnHref?: string | undefined; setWorkspace: Dispatch<SetStateAction<TripWorkspace>> }) {
   const focusAfterRemoval = useRemovalFocus();
   const trip = workspace.trips.find((entry) => entry.id === workspace.activeId) ?? workspace.trips[0];
   const updateTrip = (change: (current: Trip) => Trip) => setWorkspace((current) => ({ ...current, trips: current.trips.map((entry) => entry.id === trip?.id ? change(entry) : entry) }));
-  const addTrip = () => setWorkspace((current) => { const id = `trip-${current.sequence}`; return { trips: [...current.trips, { ...createTrip(id), ...(profile ? { balance: null, valuationCpp: null, profileDefaults: { balance: true, valuationCpp: true } } : {}) }], activeId: id, sequence: current.sequence + 1 }; });
-  const addStay = () => setWorkspace((current) => ({ ...current, sequence: current.sequence + 1, trips: current.trips.map((entry) => entry.id === trip?.id ? { ...entry, stays: [...entry.stays, createStay(`stay-${current.sequence}`, catalog.properties[0]!.id)] } : entry) }));
+  const [addError, setAddError] = useState('');
+  const addTrip = () => { const result = addWorkspaceTrip(workspace, profile); if (result.success) { setAddError(''); setWorkspace(result.workspace); } else setAddError(result.error); };
+  const addStay = () => { const result = addWorkspaceStay(workspace, trip?.id ?? '', catalog.properties[0]!.id); if (result.success) { setAddError(''); setWorkspace(result.workspace); } else setAddError(result.error); };
   const result = trip ? calculateTrip(trip, catalog, asOf, profile) : null;
   const editStay = (id: string, change: (stay: TripStay) => TripStay) => updateTrip((current) => ({ ...current, stays: current.stays.map((stay) => stay.id === id ? change(stay) : stay) }));
   const move = (index: number, delta: number) => updateTrip((current) => { const stays = [...current.stays]; [stays[index], stays[index + delta]] = [stays[index + delta]!, stays[index]!]; return { ...current, stays }; });
   const summaryRow = (label: string, value: string) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>;
   return <>
+    {returnHref && <a className="back-link" href={returnHref}>← Back to where you chose this hotel</a>}
+    {addError && <p role="alert">{addError}</p>}
     <section className="calculator-hero"><p className="eyebrow">One journey · Every stay accounted for</p><h1 id="page-title" tabIndex={-1}>Bring your trip together.</h1><p>Connect hotel stays, choose cash or points, and inspect what your trip needs. Blank prices stay unknown; enter zero only for a confirmed zero charge.</p><p className="calculator-context">Trips and notes are saved in this browser. Export a backup from Profile to transfer them. All prices and reservation statuses are your manual entries; availability is not checked.</p></section>
-    <div className="trip-toolbar"><button className="primary-link" onClick={addTrip} disabled={workspace.trips.length >= 10}>Create trip</button>{!!workspace.trips.length && <label className="calculator-field">Choose trip<select aria-label="Choose trip" value={trip?.id ?? ''} onChange={(e) => setWorkspace((current) => ({ ...current, activeId: e.target.value }))}>{workspace.trips.map((entry) => <option key={entry.id} value={entry.id}>{entry.name || 'Unnamed trip'}</option>)}</select></label>}<span>Up to 10 trips · 30 stays per trip</span></div>
+    <div className="trip-toolbar"><button className="primary-link" onClick={addTrip} disabled={workspace.trips.length >= MAX_TRIPS}>Create trip</button>{!!workspace.trips.length && <label className="calculator-field">Choose trip<select aria-label="Choose trip" value={trip?.id ?? ''} onChange={(e) => setWorkspace((current) => ({ ...current, activeId: e.target.value }))}>{workspace.trips.map((entry) => <option key={entry.id} value={entry.id}>{entry.name || 'Unnamed trip'}</option>)}</select></label>}<span>Up to 10 trips · 30 stays per trip</span></div>
     {!trip ? <section className="comparison-empty"><h2>Your next journey starts here.</h2><p>Create a trip, then add hotels from the curated collection.</p></section> : <div className="trip-layout">
       <div className="calculator-form trip-editor" aria-label="Trip editor">
         <fieldset><legend>01 · Your trip</legend><div className="calculator-fields">
@@ -82,7 +87,7 @@ export function TripBuilder({ catalog, asOf, query, comparisonSlugs, workspace, 
             {property && <details className="trip-evidence"><summary>Catalog facts & evidence</summary><p>Manual quotes and reservation status are user assertions. <a href={propertyHref(property.slug, query, comparisonSlugs)}>Open sourced details and separate editorial assessment ↗</a></p><h4>Operating status</h4><EvidenceValue catalog={catalog} property={property} subject="operatingStatus" asOf={asOf} /></details>}
           </article>;
         })}
-        <div className="trip-actions"><button className="primary-link" id="add-hotel-stay" disabled={trip.stays.length >= 30} onClick={addStay}>Add hotel stay</button><button className="text-button" onClick={() => setWorkspace((current) => { const trips = current.trips.filter((entry) => entry.id !== trip.id); return { ...current, trips, activeId: trips[0]?.id ?? null }; })}>Delete this trip</button></div>
+        <div className="trip-actions"><button className="primary-link" id="add-hotel-stay" disabled={trip.stays.length >= MAX_STAYS} onClick={addStay}>Add hotel stay</button><button className="text-button" onClick={() => setWorkspace((current) => { const trips = current.trips.filter((entry) => entry.id !== trip.id); return { ...current, trips, activeId: trips[0]?.id ?? null }; })}>Delete this trip</button></div>
       </div>
       <aside className="calculator-results trip-summary" aria-label="Trip totals" id="trip-summary" tabIndex={-1}><p className="eyebrow">Your journey, accounted for</p><h2>Trip totals</h2>{!result?.success ? <div role="alert"><h3>Check your inputs</h3><ul>{result?.errors.map((error, i) => <li key={i}>{error}</li>)}</ul><p>Totals are unavailable until invalid inputs are corrected.</p></div> : <>
         <p role="status">{result.stays.length} stays · {result.nights} nights · {result.hotelChanges} hotel {result.hotelChanges === 1 ? 'change' : 'changes'}</p>

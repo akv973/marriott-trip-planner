@@ -1,3 +1,5 @@
+import { AddToTripControl } from './AddToTrip';
+import type { AddToTripProps } from './AddToTrip';
 import { MapPanel } from './MapPanel';
 import { propertyStops } from '../lib/maps/geography';
 import { WatchControl } from './WatchControl';
@@ -22,7 +24,7 @@ function Fact({ catalog, property, subject, asOf }: { catalog: Catalog; property
   return <div className="fact-row"><dt>{FIELD_LABELS[subject]}</dt><dd><EvidenceValue catalog={catalog} property={property} subject={subject} asOf={asOf} /></dd></div>;
 }
 
-export function PropertyDetails({ catalog, property, query, asOf, comparisonSlugs = [], onToggle, status = null, onWatch, watchedIds }: WatchControlProps & { catalog: Catalog; property: Property; query: ExplorerQuery; asOf: string; comparisonSlugs?: string[]; onToggle?: (slug: string) => void; status?: UserProfile['status'] }) {
+export function PropertyDetails({ catalog, property, query, asOf, comparisonSlugs = [], onToggle, status = null, onWatch, watchedIds, onAddToTrip }: WatchControlProps & AddToTripProps & { catalog: Catalog; property: Property; query: ExplorerQuery; asOf: string; comparisonSlugs?: string[]; onToggle?: (slug: string) => void; status?: UserProfile['status'] }) {
   const official = fieldEvidence(catalog, property, 'officialUrl', asOf);
   const editorial = catalog.editorialAssessments.filter((assessment) => assessment.propertyId === property.id);
   const brand = catalog.brands.find((record) => record.id === property.brandId)?.name;
@@ -33,7 +35,7 @@ export function PropertyDetails({ catalog, property, query, asOf, comparisonSlug
       {typeof official.value === 'string' ? <a className="primary-link" href={official.value} target="_blank" rel="noopener noreferrer">Official property page <span aria-hidden="true">↗</span></a> : <p className="unknown-value">Official property page: {official.label}</p>}
       {official.stale && <p className="review-label">The official locator evidence needs a refresh.</p>}
     </section>
-    <div className="detail-compare-control"><WatchControl property={property} onWatch={onWatch} watchedIds={watchedIds} /><CompareControl property={property} slugs={comparisonSlugs} onToggle={onToggle} /></div>
+    <div className="detail-compare-control"><AddToTripControl property={property} onAddToTrip={onAddToTrip} /><WatchControl property={property} onWatch={onWatch} watchedIds={watchedIds} /><CompareControl property={property} slugs={comparisonSlugs} onToggle={onToggle} /></div>
     <MapPanel title="Property location" stops={propertyStops(catalog, [property], asOf)} query={query} comparisonSlugs={comparisonSlugs} />
     <div className="detail-layout">
       <div>

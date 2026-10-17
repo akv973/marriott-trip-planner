@@ -123,7 +123,7 @@ test('detail facts, sources, unknown booking values and editorial remain distinc
   await noOverflow(page);
   await page.screenshot({ path: testInfo.outputPath(`dove-mountain-${testInfo.project.name}.png`), fullPage: true });
   await expect(page.getByRole('button', { name: 'Save to watchlist: The Ritz-Carlton, Dove Mountain', exact: true })).toHaveCount(1);
-  await expect(page.getByRole('button', { name: /Add to trip/i })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: /Add to trip:/ })).toHaveCount(1);
 });
 
 test('invalid routes and unsupported filters have a clear recovery path', async ({ page }) => {

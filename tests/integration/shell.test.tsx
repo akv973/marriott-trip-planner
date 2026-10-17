@@ -20,7 +20,7 @@ describe('Validated explorer and detail pages', () => {
     expect(document.querySelectorAll('.property-card')).toHaveLength(100);
     expect(screen.queryByText('Planned', { exact: true })).not.toBeInTheDocument();
     expect(screen.getAllByRole('button', { name: /Save to watchlist:/ })).toHaveLength(100);
-    expect(screen.queryByRole('button', { name: /add to trip/i })).not.toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: /Add to trip:/ })).toHaveLength(100);
   });
   it('restores combined filters from the URL and keeps context in detail links', () => {
     window.history.replaceState(null, '', '#/explore?country=TZ&tag=wildlife&sort=name-desc');
