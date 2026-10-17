@@ -8,6 +8,7 @@ const saved = (page: Page) => page.evaluate(key => JSON.parse(localStorage.getIt
 const bytes = (page: Page) => page.evaluate(key => localStorage.getItem(key), key);
 const noOverflow = async (page: Page) => expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(await page.evaluate(() => innerWidth));
 const trigger = (page: Page) => page.getByRole('button', { name: /Add to trip: Mapito/ });
+const destination = (page: Page) => page.getByRole('combobox', { name: 'Destination trip', exact: true });
 const submit = (page: Page) => page.getByRole('button', { name: 'Add stay and open trip', exact: true });
 const nav = (page: Page, name: string) => page.getByRole('navigation').getByRole('link', { name, exact: true });
 const openExplorer = (page: Page) => page.goto('./#/explore?q=Mapito&country=TZ&compare=jw-tampa');
@@ -18,14 +19,14 @@ const seed = async (page: Page, envelope: unknown) => {
 test('keyboard Explorer flow cancels without writes, creates once, focuses the new stay, and retains history/context', async ({ page }, info) => {
   await openExplorer(page); const origin = page.url(); const before = await bytes(page);
   await trigger(page).focus(); await page.keyboard.press('Enter');
-  await expect(page.getByLabel('Destination trip', { exact: true })).toBeFocused();
+  await expect(destination(page)).toBeFocused();
   await page.getByLabel('New trip name', { exact: true }).fill('Discard this'); await page.keyboard.press('Escape');
   await expect(page.getByRole('dialog')).toHaveCount(0); await expect(trigger(page)).toBeFocused(); expect(await bytes(page)).toBe(before); expect(page.url()).toBe(origin);
   await page.keyboard.press('Enter'); await expect(page.getByLabel('New trip name', { exact: true })).toHaveValue('Untitled trip');
   // Shift+Tab wraps within the native modal, never reaching page navigation.
   await page.keyboard.press('Shift+Tab'); await expect(page.getByRole('button', { name: 'Cancel', exact: true })).toBeFocused();
-  await page.keyboard.press('Tab'); await expect(page.getByLabel('Destination trip', { exact: true })).toBeFocused();
-  expect(await page.getByLabel('Destination trip').evaluate(e => Number.parseFloat(getComputedStyle(e).outlineOffset))).toBeLessThanOrEqual(0);
+  await page.keyboard.press('Tab'); await expect(destination(page)).toBeFocused();
+  expect(await destination(page).evaluate(e => Number.parseFloat(getComputedStyle(e).outlineOffset))).toBeLessThanOrEqual(0);
   await page.getByLabel('New trip name', { exact: true }).fill('Safari planning'); await noOverflow(page);
   await page.screenshot({ path: info.outputPath('add-trip-new-dialog.png') });
   // Two synchronous submissions must represent one intentional addition.
@@ -43,10 +44,10 @@ test('details append to a selected inactive v1 trip, permit repeat stays, persis
   test.setTimeout(90000); await seed(page, legacy); await openExplorer(page);
   await page.getByRole('link', { name: /View details for Mapito/ }).click(); const origin = page.url();
   await expect(page.locator('.unavailable-panel')).toContainText('Unavailable'); await trigger(page).click();
-  await page.getByLabel('Destination trip', { exact: true }).selectOption(''); await page.getByLabel('New trip name', { exact: true }).fill('Separate trip'); await submit(page).click();
+  await destination(page).selectOption(''); await page.getByLabel('New trip name', { exact: true }).fill('Separate trip'); await submit(page).click();
   const separate = (await saved(page)).workspace.trips.at(-1);
   await page.getByRole('link', { name: /Back to where you chose this hotel/ }).click(); expect(page.url()).toBe(origin); await trigger(page).click();
-  await page.getByLabel('Destination trip', { exact: true }).selectOption(legacy.data.workspace.trips[0]!.id);
+  await destination(page).selectOption(legacy.data.workspace.trips[0]!.id);
   await page.screenshot({ path: info.outputPath('add-trip-existing-dialog.png') }); await submit(page).focus(); await page.keyboard.press('Enter');
   const index = legacy.data.workspace.trips[0]!.stays.length + 1;
   await expect(page.getByRole('article', { name: `Stay ${index}`, exact: true }).getByLabel('Hotel', { exact: true })).toBeFocused();
@@ -63,7 +64,7 @@ test('details append to a selected inactive v1 trip, permit repeat stays, persis
 test('full trips and the trip limit are explicit; another eligible trip remains usable and cancellation is inert', async ({ page }, info) => {
   const data = emptyPlanner(); data.workspace = { trips: Array.from({ length: 10 }, (_, i) => ({ ...createTrip(`trip-${i + 1}`), name: `Saved trip ${i + 1}`, stays: i === 0 ? Array.from({ length: 30 }, (_, j) => createStay(`stay-${11 + j}`, 'property-mapito')) : [] })), activeId: 'trip-1', sequence: 41 };
   await seed(page, { ...legacy, schemaVersion: 2, data }); await openExplorer(page); const before = await bytes(page); await trigger(page).click();
-  await expect(page.getByRole('option', { name: /Saved trip 1 ·/ })).toBeDisabled(); await expect(page.getByRole('option', { name: /Create a new trip/ })).toBeDisabled(); await expect(page.getByLabel('Destination trip')).toHaveValue('trip-2');
+  await expect(page.getByRole('option', { name: /Saved trip 1 ·/ })).toHaveJSProperty('disabled', true); await expect(page.getByRole('option', { name: /Create a new trip/ })).toHaveJSProperty('disabled', true); await destination(page).focus(); await page.keyboard.press('Home'); await expect(destination(page)).toHaveValue('trip-2');
   await page.getByRole('button', { name: 'Cancel', exact: true }).click(); expect(await bytes(page)).toBe(before); await trigger(page).click(); await submit(page).click();
   await expect(page.getByLabel('Choose trip')).toHaveValue('trip-2'); expect((await saved(page)).workspace.trips[0]).toEqual(data.workspace.trips[0]);
   const full = await saved(page); full.workspace.trips.forEach((t: { stays: ReturnType<typeof createStay>[] }, i: number) => { t.stays = Array.from({ length: 30 }, (_, j) => createStay(`stay-${100 + i * 30 + j}`, 'property-mapito')); }); full.workspace.sequence = 400;
@@ -86,6 +87,6 @@ test('320px dialog reflows with long trip names and rejects blank new names with
   await page.setViewportSize({ width: 320, height: 700 }); const data = emptyPlanner(); data.workspace = { trips: [{ ...createTrip('trip-1'), name: 'A'.repeat(200) }], activeId: 'trip-1', sequence: 2 };
   await seed(page, { ...legacy, schemaVersion: 2, data }); await openExplorer(page); const before = await bytes(page); await trigger(page).click(); await noOverflow(page);
   const modal = page.getByRole('dialog'); expect(await modal.evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
-  await page.screenshot({ path: info.outputPath('add-trip-320-existing.png') }); await page.getByLabel('Destination trip').selectOption(''); await page.getByLabel('New trip name').fill('   '); await expect(submit(page)).toBeDisabled();
+  await page.screenshot({ path: info.outputPath('add-trip-320-existing.png') }); await destination(page).selectOption(''); await page.getByLabel('New trip name').fill('   '); await expect(submit(page)).toBeDisabled();
   await page.getByLabel('New trip name').fill('A valid new trip'); await noOverflow(page); await page.screenshot({ path: info.outputPath('add-trip-320-new.png') }); await page.getByRole('button', { name: 'Cancel', exact: true }).click(); expect(await bytes(page)).toBe(before);
 });
