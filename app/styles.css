@@ -616,5 +616,6 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .add-trip-dialog p { overflow-wrap: anywhere; }
 .add-trip-dialog .calculator-field { margin: 20px 0; min-width: 0; overflow: hidden; }
 .add-trip-dialog select, .add-trip-dialog input { width: 100%; min-width: 0; outline-offset: -3px; }
+.add-trip-dialog select:focus-visible, .add-trip-dialog input:focus-visible { outline-offset: -3px; }
 .add-trip-dialog .trip-actions { flex-wrap: wrap; }
 .add-trip-property { font-weight: 600; }

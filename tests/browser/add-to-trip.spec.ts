@@ -25,6 +25,7 @@ test('keyboard Explorer flow cancels without writes, creates once, focuses the n
   // Shift+Tab wraps within the native modal, never reaching page navigation.
   await page.keyboard.press('Shift+Tab'); await expect(page.getByRole('button', { name: 'Cancel', exact: true })).toBeFocused();
   await page.keyboard.press('Tab'); await expect(page.getByLabel('Destination trip', { exact: true })).toBeFocused();
+  expect(await page.getByLabel('Destination trip').evaluate(e => Number.parseFloat(getComputedStyle(e).outlineOffset))).toBeLessThanOrEqual(0);
   await page.getByLabel('New trip name', { exact: true }).fill('Safari planning'); await noOverflow(page);
   await page.screenshot({ path: info.outputPath('add-trip-new-dialog.png') });
   // Two synchronous submissions must represent one intentional addition.
