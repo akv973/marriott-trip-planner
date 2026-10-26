@@ -5,7 +5,10 @@
    Later stages added rounder, more varied surfaces (8-14px) and dozens
    of near-identical sage/cream/border tints; this pass returns them to
    the original editorial language: hairline borders, 4px surfaces,
-   fully rounded pills only, Georgia display type with system sans UI. */
+   fully rounded pills only, Georgia display type with system sans UI.
+   One documented exception: Add to trip dialog controls keep an inset
+   -3px focus offset, so the ring stays inside the modal; the Add to trip
+   browser test guards that the computed offset is <= 0. */
 :root {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: #27392f;
@@ -39,6 +42,7 @@
   --tracking-label: 1.2px;
   --focus-ring: 3px solid var(--clay);
   --focus-offset: 3px;
+  --focus-offset-inset: -3px;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -647,7 +651,7 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .add-trip-dialog h2 { margin: 0 0 12px; font-size: 30px; }
 .add-trip-dialog p { overflow-wrap: anywhere; }
 .add-trip-dialog .calculator-field { margin: 20px 0; min-width: 0; overflow: hidden; }
-.add-trip-dialog select, .add-trip-dialog input { width: 100%; min-width: 0; outline-offset: var(--focus-offset); }
-.add-trip-dialog select:focus-visible, .add-trip-dialog input:focus-visible { outline-offset: var(--focus-offset); }
+.add-trip-dialog select, .add-trip-dialog input { width: 100%; min-width: 0; outline-offset: var(--focus-offset-inset); }
+.add-trip-dialog select:focus-visible, .add-trip-dialog input:focus-visible { outline-offset: var(--focus-offset-inset); }
 .add-trip-dialog .trip-actions { flex-wrap: wrap; }
 .add-trip-property { font-weight: 600; }
