@@ -45,8 +45,8 @@ export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], o
     <section className="explorer-hero" aria-labelledby="page-title">
       <ContourArt />
       <div><p className="eyebrow">A considered collection</p><h1 id="page-title" tabIndex={-1}>Find a stay worth<br /><em>the journey.</em></h1>
+        <p className="collection-stat-line">{catalog.properties.length} properties · {catalog.brands.length} brands</p>
         <p>Explore {catalog.properties.length} curated Marriott properties. Follow the sources, discover the setting, and see what’s still unknown.</p></div>
-      <div className="collection-stat"><strong>{catalog.properties.length}</strong><span>properties{' '}<br />across {catalog.brands.length} brands</span></div>
     </section>
     <section className="explorer-section" aria-label="Property explorer">
       <form className="search-form" onSubmit={search} role="search">
@@ -80,7 +80,7 @@ export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], o
                 <h2><a href={propertyHref(property.slug, query, comparisonSlugs)}>{property.name}</a></h2>
                 <p className="property-type">{type.label}{type.status === 'known' ? ` · ${type.confidence} confidence` : ''}</p>
                 <div className="tag-list" aria-label="Recorded experiences">{tags.value && Array.isArray(tags.value) ? tags.value.map((tag) => <span key={tag}>{humanize(tag)}</span>) : <span>{tags.label}</span>}</div>
-                <div className="property-card-bottom"><span>{identity.lastVerifiedAt ? `Identity verified ${displayDate(identity.lastVerifiedAt)}` : 'Identity needs review'}{identity.stale || type.stale || tags.stale ? ' · Evidence needs refresh' : ''}</span><a href={propertyHref(property.slug, query, comparisonSlugs)} aria-label={`View details for ${property.name}`}>View details <span aria-hidden="true">→</span></a><CompareControl property={property} slugs={comparisonSlugs} onToggle={onToggle} /><AddToTripControl property={property} onAddToTrip={onAddToTrip} /><WatchControl property={property} onWatch={onWatch} watchedIds={watchedIds} /></div>
+                <div className="property-card-bottom"><span>{identity.lastVerifiedAt ? `Identity verified ${displayDate(identity.lastVerifiedAt)}` : 'Identity needs review'}{identity.stale || type.stale || tags.stale ? ' · Evidence needs refresh' : ''}</span><div className="property-card-actions"><a className="primary-link" href={propertyHref(property.slug, query, comparisonSlugs)} aria-label={`View details for ${property.name}`}>View details <span aria-hidden="true">→</span></a><CompareControl property={property} slugs={comparisonSlugs} onToggle={onToggle} /><AddToTripControl property={property} onAddToTrip={onAddToTrip} /><WatchControl property={property} onWatch={onWatch} watchedIds={watchedIds} /></div></div>
               </article>;
             })}</div>}
           <p className="results-note">Setting tags describe sourced activities or surroundings; they don’t rate hotel quality. Year sorts put unknown values last.</p>
