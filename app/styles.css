@@ -77,8 +77,12 @@ nav a:hover { border-color: currentColor; }
 main { max-width: 1280px; margin: auto; padding: 0 52px; }
 .hero { position: relative; overflow: hidden; min-height: 510px; padding: 62px 62px 32px; border-radius: var(--radius-surface); background: var(--sage); }
 .hero-copy { position: relative; z-index: 1; max-width: 640px; }
-.eyebrow { display: flex; align-items: center; gap: 14px; margin: 0 0 20px; font-size: 12px; letter-spacing: .11em; text-transform: uppercase; font-weight: 600; line-height: 1.6; color: var(--muted); }
-.eyebrow::after { content: ""; width: 55px; height: 1px; background: var(--gold); flex-shrink: 0; }
+.eyebrow { margin: 0 0 20px; font-size: 12px; letter-spacing: .11em; text-transform: uppercase; font-weight: 600; line-height: 1.6; color: var(--muted); }
+/* Gold rule as an inline-block after the label: on a wide line it sits
+   beside the text (mockup kicker/section-index); on a narrow viewport it
+   wraps to its own line instead of forcing horizontal overflow, which the
+   browser tests guard (including a 320px viewport check). */
+.eyebrow::after { content: ""; display: inline-block; width: 55px; height: 1px; background: var(--gold); vertical-align: middle; margin-left: 14px; }
 h1, h2 { font-family: var(--font-display); font-weight: 500; }
 h1 { margin: 0; font-size: clamp(48px, 6vw, 84px); line-height: .98; letter-spacing: -.035em; }
 h1 em { font-weight: 400; }
