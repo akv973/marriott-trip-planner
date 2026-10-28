@@ -387,8 +387,8 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 
 /* Stage 4: manual inputs and an inspectable economics summary. */
 .site-header nav { gap: 20px; flex-wrap: nowrap; overflow-x: auto; }
-.calculator-hero { padding: 35px 0 32px; max-width: 840px; }
-.calculator-hero h1 { font-size: clamp(38px, 4.8vw, 60px); }
+.calculator-hero { padding: 24px 0 28px; max-width: 840px; border-bottom: 1px solid var(--line); margin-bottom: 32px; }
+.calculator-hero h1 { font-size: clamp(36px, 4.5vw, 54px); letter-spacing: -1.5px; }
 .calculator-hero > p:not(.eyebrow) { font-size: 14px; line-height: 1.8; max-width: 710px; }
 .calculator-context { color: var(--muted); }
 .calculator-context a, .calculator-policy a { text-decoration: underline; text-underline-offset: 3px; }
@@ -404,19 +404,21 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .calculator-help { margin: 0 0 20px; }
 .nightly-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; grid-column: 1 / -1; }
 .calculator-thresholds { margin-top: 22px; }
-.calculator-thresholds p, .calculator-formula p, .calculator-policy p { font-size: 12px; line-height: 1.8; }
+.calculator-thresholds p { font-size: 12px; line-height: 1.8; }
+.calculator-formula p, .calculator-policy p { font-size: 11px; line-height: 1.8; color: var(--text-soft); }
 .calculator-thresholds summary, .calculator-formula summary { font-size: 13px; cursor: pointer; font-weight: 600; min-height: 32px; }
 .calculator-actions { display: flex; align-items: center; gap: 26px; }
 .calculator-actions .primary-link { border: 0; cursor: pointer; min-height: 46px; }
 .calculator-results { border: 1px solid var(--border-strong); border-radius: var(--radius-surface); padding: 28px; background: var(--sage-soft); overflow-wrap: anywhere; min-width: 0; }
+@media (min-width: 961px) { .calculator-results { position: sticky; top: 24px; } }
 .calculator-results h2 { font-size: 27px; margin-bottom: 24px; }
 .calculator-results .eyebrow { margin-bottom: 14px; }
 .calculator-verdict { display: flex; flex-direction: column; gap: 12px; padding-bottom: 24px; border-bottom: 1px solid var(--border-strong); }
-.calculator-verdict strong { font-size: 16px; font-weight: 600; }
-.cpp-value { font: 32px var(--font-display); }
+.calculator-verdict strong { font-size: 18px; font-weight: 600; }
+.cpp-value { font: 40px var(--font-display); }
 .calculator-verdict > span:last-child { font-size: 11px; color: var(--text-soft); }
 .calculator-breakdown { margin: 18px 0; }
-.calculator-breakdown > div { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border-strong); font-size: 12px; line-height: 1.65; }
+.calculator-breakdown > div { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border-strong); font-size: 12px; line-height: 1.65; }
 .calculator-breakdown dt { color: var(--text-soft); }
 .calculator-breakdown dd { margin: 0; text-align: right; font-weight: 600; font-variant-numeric: tabular-nums; }
 .calculator-notice { margin-top: 24px; font-size: 12px; line-height: 1.8; }
@@ -474,6 +476,9 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .trip-section-heading h3 { font-size: 23px; }
 .trip-section-heading a { font-size: 12px; text-decoration: underline; }
 .trip-stay { padding: 24px; margin-bottom: 24px; background: var(--surface-warm); border: 1px solid var(--line); border-radius: var(--radius-surface); min-width: 0; }
+.trip-stay-summary { font-size: 12px; line-height: 1.7; color: var(--text-soft); margin: 0 0 18px; }
+.trip-stay-summary strong { color: var(--green); }
+.trip-totals-strip { padding: 14px 18px; background: var(--sage-soft); border: 1px solid var(--border-strong); border-radius: var(--radius-surface); font-size: 12px; font-weight: 600; line-height: 1.7; margin: 0 0 24px; }
 .trip-actions { gap: 16px; }
 .trip-actions button:disabled, .trip-toolbar button:disabled { opacity: .45; cursor: default; }
 .calculator-field textarea { font: inherit; font-weight: 400; padding: 12px; min-height: 90px; width: 100%; border: 1px solid var(--border-strong); border-radius: var(--radius-surface); resize: vertical; color: var(--green); background: white; }
@@ -619,7 +624,8 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .portfolio-check span { flex-basis: 100%; font-size: .82rem; color: var(--text-soft); }
 .portfolio-strategy-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .portfolio-strategy-card { display: flex; flex-direction: column; gap: .6rem; background: #fff; border: 1px solid var(--line); border-radius: var(--radius-surface); padding: clamp(1rem, 2vw, 1.5rem); min-width: 0; }
-.portfolio-strategy-card.is-selected { border-color: var(--green); box-shadow: inset 0 3px var(--green); }
+.portfolio-strategy-card.is-selected { border: 2px solid var(--green); background: var(--sage-soft); box-shadow: inset 0 3px var(--green); }
+.portfolio-strategy-card.is-selected::before { content: "Selected strategy"; font-size: 10px; letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; font-weight: 600; color: var(--green); }
 .portfolio-strategy-card h3, .portfolio-strategy-card p { margin: 0; }
 .portfolio-strategy-card .primary-link { margin-top: auto; align-self: flex-start; }
 .portfolio-metrics { display: grid; gap: .65rem; margin: 1rem 0; }
