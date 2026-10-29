@@ -418,7 +418,7 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .calculator-thresholds p { font-size: 12px; line-height: 1.8; }
 .calculator-formula p, .calculator-policy p { font-size: 11px; line-height: 1.8; color: var(--text-soft); }
 .calculator-thresholds summary, .calculator-formula summary { font-size: 13px; cursor: pointer; font-weight: 600; min-height: 32px; }
-.calculator-actions { display: flex; align-items: center; gap: 26px; }
+.calculator-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 26px; }
 .calculator-actions .primary-link { border: 0; cursor: pointer; min-height: 46px; }
 .calculator-results { border: 1px solid var(--border-strong); border-radius: var(--radius-surface); padding: 28px; background: var(--sage-soft); overflow-wrap: anywhere; min-width: 0; }
 @media (min-width: 961px) { .calculator-results { position: sticky; top: 24px; } }
