@@ -11,6 +11,11 @@ import { explorerHref, propertyHref } from '../lib/navigation/routes';
 import { ContourArt } from './ContourArt';
 import { CompareControl } from './CompareControl';
 
+import { LAKE_COMO_PHOTO } from '../lib/embedded-photos/lake-como';
+import { KYOTO_PHOTO } from '../lib/embedded-photos/kyoto';
+import { DOLOMITES_PHOTO } from '../lib/embedded-photos/dolomites';
+import { PAROS_PHOTO } from '../lib/embedded-photos/paros';
+
 const FILTER_LABELS: Record<FilterKey, string> = {
   destination: 'Destination', country: 'Country / territory', region: 'Region', brand: 'Brand', type: 'Property type',
   tag: 'Experience', resort: 'Resort designation', destinationProperty: 'Destination-property designation', opening: 'Opening year', renovation: 'Renovation year',
@@ -42,6 +47,7 @@ export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], o
     </label>;
   }
   return <>
+    <figure className="explorer-hero-photo"><img src={LAKE_COMO_PHOTO} alt="Historic lakeside villa and cypress trees on Lake Como" /><figcaption>Lake Como</figcaption></figure>
     <section className="explorer-hero" aria-labelledby="page-title">
       <ContourArt />
       <div><p className="eyebrow">A considered collection</p><h1 id="page-title" tabIndex={-1}>Find a stay worth<br /><em>the journey.</em></h1>
@@ -85,6 +91,15 @@ export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], o
             })}</div>}
           <p className="results-note">Setting tags describe sourced activities or surroundings; they don’t rate hotel quality. Year sorts put unknown values last.</p>
         </div>
+      </div>
+    </section>
+    <section className="journey-gallery" aria-labelledby="journeys-title">
+      <div><p className="eyebrow">Places that linger</p><h2 id="journeys-title">Journeys to linger over.</h2>
+        <p className="journey-note">Destination photographs from the travel concept — not photographs of catalog hotels.</p></div>
+      <div className="journey-grid">
+        <figure><img src={KYOTO_PHOTO} alt="Traditional garden and wooden ryokan in Kyoto" loading="lazy" /><figcaption><strong>Kyoto</strong><span>A measured stay shaped by garden mornings, intimate meals, and time set aside simply to notice.</span></figcaption></figure>
+        <figure><img src={DOLOMITES_PHOTO} alt="Alpine landscape in the Italian Dolomites" loading="lazy" /><figcaption><strong>The Dolomites</strong><span>Crisp mountain air, long lunches, and a landscape that invites you to leave the schedule behind.</span></figcaption></figure>
+        <figure><img src={PAROS_PHOTO} alt="Whitewashed village above the blue Aegean Sea on Paros" loading="lazy" /><figcaption><strong>Paros</strong><span>Salt air, whitewashed lanes, and generous days that begin late and finish by the water.</span></figcaption></figure>
       </div>
     </section>
   </>;
