@@ -26,6 +26,10 @@ test('explorer sections switch by tab without reloading the collection', async (
   await expect(tabs.getByRole('tab', { name: 'About' })).toHaveAttribute('aria-selected', 'true');
   await expect(page.getByRole('heading', { name: 'Better planning begins' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Taking shape, one stage at a time.' })).toBeVisible();
+  // Roadmap labels moved here with ProjectNotes: stages 3, 4 and 6 are all
+  // "Available", none "Planned".
+  await expect(page.getByText('Available', { exact: true })).toHaveCount(3);
+  await expect(page.getByText('Planned', { exact: true })).toHaveCount(0);
   await noOverflow(page);
 
   await tabs.getByRole('tab', { name: 'Properties' }).click();
