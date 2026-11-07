@@ -15,7 +15,7 @@ describe('Validated explorer and detail pages', () => {
   it('loads the shipped catalog and renders all 100 properties with watchlist controls', () => {
     expect(catalog.loadFoundation().success).toBe(true);
     render(<App />);
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Find a stay worth');
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('One hundred addresses');
     expect(screen.getByRole('status')).toHaveTextContent('100 of 100 properties');
     expect(document.querySelectorAll('.property-card')).toHaveLength(100);
     expect(screen.queryByText('Planned', { exact: true })).not.toBeInTheDocument();
