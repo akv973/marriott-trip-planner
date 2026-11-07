@@ -9,14 +9,9 @@ import type { ExplorerQuery, FilterKey } from '../lib/catalog/explorer';
 import { countryName, displayDate, fieldEvidence, humanize } from '../lib/catalog/presentation';
 import { explorerHref, explorerSectionHref, explorerTabForSection, propertyHref } from '../lib/navigation/routes';
 import type { ExplorerSection } from '../lib/navigation/routes';
-import { ContourArt } from './ContourArt';
 import { CompareControl } from './CompareControl';
+import { EditorialHomepage, JourneyGallery } from './EditorialHomepage';
 import { ProjectNotes } from './ProjectNotes';
-
-import { LAKE_COMO_PHOTO } from '../lib/embedded-photos/lake-como';
-import { KYOTO_PHOTO } from '../lib/embedded-photos/kyoto';
-import { DOLOMITES_PHOTO } from '../lib/embedded-photos/dolomites';
-import { PAROS_PHOTO } from '../lib/embedded-photos/paros';
 
 const FILTER_LABELS: Record<FilterKey, string> = {
   destination: 'Destination', country: 'Country / territory', region: 'Region', brand: 'Brand', type: 'Property type',
@@ -71,14 +66,8 @@ export function PropertyExplorer({ catalog, query, asOf, section, comparisonSlug
       {tabs.map((entry) => <a key={entry.id} role="tab" id={`explorer-tab-${entry.id}`} aria-selected={tab === entry.id} aria-controls={`explorer-${entry.id}`} tabIndex={tab === entry.id ? 0 : -1} href={entry.href}>{entry.label}</a>)}
     </div>
     {tab === 'properties' && (<div role="tabpanel" id="explorer-properties" aria-labelledby="explorer-tab-properties">
-    <figure className="explorer-hero-photo"><img src={LAKE_COMO_PHOTO} alt="Historic lakeside villa and cypress trees on Lake Como" /><figcaption>Lake Como</figcaption></figure>
-    <section className="explorer-hero" aria-labelledby="page-title">
-      <ContourArt />
-      <div><p className="eyebrow">A considered collection</p><h1 id="page-title" tabIndex={-1}>Find a stay worth<br /><em>the journey.</em></h1>
-        <p className="collection-stat-line">{catalog.properties.length} properties · {catalog.brands.length} brands</p>
-        <p>Explore {catalog.properties.length} curated Marriott properties. Follow the sources, discover the setting, and see what’s still unknown.</p></div>
-    </section>
-    <section className="explorer-section" aria-label="Property explorer">
+    <EditorialHomepage catalog={catalog} query={query} comparisonSlugs={comparisonSlugs} />
+    <section className="explorer-section" id="collection-grid" aria-label="Property explorer">
       <form className="search-form" onSubmit={search} role="search">
         <label htmlFor="property-search">Where will your curiosity take you?</label>
         <div className="search-row"><input key={query.q} id="property-search" name="q" type="search" maxLength={200} defaultValue={query.q} placeholder="Property, destination, brand, or experience" />
@@ -117,17 +106,10 @@ export function PropertyExplorer({ catalog, query, asOf, section, comparisonSlug
         </div>
       </div>
     </section>
+    <p className="editorial-photo-note">Destination photographs from the travel concept — not photographs of catalog hotels.</p>
     </div>)}
     {tab === 'journeys' && (<div role="tabpanel" id="explorer-journeys" aria-labelledby="explorer-tab-journeys">
-    <section className="journey-gallery" aria-labelledby="page-title">
-      <div><p className="eyebrow">Places that linger</p><h2 id="page-title" tabIndex={-1}>Journeys to linger over.</h2>
-        <p className="journey-note">Destination photographs from the travel concept — not photographs of catalog hotels.</p></div>
-      <div className="journey-grid">
-        <figure><img src={KYOTO_PHOTO} alt="Traditional garden and wooden ryokan in Kyoto" loading="lazy" /><figcaption><strong>Kyoto</strong><span>A measured stay shaped by garden mornings, intimate meals, and time set aside simply to notice.</span></figcaption></figure>
-        <figure><img src={DOLOMITES_PHOTO} alt="Alpine landscape in the Italian Dolomites" loading="lazy" /><figcaption><strong>The Dolomites</strong><span>Crisp mountain air, long lunches, and a landscape that invites you to leave the schedule behind.</span></figcaption></figure>
-        <figure><img src={PAROS_PHOTO} alt="Whitewashed village above the blue Aegean Sea on Paros" loading="lazy" /><figcaption><strong>Paros</strong><span>Salt air, whitewashed lanes, and generous days that begin late and finish by the water.</span></figcaption></figure>
-      </div>
-    </section>
+    <JourneyGallery />
     </div>)}
     {tab === 'about' && (<div role="tabpanel" id="explorer-about" aria-labelledby="explorer-tab-about"><ProjectNotes /></div>)}
   </>;

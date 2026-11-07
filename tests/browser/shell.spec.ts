@@ -23,7 +23,9 @@ test('explorer loads all properties with intact assets and responsive cards', as
   page.on('requestfailed', (request) => { if (['script', 'stylesheet', 'image', 'font'].includes(request.resourceType())) brokenAssets.push(`${request.failure()?.errorText} ${request.url()}`); });
   const response = await page.goto('./', { waitUntil: 'networkidle' });
   expect(response?.status()).toBe(200);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Find a stay worththe journey.');
+  // The editorial homepage (Properties tab) now opens with the mockup's
+  // headline instead of the old hero line.
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('One hundred addresses,chosen with intent.');
   await expect(page.getByRole('status')).toHaveText('100 of 100 properties');
   await expect(page.locator('.property-card')).toHaveCount(100);
   await expect(page.getByText('Planned', { exact: true })).toHaveCount(0);
