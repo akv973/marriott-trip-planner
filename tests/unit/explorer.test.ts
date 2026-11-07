@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { rawCatalog } from '../../lib/catalog/catalog';
 import { DEFAULT_QUERY, queryProperties } from '../../lib/catalog/explorer';
 import { fieldEvidence, formatValue } from '../../lib/catalog/presentation';
-import { explorerHref, parseRoute, propertyHref } from '../../lib/navigation/routes';
+import { explorerAnchorHref, explorerHref, explorerSectionHref, explorerTabForSection, parseRoute, propertyHref } from '../../lib/navigation/routes';
 import type { Catalog, EvidenceClaim } from '../../types/catalog';
 import { AS_OF, claim, conflictFixture, fixtureCatalog, staleFixture } from '../fixtures/catalog';
 
@@ -60,6 +60,18 @@ describe('Static-host-safe navigation', () => {
     const query = { ...DEFAULT_QUERY, q: 'spa & city?', destination: 'destination-test', country: 'US', region: 'North America', brand: 'brand-test', type: 'hotel', tag: 'spa', resort: 'unknown', destinationProperty: 'unknown', opening: 'unknown', renovation: '2018', sort: 'name-desc' as const };
     expect(parseRoute(propertyHref('dove-mountain', query))).toEqual({ page: 'property', slug: 'dove-mountain', query, comparisonSlugs: [] });
     expect(parseRoute(explorerHref(query))).toEqual({ page: 'explore', query, section: null, comparisonSlugs: [] });
+  });
+  it('parses the journeys section and round trips section tab URLs', () => {
+    expect(parseRoute('#journeys')).toEqual({ page: 'explore', query: DEFAULT_QUERY, section: 'journeys', comparisonSlugs: [] });
+    expect(parseRoute(explorerSectionHref('journeys'))).toEqual({ page: 'explore', query: DEFAULT_QUERY, section: 'journeys', comparisonSlugs: [] });
+    expect(parseRoute(explorerSectionHref('about'))).toEqual({ page: 'explore', query: DEFAULT_QUERY, section: 'foundation', comparisonSlugs: [] });
+    expect(parseRoute(explorerSectionHref('properties'))).toEqual({ page: 'explore', query: DEFAULT_QUERY, section: null, comparisonSlugs: [] });
+    expect(parseRoute(explorerAnchorHref('roadmap'))).toEqual({ page: 'explore', query: DEFAULT_QUERY, section: 'roadmap', comparisonSlugs: [] });
+    expect(explorerTabForSection('journeys')).toBe('journeys');
+    expect(explorerTabForSection('foundation')).toBe('about');
+    expect(explorerTabForSection('roadmap')).toBe('about');
+    expect(explorerTabForSection(null)).toBe('properties');
+    expect(explorerTabForSection('main')).toBe('properties');
   });
   it('handles the base, legacy anchors, malformed paths, and unsupported sorting', () => {
     expect(parseRoute('').page).toBe('explore');

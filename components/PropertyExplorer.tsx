@@ -2,14 +2,16 @@ import { AddToTripControl } from './AddToTrip';
 import type { AddToTripProps } from './AddToTrip';
 import { WatchControl } from './WatchControl';
 import type { WatchControlProps } from './WatchControl';
-import type { FormEvent } from 'react';
+import type { FormEvent, KeyboardEvent } from 'react';
 import type { Catalog } from '../types/catalog';
 import { activeFilterCount, compareText, facetValue, FILTER_KEYS, queryProperties, SORT_OPTIONS } from '../lib/catalog/explorer';
 import type { ExplorerQuery, FilterKey } from '../lib/catalog/explorer';
 import { countryName, displayDate, fieldEvidence, humanize } from '../lib/catalog/presentation';
-import { explorerHref, propertyHref } from '../lib/navigation/routes';
+import { explorerHref, explorerSectionHref, explorerTabForSection, propertyHref } from '../lib/navigation/routes';
+import type { ExplorerSection } from '../lib/navigation/routes';
 import { ContourArt } from './ContourArt';
 import { CompareControl } from './CompareControl';
+import { ProjectNotes } from './ProjectNotes';
 
 import { LAKE_COMO_PHOTO } from '../lib/embedded-photos/lake-como';
 import { KYOTO_PHOTO } from '../lib/embedded-photos/kyoto';
@@ -21,8 +23,26 @@ const FILTER_LABELS: Record<FilterKey, string> = {
   tag: 'Experience', resort: 'Resort designation', destinationProperty: 'Destination-property designation', opening: 'Opening year', renovation: 'Renovation year',
 };
 
-export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], onToggle, onWatch, watchedIds, onAddToTrip }: WatchControlProps & AddToTripProps & { catalog: Catalog; query: ExplorerQuery; asOf: string; comparisonSlugs?: string[]; onToggle?: (slug: string) => void }) {
+export function PropertyExplorer({ catalog, query, asOf, section, comparisonSlugs = [], onToggle, onWatch, watchedIds, onAddToTrip }: WatchControlProps & AddToTripProps & { catalog: Catalog; query: ExplorerQuery; asOf: string; section: string | null; comparisonSlugs?: string[]; onToggle?: (slug: string) => void }) {
   const results = queryProperties(catalog, query);
+  const tab = explorerTabForSection(section);
+  const tabs: { id: ExplorerSection; label: string; href: string }[] = [
+    { id: 'properties', label: 'Properties', href: explorerSectionHref('properties', query, comparisonSlugs) },
+    { id: 'journeys', label: 'Journeys', href: explorerSectionHref('journeys', query, comparisonSlugs) },
+    { id: 'about', label: 'About', href: explorerSectionHref('about', query, comparisonSlugs) },
+  ];
+  function onTabKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+    const order = tabs.map((entry) => entry.id);
+    const current = order.indexOf(tab);
+    let next: number | null = null;
+    if (event.key === 'ArrowRight') next = (current + 1) % order.length;
+    else if (event.key === 'ArrowLeft') next = (current - 1 + order.length) % order.length;
+    else if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = order.length - 1;
+    if (next === null) return;
+    event.preventDefault();
+    window.location.assign(tabs[next]!.href);
+  }
   const update = (key: keyof ExplorerQuery, value: string) => window.location.assign(explorerHref({ ...query, [key]: value }, comparisonSlugs));
   function search(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -47,6 +67,10 @@ export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], o
     </label>;
   }
   return <>
+    <div className="explorer-tabs" role="tablist" aria-label="Explorer sections" onKeyDown={onTabKeyDown}>
+      {tabs.map((entry) => <a key={entry.id} role="tab" id={`explorer-tab-${entry.id}`} aria-selected={tab === entry.id} aria-controls={`explorer-${entry.id}`} tabIndex={tab === entry.id ? 0 : -1} href={entry.href}>{entry.label}</a>)}
+    </div>
+    {tab === 'properties' && (<div role="tabpanel" id="explorer-properties" aria-labelledby="explorer-tab-properties">
     <figure className="explorer-hero-photo"><img src={LAKE_COMO_PHOTO} alt="Historic lakeside villa and cypress trees on Lake Como" /><figcaption>Lake Como</figcaption></figure>
     <section className="explorer-hero" aria-labelledby="page-title">
       <ContourArt />
@@ -93,8 +117,10 @@ export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], o
         </div>
       </div>
     </section>
-    <section className="journey-gallery" aria-labelledby="journeys-title">
-      <div><p className="eyebrow">Places that linger</p><h2 id="journeys-title">Journeys to linger over.</h2>
+    </div>)}
+    {tab === 'journeys' && (<div role="tabpanel" id="explorer-journeys" aria-labelledby="explorer-tab-journeys">
+    <section className="journey-gallery" aria-labelledby="page-title">
+      <div><p className="eyebrow">Places that linger</p><h2 id="page-title" tabIndex={-1}>Journeys to linger over.</h2>
         <p className="journey-note">Destination photographs from the travel concept — not photographs of catalog hotels.</p></div>
       <div className="journey-grid">
         <figure><img src={KYOTO_PHOTO} alt="Traditional garden and wooden ryokan in Kyoto" loading="lazy" /><figcaption><strong>Kyoto</strong><span>A measured stay shaped by garden mornings, intimate meals, and time set aside simply to notice.</span></figcaption></figure>
@@ -102,5 +128,7 @@ export function PropertyExplorer({ catalog, query, asOf, comparisonSlugs = [], o
         <figure><img src={PAROS_PHOTO} alt="Whitewashed village above the blue Aegean Sea on Paros" loading="lazy" /><figcaption><strong>Paros</strong><span>Salt air, whitewashed lanes, and generous days that begin late and finish by the water.</span></figcaption></figure>
       </div>
     </section>
+    </div>)}
+    {tab === 'about' && (<div role="tabpanel" id="explorer-about" aria-labelledby="explorer-tab-about"><ProjectNotes /></div>)}
   </>;
 }
