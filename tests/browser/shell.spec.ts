@@ -27,7 +27,9 @@ test('explorer loads all properties with intact assets and responsive cards', as
   await expect(page.getByRole('status')).toHaveText('100 of 100 properties');
   await expect(page.locator('.property-card')).toHaveCount(100);
   await expect(page.getByText('Planned', { exact: true })).toHaveCount(0);
-  await expect(page.getByText('Available', { exact: true })).toHaveCount(3);
+  // Roadmap labels live on the About tab now (ProjectNotes moved there in the
+  // section-tabs split), so none appear on the default Properties tab.
+  await expect(page.getByText('Available', { exact: true })).toHaveCount(0);
   await noOverflow(page);
   const cards = await page.locator('.property-card').evaluateAll((elements) => elements.slice(0, 2).map((element) => { const r = element.getBoundingClientRect(); return { left: r.left, top: r.top, right: r.right, bottom: r.bottom }; }));
   if (page.viewportSize()!.width <= 760) {

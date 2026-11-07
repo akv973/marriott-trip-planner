@@ -23,8 +23,8 @@ export function parseRoute(hash: string): Route {
   for (const key of FILTER_KEYS) query[key] = (params.get(key) ?? '').slice(0, 100);
   const sort = params.get('sort');
   if (sort && Object.hasOwn(SORT_OPTIONS, sort)) query.sort = sort as ExplorerQuery['sort'];
-  if (['', '/', '/explore', 'overview', 'foundation', 'roadmap', 'main'].includes(path)) {
-    return { page: 'explore', query, comparisonSlugs, section: ['foundation', 'roadmap', 'main'].includes(path) ? path : null };
+  if (['', '/', '/explore', 'overview', 'foundation', 'roadmap', 'main', 'journeys'].includes(path)) {
+    return { page: 'explore', query, comparisonSlugs, section: ['foundation', 'roadmap', 'main', 'journeys'].includes(path) ? path : null };
   }
   if (path === '/calculator') return { page: 'calculator', propertySlug: params.get('property')?.slice(0, 100) ?? null, query, comparisonSlugs };
   if (path === '/recommendations') return { page: 'recommendations', query, comparisonSlugs };
@@ -47,6 +47,10 @@ function serializeQuery(query: ExplorerQuery, comparisonSlugs: string[] = []) {
   return params.size ? `?${params}` : '';
 }
 export const explorerHref = (query: ExplorerQuery = DEFAULT_QUERY, comparisonSlugs: string[] = []) => `#/explore${serializeQuery(query, comparisonSlugs)}`;
+export type ExplorerSection = 'properties' | 'journeys' | 'about';
+export const explorerAnchorHref = (anchor: 'journeys' | 'foundation' | 'roadmap', query: ExplorerQuery = DEFAULT_QUERY, comparisonSlugs: string[] = []) => `#${anchor}${serializeQuery(query, comparisonSlugs)}`;
+export const explorerSectionHref = (section: ExplorerSection, query: ExplorerQuery = DEFAULT_QUERY, comparisonSlugs: string[] = []) => section === 'properties' ? explorerHref(query, comparisonSlugs) : explorerAnchorHref(section === 'journeys' ? 'journeys' : 'foundation', query, comparisonSlugs);
+export const explorerTabForSection = (section: string | null): ExplorerSection => section === 'journeys' ? 'journeys' : section === 'foundation' || section === 'roadmap' ? 'about' : 'properties';
 export const propertyHref = (slug: string, query: ExplorerQuery = DEFAULT_QUERY, comparisonSlugs: string[] = []) => `#/properties/${slug}${serializeQuery(query, comparisonSlugs)}`;
 export const comparisonHref = (comparisonSlugs: string[] = [], query: ExplorerQuery = DEFAULT_QUERY) => `#/compare${serializeQuery(query, comparisonSlugs)}`;
 
