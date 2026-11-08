@@ -16,6 +16,9 @@ const row = (label: string) => screen.getByRole('rowheader', { name: label }).pa
 
 describe('Property comparison UI', () => {
   it('updates a controlled checkbox in the click event before hashchange delivery', () => {
+    // Mapito is in Africa, so open that group: the default view shows one
+    // group at a time (North America, the largest).
+    window.history.replaceState(null, '', '#/explore?only=africa');
     render(<App />);
     const checkbox = screen.getByRole('checkbox', { name: /Compare Mapito/ });
     fireEvent.click(checkbox);

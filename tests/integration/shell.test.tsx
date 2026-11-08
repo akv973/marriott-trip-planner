@@ -12,15 +12,17 @@ beforeEach(() => {
 });
 
 describe('Validated explorer and detail pages', () => {
-  it('loads the shipped catalog and renders all 100 properties with watchlist controls', () => {
+  it('loads the shipped catalog and renders the default group with watchlist controls', () => {
     expect(catalog.loadFoundation().success).toBe(true);
     render(<App />);
     expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('One hundred addresses');
+    // The status line counts the whole catalog, but the default view shows
+    // one group at a time: North America, the largest, with 32 properties.
     expect(screen.getByRole('status')).toHaveTextContent('100 of 100 properties');
-    expect(document.querySelectorAll('.property-card')).toHaveLength(100);
+    expect(document.querySelectorAll('.property-card')).toHaveLength(32);
     expect(screen.queryByText('Planned', { exact: true })).not.toBeInTheDocument();
-    expect(screen.getAllByRole('button', { name: /Save to watchlist:/ })).toHaveLength(100);
-    expect(screen.getAllByRole('button', { name: /Add to trip:/ })).toHaveLength(100);
+    expect(screen.getAllByRole('button', { name: /Save to watchlist:/ })).toHaveLength(32);
+    expect(screen.getAllByRole('button', { name: /Add to trip:/ })).toHaveLength(32);
   });
   it('restores combined filters from the URL and keeps context in detail links', () => {
     window.history.replaceState(null, '', '#/explore?country=TZ&tag=wildlife&sort=name-desc');

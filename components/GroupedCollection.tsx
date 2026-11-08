@@ -1,7 +1,7 @@
 import type { AddToTripProps } from './AddToTrip';
 import type { WatchControlProps } from './WatchControl';
 import type { Catalog, Property } from '../types/catalog';
-import { groupProperties } from '../lib/catalog/explorer';
+import { groupProperties, groupSlug } from '../lib/catalog/explorer';
 import type { ExplorerQuery, GroupBy } from '../lib/catalog/explorer';
 import { explorerHref } from '../lib/navigation/routes';
 import { PropertyCard } from './PropertyCard';
@@ -48,14 +48,34 @@ export function GroupedCollection({ catalog, results, query, asOf, comparisonSlu
   const groups = groupProperties(catalog, results, groupBy);
   const banners = groupBy === 'brand' ? BRAND_BANNERS : REGION_BANNERS;
   const setGroup = (next: GroupBy) => {
-    if (next !== groupBy) window.location.assign(explorerHref({ ...query, group: next }, comparisonSlugs));
+    // Switching modes resets to that mode's largest group.
+    if (next !== groupBy) window.location.assign(explorerHref({ ...query, group: next, only: '' }, comparisonSlugs));
+  };
+  // One group at a time by default: 'all' shows every group; a named group
+  // shows only that group; anything else — no choice yet, an unknown slug,
+  // or a group the filters emptied — falls back to the largest group that
+  // still has properties, so plan-bar and Learn More links always land
+  // somewhere instead of on an empty section.
+  const selected = query.only === 'all' ? null : groups.find((group) => groupSlug(groupBy, group.key) === query.only);
+  const visibleGroups = query.only === 'all' ? groups : [selected ?? groups[0]!];
+  const effectiveOnly = query.only === 'all' ? 'all' : groupSlug(groupBy, (selected ?? groups[0]!).key);
+  const setOnly = (next: string) => {
+    if (next !== query.only) window.location.assign(explorerHref({ ...query, only: next }, comparisonSlugs));
   };
   return <>
-    <div className="group-toggle" role="group" aria-label="Group by">
-      <span className="group-toggle-label" aria-hidden="true">Group by</span>
-      {GROUP_OPTIONS.map((option) => <button key={option.id} type="button" aria-pressed={groupBy === option.id} aria-label={`Group by ${option.label.toLowerCase()}`} onClick={() => setGroup(option.id)}>{option.label}</button>)}
+    <div className="group-controls">
+      <div className="group-toggle" role="group" aria-label="Group by">
+        <span className="group-toggle-label" aria-hidden="true">Group by</span>
+        {GROUP_OPTIONS.map((option) => <button key={option.id} type="button" aria-pressed={groupBy === option.id} aria-label={`Group by ${option.label.toLowerCase()}`} onClick={() => setGroup(option.id)}>{option.label}</button>)}
+      </div>
+      <label className="group-select"><span>{groupBy === 'brand' ? 'Show brand' : 'Show destination'}</span>
+        <select value={effectiveOnly} onChange={(event) => setOnly(event.target.value)}>
+          <option value="all">{groupBy === 'brand' ? 'All brands' : 'All destinations'}</option>
+          {groups.map((group) => <option key={group.key} value={groupSlug(groupBy, group.key)}>{group.label} ({group.properties.length} {group.properties.length === 1 ? 'property' : 'properties'})</option>)}
+        </select>
+      </label>
     </div>
-    {groups.map((group) => {
+    {visibleGroups.map((group) => {
       const banner = banners[group.key];
       return <section className="collection-group" key={group.key} aria-labelledby={`collection-group-${group.key}`}>
         {banner && <figure className="collection-group-banner">

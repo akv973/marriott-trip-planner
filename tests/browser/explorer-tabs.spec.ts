@@ -9,7 +9,8 @@ test('explorer sections switch by tab without reloading the collection', async (
   await page.goto('./');
   const tabs = page.getByRole('tablist', { name: 'Explorer sections' });
   await expect(tabs.getByRole('tab', { name: 'Properties' })).toHaveAttribute('aria-selected', 'true');
-  await expect(page.locator('.property-card')).toHaveCount(100);
+  // Default view shows one group at a time: North America, 32 properties.
+  await expect(page.locator('.property-card')).toHaveCount(32);
   await expect(page.getByRole('heading', { name: 'Journeys to linger over.' })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'Better planning begins' })).toHaveCount(0);
 
@@ -35,7 +36,7 @@ test('explorer sections switch by tab without reloading the collection', async (
   await tabs.getByRole('tab', { name: 'Properties' }).click();
   await expect(page).toHaveURL(/#\/explore/);
   await expect(tabs.getByRole('tab', { name: 'Properties' })).toHaveAttribute('aria-selected', 'true');
-  await expect(page.locator('.property-card')).toHaveCount(100);
+  await expect(page.locator('.property-card')).toHaveCount(32);
 });
 
 test('footer links open the About tab at the matching section', async ({ page }) => {

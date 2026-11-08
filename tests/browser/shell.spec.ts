@@ -27,7 +27,11 @@ test('explorer loads all properties with intact assets and responsive cards', as
   // headline instead of the old hero line.
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('One hundred addresses,chosen with intent.');
   await expect(page.getByRole('status')).toHaveText('100 of 100 properties');
-  await expect(page.locator('.property-card')).toHaveCount(100);
+  // The default view shows one group at a time: North America, the largest,
+  // with its banner — the status line still counts the whole catalog.
+  await expect(page.locator('.collection-group')).toHaveCount(1);
+  await expect(page.locator('.collection-group-name')).toHaveText('North America');
+  await expect(page.locator('.property-card')).toHaveCount(32);
   await expect(page.getByText('Planned', { exact: true })).toHaveCount(0);
   // Roadmap labels live on the About tab now (ProjectNotes moved there in the
   // section-tabs split), so none appear on the default Properties tab.
@@ -98,10 +102,10 @@ test('search, incompatible filters, removable selections and reset recover the c
 });
 
 test('year sorting puts unknowns last and unknown filters preserve missing facts', async ({ page }) => {
-  await page.goto('./#/explore?sort=opening-newest');
-  // The collection is grouped (by destination by default), so the global
-  // card order is group order: within the Europe group the newest openings
-  // still lead with Marqués de Riscal, then Hotel Imperial.
+  await page.goto('./#/explore?sort=opening-newest&only=europe');
+  // The collection shows one group at a time, so open the Europe group
+  // directly: within it the newest openings still lead with Marqués de
+  // Riscal, then Hotel Imperial.
   const europe = page.locator('.collection-group').filter({ has: page.getByRole('heading', { name: /Europe/ }) });
   await expect(europe.locator('.property-card h2').first()).toContainText('Marqués de Riscal');
   await expect(europe.locator('.property-card h2').nth(1)).toContainText('Hotel Imperial');

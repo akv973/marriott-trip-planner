@@ -78,7 +78,12 @@ for (const count of [2, 3, 4]) test(`${count}-property metrics align with respon
 test('capacity, deselection, replacement, reset filters and clear work from explorer', async ({ page }) => {
   await page.goto(`./#/explore?${slugs.map((slug) => `compare=${slug}`).join('&')}`);
   await expect(page.getByRole('checkbox', { name: /Compare The Cloudveil/ })).toBeDisabled();
+  // One group shows at a time: Mereshi is in the Africa group, not the
+  // default North America group, so switch to it before deselecting.
+  await page.getByLabel('Show destination').selectOption('africa');
   await page.getByRole('checkbox', { name: /Compare Mereshi/ }).uncheck();
+  // Back in the North America group, the Cloudveil slot is free again.
+  await page.getByLabel('Show destination').selectOption('north-america');
   await expect(page.getByRole('checkbox', { name: /Compare The Cloudveil/ })).toBeEnabled();
   await page.getByRole('checkbox', { name: /Compare The Cloudveil/ }).check();
   await page.getByRole('combobox', { name: 'Country / territory' }).selectOption('TZ');
@@ -86,6 +91,8 @@ test('capacity, deselection, replacement, reset filters and clear work from expl
   await expect(page.getByRole('link', { name: 'Compare 4 properties' })).toBeVisible();
   await page.getByRole('button', { name: 'Clear comparison' }).click();
   await expect(page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'Compare (0)' })).toBeVisible();
+  // Mapito is in the Africa group, so switch to it to see its checkbox.
+  await page.getByLabel('Show destination').selectOption('africa');
   await expect(page.getByRole('checkbox', { name: /Compare Mapito/ })).not.toBeChecked();
 });
 

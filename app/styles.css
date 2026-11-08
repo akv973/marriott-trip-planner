@@ -779,11 +779,14 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 
 /* Grouped collection: the grid grouped by destination or brand, each group
    under a wide illustrative banner with its name and property count. */
-.group-toggle { display: flex; align-items: center; flex-wrap: wrap; margin: 0 0 28px; border: 1px solid var(--border-strong); background: var(--surface); width: fit-content; max-width: 100%; }
+.group-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; margin: 0 0 28px; }
+.group-toggle { display: flex; align-items: center; flex-wrap: wrap; margin: 0; border: 1px solid var(--border-strong); background: var(--surface); width: fit-content; max-width: 100%; }
 .group-toggle-label { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); padding: 0 16px; }
 .group-toggle button { background: none; border: 0; border-left: 1px solid var(--line); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); padding: 12px 20px; cursor: pointer; }
 .group-toggle button[aria-pressed="true"] { background: var(--green); color: var(--cream); }
 .group-toggle button:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+.group-select { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; max-width: 100%; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+.group-select select { width: auto; max-width: min(320px, 100%); min-width: 0; font-size: 13px; letter-spacing: normal; text-transform: none; text-overflow: ellipsis; }
 .collection-group { margin-bottom: 56px; }
 .collection-group:last-child { margin-bottom: 0; }
 .collection-group-banner { position: relative; margin: 0 0 24px; overflow: hidden; }

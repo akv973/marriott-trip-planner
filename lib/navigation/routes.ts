@@ -25,6 +25,10 @@ export function parseRoute(hash: string): Route {
   if (sort && Object.hasOwn(SORT_OPTIONS, sort)) query.sort = sort as ExplorerQuery['sort'];
   const group = params.get('group');
   if (group === 'brand' || group === 'destination') query.group = group;
+  // Kept opaque here: the collection resolves it against the groups that
+  // actually have properties, so unknown or emptied values fall back to the
+  // largest group instead of breaking a shared link.
+  query.only = (params.get('only') ?? '').slice(0, 100);
   if (['', '/', '/explore', 'overview', 'foundation', 'roadmap', 'main', 'journeys'].includes(path)) {
     return { page: 'explore', query, comparisonSlugs, section: ['foundation', 'roadmap', 'main', 'journeys'].includes(path) ? path : null };
   }
@@ -46,6 +50,7 @@ function serializeQuery(query: ExplorerQuery, comparisonSlugs: string[] = []) {
   for (const key of FILTER_KEYS) if (query[key]) params.set(key, query[key]);
   if (query.sort !== DEFAULT_QUERY.sort) params.set('sort', query.sort);
   if (query.group !== DEFAULT_QUERY.group) params.set('group', query.group);
+  if (query.only) params.set('only', query.only);
   for (const slug of comparisonSlugs) params.append('compare', slug);
   return params.size ? `?${params}` : '';
 }

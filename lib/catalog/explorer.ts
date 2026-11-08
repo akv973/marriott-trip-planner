@@ -9,10 +9,16 @@ export type ExplorerSort = keyof typeof SORT_OPTIONS;
 export const FILTER_KEYS = ['destination', 'country', 'region', 'brand', 'type', 'tag', 'resort', 'destinationProperty', 'opening', 'renovation'] as const;
 export type FilterKey = typeof FILTER_KEYS[number];
 export type GroupBy = 'destination' | 'brand';
-export type ExplorerQuery = { q: string; sort: ExplorerSort; group: GroupBy } & Record<FilterKey, string>;
+// Which group the collection shows: '' is the default (the largest group of
+// the active mode), 'all' shows every group, otherwise a group slug — a brand
+// id in brand mode, a slugified region name in destination mode.
+export type ExplorerQuery = { q: string; sort: ExplorerSort; group: GroupBy; only: string } & Record<FilterKey, string>;
 export const DEFAULT_QUERY: ExplorerQuery = {
-  q: '', sort: 'name', group: 'destination', destination: '', country: '', region: '', brand: '', type: '', tag: '', resort: '', destinationProperty: '', opening: '', renovation: '',
+  q: '', sort: 'name', group: 'destination', only: '', destination: '', country: '', region: '', brand: '', type: '', tag: '', resort: '', destinationProperty: '', opening: '', renovation: '',
 };
+// URL slug for a group key: brand ids already are slugs; region names are
+// slugified ('North America' -> 'north-america').
+export const groupSlug = (groupBy: GroupBy, key: string) => groupBy === 'brand' ? key : key.toLowerCase().replace(/\s+/g, '-');
 
 const collator = new Intl.Collator('en', { sensitivity: 'base', numeric: true });
 export const compareText = (a: string, b: string) => collator.compare(a, b);
