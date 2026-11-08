@@ -23,6 +23,8 @@ export function parseRoute(hash: string): Route {
   for (const key of FILTER_KEYS) query[key] = (params.get(key) ?? '').slice(0, 100);
   const sort = params.get('sort');
   if (sort && Object.hasOwn(SORT_OPTIONS, sort)) query.sort = sort as ExplorerQuery['sort'];
+  const group = params.get('group');
+  if (group === 'brand' || group === 'destination') query.group = group;
   if (['', '/', '/explore', 'overview', 'foundation', 'roadmap', 'main', 'journeys'].includes(path)) {
     return { page: 'explore', query, comparisonSlugs, section: ['foundation', 'roadmap', 'main', 'journeys'].includes(path) ? path : null };
   }
@@ -43,6 +45,7 @@ function serializeQuery(query: ExplorerQuery, comparisonSlugs: string[] = []) {
   if (query.q) params.set('q', query.q);
   for (const key of FILTER_KEYS) if (query[key]) params.set(key, query[key]);
   if (query.sort !== DEFAULT_QUERY.sort) params.set('sort', query.sort);
+  if (query.group !== DEFAULT_QUERY.group) params.set('group', query.group);
   for (const slug of comparisonSlugs) params.append('compare', slug);
   return params.size ? `?${params}` : '';
 }

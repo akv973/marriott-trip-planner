@@ -1,16 +1,14 @@
-import { AddToTripControl } from './AddToTrip';
 import type { AddToTripProps } from './AddToTrip';
-import { WatchControl } from './WatchControl';
 import type { WatchControlProps } from './WatchControl';
 import type { FormEvent, KeyboardEvent } from 'react';
 import type { Catalog } from '../types/catalog';
 import { activeFilterCount, compareText, facetValue, FILTER_KEYS, queryProperties, SORT_OPTIONS } from '../lib/catalog/explorer';
 import type { ExplorerQuery, FilterKey } from '../lib/catalog/explorer';
-import { countryName, displayDate, fieldEvidence, humanize } from '../lib/catalog/presentation';
-import { explorerHref, explorerSectionHref, explorerTabForSection, propertyHref } from '../lib/navigation/routes';
+import { countryName, humanize } from '../lib/catalog/presentation';
+import { explorerHref, explorerSectionHref, explorerTabForSection } from '../lib/navigation/routes';
 import type { ExplorerSection } from '../lib/navigation/routes';
-import { CompareControl } from './CompareControl';
 import { EditorialHomepage, JourneyGallery } from './EditorialHomepage';
+import { GroupedCollection } from './GroupedCollection';
 import { ProjectNotes } from './ProjectNotes';
 
 const FILTER_LABELS: Record<FilterKey, string> = {
@@ -89,19 +87,7 @@ export function PropertyExplorer({ catalog, query, asOf, section, comparisonSlug
             {FILTER_KEYS.filter((key) => query[key]).map((key) => <button key={key} onClick={() => update(key, '')} aria-label={`Remove ${FILTER_LABELS[key]} filter`}>{FILTER_LABELS[key]}: {labelFor(key, query[key])} <span aria-hidden="true">×</span></button>)}
           </div>}
           {!results.length ? <div className="no-results"><p className="eyebrow">A little room to explore</p><h2>No properties match these choices.</h2><p>Try another destination or remove a filter. The collection is curated, rather than a complete Marriott directory.</p><a className="primary-link" href={explorerHref(undefined, comparisonSlugs)}>View all properties <span aria-hidden="true">↗</span></a></div> :
-            <div className="property-grid">{results.map((property) => {
-              const type = fieldEvidence(catalog, property, 'propertyType', asOf);
-              const tags = fieldEvidence(catalog, property, 'experienceTags', asOf);
-              const identity = fieldEvidence(catalog, property, 'name', asOf);
-              return <article className="property-card" key={property.id}>
-                <div className="property-card-top"><span className="property-brand">{catalog.brands.find((brand) => brand.id === property.brandId)?.name}</span><span className="property-index" aria-hidden="true">↗</span></div>
-                <p className="property-location">{catalog.destinations.find((destination) => destination.id === property.destinationId)?.name} <span>·</span> {countryName(property.country)}</p>
-                <h2><a href={propertyHref(property.slug, query, comparisonSlugs)}>{property.name}</a></h2>
-                <p className="property-type">{type.label}{type.status === 'known' ? ` · ${type.confidence} confidence` : ''}</p>
-                <div className="tag-list" aria-label="Recorded experiences">{tags.value && Array.isArray(tags.value) ? tags.value.map((tag) => <span key={tag}>{humanize(tag)}</span>) : <span>{tags.label}</span>}</div>
-                <div className="property-card-bottom"><span>{identity.lastVerifiedAt ? `Identity verified ${displayDate(identity.lastVerifiedAt)}` : 'Identity needs review'}{identity.stale || type.stale || tags.stale ? ' · Evidence needs refresh' : ''}</span><div className="property-card-actions"><a className="primary-link" href={propertyHref(property.slug, query, comparisonSlugs)} aria-label={`View details for ${property.name}`}>View details <span aria-hidden="true">→</span></a><CompareControl property={property} slugs={comparisonSlugs} onToggle={onToggle} /><AddToTripControl property={property} onAddToTrip={onAddToTrip} /><WatchControl property={property} onWatch={onWatch} watchedIds={watchedIds} /></div></div>
-              </article>;
-            })}</div>}
+            <GroupedCollection catalog={catalog} results={results} query={query} asOf={asOf} comparisonSlugs={comparisonSlugs} onToggle={onToggle} onWatch={onWatch} watchedIds={watchedIds} onAddToTrip={onAddToTrip} />}
           <p className="results-note">Setting tags describe sourced activities or surroundings; they don’t rate hotel quality. Year sorts put unknown values last.</p>
         </div>
       </div>

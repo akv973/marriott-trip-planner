@@ -8,9 +8,10 @@ export const SORT_OPTIONS = {
 export type ExplorerSort = keyof typeof SORT_OPTIONS;
 export const FILTER_KEYS = ['destination', 'country', 'region', 'brand', 'type', 'tag', 'resort', 'destinationProperty', 'opening', 'renovation'] as const;
 export type FilterKey = typeof FILTER_KEYS[number];
-export type ExplorerQuery = { q: string; sort: ExplorerSort } & Record<FilterKey, string>;
+export type GroupBy = 'destination' | 'brand';
+export type ExplorerQuery = { q: string; sort: ExplorerSort; group: GroupBy } & Record<FilterKey, string>;
 export const DEFAULT_QUERY: ExplorerQuery = {
-  q: '', sort: 'name', destination: '', country: '', region: '', brand: '', type: '', tag: '', resort: '', destinationProperty: '', opening: '', renovation: '',
+  q: '', sort: 'name', group: 'destination', destination: '', country: '', region: '', brand: '', type: '', tag: '', resort: '', destinationProperty: '', opening: '', renovation: '',
 };
 
 const collator = new Intl.Collator('en', { sensitivity: 'base', numeric: true });
@@ -70,4 +71,22 @@ export function queryProperties(catalog: Catalog, query: ExplorerQuery): Propert
 
 export function activeFilterCount(query: ExplorerQuery) {
   return FILTER_KEYS.filter((key) => query[key]).length + (query.q ? 1 : 0);
+}
+
+export type PropertyGroup = { key: string; label: string; properties: Property[] };
+
+// Groups the already filtered and sorted results for the collection view.
+// Groups keep the results' order within themselves and render largest first
+// (alphabetical by label breaks ties); empty groups never appear.
+export function groupProperties(catalog: Catalog, results: Property[], groupBy: GroupBy): PropertyGroup[] {
+  const brands = new Map(catalog.brands.map((brand) => [brand.id, brand.name]));
+  const byKey = new Map<string, PropertyGroup>();
+  for (const property of results) {
+    const key = groupBy === 'brand' ? property.brandId : property.region;
+    const label = groupBy === 'brand' ? brands.get(property.brandId) ?? property.brandId : property.region;
+    const group = byKey.get(key) ?? { key, label, properties: [] };
+    group.properties.push(property);
+    byKey.set(key, group);
+  }
+  return [...byKey.values()].sort((a, b) => b.properties.length - a.properties.length || compareText(a.label, b.label));
 }
