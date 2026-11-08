@@ -776,3 +776,24 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
   .editorial-browse h2 { font-size: 36px; }
 }
 @media (prefers-reduced-motion: reduce) { .editorial-hero-slide { transition: none; } }
+
+/* Grouped collection: the grid grouped by destination or brand, each group
+   under a wide illustrative banner with its name and property count. */
+.group-toggle { display: flex; align-items: center; flex-wrap: wrap; margin: 0 0 28px; border: 1px solid var(--border-strong); background: var(--surface); width: fit-content; max-width: 100%; }
+.group-toggle-label { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); padding: 0 16px; }
+.group-toggle button { background: none; border: 0; border-left: 1px solid var(--line); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); padding: 12px 20px; cursor: pointer; }
+.group-toggle button[aria-pressed="true"] { background: var(--green); color: var(--cream); }
+.group-toggle button:focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+.collection-group { margin-bottom: 56px; }
+.collection-group:last-child { margin-bottom: 0; }
+.collection-group-banner { position: relative; margin: 0 0 24px; overflow: hidden; }
+.collection-group-banner img { display: block; width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+.collection-group-banner::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 120px; background: linear-gradient(to top, rgb(0 0 0 / .5), transparent); }
+.collection-group-banner figcaption { position: absolute; left: 28px; right: 28px; bottom: 20px; z-index: 1; color: #fff; }
+.collection-group-banner h2 { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 18px; margin: 0; }
+.collection-group-name { font-family: var(--font-display); font-size: clamp(30px, 3.4vw, 44px); font-weight: 500; line-height: 1.05; }
+.collection-group-count { font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: rgb(255 255 255 / .85); }
+@media (max-width: 640px) {
+  .collection-group-banner figcaption { left: 16px; right: 16px; bottom: 14px; }
+  .collection-group { margin-bottom: 40px; }
+}

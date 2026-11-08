@@ -99,8 +99,12 @@ test('search, incompatible filters, removable selections and reset recover the c
 
 test('year sorting puts unknowns last and unknown filters preserve missing facts', async ({ page }) => {
   await page.goto('./#/explore?sort=opening-newest');
-  await expect(page.locator('.property-card h2').first()).toContainText('Marqués de Riscal');
-  await expect(page.locator('.property-card h2').nth(1)).toContainText('Hotel Imperial');
+  // The collection is grouped (by destination by default), so the global
+  // card order is group order: within the Europe group the newest openings
+  // still lead with Marqués de Riscal, then Hotel Imperial.
+  const europe = page.locator('.collection-group').filter({ has: page.getByRole('heading', { name: /Europe/ }) });
+  await expect(europe.locator('.property-card h2').first()).toContainText('Marqués de Riscal');
+  await expect(europe.locator('.property-card h2').nth(1)).toContainText('Hotel Imperial');
   await page.getByText('More property details', { exact: true }).click();
   await page.getByRole('combobox', { name: 'Opening year', exact: true }).selectOption('unknown');
   await expect(page.getByRole('status')).toContainText('98 of 100');
