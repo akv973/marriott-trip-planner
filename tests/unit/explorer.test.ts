@@ -61,6 +61,12 @@ describe('Static-host-safe navigation', () => {
     expect(parseRoute(propertyHref('dove-mountain', query))).toEqual({ page: 'property', slug: 'dove-mountain', query, comparisonSlugs: [] });
     expect(parseRoute(explorerHref(query))).toEqual({ page: 'explore', query, section: null, comparisonSlugs: [] });
   });
+  it('round trips the group dropdown selection in the URL', () => {
+    const query = { ...DEFAULT_QUERY, group: 'brand' as const, only: 'brand-st-regis' };
+    expect(parseRoute(explorerHref(query))).toEqual({ page: 'explore', query, section: null, comparisonSlugs: [] });
+    expect(parseRoute('#/explore?only=all')).toEqual({ page: 'explore', query: { ...DEFAULT_QUERY, only: 'all' }, section: null, comparisonSlugs: [] });
+    expect(parseRoute('#/explore')).toEqual({ page: 'explore', query: DEFAULT_QUERY, section: null, comparisonSlugs: [] });
+  });
   it('parses the journeys section and round trips section tab URLs', () => {
     expect(parseRoute('#journeys')).toEqual({ page: 'explore', query: DEFAULT_QUERY, section: 'journeys', comparisonSlugs: [] });
     expect(parseRoute(explorerSectionHref('journeys'))).toEqual({ page: 'explore', query: DEFAULT_QUERY, section: 'journeys', comparisonSlugs: [] });
