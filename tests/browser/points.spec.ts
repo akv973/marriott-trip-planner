@@ -79,7 +79,7 @@ test('varying nights, final quoted total and manual non-USD exchange rate', asyn
 
 test('explorer comparison context, property entry, reload and native history preserve existing flows', async ({ page }) => {
   await page.goto('./#/compare?country=TZ&compare=mapito&compare=mereshi');
-  await page.getByRole('navigation').getByRole('link', { name: 'Points calculator' }).click();
+  await page.getByRole('navigation').getByRole('link', { name: 'Points Calculator' }).click();
   await expect(page).toHaveURL(/calculator\?country=TZ&compare=mapito&compare=mereshi/);
   await fill(page); await calculate(page);
   await page.reload();

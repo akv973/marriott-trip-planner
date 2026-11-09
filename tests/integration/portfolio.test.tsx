@@ -41,7 +41,7 @@ describe('Read-only portfolio scenario flows', () => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(legacy)); window.history.replaceState(null, '', '#/portfolio?country=TZ&compare=jw-tampa'); render(<App />);
     expect(screen.getByRole('heading', { name: 'Plan your travel portfolio.' })).toBeInTheDocument(); expect(localStorage.getItem(STORAGE_KEY)).toBe(JSON.stringify(legacy));
     expect(screen.getByRole('navigation').querySelector('[aria-current="page"]')).toHaveTextContent('Portfolio');
-    expect(within(screen.getByRole('navigation')).getByRole('link', { name: 'Trip builder' })).toHaveAttribute('href', '#/trips?country=TZ&compare=jw-tampa');
+    expect(within(screen.getByRole('navigation')).getByRole('link', { name: 'Trip Builder' })).toHaveAttribute('href', '#/trips?country=TZ&compare=jw-tampa');
   });
   it('withholds redemption ranking for an unknown fixed award value while exposing other incomplete assessments', () => {
     const d = portfolioFixture('property-jw-tampa'); d.profile.balance = 200000; d.workspace.trips[0]!.stays[0]!.bookingMethod = 'points'; d.workspace.trips[0]!.stays[0]!.pricing.cashTaxes = null;

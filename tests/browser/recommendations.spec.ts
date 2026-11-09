@@ -83,7 +83,7 @@ test('recommendation navigation preserves earlier feature context and supports h
   await page.getByRole('article', { name: /Recommendation for Mapito/ }).getByRole('heading', { level: 3 }).getByRole('link').click();
   await expect(page).toHaveURL(/properties\/mapito\?country=TZ&compare=mapito&compare=mereshi/);
   await page.goBack(); await expect(page.getByRole('heading', { level: 1 })).toContainText('Find a fit');
-  await page.getByRole('navigation').getByRole('link', { name: 'Points calculator' }).click();
+  await page.getByRole('navigation').getByRole('link', { name: 'Points Calculator' }).click();
   await expect(page).toHaveURL(/calculator\?country=TZ&compare=mapito&compare=mereshi/);
   await page.getByRole('navigation').getByRole('link', { name: 'Compare (2)' }).click();
   await expect(page.getByRole('table')).toHaveAccessibleName('Side-by-side comparison of 2 properties');

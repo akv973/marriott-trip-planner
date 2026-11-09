@@ -57,7 +57,7 @@ test('details append to a selected inactive v1 trip, permit repeat stays, persis
   after = await saved(page); expect(after.workspace.trips[0].stays).toHaveLength(index + 1); const ids = after.workspace.trips.flatMap((t: { id: string; stays: { id: string }[] }) => [t.id, ...t.stays.map(s => s.id)]); expect(new Set(ids).size).toBe(ids.length);
   await page.reload(); expect(await saved(page)).toEqual(after); await nav(page, 'Profile').click();
   await page.getByRole('button', { name: 'Export planner JSON', exact: true }).click(); const json = await page.getByLabel('Planner JSON', { exact: true }).inputValue(); expect(JSON.parse(json).data).toEqual(after);
-  await nav(page, 'Trip builder').click(); await page.getByRole('button', { name: 'Remove stay 1', exact: true }).click(); await nav(page, 'Profile').click();
+  await nav(page, 'Trip Builder').click(); await page.getByRole('button', { name: 'Remove stay 1', exact: true }).click(); await nav(page, 'Profile').click();
   await page.getByLabel('Planner JSON', { exact: true }).fill(json); await page.getByRole('button', { name: 'Review import', exact: true }).click(); await page.getByRole('button', { name: 'Import and replace planner', exact: true }).click(); await page.reload(); expect(await saved(page)).toEqual(after); await noOverflow(page);
 });
 

@@ -13,12 +13,12 @@ test('Stage 7 saved backup loads intact and its status drives property and compa
  await card(page,'Lounge access').getByText('Inspect lounge access rules & sources',{exact:true}).click();await expect(card(page,'Lounge access').getByRole('link',{name:/Tampa/})).toHaveAttribute('href',/tpajd/);await expect(card(page,'Lounge access')).toContainText('takes precedence');
  await noOverflow(page);await page.screenshot({path:info.outputPath('benefits-property-precedence.png'),fullPage:true});
  expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('marriott-trip-planner:v1')!).data)).toEqual(original);
- await nav(page,'Trip builder');await expect(page.getByLabel('Trip name',{exact:true})).toHaveValue('Stage 7 saved trip');await expect(page.getByLabel('Stay notes',{exact:true})).toHaveValue('Keep this manual stay');
+ await nav(page,'Trip Builder');await expect(page.getByLabel('Trip name',{exact:true})).toHaveValue('Stage 7 saved trip');await expect(page.getByLabel('Stay notes',{exact:true})).toHaveValue('Keep this manual stay');
  await nav(page,'Profile');await page.getByRole('button',{name:'Export planner JSON',exact:true}).click();const after=JSON.parse(await page.getByLabel('Planner JSON',{exact:true}).inputValue());expect(after.data).toEqual({...original,watchlist:[]});expect(after.schemaVersion).toBe(2);
  await page.goto('./#/compare?compare=jw-tampa&compare=half-moon-bay');await expect(page.locator('tbody.comparison-benefits')).toContainText('Club access requires a qualifying booking');await expect(page.locator('tbody.comparison-benefits')).toContainText('Elite lounge access, member +1');await noOverflow(page);
 });
 test('status previews recalculate rules and preserve saved profile on reload',async({page},info)=>{
- await page.goto('./#/profile');await page.getByLabel('Bonvoy status',{exact:true}).selectOption('platinum');await nav(page,'Elite benefits');
+ await page.goto('./#/profile');await page.getByLabel('Bonvoy status',{exact:true}).selectOption('platinum');await nav(page,'Elite Benefits');
  await page.getByLabel('Benefit property',{exact:true}).selectOption('half-moon-bay');await expect(card(page,'Suite upgrade')).toContainText('Select suites, subject to availability');await expect(card(page,'Club access')).toContainText('Club access requires a qualifying booking');
  await page.getByLabel('Benefit status preview',{exact:true}).selectOption('gold');await expect(card(page,'Suite upgrade')).toContainText('No suite entitlement at Gold');await page.getByLabel('Benefit status preview',{exact:true}).selectOption('ambassador');await expect(card(page,'Your24')).toContainText('subject to approval');await expect(card(page,'Late checkout')).toContainText('Up to 4 p.m., if available');
  await card(page,'Club access').getByText('Inspect club access rules & sources',{exact:true}).click();await noOverflow(page);await page.screenshot({path:info.outputPath('benefits-ritz-club.png'),fullPage:true});

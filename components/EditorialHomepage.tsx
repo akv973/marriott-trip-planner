@@ -92,7 +92,6 @@ function PlanBar({ catalog, query, comparisonSlugs }: { catalog: Catalog; query:
     goToCollection(explorerHref({ ...query, country, tag }, comparisonSlugs));
   }
   return <form className="editorial-planbar" aria-label="Plan a stay" onSubmit={begin}>
-    <p className="editorial-planbar-title">Plan a stay</p>
     <label className="editorial-planbar-field"><span>Destination</span>
       <select value={country} onChange={(event) => setCountry(event.target.value)} aria-label="Destination country">
         <option value="">Anywhere</option>

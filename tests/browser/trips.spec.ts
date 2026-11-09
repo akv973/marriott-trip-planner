@@ -41,7 +41,7 @@ test('separate trips, notes, hotel order/removal, navigation memory and reload b
   await page.getByRole('button', { name: 'Add hotel stay', exact: true }).click(); await stay(page, 2).getByLabel('Hotel', { exact: true }).selectOption('property-mereshi');
   await page.getByRole('button', { name: 'Move stay 2 earlier', exact: true }).click(); await expect(stay(page).getByLabel('Hotel', { exact: true })).toHaveValue('property-mereshi');
   await page.getByRole('button', { name: 'Remove stay 1', exact: true }).click(); await expect(stay(page).getByLabel('Hotel', { exact: true })).toHaveValue('property-mapito');
-  await page.getByRole('navigation').getByRole('link', { name: 'Points calculator', exact: true }).click(); await page.goBack();
+  await page.getByRole('navigation').getByRole('link', { name: 'Points Calculator', exact: true }).click(); await page.goBack();
   await expect(page.getByLabel('Trip name', { exact: true })).toHaveValue('Safari'); await expect(page.getByLabel('Trip notes / planned activities', { exact: true })).toHaveValue('<script>Notes stay text</script>');
   await page.getByRole('button', { name: 'Delete this trip', exact: true }).click(); await expect(page.getByLabel('Trip name', { exact: true })).toHaveValue('Desert');
   await page.reload(); await expect(page.getByLabel('Trip name', { exact: true })).toHaveValue('Desert'); await expect(page.getByLabel('Choose trip', { exact: true })).toHaveCount(1);
@@ -72,7 +72,7 @@ test('manual FX, validation, quote invalidation and incomplete input recovery', 
 });
 
 test('inspectable totals and evidence preserve explorer and comparison context', async ({ page }) => {
-  await page.goto('./#/compare?country=TZ&compare=mapito&compare=mereshi'); await page.getByRole('navigation').getByRole('link', { name: 'Trip builder', exact: true }).click(); await expect(page).toHaveURL(/trips\?country=TZ&compare=mapito&compare=mereshi/);
+  await page.goto('./#/compare?country=TZ&compare=mapito&compare=mereshi'); await page.getByRole('navigation').getByRole('link', { name: 'Trip Builder', exact: true }).click(); await expect(page).toHaveURL(/trips\?country=TZ&compare=mapito&compare=mereshi/);
   await page.getByRole('button', { name: 'Create trip', exact: true }).click(); await page.getByRole('button', { name: 'Add hotel stay', exact: true }).click(); await stay(page).getByLabel('Hotel', { exact: true }).selectOption('property-mapito');
   await stay(page).getByText('Catalog facts & evidence', { exact: true }).click(); await expect(stay(page)).toContainText('Operating status'); await expect(stay(page)).toContainText('Unknown');
   await summary(page).getByText('Inspect trip and structured totals (JSON)', { exact: true }).click(); const audit = summary(page).locator('pre'); await expect(audit).toContainText('trip-totals-2'); await expect(audit).toContainText('"selectedCash": null');

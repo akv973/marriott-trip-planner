@@ -51,7 +51,7 @@ test('reserved resources outside selection remain held; duplicate certificate fa
 });
 test('empty portfolio recovers and route query/comparison context survives', async ({ page }, info) => {
   await page.goto('./#/portfolio?country=TZ&compare=jw-tampa'); await expect(page.getByText('Create saved trips in Trip builder to compare strategies.')).toBeVisible(); await noOverflow(page); await page.screenshot({ path: info.outputPath('portfolio-empty.png'), fullPage: true });
-  await expect(page.getByRole('navigation').getByRole('link', { name: 'Trip builder', exact: true })).toHaveAttribute('href', '#/trips?country=TZ&compare=jw-tampa');
-  await page.getByRole('navigation').getByRole('link', { name: 'Trip builder', exact: true }).click(); await page.getByRole('button', { name: 'Create trip', exact: true }).click(); await page.getByRole('button', { name: 'Add hotel stay', exact: true }).click();
+  await expect(page.getByRole('navigation').getByRole('link', { name: 'Trip Builder', exact: true })).toHaveAttribute('href', '#/trips?country=TZ&compare=jw-tampa');
+  await page.getByRole('navigation').getByRole('link', { name: 'Trip Builder', exact: true }).click(); await page.getByRole('button', { name: 'Create trip', exact: true }).click(); await page.getByRole('button', { name: 'Add hotel stay', exact: true }).click();
   await page.getByRole('navigation').getByRole('link', { name: 'Portfolio', exact: true }).click(); await expect(card(page, 'Cash conservation')).toContainText('Incomplete assessment'); await expect(page.getByRole('navigation').getByRole('link', { name: 'Compare (1)', exact: true })).toBeVisible();
 });

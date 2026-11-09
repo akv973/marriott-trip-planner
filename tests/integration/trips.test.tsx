@@ -54,6 +54,6 @@ describe('Trip Builder editing and independent totals', () => {
     window.location.hash = '#/calculator?country=TZ'; fireEvent(window, new HashChangeEvent('hashchange')); expect(await screen.findByRole('heading', { level: 1 })).toHaveTextContent('Make your points');
     window.location.hash = '#/trips?country=TZ'; fireEvent(window, new HashChangeEvent('hashchange')); expect(await screen.findByLabelText('Trip name')).toHaveValue('My trip');
     expect(screen.getByLabelText('Trip notes / planned activities')).toHaveValue('Private note'); expect(local).toHaveBeenCalled(); expect(window.location.hash).not.toContain('Private');
-    expect(screen.getByRole('link', { name: 'Trip builder' })).toHaveAttribute('href', '#/trips?country=TZ');
+    expect(screen.getByRole('link', { name: 'Trip Builder' })).toHaveAttribute('href', '#/trips?country=TZ');
   });
 });
