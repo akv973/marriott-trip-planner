@@ -28,11 +28,11 @@ test('real manual journey: discover, compare, calculate, save two hotels, optimi
   await page.getByLabel('Desired cash rate per night', { exact: true }).fill('575'); await page.getByLabel('Cash target currency', { exact: true }).fill('USD');
   await nav(page, 'Explorer').click(); await page.getByRole('searchbox').fill('Mapito'); await page.getByRole('button', { name: 'Search', exact: true }).click(); await page.getByLabel(/Compare Mapito Safari/).check();
   await nav(page, 'Compare (2)').click(); await expect(page.getByRole('table')).toHaveAccessibleName('Side-by-side comparison of 2 properties');
-  await nav(page, 'Points calculator').click();
+  await nav(page, 'Points Calculator').click();
   for (const [label, value] of Object.entries({ 'Number of nights': '5', 'Nightly room rate (USD)': '1400', 'Cash taxes, stay total (USD)': '0', 'Cash mandatory fees, stay total (USD)': '0', 'Points per night before discount': '100000', 'Award cash payable, stay total (USD)': '200' })) await page.getByLabel(label, { exact: true }).fill(value);
   await page.getByLabel('Stay for 5, Pay for 4 eligibility', { exact: true }).selectOption('eligible'); await page.getByLabel('Are the two quotes comparable?', { exact: true }).selectOption('same');
   await page.getByRole('button', { name: 'Calculate value', exact: true }).click(); await expect(page.locator('.calculator-results')).toContainText('400,000 points');
-  await nav(page, 'Trip builder').click(); await page.getByRole('button', { name: 'Create trip', exact: true }).click(); await page.getByLabel('Trip name', { exact: true }).fill('Winter & safari audit'); await page.getByRole('button', { name: 'Add hotel stay', exact: true }).click();
+  await nav(page, 'Trip Builder').click(); await page.getByRole('button', { name: 'Create trip', exact: true }).click(); await page.getByLabel('Trip name', { exact: true }).fill('Winter & safari audit'); await page.getByRole('button', { name: 'Add hotel stay', exact: true }).click();
   await enterQuote(page, 1, 'property-dove-mountain', '2027-01-10', '4', '575', '240000');
   await page.getByRole('button', { name: 'Add hotel stay', exact: true }).click(); await enterQuote(page, 2, 'property-mapito', '2027-02-10', '5', '1400', '400000');
   await page.getByRole('article', { name: 'Stay 2', exact: true }).getByLabel('Booking method', { exact: true }).selectOption('points');
@@ -79,7 +79,7 @@ test('denied storage reads and quota failures retain exportable in-memory work',
 
 test('keyboard route focus, control names, optional map and horizontal ledgers are usable', async ({ page }, info) => {
   await seed(page); await page.goto('./#/portfolio');
-  for (const name of ['Explorer', 'Compare (0)', 'Points calculator', 'Recommendations', 'Trip builder', 'Portfolio', 'Profile', 'Watchlist', 'Elite benefits']) {
+  for (const name of ['Explorer', 'Compare (0)', 'Points Calculator', 'Recommendations', 'Trip Builder', 'Portfolio', 'Profile', 'Watchlist', 'Elite Benefits']) {
     await nav(page, name).focus(); await page.keyboard.press('Enter'); await expect(page.getByRole('heading', { level: 1 })).toBeFocused();
     await page.getByRole('link', { name: 'Skip to content', exact: true }).focus(); await page.keyboard.press('Enter'); await expect(page.locator('main')).toBeFocused();
     for (const control of await page.locator('button:visible, input:visible, select:visible, textarea:visible, summary:visible').all()) await expect(control).toHaveAccessibleName(/\S/);

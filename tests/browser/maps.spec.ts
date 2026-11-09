@@ -51,9 +51,9 @@ test('trip maps preserve ordered repeat visits and exact backups through reload 
   await tripMap.getByLabel('Focus location').selectOption({index:2});await tripMap.getByRole('button',{name:'Fit locations'}).click();await noOverflow(page);await tripMap.screenshot({path:info.outputPath('maps-itinerary.png')});
   await page.reload();await expect(tripMap).toContainText('3 of 3 stays mapped');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('marriott-trip-planner:v1')!).data)).toEqual(data);
   await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Profile',exact:true}).click();await page.getByRole('button',{name:'Export planner JSON'}).click();const json=await page.getByLabel('Planner JSON',{exact:true}).inputValue();expect(JSON.parse(json).data).toEqual(data);
-  await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Trip builder',exact:true}).click();await page.getByRole('button',{name:'Delete this trip'}).click();
+  await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Trip Builder',exact:true}).click();await page.getByRole('button',{name:'Delete this trip'}).click();
   await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Profile',exact:true}).click();await page.getByLabel('Planner JSON',{exact:true}).fill(json);await page.getByRole('button',{name:'Review import'}).click();await page.getByRole('button',{name:'Import and replace planner'}).click();
-  await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Trip builder',exact:true}).click();await expect(tripMap).toContainText('3 of 3 stays mapped');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('marriott-trip-planner:v1')!).data)).toEqual(data);
+  await page.getByRole('navigation',{name:'Main navigation'}).getByRole('link',{name:'Trip Builder',exact:true}).click();await expect(tripMap).toContainText('3 of 3 stays mapped');expect(await page.evaluate(()=>JSON.parse(localStorage.getItem('marriott-trip-planner:v1')!).data)).toEqual(data);
   await page.getByRole('button',{name:'Move stay 2 earlier'}).click();await expect(tripMap.getByRole('listitem').first()).toContainText('Mereshi');
 });
 test('comparison geography and map-chunk failure remain isolated from the saved planner',async({page},info)=>{

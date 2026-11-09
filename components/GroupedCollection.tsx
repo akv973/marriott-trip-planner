@@ -85,7 +85,7 @@ export function GroupedCollection({ catalog, results, query, asOf, comparisonSlu
           <figcaption><h2 id={`collection-group-${group.key}`}><span className="collection-group-name">{group.label}</span><span className="collection-group-count">{group.properties.length} {group.properties.length === 1 ? 'property' : 'properties'}</span></h2></figcaption>
         </figure>}
         <div className="property-grid">
-          {group.properties.map((property) => <PropertyCard key={property.id} catalog={catalog} property={property} query={query} asOf={asOf} comparisonSlugs={comparisonSlugs} onToggle={onToggle} onWatch={onWatch} watchedIds={watchedIds} onAddToTrip={onAddToTrip} />)}
+          {group.properties.map((property) => <PropertyCard key={property.id} catalog={catalog} property={property} query={query} asOf={asOf} comparisonSlugs={comparisonSlugs} onToggle={onToggle} onWatch={onWatch} watchedIds={watchedIds} onAddToTrip={onAddToTrip} brandPhoto={BRAND_BANNERS[property.brandId]} />)}
         </div>
       </section>;
     })}
