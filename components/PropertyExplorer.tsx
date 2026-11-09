@@ -92,7 +92,7 @@ export function PropertyExplorer({ catalog, query, asOf, section, comparisonSlug
         </div>
       </div>
     </section>
-    <p className="editorial-photo-note">Destination photographs from the travel concept — not photographs of catalog hotels.</p>
+    <p className="editorial-photo-note">Card photographs are real photographs from Wikimedia Commons: of the hotel where one exists, otherwise of the destination — each card credits its photographer. The hero and journey photographs are destination photographs from the travel concept, not photographs of catalog hotels.</p>
     </div>)}
     {tab === 'journeys' && (<div role="tabpanel" id="explorer-journeys" aria-labelledby="explorer-tab-journeys">
     <JourneyGallery />

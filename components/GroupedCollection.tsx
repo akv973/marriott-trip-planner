@@ -5,6 +5,7 @@ import { groupProperties, groupSlug } from '../lib/catalog/explorer';
 import type { ExplorerQuery, GroupBy } from '../lib/catalog/explorer';
 import { explorerHref } from '../lib/navigation/routes';
 import { PropertyCard } from './PropertyCard';
+import { cardPhotoFor } from '../lib/catalog/photos';
 import { REGION_NORTH_AMERICA_PHOTO } from '../lib/embedded-photos/region-north-america';
 import { REGION_ASIA_PHOTO } from '../lib/embedded-photos/region-asia';
 import { REGION_EUROPE_PHOTO } from '../lib/embedded-photos/region-europe';
@@ -85,7 +86,7 @@ export function GroupedCollection({ catalog, results, query, asOf, comparisonSlu
           <figcaption><h2 id={`collection-group-${group.key}`}><span className="collection-group-name">{group.label}</span><span className="collection-group-count">{group.properties.length} {group.properties.length === 1 ? 'property' : 'properties'}</span></h2></figcaption>
         </figure>}
         <div className="property-grid">
-          {group.properties.map((property) => <PropertyCard key={property.id} catalog={catalog} property={property} query={query} asOf={asOf} comparisonSlugs={comparisonSlugs} onToggle={onToggle} onWatch={onWatch} watchedIds={watchedIds} onAddToTrip={onAddToTrip} brandPhoto={BRAND_BANNERS[property.brandId]} />)}
+          {group.properties.map((property) => <PropertyCard key={property.id} catalog={catalog} property={property} query={query} asOf={asOf} comparisonSlugs={comparisonSlugs} onToggle={onToggle} onWatch={onWatch} watchedIds={watchedIds} onAddToTrip={onAddToTrip} brandPhoto={BRAND_BANNERS[property.brandId]} photo={cardPhotoFor(property.slug)} />)}
         </div>
       </section>;
     })}

@@ -231,13 +231,20 @@ summary { cursor: pointer; font-size: 12px; padding: 5px 0; line-height: 1.6; }
 .active-filters button { background: var(--sage); border: 1px solid var(--border-strong); padding: 8px 11px; border-radius: var(--radius-surface); color: var(--green); font-size: 11px; max-width: 100%; overflow-wrap: anywhere; text-align: left; min-height: 36px; }
 .active-filters span { padding-left: 10px; font-size: 16px; }
 .property-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-/* Split editorial card: brand illustration left, details right. The image
-   is the brand illustration already in the bundle; on narrow widths the
-   card stacks with the image on top. */
+/* Split editorial card: real photograph left, details right. The photo is
+   the hotel's own photograph from Wikimedia Commons where one exists, a
+   destination photograph otherwise; if it fails to load the card falls back
+   to the brand illustration. On narrow widths the card stacks with the
+   image on top. */
 .property-card { display: grid; grid-template-columns: 40% 60%; min-width: 0; border: 1px solid var(--line); background: #fff; border-radius: var(--radius-surface); overflow: hidden; transition: border-color .15s ease; }
 .property-card:hover { border-color: var(--green); }
 .property-card-no-photo { grid-template-columns: 1fr; }
+.property-card-photo { position: relative; min-height: 0; }
 .property-card-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+/* Photo credit: small white type over a bottom gradient, so the attribution
+   the Commons license requires stays readable on any photograph. */
+.property-card-photo-credit { position: absolute; left: 0; right: 0; bottom: 0; padding: 20px 12px 7px; font-size: 10px; line-height: 1.5; color: #fff; background: linear-gradient(transparent, rgba(0, 0, 0, .6)); }
+.property-card-photo-credit a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
 .property-card-body { padding: 24px 24px 0; display: flex; flex-direction: column; min-width: 0; }
 .property-brand { font-size: 11px; text-transform: uppercase; letter-spacing: .24em; line-height: 1.6; color: var(--muted); font-weight: 600; }
 .property-card h2 { font-size: 26px; font-weight: 600; line-height: 1.2; letter-spacing: normal; margin: 10px 0 0; }
